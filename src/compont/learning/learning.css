@@ -1,0 +1,1056 @@
+/* =================================================
+   LEARNING PAGE
+================================================= */
+
+.leaning-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  overflow-x: hidden;
+}
+
+
+/* =================================================
+   HERO
+================================================= */
+
+.leaning-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 70px 0 110px;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(65, 102, 230, 0.12),
+      transparent 30%
+    ),
+    #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =================================================
+   DOT BACKGROUND
+================================================= */
+
+.leaning-dots {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.7;
+
+  background-image: radial-gradient(
+    #cbd8ff 1px,
+    transparent 1px
+  );
+
+  background-size: 20px 20px;
+
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 45%,
+    transparent 80%
+  );
+}
+
+
+/* =================================================
+   TOP CONTAINER
+================================================= */
+
+.leaning-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1060px, calc(100% - 60px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =================================================
+   LEFT CONTENT
+================================================= */
+
+.leaning-left {
+  padding-top: 30px;
+}
+
+
+/* =================================================
+   BADGE
+================================================= */
+
+.leaning-badge {
+  width: fit-content;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 15px;
+
+  border-radius: 25px;
+
+  background: #eef3ff;
+
+  color: #2864e9;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.leaning-badge span {
+  color: #ffb511;
+
+  font-size: 17px;
+}
+
+
+/* =================================================
+   MAIN HEADING
+================================================= */
+
+.leaning-left h1 {
+  margin: 25px 0 22px;
+
+  color: #101a58;
+
+  font-size: 62px;
+
+  line-height: 1.02;
+
+  letter-spacing: -3px;
+
+  font-weight: 850;
+}
+
+.leaning-left h1 span {
+  color: #2864e9;
+}
+
+
+/* =================================================
+   LEFT DESCRIPTION
+================================================= */
+
+.leaning-left p {
+  max-width: 530px;
+
+  margin: 0;
+
+  color: #47547d;
+
+  font-size: 18px;
+
+  line-height: 1.55;
+}
+
+
+/* =================================================
+   MAIN LEARNING CARD
+================================================= */
+
+.learning-card {
+  position: relative;
+
+  width: 100%;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e9edfa;
+
+  box-shadow:
+    0 25px 55px rgba(31, 46, 100, 0.16);
+}
+
+
+/* =================================================
+   TABS
+================================================= */
+
+.learning-tabs {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 5px;
+
+  padding: 4px;
+
+  margin-bottom: 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 15px;
+
+  background: #eef2ff;
+}
+
+.learning-tab {
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #7782a6;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.learning-tab.active {
+  background: #ffffff;
+
+  color: #182454;
+
+  box-shadow:
+    0 5px 14px rgba(30, 50, 110, 0.13);
+}
+
+.learning-tab-icon {
+  font-size: 13px;
+
+  color: #2864e9;
+}
+
+
+/* =================================================
+   IMAGE
+================================================= */
+
+.learning-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 255px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+}
+
+.learning-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  animation: learningImageIn 0.5s ease;
+}
+
+@keyframes learningImageIn {
+  from {
+    opacity: 0;
+
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =================================================
+   IMAGE OVERLAY
+================================================= */
+
+.learning-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 15, 45, 0.78),
+      rgba(5, 15, 45, 0.02) 65%
+    );
+}
+
+
+/* =================================================
+   IMAGE TEXT
+================================================= */
+
+.learning-image-text {
+  position: absolute;
+
+  left: 18px;
+
+  right: 18px;
+
+  bottom: 16px;
+
+  color: #ffffff;
+}
+
+.learning-image-text h2 {
+  margin: 0 0 5px;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+.learning-image-text p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =================================================
+   4 POINTS
+================================================= */
+
+.learning-points {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+.learning-point {
+  min-height: 39px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 11px;
+
+  background: #eef2ff;
+
+  color: #17234e;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.learning-check {
+  width: 17px;
+
+  height: 17px;
+
+  min-width: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #2864e9;
+
+  font-size: 14px;
+
+  font-weight: 900;
+}
+
+
+/* =================================================
+   BELOW 3 CARDS
+================================================= */
+/* =================================================
+   BELOW 3 BOXES
+   UPPER SECTION SAFE - NO CHANGE
+================================================= */
+
+.learning-second-row {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1060px, calc(100% - 60px));
+
+  margin: 140px auto 100px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =================================================
+   BOX
+================================================= */
+
+.learning-box {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 430px;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  border-radius: 25px;
+
+  background: #eef2ff;
+
+  color: #101a58;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* =================================================
+   MIDDLE BLUE BOX
+================================================= */
+
+.learning-box-blue {
+  background: #315be8;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 18px 40px rgba(49, 91, 232, 0.18);
+}
+
+
+/* =================================================
+   ICON
+================================================= */
+
+.learning-box-icon {
+  width: 58px;
+
+  height: 58px;
+
+  min-width: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  border-radius: 50%;
+
+  font-size: 25px;
+}
+
+.learning-icon-cyan {
+  background: #20c4e5;
+}
+
+.learning-icon-yellow {
+  background: #ffb511;
+}
+
+.learning-icon-pink {
+  background: #f36ba8;
+}
+
+
+/* =================================================
+   HEADING
+================================================= */
+
+.learning-box h3 {
+  margin: 0 0 15px;
+
+  color: #101a58;
+
+  font-size: 27px;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.5px;
+
+  font-weight: 850;
+}
+
+.learning-box-blue h3 {
+  color: #ffffff;
+}
+
+
+/* =================================================
+   DESCRIPTION
+================================================= */
+
+.learning-box p {
+  min-height: 72px;
+
+  margin: 0 0 25px;
+
+  color: #536086;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+.learning-box-blue p {
+  color: #e1e7ff;
+}
+
+
+/* =================================================
+   POINTS
+================================================= */
+
+.learning-box-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  margin-top: auto;
+}
+
+.learning-box-list div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #46537d;
+
+  font-size: 13px;
+}
+
+.learning-box-blue .learning-box-list div {
+  color: #ffffff;
+}
+
+
+/* CHECK CIRCLE */
+
+.learning-box-list span {
+  width: 20px;
+
+  height: 20px;
+
+  min-width: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffb511;
+
+  color: #101a58;
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+
+/* =================================================
+   BUTTON
+================================================= */
+
+.learning-box-button {
+  width: fit-content;
+
+  margin-top: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #2864e9;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.learning-box-blue .learning-box-button {
+  color: #ffffff;
+}
+
+.learning-box-button span {
+  margin-left: 8px;
+
+  font-size: 17px;
+}
+
+
+/* =================================================
+   TABLET
+================================================= */
+
+@media (max-width: 900px) {
+
+  .learning-second-row {
+    width: min(700px, calc(100% - 40px));
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .learning-box {
+    padding: 22px;
+  }
+
+  .learning-box h3 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 650px) {
+
+  .learning-second-row {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 35px;
+  }
+
+  .learning-box {
+    min-height: auto;
+
+    padding: 25px;
+  }
+
+}
+/* =================================================
+   SECTION BELOW 3 BOXES
+================================================= */
+
+.learning-live-section {
+  position: relative;
+
+  width: min(1060px, calc(100% - 60px));
+
+  min-height: 580px;
+
+  margin: 55px 0 100px;
+
+  padding: 75px 70px;
+
+  box-sizing: border-box;
+
+  border-radius: 38px;
+
+  background: #eef2ff;
+
+  overflow: hidden;
+}
+
+
+/* =================================================
+   CONTAINER
+================================================= */
+
+.learning-live-section {
+  position: relative;
+
+  width: calc(100% - 30px);
+  max-width: none;
+
+  min-height: 580px;
+
+  margin: 5px 10px 100px;
+
+  padding: 75px 0;
+
+  box-sizing: border-box;
+
+  border-radius: 38px;
+
+  background: #eef2ff;
+
+  overflow: hidden;
+}
+
+.learning-live-container {
+  width: min(1250px, calc(100% - 100px));
+
+  min-height: 450px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+/* =================================================
+   LEFT
+================================================= */
+
+.learning-live-left {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =================================================
+   LABEL
+================================================= */
+
+.learning-live-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 30px;
+
+  color: #2864e9;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.learning-live-label span:first-child {
+  color: #ffb511;
+
+  font-size: 17px;
+}
+
+.learning-live-label strong {
+  font-weight: 800;
+}
+
+
+/* =================================================
+   HEADING
+================================================= */
+
+.learning-live-left h2 {
+  margin: 0;
+
+  color: #101a58;
+
+  font-size: 78px;
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
+}
+
+.learning-live-left h2 span {
+  color: #2864e9;
+}
+
+
+/* =================================================
+   RIGHT
+================================================= */
+
+.learning-live-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+/* =================================================
+   RIGHT HEADING
+================================================= */
+
+.learning-live-right h3 {
+  max-width: 570px;
+
+  margin: 0 0 30px;
+
+  color: #101a58;
+
+  font-size: 30px;
+
+  line-height: 1.08;
+
+  letter-spacing: -1px;
+
+  font-weight: 850;
+}
+
+
+/* =================================================
+   FEATURE PILLS
+================================================= */
+
+.learning-live-features {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  max-width: 570px;
+
+  margin-bottom: 30px;
+}
+
+.learning-live-feature {
+  min-height: 54px;
+
+  padding: 0 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  box-sizing: border-box;
+
+  border: 2px solid #dce4ff;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  color: #3e4c78;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.learning-live-feature span {
+  width: 27px;
+
+  height: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 2px solid #d5defd;
+
+  border-radius: 50%;
+
+  color: #2864e9;
+
+  font-size: 14px;
+}
+
+
+/* =================================================
+   BUTTON
+================================================= */
+
+.learning-live-button {
+  min-width: 140px;
+
+  height: 50px;
+
+  padding: 0 25px;
+
+  border: 2px solid #101a58;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  color: #101a58;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.learning-live-button:hover {
+  background: #101a58;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =================================================
+   TABLET
+================================================= */
+
+@media (max-width: 900px) {
+
+  .learning-live-section {
+    width: calc(100% - 40px);
+
+    padding: 55px 45px;
+  }
+
+  .learning-live-container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .learning-live-left h2 {
+    font-size: 52px;
+  }
+
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 650px) {
+
+  .learning-live-section {
+    width: calc(100% - 30px);
+
+    min-height: auto;
+
+    margin-top: 35px;
+
+    padding: 40px 25px;
+
+    border-radius: 28px;
+  }
+
+  .learning-live-container {
+    min-height: auto;
+
+    gap: 35px;
+  }
+
+  .learning-live-left h2 {
+    font-size: 42px;
+
+    letter-spacing: -2px;
+  }
+
+  .learning-live-right h3 {
+    font-size: 22px;
+  }
+
+  .learning-live-features {
+    gap: 8px;
+  }
+
+  .learning-live-feature {
+    min-height: 48px;
+
+    font-size: 12px;
+  }
+
+}

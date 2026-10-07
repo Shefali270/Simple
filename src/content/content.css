@@ -1,0 +1,643 @@
+/* =========================================
+   CONTENT PAGE
+========================================= */
+
+.content-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   MAIN DARK SECTION
+========================================= */
+
+.content-section {
+  position: relative;
+
+  width: calc(100% - 24px);
+  margin: 0 auto;
+
+  min-height: 890px;
+
+  background: #101a58;
+
+  border-radius: 0 0 38px 38px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.content-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1120px, calc(100% - 60px));
+
+  margin: 0 auto;
+
+  padding-top: 70px;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.content-top {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.content-top h1 {
+  margin: 0;
+
+  font-size: 96px;
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  color: #ffffff;
+}
+
+
+.content-top h1 span {
+  color: #ffb511;
+}
+
+
+/* =========================================
+   GET STARTED BUTTON
+========================================= */
+
+.content-get-started {
+  margin-top: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 10px 10px 20px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  color: #101a58;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.content-get-started span {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffb511;
+
+  color: #101a58;
+
+  font-size: 17px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.content-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin-top: 38px;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   MAIN CONTENT GRID
+========================================= */
+
+.content-main {
+  display: grid;
+
+  grid-template-columns:
+    2.2fr
+    0.9fr
+    0.9fr
+    0.9fr
+    1fr;
+
+  gap: 45px;
+
+  padding-top: 50px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.content-brand {
+  max-width: 330px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.content-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+
+.content-logo-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  font-size: 40px;
+}
+
+
+.content-logo-text {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.content-logo-text strong {
+  font-size: 25px;
+
+  color: #ffffff;
+}
+
+
+.content-logo-text small {
+  margin-top: 4px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.4px;
+
+  color: #ffb511;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   BRAND DESCRIPTION
+========================================= */
+
+.content-brand > p {
+  margin: 0;
+
+  color: #aeb8e2;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.content-newsletter {
+  margin-top: 15px;
+}
+
+
+.content-newsletter h4 {
+  margin: 0 0 10px;
+
+  font-size: 12px;
+
+  color: #ffffff;
+}
+
+
+.content-subscribe {
+  width: 255px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 3px;
+
+  border-radius: 22px;
+
+  background: #202b72;
+}
+
+
+.content-subscribe input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 14px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 11px;
+}
+
+
+.content-subscribe input::placeholder {
+  color: #8994c8;
+}
+
+
+.content-subscribe button {
+  height: 32px;
+
+  padding: 0 16px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: #ffb511;
+
+  color: #101a58;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   COLUMNS
+========================================= */
+
+.content-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.content-column h3 {
+  margin: 0 0 17px;
+
+  font-size: 20px;
+
+  color: #ffffff;
+
+  font-weight: 800;
+}
+
+
+.content-column a {
+  margin-bottom: 11px;
+
+  text-decoration: none;
+
+  color: #aeb8e2;
+
+  font-size: 15px;
+
+  transition: color 0.2s ease;
+}
+
+
+.content-column a:hover {
+  color: #ffb511;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.content-contact {
+  min-width: 170px;
+}
+
+
+.contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-bottom: 12px;
+}
+
+
+.contact-item span {
+  color: #ffb511;
+
+  font-size: 20px;
+}
+
+
+.contact-item p {
+  margin: 0;
+
+  color: #aeb8e2;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   BOTTOM DIVIDER
+========================================= */
+
+.content-bottom-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin-top: 40px;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.content-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 0 25px;
+}
+
+
+.content-bottom p {
+  margin: 0;
+
+  color: #aeb8e2;
+
+  font-size: 10px;
+}
+
+
+.content-legal {
+  display: flex;
+
+  gap: 22px;
+}
+
+
+.content-legal a {
+  text-decoration: none;
+
+  color: #aeb8e2;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   YELLOW STAR
+========================================= */
+
+.content-yellow-star {
+  position: absolute;
+
+  z-index: 2;
+
+  top: -35px;
+
+  right: -15px;
+
+  font-size: 190px;
+
+  line-height: 1;
+
+  color: #ffb511;
+
+  transform-origin: center center;
+
+  animation: contentStarRotate 8s linear infinite;
+}
+
+
+/* =========================================
+   YELLOW STAR ROTATION
+========================================= */
+
+@keyframes contentStarRotate {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   BLUE BOTTOM SHAPE
+========================================= */
+
+.content-blue-shape {
+  position: absolute;
+
+  z-index: 1;
+
+  left: -45px;
+
+  bottom: -70px;
+
+  width: 150px;
+
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: #294bc0;
+
+  box-shadow:
+    55px 15px 0 #294bc0;
+
+  transform-origin: center center;
+
+  animation: contentBlueRotate 12s linear infinite;
+}
+
+
+/* =========================================
+   BLUE SHAPE ROTATION
+========================================= */
+
+@keyframes contentBlueRotate {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .content-top h1 {
+    font-size: 62px;
+  }
+
+  .content-main {
+    grid-template-columns:
+      1.8fr
+      1fr
+      1fr;
+
+    row-gap: 35px;
+  }
+
+  .content-brand {
+    max-width: 100%;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .content-section {
+    width: calc(100% - 12px);
+
+    border-radius: 0 0 25px 25px;
+  }
+
+  .content-container {
+    width: calc(100% - 35px);
+
+    padding-top: 50px;
+  }
+
+  .content-top h1 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+  }
+
+  .content-main {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+  }
+
+  .content-brand {
+    grid-column: 1 / -1;
+  }
+
+  .content-yellow-star {
+    font-size: 120px;
+  }
+
+  .content-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .content-main {
+    grid-template-columns: 1fr;
+  }
+
+  .content-subscribe {
+    width: 100%;
+  }
+
+  .content-top h1 {
+    font-size: 38px;
+  }
+
+}
