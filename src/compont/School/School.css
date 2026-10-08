@@ -1,0 +1,1252 @@
+/* =========================
+   SCHOOL PAGE
+========================= */
+
+.school-page {
+  position: relative;
+  min-height: calc(100vh - 80px);
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   DOT BACKGROUND
+========================= */
+
+.school-dots {
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    #d9e2f7 1px,
+    transparent 1px
+  );
+
+  background-size: 20px 20px;
+
+  opacity: 0.55;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.school-hero {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1080px;
+
+  margin: 0 auto;
+
+  min-height: 720px;
+
+  padding: 85px 20px 70px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.school-left {
+  padding-top: 10px;
+}
+
+
+.school-badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border-radius: 30px;
+
+  background: #edf3ff;
+
+  color: #315fe0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 22px;
+}
+
+
+.school-badge span {
+  color: #f5b400;
+  font-size: 15px;
+}
+
+
+.school-left h1 {
+  margin: 0;
+
+  color: #101a4d;
+
+  font-size: 57px;
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
+}
+
+
+.school-left h1 span {
+  color: #3262e9;
+}
+
+
+.school-left p {
+  margin: 28px 0 0;
+
+  color: #58658a;
+
+  font-size: 17px;
+  line-height: 1.55;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.school-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+
+.school-primary-btn,
+.school-secondary-btn {
+  height: 52px;
+
+  border-radius: 28px;
+
+  padding: 0 18px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.school-primary-btn {
+  min-width: 185px;
+
+  border: none;
+
+  background: #3262e9;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  box-shadow: 0 12px 25px rgba(50, 98, 233, 0.25);
+}
+
+
+.school-primary-btn span {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #3262e9;
+
+  font-size: 20px;
+}
+
+
+.school-secondary-btn {
+  min-width: 155px;
+
+  background: white;
+
+  border: 2px solid #101a4d;
+
+  color: #101a4d;
+}
+
+
+/* =========================
+   RIGHT
+========================= */
+
+.school-right {
+  position: relative;
+
+  padding-top: 15px;
+}
+
+
+/* =========================
+   TEACHER TRAINING
+========================= */
+
+.school-training {
+  position: absolute;
+
+  top: -2px;
+  left: -18px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  color: #26345f;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  box-shadow: 0 5px 18px rgba(40, 62, 110, 0.08);
+}
+
+
+.school-training span {
+  color: #315fe8;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.school-dashboard {
+  width: 100%;
+
+  background: white;
+
+  border: 1px solid #e2e7f3;
+
+  border-radius: 23px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 45px rgba(31, 53, 105, 0.13);
+}
+
+
+/* HEADER */
+
+.dashboard-header {
+  min-height: 68px;
+
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e9edf5;
+
+  box-sizing: border-box;
+}
+
+
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.dashboard-main-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #3563e9;
+
+  color: white;
+
+  font-size: 20px;
+}
+
+
+.dashboard-title h3 {
+  margin: 0;
+
+  color: #17224e;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.dashboard-title p {
+  margin: 2px 0 0;
+
+  color: #7b86a5;
+
+  font-size: 11px;
+}
+
+
+.sample-data {
+  padding: 6px 12px;
+
+  border-radius: 15px;
+
+  background: #edf2ff;
+
+  color: #4864bb;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  padding: 12px 14px;
+}
+
+
+.stat-box {
+  min-height: 76px;
+
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  background: #eef2fc;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.stat-box small {
+  color: #7a85a5;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+.stat-box strong {
+  margin-top: 2px;
+
+  color: #17224e;
+
+  font-size: 21px;
+  line-height: 1;
+}
+
+
+.stat-box span {
+  margin-top: 6px;
+
+  color: #20a57b;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+.stat-blue {
+  background: #3262e9;
+}
+
+
+.stat-blue small,
+.stat-blue strong,
+.stat-blue span {
+  color: white;
+}
+
+
+/* =========================
+   SCORE CARD
+========================= */
+
+.score-card {
+  margin: 0 14px;
+
+  padding: 13px;
+
+  border: 1px solid #e1e6f1;
+
+  border-radius: 13px;
+}
+
+
+.score-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.score-heading strong {
+  color: #17224e;
+
+  font-size: 11px;
+}
+
+
+.score-heading span {
+  color: #7c87a5;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   CHART
+========================= */
+
+.score-chart {
+  height: 108px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  gap: 7px;
+
+  border-top: 1px solid #edf0f6;
+
+  padding-top: 10px;
+}
+
+
+.bar-item {
+  height: 100%;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 5px;
+}
+
+
+.bar {
+  width: 100%;
+
+  max-width: 38px;
+
+  border-radius: 7px 7px 2px 2px;
+
+  background: #4169e9;
+}
+
+
+.bar-6 {
+  height: 66px;
+}
+
+.bar-7 {
+  height: 73px;
+}
+
+.bar-8 {
+  height: 69px;
+}
+
+.bar-9 {
+  height: 77px;
+}
+
+.bar-10 {
+  height: 85px;
+  background: #ffc33d;
+}
+
+.bar-11 {
+  height: 75px;
+}
+
+.bar-12 {
+  height: 81px;
+}
+
+
+.bar-item span {
+  color: #7c87a5;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   CAREER WORKSHOP
+========================= */
+
+.career-workshop {
+  margin: 12px 14px 14px;
+
+  min-height: 53px;
+
+  padding: 9px 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 12px;
+
+  background: #fff4d9;
+
+  box-sizing: border-box;
+}
+
+
+.workshop-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #ffb900;
+
+  color: #14204d;
+
+  font-size: 16px;
+}
+
+
+.workshop-text {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+
+.workshop-text strong {
+  color: #18234d;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+.workshop-text span {
+  margin-top: 3px;
+
+  color: #71809f;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+.upcoming {
+  padding: 6px 10px;
+
+  border-radius: 15px;
+
+  background: #ffb900;
+
+  color: #17224e;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   DETAILED REPORTS
+========================= */
+
+.detailed-reports {
+  position: absolute;
+
+  right: -12px;
+  bottom: -25px;
+
+  padding: 9px 15px;
+
+  border-radius: 20px;
+
+  background: #3262e9;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  box-shadow: 0 8px 18px rgba(50, 98, 233, 0.25);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .school-hero {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding-top: 60px;
+  }
+
+  .school-left h1 {
+    font-size: 48px;
+  }
+
+  .school-right {
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .school-hero {
+    padding: 45px 18px 70px;
+  }
+
+  .school-left h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .school-left p {
+    font-size: 14px;
+  }
+
+  .school-left p br {
+    display: none;
+  }
+
+  .school-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-stats {
+    gap: 5px;
+    padding: 9px;
+  }
+
+  .stat-box {
+    padding: 8px;
+  }
+
+  .stat-box strong {
+    font-size: 17px;
+  }
+
+  .score-card {
+    margin: 0 9px;
+  }
+
+  .career-workshop {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
+
+  .school-training {
+    left: 5px;
+  }
+
+  .detailed-reports {
+    right: 5px;
+  }
+}
+/* =========================
+   SIX WAYS SECTION
+========================= */
+
+.school-ways {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1080px;
+
+  margin: 0 auto;
+
+  padding: 70px 20px 90px;
+
+  box-sizing: border-box;
+}
+
+
+/* BADGE */
+
+.school-ways-badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  padding: 7px 13px;
+
+  border-radius: 25px;
+
+  background: #edf3ff;
+
+  color: #315fe0;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.school-ways-badge span {
+  color: #f4b000;
+  font-size: 15px;
+}
+
+
+/* HEADING */
+
+.school-ways h2 {
+  margin: 25px 0 55px;
+
+  color: #101a4d;
+
+  font-size: 50px;
+  line-height: 1;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 900;
+}
+
+
+.school-ways h2 span {
+  color: #3262e9;
+}
+
+
+/* GRID */
+
+.school-way-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+
+/* CARD */
+
+.school-way-card {
+  min-height: 235px;
+
+  padding: 29px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border: 1px solid #dfe5f2;
+
+  border-radius: 25px;
+
+  box-shadow: 0 8px 22px rgba(35, 55, 105, 0.04);
+}
+
+
+.school-way-card h3 {
+  margin: 25px 0 10px;
+
+  color: #101a4d;
+
+  font-size: 20px;
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+
+.school-way-card p {
+  margin: 0;
+
+  color: #5c688d;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  font-weight: 500;
+}
+
+
+/* ICON */
+
+.way-icon {
+  width: 51px;
+  height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 21px;
+  font-weight: 900;
+}
+
+
+.way-cyan {
+  background: #20bad7;
+  color: #09204e;
+}
+
+
+.way-yellow {
+  background: #ffb814;
+  color: #09204e;
+}
+
+
+.way-pink {
+  background: #ff5b78;
+  color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .school-way-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .school-ways h2 {
+    font-size: 42px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .school-ways {
+    padding: 55px 18px 70px;
+  }
+
+  .school-ways h2 {
+    font-size: 35px;
+    margin-bottom: 35px;
+  }
+
+  .school-way-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================
+   PARTNER SECTION
+========================= */
+
+.school-partner {
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 70px max(20px, calc((100% - 1080px) / 2))
+    75px;
+
+  box-sizing: border-box;
+
+  background: #eef2ff;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.partner-left {
+  padding-top: 5px;
+}
+
+
+.partner-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 25px;
+
+  color: #3262e9;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.partner-badge span {
+  color: #f5b400;
+  font-size: 15px;
+}
+
+
+.partner-left h2 {
+  margin: 0;
+
+  color: #101a4d;
+
+  font-size: 54px;
+  line-height: 0.98;
+
+  letter-spacing: -2.8px;
+
+  font-weight: 900;
+}
+
+
+.partner-left h2 span {
+  color: #3262e9;
+}
+
+
+.partner-left > p {
+  margin: 27px 0 0;
+
+  color: #52618b;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   CONTACT BOXES
+========================= */
+
+.partner-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 30px;
+
+  max-width: 410px;
+}
+
+
+.partner-info-box {
+  min-height: 72px;
+
+  padding: 15px 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: 20px;
+}
+
+
+.partner-info-box small {
+  margin-bottom: 4px;
+
+  color: #7783a4;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.partner-info-box strong {
+  color: #111a49;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.partner-form {
+  width: 100%;
+
+  padding: 38px 38px;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border-radius: 27px;
+
+  box-shadow: 0 12px 35px rgba(45, 64, 115, 0.06);
+}
+
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 15px;
+}
+
+
+.form-group label {
+  margin-bottom: 7px;
+
+  color: #18234d;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: none;
+  outline: none;
+
+  background: #edf1ff;
+
+  border-radius: 16px;
+
+  color: #26345f;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+
+.form-group input,
+.form-group select {
+  height: 47px;
+
+  padding: 0 18px;
+}
+
+
+.form-group textarea {
+  height: 120px;
+
+  padding: 15px 18px;
+
+  resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 2px #3262e9;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.partner-submit {
+  margin-top: 18px;
+
+  height: 50px;
+
+  min-width: 185px;
+
+  padding: 0 12px 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border: none;
+
+  border-radius: 28px;
+
+  background: #3262e9;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 24px rgba(50, 98, 233, 0.25);
+}
+
+
+.partner-submit span {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #3262e9;
+
+  font-size: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .school-partner {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding: 60px 25px;
+  }
+
+  .partner-form {
+    max-width: 650px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .school-partner {
+    padding: 50px 18px;
+  }
+
+  .partner-left h2 {
+    font-size: 40px;
+  }
+
+  .partner-left > p br {
+    display: none;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .partner-form {
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+
+}

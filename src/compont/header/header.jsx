@@ -1,3 +1,4 @@
+import { logo } from "../../assets/image/image.js";
 import "./header.css";
 
 function Header() {
@@ -8,9 +9,7 @@ function Header() {
         {/* LOGO */}
         <a href="/" className="logo">
           <div className="logo-icon">
-            <span className="book book-blue"></span>
-            <span className="book book-yellow"></span>
-            <span className="star">✦</span>
+            <img src={logo} alt="logo" />
           </div>
 
           <div className="logo-text">
@@ -29,7 +28,6 @@ function Header() {
           <a href="#schools">For Schools</a>
           <a href="#resources">Resources</a>
           <a href="#about">About Us</a>
-       
         </nav>
 
         {/* ACTIONS */}

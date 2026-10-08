@@ -1,0 +1,706 @@
+/* =========================
+   RESOURCE PAGE
+========================= */
+
+.resource-page {
+  position: relative;
+  min-height: calc(100vh - 80px);
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   DOT BACKGROUND
+========================= */
+
+.resource-dots {
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    #dce5fa 1px,
+    transparent 1px
+  );
+
+  background-size: 20px 20px;
+
+  opacity: 0.65;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.resource-hero {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1080px;
+
+  min-height: 730px;
+
+  margin: 0 auto;
+
+  padding: 75px 20px 80px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: 1fr 465px;
+
+  align-items: center;
+
+  gap: 55px;
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.resource-left {
+  padding-top: 25px;
+}
+
+
+.resource-badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border-radius: 25px;
+
+  background: #edf3ff;
+
+  color: #3262e9;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  margin-bottom: 25px;
+}
+
+
+.resource-badge span {
+  color: #f5b400;
+  font-size: 15px;
+}
+
+
+.resource-left h1 {
+  margin: 0;
+
+  color: #101a4d;
+
+  font-size: 57px;
+
+  line-height: 0.99;
+
+  letter-spacing: -3px;
+
+  font-weight: 900;
+}
+
+
+.resource-left h1 span {
+  color: #3262e9;
+}
+
+
+.resource-left p {
+  margin: 27px 0 0;
+
+  color: #58658a;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   RIGHT GRID
+========================= */
+
+.resource-right {
+  width: 465px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-rows: 360px 135px 135px;
+
+  gap: 10px;
+}
+
+
+/* =========================
+   COMMON BOX
+========================= */
+
+.resource-box {
+  background: white;
+
+  border: 1px solid #e1e6f2;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 30px rgba(35, 55, 105, 0.08);
+
+  box-sizing: border-box;
+}
+
+
+.resource-box-title {
+  height: 38px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #1a2854;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+.resource-box-title span {
+  color: #315fe8;
+}
+
+
+/* =========================
+   NOTES
+========================= */
+
+.resource-notes {
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+  height: auto;
+}
+
+
+.notes-paper {
+  position: relative;
+
+  height: calc(100% - 38px);
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fffdf5 0px,
+      #fffdf5 23px,
+      #e8dfc9 24px,
+      #fffdf5 25px
+    );
+
+  border-left: 2px solid #ffb5b9;
+}
+
+
+.notes-paper strong {
+  color: #243053;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+.note-line {
+  margin-top: 10px;
+
+  color: #536181;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.formula {
+  margin-top: 7px;
+
+  color: #1c294f;
+
+  font-size: 12px;
+
+  font-style: italic;
+}
+
+
+.lens-diagram {
+  position: absolute;
+
+  right: 20px;
+  bottom: 55px;
+
+  width: 115px;
+  height: 65px;
+
+  border-bottom: 1px dashed #bdc5d8;
+}
+
+
+.lens-diagram::before {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+  top: 30px;
+
+  width: 80px;
+
+  border-top: 2px solid #1d2b50;
+}
+
+
+.lens-diagram::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 7px;
+
+  width: 27px;
+  height: 52px;
+
+  border-left: 3px solid #17264d;
+
+  border-radius: 50%;
+}
+
+
+.lens-diagram i {
+  position: absolute;
+
+  left: 62px;
+  top: 26px;
+
+  width: 6px;
+  height: 6px;
+
+  background: #ff5a68;
+
+  border-radius: 50%;
+}
+
+
+.lens-diagram span {
+  position: absolute;
+
+  left: 55px;
+  top: 37px;
+
+  font-size: 9px;
+
+  color: #26345f;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.resource-video {
+  grid-column: 2;
+  grid-row: 1;
+
+  height: auto;
+}
+
+
+.video-image {
+  position: relative;
+
+  width: 100%;
+
+  height: calc(100% - 38px);
+
+  overflow: hidden;
+}
+
+
+.video-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  display: block;
+}
+
+
+.video-play {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #3262e9;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   TEST SERIES
+========================= */
+
+.resource-test {
+  grid-column: 2;
+  grid-row: 2;
+
+  height: auto;
+
+  padding-bottom: 7px;
+}
+
+
+.test-heading {
+  justify-content: flex-start;
+}
+
+
+.test-heading small {
+  margin-left: auto;
+
+  color: #7a85a3;
+
+  font-size: 9px;
+}
+
+
+.resource-test h4 {
+  margin: 5px 13px 8px;
+
+  color: #253257;
+
+  font-size: 10px;
+}
+
+
+.test-option {
+  height: 25px;
+
+  margin: 4px 10px;
+
+  padding: 0 7px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border: 1px solid #dce3f3;
+
+  border-radius: 8px;
+
+  color: #65718f;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+.test-option b {
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf1fc;
+
+  color: #536180;
+
+  font-size: 8px;
+}
+
+
+.test-option.correct {
+  border-color: #63cda3;
+
+  background: #eafaf3;
+
+  color: #355c51;
+}
+
+
+.test-option.correct b {
+  background: #18ad7b;
+
+  color: white;
+}
+
+
+/* =========================
+   PREVIOUS PAPERS
+========================= */
+
+.resource-papers {
+  grid-column: 1;
+  grid-row: 3;
+
+  height: auto;
+
+  padding-bottom: 5px;
+}
+
+
+.paper-item {
+  height: 34px;
+
+  margin: 6px 10px;
+
+  padding: 0 8px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border-radius: 8px;
+
+  background: #edf1ff;
+}
+
+
+.paper-item span {
+  color: #ff5d7a;
+
+  font-size: 13px;
+}
+
+
+.paper-item strong {
+  flex: 1;
+
+  color: #526080;
+
+  font-size: 8px;
+
+  line-height: 1.25;
+}
+
+
+.paper-item b {
+  color: #3262e9;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   E-BOOKS
+========================= */
+
+.resource-books {
+  grid-column: 2;
+  grid-row: 3;
+
+  height: auto;
+}
+
+
+.books {
+  height: calc(100% - 38px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0;
+
+  padding-top: 5px;
+}
+
+
+.book {
+  width: 48px;
+  height: 90px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding-bottom: 7px;
+
+  box-sizing: border-box;
+
+  border-radius: 4px 4px 7px 7px;
+
+  color: white;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 5px 10px rgba(30, 50, 100, 0.15);
+}
+
+
+.book-maths {
+  background: #315fe8;
+
+  transform: rotate(-9deg);
+
+  z-index: 1;
+}
+
+
+.book-science {
+  background: #ff5c79;
+
+  transform: rotate(2deg);
+
+  z-index: 2;
+}
+
+
+.book-english {
+  background: #1fb7d4;
+
+  transform: rotate(9deg);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .resource-hero {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding-top: 55px;
+  }
+
+  .resource-left h1 {
+    font-size: 48px;
+  }
+
+  .resource-right {
+    width: 465px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .resource-hero {
+    padding: 40px 18px 60px;
+  }
+
+  .resource-left h1 {
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .resource-left p {
+    font-size: 14px;
+  }
+
+  .resource-left p br {
+    display: none;
+  }
+
+  .resource-right {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto;
+
+    gap: 10px;
+  }
+
+  .resource-notes,
+  .resource-video,
+  .resource-test,
+  .resource-papers,
+  .resource-books {
+    grid-column: 1;
+    grid-row: auto;
+
+    height: auto;
+
+    min-height: 180px;
+  }
+
+  .resource-notes {
+    min-height: 300px;
+  }
+
+  .resource-video {
+    min-height: 220px;
+  }
+
+  .resource-test {
+    min-height: 220px;
+  }
+
+}
