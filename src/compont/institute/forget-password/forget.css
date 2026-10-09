@@ -1,0 +1,64 @@
+
+/* Forgot Password page */
+.forgot-card h2 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.forgot-card .login-subtitle {
+  max-width: 310px;
+  line-height: 1.4;
+  margin-bottom: 17px;
+}
+
+.forgot-card form > label {
+  margin-top: 16px;
+}
+
+.forgot-card .institute-submit {
+  margin-top: 14px;
+}
+
+.forgot-card .institute-register {
+  margin-top: 5px;
+}
+
+.banner-get-started {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 157px;
+  margin: 22px 0 0;
+  padding: 6px 8px 6px 25px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: #fff;
+  color: #10194f;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.banner-get-started span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffb400;
+  color: #10194f;
+  font-size: 22px;
+}
+
+@media (max-width: 500px) {
+  .forgot-card h2 {
+    font-size: 18px;
+  }
+
+  .banner-get-started {
+    margin-top: 18px;
+  }
+}

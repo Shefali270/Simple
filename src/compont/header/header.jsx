@@ -31,17 +31,24 @@ function Header() {
         </nav>
 
         {/* ACTIONS */}
-        <div className="header-actions">
-          <button className="signin-btn">
-            Sign in
-            <span className="chevron">⌄</span>
-          </button>
+   
+<div className="header-actions">
+  <button className="signin-btn">
+    Sign in
+    <span className="chevron">⌄</span>
+  </button>
 
-          <button className="get-started">
-            <span>Get Started</span>
-            <span className="arrow">→</span>
-          </button>
-        </div>
+  <button
+    className="get-started"
+    onClick={() => {
+      window.location.hash = "#signup";
+    }}
+  >
+    <span>Get Started</span>
+    <span className="arrow">→</span>
+  </button>
+</div>
+
 
       </div>
     </header>

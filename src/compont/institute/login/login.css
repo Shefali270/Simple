@@ -1,0 +1,367 @@
+
+.institute-page {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  overflow: hidden;
+  background: #fff;
+  color: #10183f;
+  font-family: Arial, sans-serif;
+}
+
+.institute-dots {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 590px;
+  background-image: radial-gradient(#dce5fa 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.institute-hero {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  min-height: 590px;
+  margin: auto;
+  padding: 70px 20px 45px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.1fr 395px;
+  align-items: center;
+  gap: 55px;
+}
+
+.institute-left {
+  min-width: 0;
+}
+
+.institute-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 13px;
+  margin-bottom: 24px;
+  border-radius: 25px;
+  background: #edf2ff;
+  color: #3262e9;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.institute-badge span {
+  color: #ffb400;
+  font-size: 17px;
+}
+
+.institute-left h1 {
+  margin: 0;
+  font-size: clamp(40px, 4.2vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+
+.institute-left h1 span {
+  color: #3262ed;
+}
+
+.institute-left > p {
+  margin: 22px 0 26px;
+  color: #536187;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.institute-features {
+  max-width: 510px;
+  padding-top: 18px;
+  border-top: 1px solid #e4e9f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.institute-features div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #26345c;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.institute-features span {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #edf2ff;
+  color: #3262e9;
+  font-size: 17px;
+}
+
+.institute-login-card {
+  width: 100%;
+  padding: 12px 22px 20px;
+  box-sizing: border-box;
+  border: 1px solid #e1e7f5;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 45px rgba(28, 43, 87, 0.14);
+}
+
+.institute-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #edf1ff;
+}
+
+.institute-tabs button {
+  min-width: 0;
+  padding: 12px 4px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #69769e;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.institute-tabs button.selected {
+  background: #fff;
+  color: #17234c;
+  box-shadow: 0 3px 10px rgba(25, 39, 80, 0.12);
+}
+
+.institute-login-card h2 {
+  margin: 0 0 4px;
+  font-size: 21px;
+  letter-spacing: -0.6px;
+}
+
+.login-subtitle {
+  margin: 0 0 18px;
+  color: #7783a5;
+  font-size: 13px;
+}
+
+.institute-login-card form > label {
+  display: block;
+  margin: 14px 0 7px;
+  color: #253154;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.institute-login-card form > input {
+  display: block;
+  width: 100%;
+  height: 47px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  outline: none;
+  background: #edf1ff;
+  color: #10183f;
+  font-size: 14px;
+}
+
+.institute-login-card form > input:focus {
+  border-color: #3262ed;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0;
+  font-size: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #566386;
+}
+
+.remember input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #3262ed;
+}
+
+.login-options a,
+.institute-register a {
+  color: #3262ed;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.institute-submit {
+  width: 100%;
+  min-height: 49px;
+  padding: 5px 8px 5px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 30px;
+  background: #3260ed;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(50, 96, 237, 0.2);
+}
+
+.institute-submit span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #3260ed;
+  font-size: 23px;
+}
+
+.institute-register {
+  margin-top: 17px;
+  padding-top: 13px;
+  border-top: 1px dashed #d9e0f2;
+  text-align: center;
+  color: #7783a5;
+  font-size: 12px;
+}
+
+.institute-bottom-banner {
+  position: relative;
+  min-height: 230px;
+  margin: 0 14px;
+  padding: 65px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 36px 36px 0 0;
+  background: #10194f;
+  text-align: center;
+}
+
+.institute-bottom-banner h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(38px, 6vw, 82px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.institute-bottom-banner h2 span {
+  color: #ffb400;
+}
+
+.banner-star {
+  position: absolute;
+  top: -40px;
+  right: -25px;
+  color: #ffb400;
+  font-size: 210px;
+  line-height: 1;
+  transform: rotate(-12deg);
+}
+
+@media (max-width: 850px) {
+  .institute-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 45px;
+  }
+
+  .institute-left h1 {
+    font-size: 48px;
+  }
+
+  .institute-login-card {
+    max-width: 430px;
+    margin: auto;
+  }
+
+  .institute-bottom-banner {
+    min-height: 180px;
+    padding: 55px 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .institute-hero {
+    padding: 35px 18px 40px;
+    gap: 30px;
+  }
+
+  .institute-left h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .institute-left > p {
+    font-size: 14px;
+  }
+
+  .institute-left > p br {
+    display: none;
+  }
+
+  .institute-features {
+    gap: 8px;
+  }
+
+  .institute-features div {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .institute-features span {
+    width: 30px;
+    height: 30px;
+  }
+
+  .institute-login-card {
+    padding: 10px 14px 18px;
+    border-radius: 20px;
+  }
+
+  .institute-tabs button {
+    font-size: 10px;
+  }
+
+  .institute-bottom-banner {
+    margin: 0 8px;
+    min-height: 150px;
+    padding: 48px 12px;
+    border-radius: 25px 25px 0 0;
+  }
+
+  .institute-bottom-banner h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .banner-star {
+    right: -55px;
+    font-size: 145px;
+  }
+}
