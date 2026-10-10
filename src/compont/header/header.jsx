@@ -1,3 +1,4 @@
+
 import { logo } from "../../assets/image/image.js";
 import "./header.css";
 
@@ -30,26 +31,30 @@ function Header() {
           <a href="#about">About Us</a>
         </nav>
 
-        {/* ACTIONS */}
-   
-<div className="header-actions">
-  <button className="signin-btn">
-    Sign in
-    <span className="chevron">⌄</span>
-  </button>
+        {/* BUTTONS */}
+        <div className="header-actions">
 
-  <button
-    className="get-started"
-    onClick={() => {
-      window.location.hash = "#signup";
-    }}
-  >
-    <span>Get Started</span>
-    <span className="arrow">→</span>
-  </button>
-</div>
+          <button
+            className="signin-btn"
+            onClick={() => {
+              window.location.hash = "#signin";
+            }}
+          >
+          <span> Sign in</span>  
+          <span className="chevron">⌄</span>
+          </button>
 
+          <button
+            className="get-started"
+            onClick={() => {
+              window.location.hash = "#get-started";
+            }}
+          >
+            <span>Get Started</span>
+            <span className="arrow">→</span>
+          </button>
 
+        </div>
       </div>
     </header>
   );

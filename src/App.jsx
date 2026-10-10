@@ -11,14 +11,17 @@ import Resources from "./compont/Resources/Resources.jsx";
 import About from "./compont/About/About.jsx";
 import Parent from "./compont/parent/parent.jsx";
 import Signup from "./compont/Signup/Signup.jsx";
-
+import GetStarted from "./compont/Getstarted/Getstarted.jsx";
 
 function App() {
-  const [page, setPage] = useState(window.location.hash);
+  const getCurrentPage = () =>
+    window.location.hash.slice(1).toLowerCase();
+
+  const [page, setPage] = useState(getCurrentPage);
 
   useEffect(() => {
     const handleHashChange = () => {
-      setPage(window.location.hash);
+      setPage(getCurrentPage());
     };
 
     window.addEventListener("hashchange", handleHashChange);
@@ -28,29 +31,22 @@ function App() {
     };
   }, []);
 
+  const pages = {
+    learning: <Learning />,
+    content: <Content />,
+    teachers: <Teacher />,
+    schools: <School />,
+    resources: <Resources />,
+    about: <About />,
+    parent: <Parent />,
+    signup: <Signup />,
+    "get-started": <GetStarted />,
+  };
+
   return (
     <>
       <Header />
-
-      {page === "#learning" ? (
-        <Learning />
-      ) : page === "#content" ? (
-        <Content />
-      ) : page === "#teachers" ? (
-        <Teacher />
-      ) : page === "#schools" ? (
-        <School />
-      ) : page === "#resources" ? (
-        <Resources />
-      ) : page === "#about" ? (
-        <About />
-      ) : page === "#parent" ? (
-        <Parent />
-      ) : page === "#signup" ? (
-        <Signup />
-      ) : (
-        <Work />
-      )}
+      {pages[page] || <Work />}
     </>
   );
 }
