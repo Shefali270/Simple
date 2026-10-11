@@ -242,14 +242,25 @@ function Work() {
 
           <div className="work-buttons">
 
-            <button className="work-primary">
-              Get Started
-              <span>→</span>
-            </button>
+            
+<button
+  className="work-primary"
+  onClick={() => {
+    window.location.hash = "get-started";
+  }}
+>
+  Get Started
+  <span>→</span>
+</button>
 
-            <button className="work-secondary">
-              See the Journey
-            </button>
+<button
+  className="work-secondary"
+  onClick={() => {
+    window.location.hash = "learning";
+  }}
+>
+  See the Journey
+</button>
 
           </div>
 
@@ -458,7 +469,6 @@ function Work() {
 
 
 <section className="dashboard-section">
-
   <div className="dashboard-wrapper">
 
     <div className="dashboard-badge">
@@ -473,152 +483,70 @@ function Work() {
       <span>One powerful platform.</span>
     </h2>
 
+    {/* First Row */}
     <div className="dashboard-grid">
-
       <div className="dashboard-card">
-
-        <div className="dashboard-icon dashboard-cyan">
-          🎓
-        </div>
-
-        <h3>
-          Student Dashboard
-        </h3>
-
-        <p>
-          Learn, attend classes, practise, track
-          progress and achieve your goals.
-        </p>
-
-        <button className="dashboard-button">
-          Learn More
-          <span>→</span>
+        <div className="dashboard-icon dashboard-cyan">🎓</div>
+        <h3>Student Dashboard</h3>
+        <p>Learn, attend classes, practise, track progress and achieve your goals.</p>
+        <button className="dashboard-button"
+         onClick={() => window.location.hash = "schools"}>
+          Learn More <span>→</span>
         </button>
-
       </div>
 
-
       <div className="dashboard-card">
-
-        <div className="dashboard-icon dashboard-yellow">
-          👨‍🏫
-        </div>
-
-        <h3>
-          Teacher / Mentor Dashboard
-        </h3>
-
-        <p>
-          Teach online, manage sessions and
-          connect with students.
-        </p>
-
-        <button className="dashboard-button">
-          Learn More
-          <span>→</span>
+        <div className="dashboard-icon dashboard-cyan">👨‍🏫</div>
+        <h3>Teacher Dashboard</h3>
+        <p>Manage classes, teach students and track progress.</p>
+        <button className="dashboard-button" onClick={() => window.location.hash = "teachers"}>
+          Learn More <span>→</span>
         </button>
-
       </div>
 
-
       <div className="dashboard-card">
-
-        <div className="dashboard-icon dashboard-pink">
-          🏢
-        </div>
-
-        <h3>
-          Coaching Institute
-          <br />
-          Dashboard
-        </h3>
-
-        <p>
-          Manage your institute, students, teachers,
-          batches and everything in one place.
-        </p>
-
-        <button className="dashboard-button">
-          Learn More
-          <span>→</span>
+        <div className="dashboard-icon dashboard-cyan">🏫</div>
+        <h3>Institute Dashboard</h3>
+        <p>Manage your institution, teachers and students.</p>
+        <button className="dashboard-button" onClick={() => window.location.hash = "schools"}>
+          Learn More <span>→</span>
         </button>
+      </div>
+    </div>
 
+    {/* Second Row */}
+    <div className="dashboard-grid">
+      <div className="dashboard-card">
+        <div className="dashboard-icon dashboard-cyan">🏢</div>
+        <h3>Organization Dashboard</h3>
+        <p>Find the right talent, post jobs, manage applications and recruit easily.</p>
+        <button className="dashboard-button" onClick={() => window.location.hash = "content"}>
+          Learn More <span>→</span>
+        </button>
       </div>
 
-
       <div className="dashboard-card">
-
-        <div className="dashboard-icon dashboard-cyan">
-          🏢
-        </div>
-
-        <h3>
-          Organization Dashboard
-        </h3>
-
-        <p>
-          Find the right talent, post jobs, manage
-          applications and recruit easily.
-        </p>
-
-        <button className="dashboard-button">
-          Learn More
-          <span>→</span>
+        <div className="dashboard-icon dashboard-yellow">👤</div>
+        <h3>LiveMentorHub Super Admin</h3>
+        <p>Monitor, manage and analyze the entire platform with complete control.</p>
+        <button className="dashboard-button" onClick={() => window.location.hash = "admin"}>
+          Learn More <span>→</span>
         </button>
-
       </div>
-
-
-      <div className="dashboard-card">
-
-        <div className="dashboard-icon dashboard-yellow">
-          👤
-        </div>
-
-        <h3>
-          LiveMentorHub Super Admin
-        </h3>
-
-        <p>
-          Monitor, manage and analyze the entire
-          platform with complete control.
-        </p>
-
-        <button className="dashboard-button">
-          Learn More
-          <span>→</span>
-        </button>
-
-      </div>
-
 
       <div className="dashboard-card dashboard-started">
-
-        <div className="dashboard-icon dashboard-pink">
-          ⚡
-        </div>
-
-        <h3>
-          Get Started
-        </h3>
-
-        <p>
-          Choose your role and we'll guide you to the
-          right LiveMentorHub portal.
-        </p>
-
-        <button className="dashboard-start-button">
-          Choose your role
-          <span>→</span>
+        <div className="dashboard-icon dashboard-pink">⚡</div>
+        <h3>Get Started</h3>
+        <p>Choose your role and we'll guide you to the right LiveMentorHub portal.</p>
+        <button className="dashboard-button" onClick={() => window.location.hash = "get-started"}>
+          Learn More <span>→</span>
         </button>
-
       </div>
-
     </div>
 
   </div>
-
 </section>
+
 
       {/* ====bule==== */}
 
@@ -696,21 +624,6 @@ function Work() {
 </section>
 
 
-
-
-      {/* =====================================================
-          IMPORTANT
-          
-          TUMHARA EXISTING SECTION 02
-          dashboard-section
-
-          AUR SECTION 03
-          ecosystem-section
-
-          YAHAN ISKE BAAD SAME RAHENGE.
-
-          UNKA CODE CHANGE MAT KARNA.
-      ===================================================== */}
 
     </main>
   );

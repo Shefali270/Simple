@@ -1,216 +1,72 @@
-import "./content.css";
 
-function Content() {
+import { useEffect, useState } from "react";
+import "./Content.css";
+
+function Contact() {
+  const messages = [
+    { text: "Hi! I'd like to know more about live classes for Class 9, CBSE.", type: "user" },
+    { text: "Happy to help! Which subjects are you looking for?", type: "bot" },
+    { text: "Maths and Science, with doubt solving.", type: "user" },
+    { text: "Great choice — our team will share class options with you shortly.", type: "bot" }
+  ];
+
+  const [count, setCount] = useState(0);
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    if (count >= messages.length) return;
+
+    const timer = setTimeout(() => {
+      setCount(c => c + 1);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [count]);
+
   return (
-    <main className="content-page">
+    <div className="contact-layout">
+      <div className="contact-text">
+        <span>⭐ Contact</span>
+        <h1>Let's <b>connect.</b></h1>
+        <p>
+          Reach LiveMentorHub for learner support,
+          mentorship or institutional partnerships.
+        </p>
+      </div>
 
-      {/* ================================
-          CONTENT / FOOTER HERO
-      ================================= */}
-
-      <section className="content-section">
-
-        {/* Yellow Star */}
-        <div className="content-yellow-star">
-          ★
+      <div className="chat-box">
+        <div className="chat-header">
+          <h3>🌐 LiveMentorHub Support</h3>
+          <small>🟢 Online now</small>
         </div>
 
-        {/* Blue Bottom Shape */}
-        <div className="content-blue-shape"></div>
-
-        <div className="content-container">
-
-          {/* ================================
-              TOP HEADING
-          ================================= */}
-
-          <div className="content-top">
-
-            <h1>
-              Learn. Connect. <span>Grow.</span>
-            </h1>
-
-            <button className="content-get-started">
-              Get Started
-              <span>→</span>
-            </button>
-
-          </div>
-
-
-          {/* Divider */}
-
-          <div className="content-divider"></div>
-
-
-          {/* ================================
-              MAIN FOOTER CONTENT
-          ================================= */}
-
-          <div className="content-main">
-
-            {/* ================================
-                BRAND
-            ================================= */}
-
-            <div className="content-brand">
-
-              <div className="content-logo">
-                <div className="content-logo-icon">
-                  🎓
-                </div>
-
-                <div className="content-logo-text">
-                  <strong>LiveMentorHub</strong>
-                  <small>LEARN. CONNECT. GROW.</small>
-                </div>
-              </div>
-
-              <p>
-                An Indian education and mentorship platform
-                established in 2026 with a simple belief:
-                learning becomes more powerful when great
-                content is combined with great guidance.
-              </p>
-
-
-              {/* Newsletter */}
-
-              <div className="content-newsletter">
-
-                <h4>
-                  Latest courses, resources and updates.
-                </h4>
-
-                <div className="content-subscribe">
-
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                  />
-
-                  <button>
-                    Subscribe
-                  </button>
-
-                </div>
-
-              </div>
-
+        <div className="chat-messages">
+          {messages.slice(0, count).map((msg, i) => (
+            <div key={i} className={`message ${msg.type}`}>
+              {msg.text}
             </div>
-
-
-            {/* ================================
-                PLATFORM
-            ================================= */}
-
-            <div className="content-column">
-
-              <h3>Platform</h3>
-
-              <a href="#">Home</a>
-              <a href="#">Learning</a>
-              <a href="#">How It Works</a>
-              <a href="#">Teachers</a>
-              <a href="#">For Schools</a>
-              <a href="#">Why LiveMentorHub</a>
-
-            </div>
-
-
-            {/* ================================
-                LEARNING
-            ================================= */}
-
-            <div className="content-column">
-
-              <h3>Learning</h3>
-
-              <a href="#">Academics</a>
-              <a href="#">Live Learning</a>
-              <a href="#">Assignments</a>
-              <a href="#">Skills & Careers</a>
-              <a href="#">Mentorship</a>
-
-            </div>
-
-
-            {/* ================================
-                COMPANY
-            ================================= */}
-
-            <div className="content-column">
-
-              <h3>Company</h3>
-
-              <a href="#">About Us</a>
-              <a href="#">Our Story</a>
-              <a href="#">Learner Stories</a>
-              <a href="#">Resources</a>
-              <a href="#">Partner With Us</a>
-              <a href="#">Contact</a>
-
-            </div>
-
-
-            {/* ================================
-                CONTACT
-            ================================= */}
-
-            <div className="content-column content-contact">
-
-              <h3>Contact Us</h3>
-
-              <div className="contact-item">
-                <span>📍</span>
-                <p>Hyderabad, India</p>
-              </div>
-
-              <div className="contact-item">
-                <span>✉</span>
-                <p>support@livementorhub.com</p>
-              </div>
-
-              <div className="contact-item">
-                <span>📞</span>
-                <p>+91 80191 67891</p>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* ================================
-              BOTTOM DIVIDER
-          ================================= */}
-
-          <div className="content-bottom-divider"></div>
-
-
-          {/* ================================
-              COPYRIGHT
-          ================================= */}
-
-          <div className="content-bottom">
-
-            <p>
-              © 2026 LiveMentorHub. All rights reserved.
-            </p>
-
-            <div className="content-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms and Conditions</a>
-            </div>
-
-          </div>
-
+          ))}
         </div>
 
-      </section>
-
-    </main>
+        <form
+          className="chat-input"
+          onSubmit={e => {
+            e.preventDefault();
+            if (input.trim()) {
+              setInput("");
+            }
+          }}
+        >
+          <input
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder="Type a message..."
+          />
+          <button type="submit">➤</button>
+        </form>
+      </div>
+    </div>
   );
 }
 
-export default Content;
+export default Contact;

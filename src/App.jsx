@@ -12,6 +12,8 @@ import About from "./compont/About/About.jsx";
 import Parent from "./compont/parent/parent.jsx";
 import Signup from "./compont/Signup/Signup.jsx";
 import GetStarted from "./compont/Getstarted/Getstarted.jsx";
+import Connect from "./compont/connect/connect.jsx";
+import Live from "./compont/Live/Live.jsx";
 
 function App() {
   const getCurrentPage = () =>
@@ -32,6 +34,7 @@ function App() {
   }, []);
 
   const pages = {
+    "how-it-works": <Work />,
     learning: <Learning />,
     content: <Content />,
     teachers: <Teacher />,
@@ -41,12 +44,17 @@ function App() {
     parent: <Parent />,
     signup: <Signup />,
     "get-started": <GetStarted />,
+    connect: <Connect />,
+    live: <Live />,
   };
 
   return (
     <>
       <Header />
-      {pages[page] || <Work />}
+
+      {pages[page] || <Live />}
+
+      <Connect />
     </>
   );
 }

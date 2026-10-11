@@ -228,8 +228,9 @@ function Leaning() {
 
     </div>
 
-    <button className="learning-box-button">
-      Get Started <span>→</span>
+   <button className="dashboard-button"
+    onClick={() => window.location.hash = "get-started"}>
+    Get Started <span>→</span>
     </button>
 
   </div>
@@ -276,9 +277,8 @@ function Leaning() {
 
     </div>
 
-    <button className="learning-box-button">
-      Get Started <span>→</span>
-    </button>
+   <button className="dashboard-button" onClick={() => window.location.hash = "get-started"}> Get Started <span>→</span>
+  </button>
 
   </div>
 
@@ -319,9 +319,8 @@ function Leaning() {
 
     </div>
 
-    <button className="learning-box-button">
-      Get Started <span>→</span>
-    </button>
+  <button className="dashboard-button"onClick={() => window.location.hash = "get-started"}>Get Started <span>→</span>
+  </button>
 
 
 
