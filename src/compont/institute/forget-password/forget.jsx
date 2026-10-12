@@ -1,5 +1,5 @@
 
-import "./Institute.css";
+import "./forget.css";
 
 function ForgotPassword() {
   return (
@@ -26,16 +26,34 @@ function ForgotPassword() {
 
           <div className="institute-features">
             <div><span>▣</span> Courses</div>
-            <div><span>♟</span> Teachers &amp;<br /> learners</div>
+            <div><span>♟</span> Teachers &amp; learners</div>
             <div><span>▦</span> Reports</div>
           </div>
         </div>
 
         <div className="institute-login-card forgot-card">
           <div className="institute-tabs">
-            <button>♟ Student</button>
-            <button>▣ Teacher</button>
-            <button className="selected">▦ Institute</button>
+            <button
+              type="button"
+              onClick={() => {
+                window.location.hash = "student/login";
+              }}
+            >
+              ♟ Student
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                window.location.hash = "teacher/login";
+              }}
+            >
+              ▣ Teacher
+            </button>
+
+            <button type="button" className="selected">
+              ▦ Institute
+            </button>
           </div>
 
           <h2>Reset Institute Password</h2>
@@ -45,10 +63,14 @@ function ForgotPassword() {
           </p>
 
           <form onSubmit={(e) => e.preventDefault()}>
-            <label>Official email or mobile number</label>
+            <label htmlFor="reset-contact">
+              Official email or mobile number
+            </label>
+
             <input
+              id="reset-contact"
               type="text"
-              placeholder=""
+              placeholder="Enter email or mobile number"
               required
             />
 
@@ -59,7 +81,7 @@ function ForgotPassword() {
 
           <div className="institute-register">
             Remembered it?{" "}
-            <a href="/institute/login/index.html">Back to sign in</a>
+            <a href="#institute/login">Back to sign in</a>
           </div>
         </div>
       </section>

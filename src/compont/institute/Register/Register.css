@@ -1,375 +1,459 @@
 
+/* ===== Institute Registration Page ===== */
+
 .register-page {
   position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  padding: 30px 5%;
   overflow: hidden;
   background: #fff;
-  color: #10183f;
-  font-family: Arial, sans-serif;
+  color: #101943;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-page * {
+  box-sizing: border-box;
 }
 
 .register-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(#dce5fa 1px, transparent 1px);
-  background-size: 20px 20px;
+  z-index: 0;
   pointer-events: none;
+  background-image: radial-gradient(#dbe5ff 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.65;
 }
 
 .register-layout {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 850px;
-  margin: auto;
-  padding: 52px 18px 40px;
-  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1.1fr 348px;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: start;
-  gap: 48px;
+  gap: 55px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .register-left {
-  padding-top: 2px;
+  position: sticky;
+  top: 35px;
+  padding: 45px 0 30px;
 }
 
 .register-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  width: fit-content;
-  padding: 6px 11px;
-  margin-bottom: 18px;
-  border-radius: 22px;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 30px;
   background: #edf2ff;
-  color: #3262e9;
-  font-size: 10px;
-  font-weight: 800;
+  color: #315cf5;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .register-badge span {
-  color: #ffb400;
-  font-size: 14px;
+  color: #ffb800;
+  font-size: 17px;
 }
 
 .register-left h1 {
-  margin: 0;
-  font-size: 43px;
-  line-height: 1.05;
-  letter-spacing: -2.5px;
-  font-weight: 900;
+  margin: 28px 0 20px;
+  color: #101943;
+  font-size: clamp(38px, 4.5vw, 59px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
 }
 
 .register-left h1 span {
-  color: #3262ed;
+  color: #315cf5;
 }
 
-.register-left > p {
-  margin: 18px 0 22px;
-  color: #536187;
-  font-size: 13px;
-  line-height: 1.55;
+.register-left p {
+  max-width: 470px;
+  margin: 0;
+  color: #596587;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
 .register-features {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #e4e9f5;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e7ebf5;
 }
 
 .register-features div {
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #26345c;
-  font-size: 10px;
-  font-weight: 800;
-  line-height: 1.3;
+  gap: 8px;
+  color: #18244e;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
-.register-features span {
-  width: 27px;
-  height: 27px;
-  flex-shrink: 0;
+.register-features div span {
   display: grid;
   place-items: center;
-  border-radius: 9px;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
   background: #edf2ff;
-  color: #3262e9;
-  font-size: 13px;
+  color: #315cf5;
+  font-size: 18px;
 }
+
+/* ===== Registration Card ===== */
 
 .register-card {
   width: 100%;
-  padding: 8px 17px 15px;
-  box-sizing: border-box;
-  border: 1px solid #e1e7f5;
-  border-radius: 19px;
+  max-width: 550px;
+  justify-self: center;
+  padding: 27px;
+  border: 1px solid #e5eaff;
+  border-top: 5px solid #315cf5;
+  border-radius: 22px;
   background: #fff;
-  box-shadow: 0 18px 35px rgba(28, 43, 87, 0.16);
+  box-shadow: 0 22px 55px rgba(24, 43, 105, 0.14);
 }
 
 .register-tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3px;
-  padding: 3px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  background: #edf1ff;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 26px;
+  padding: 5px;
+  border-radius: 13px;
+  background: #f0f3ff;
 }
 
 .register-tabs button {
   min-width: 0;
-  padding: 9px 2px;
-  border: 0;
-  border-radius: 9px;
+  padding: 12px 5px;
+  border: none;
+  border-radius: 10px;
   background: transparent;
-  color: #69769e;
-  font-size: 9px;
+  color: #58648b;
+  font-size: 12px;
   font-weight: 700;
-  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.register-tabs button:hover {
+  background: #e0e8ff;
+  color: #315cf5;
 }
 
 .register-tabs button.active {
-  background: #fff;
-  color: #17234c;
-  box-shadow: 0 3px 8px #18295716;
+  background: #315cf5;
+  color: #fff;
+  box-shadow: 0 5px 12px rgba(49, 92, 245, 0.22);
 }
 
 .register-card h2 {
-  margin: 0 0 3px;
-  font-size: 15px;
-  letter-spacing: -0.4px;
+  margin: 0 0 9px;
+  color: #101943;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 .register-subtitle {
-  margin: 0 0 12px;
-  color: #7783a5;
-  font-size: 10px;
-  line-height: 1.4;
+  margin: 0 0 25px;
+  color: #7781a0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
 }
 
 .register-card form h3 {
-  margin: 13px 0 8px;
-  color: #3262ed;
-  font-size: 8px;
-  letter-spacing: 0.7px;
+  margin: 8px 0 17px;
+  color: #315cf5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .register-card form > label,
 .register-form-grid label {
   display: block;
-  margin: 9px 0 5px;
-  color: #263154;
-  font-size: 9px;
+  margin-bottom: 8px;
+  color: #253052;
+  font-size: 13px;
   font-weight: 700;
 }
 
-.register-card label b {
-  color: #ff5571;
+.register-card form label b {
+  color: #f0445e;
 }
 
-.register-card form > input:not(.register-file),
+.register-card form > input:not([type="checkbox"]):not([type="file"]),
 .register-form-grid input,
 .register-form-grid select {
   width: 100%;
-  height: 34px;
-  padding: 0 10px;
-  box-sizing: border-box;
-  border: 1px solid transparent;
-  border-radius: 12px;
+  height: 46px;
+  margin-bottom: 18px;
+  padding: 0 13px;
   outline: none;
-  background: #edf1ff;
-  color: #263154;
-  font-size: 11px;
+  border: 1px solid #e2e8f8;
+  border-radius: 10px;
+  background: #f5f7ff;
+  color: #101943;
+  font-family: inherit;
+  font-size: 13px;
+  transition: 0.2s ease;
 }
 
 .register-card input:focus,
-.register-form-grid select:focus {
-  border-color: #3262ed;
+.register-card select:focus {
+  border-color: #315cf5;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(49, 92, 245, 0.1);
 }
 
+.register-card input::placeholder {
+  color: #9aa3bd;
+}
+
+/* ===== Exam Categories ===== */
+
 .exam-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 7px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 3px 0 22px;
 }
 
 .exam-categories label {
   display: flex;
   align-items: center;
-  gap: 3px;
-  padding: 6px 9px;
-  border: 1px solid #dfe5f5;
-  border-radius: 20px;
-  color: #526080;
-  font-size: 8px;
-  font-weight: 700;
-  white-space: nowrap;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px;
+  border: 1px solid #e4e9f8;
+  border-radius: 9px;
+  background: #f8f9ff;
+  color: #475477;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-.exam-categories input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.exam-categories label:has(input:checked) {
-  border-color: #3262ed;
+.exam-categories label:hover {
+  border-color: #315cf5;
   background: #edf2ff;
-  color: #3262ed;
 }
+
+.exam-categories input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: #315cf5;
+  cursor: pointer;
+}
+
+/* ===== Address Details ===== */
 
 .register-divider {
-  margin-top: 18px;
-  border-top: 1px dashed #d7def1;
+  width: 100%;
+  height: 1px;
+  margin: 5px 0 20px;
+  background: #e8ecf7;
 }
 
 .register-form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 15px;
 }
 
-.register-form-grid label {
-  margin-top: 7px;
+.register-form-grid > div {
+  min-width: 0;
 }
 
 .register-form-grid input,
 .register-form-grid select {
-  height: 34px;
+  margin-bottom: 17px;
 }
 
-.register-file {
-  display: block;
+.register-form-grid select {
+  cursor: pointer;
+}
+
+/* ===== Documents ===== */
+
+.register-card form > .register-file {
   width: 100%;
-  min-height: 36px;
-  padding: 6px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  background: #edf1ff;
-  color: #526080;
-  font-size: 9px;
-}
-
-.register-file::file-selector-button {
-  padding: 6px 10px;
-  margin-right: 7px;
-  border: 0;
-  border-radius: 15px;
-  background: #10183f;
-  color: white;
-  font-size: 9px;
-  font-weight: 700;
+  min-height: 48px;
+  margin: 0 0 9px;
+  padding: 10px;
+  border: 1px dashed #b8c7f6;
+  border-radius: 10px;
+  background: #f5f7ff;
+  color: #596587;
+  font-size: 12px;
   cursor: pointer;
 }
 
 .register-help {
   display: block;
-  margin-top: 5px;
-  color: #7783a5;
-  font-size: 8px;
-  line-height: 1.4;
+  margin-bottom: 23px;
+  color: #818ba7;
+  font-size: 11px;
+  line-height: 1.7;
 }
 
+/* ===== Submit Button ===== */
+
 .register-submit {
-  width: 100%;
-  min-height: 38px;
-  margin-top: 10px;
-  padding: 4px 6px 4px 17px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 0;
-  border-radius: 25px;
-  background: #3260ed;
-  color: white;
-  font-size: 10px;
-  font-weight: 800;
+  width: 100%;
+  min-height: 51px;
+  padding: 7px 10px 7px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #315cf5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 7px 13px #3260ed2e;
+  box-shadow: 0 8px 18px rgba(49, 92, 245, 0.22);
+  transition: 0.2s ease;
 }
 
 .register-submit span {
-  width: 27px;
-  height: 27px;
   display: grid;
   place-items: center;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: white;
-  color: #3260ed;
-  font-size: 18px;
+  background: #fff;
+  color: #315cf5;
+  font-size: 21px;
+}
+
+.register-submit:hover {
+  transform: translateY(-2px);
+  background: #2149dc;
 }
 
 .register-terms {
-  margin: 5px 0;
-  color: #7783a5;
-  font-size: 8px;
-  line-height: 1.5;
+  margin: 19px 0;
+  color: #818ba7;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
 }
 
 .register-terms a,
 .register-signin a {
-  color: #3262ed;
+  color: #315cf5;
   font-weight: 700;
   text-decoration: none;
 }
 
+.register-terms a:hover,
+.register-signin a:hover {
+  text-decoration: underline;
+}
+
 .register-signin {
-  margin-top: 10px;
-  color: #7783a5;
-  font-size: 9px;
+  padding-top: 17px;
+  border-top: 1px solid #e8ecf7;
+  color: #7781a0;
+  font-size: 12px;
+  line-height: 1.8;
   text-align: center;
 }
 
-@media (max-width: 720px) {
+/* ===== Responsive Design ===== */
+
+@media (max-width: 900px) {
+  .register-page {
+    padding: 20px 5%;
+  }
+
   .register-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
-    max-width: 420px;
-    padding-top: 35px;
+    gap: 25px;
   }
 
-  .register-left h1 {
-    font-size: 39px;
+  .register-left {
+    position: static;
+    padding: 25px 0 0;
+    text-align: center;
   }
 
-  .register-left > p br {
-    display: none;
-  }
-
-  .register-card {
-    max-width: 380px;
-    margin: auto;
-  }
-}
-
-@media (max-width: 380px) {
-  .register-layout {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .register-left h1 {
-    font-size: 34px;
+  .register-left p {
+    margin: 0 auto;
   }
 
   .register-features {
-    gap: 8px;
-  }
-
-  .register-features div {
-    font-size: 9px;
+    justify-content: center;
   }
 
   .register-card {
-    padding-right: 12px;
-    padding-left: 12px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 520px) {
+  .register-left h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .register-left p {
+    font-size: 13px;
+  }
+
+  .register-left p br {
+    display: none;
+  }
+
+  .register-features {
+    gap: 12px;
+  }
+
+  .register-features div {
+    font-size: 11px;
+  }
+
+  .register-card {
+    padding: 18px;
+    border-radius: 17px;
+  }
+
+  .register-card h2 {
+    font-size: 22px;
+  }
+
+  .register-tabs button {
+    padding: 11px 3px;
+    font-size: 10px;
+  }
+
+  .exam-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .register-form-grid {
+    grid-template-columns: 1fr;
   }
 }

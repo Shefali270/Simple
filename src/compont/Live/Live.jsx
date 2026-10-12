@@ -1,7 +1,39 @@
-
 import { useState, useEffect } from "react";
 import "./Live.css";
 
+/* WHY LIVEMENTORHUB FEATURES */
+const features = [
+  {
+    title: "Expert Mentors",
+    description:
+      "Get guidance from mentors who care about your learning and support your journey, every step.",
+    icon: "♙",
+    color: "blue",
+  },
+  {
+    title: "Live Classes",
+    description:
+      "Learn interactively with live sessions that are collaborative and designed for concept-building.",
+    icon: "◉",
+    color: "yellow",
+  },
+  {
+    title: "Structured Learning",
+    description:
+      "Follow clear pathways designed to help you learn for academics and skills that matter.",
+    icon: "↕",
+    color: "pink",
+  },
+  {
+    title: "Progress Focused",
+    description:
+      "Track your learning journey with insights, assessments and progress tools.",
+    icon: "▥",
+    color: "cyan",
+  },
+];
+
+/* LIVE LAB DATA */
 const labTopics = [
   {
     title: "Hydrogen spectrum",
@@ -44,12 +76,13 @@ const labTopics = [
     subject: "Chemistry",
     topic: "Structure of the atom",
     description:
-      "Most alpha particles fly almost straight through: the atom is mostly empty space. Only the rare ones aimed right at the tiny, positive nucleus bounce back, which is how Rutherford found it.",
+      "Most alpha particles pass straight through an atom. A few deflect sharply when they approach its tiny, positively charged nucleus.",
     fact: "The experiment revealed a small, dense nucleus.",
     icon: "⚛",
   },
 ];
 
+/* MAIN COMPONENT */
 function Live() {
   const [index, setIndex] = useState(4);
   const [playing, setPlaying] = useState(true);
@@ -58,8 +91,9 @@ function Live() {
 
   const lab = labTopics[index % labTopics.length];
 
+  /* LAB ANIMATION */
   useEffect(() => {
-    if (!playing) return;
+    if (!playing) return undefined;
 
     const timer = setInterval(() => {
       setImpact((value) => (value >= 90 ? 15 : value + 1));
@@ -68,12 +102,15 @@ function Live() {
     return () => clearInterval(timer);
   }, [playing]);
 
+  /* NEXT AND PREVIOUS */
   const nextLab = () => {
-    setIndex((value) => (value + 1) % 50);
+    setIndex((value) => (value + 1) % labTopics.length);
   };
 
   const previousLab = () => {
-    setIndex((value) => (value + 49) % 50);
+    setIndex(
+      (value) => (value - 1 + labTopics.length) % labTopics.length
+    );
   };
 
   const angle = (impact * 0.96).toFixed(1);
@@ -81,6 +118,7 @@ function Live() {
 
   return (
     <main className="live-page">
+      {/* HERO SECTION */}
       <section className="live-hero">
         <div className="live-hero-copy">
           <span className="live-eyebrow">
@@ -120,6 +158,7 @@ function Live() {
           </div>
         </div>
 
+        {/* LIVE LAB CARD */}
         <div className="live-lab-card">
           <div className="live-card-header">
             <div className="live-card-topic">
@@ -145,12 +184,13 @@ function Live() {
               </button>
 
               <small>
-                {index + 1}/50
+                {index + 1}/{labTopics.length}
               </small>
             </div>
           </div>
 
           <div className="live-lab-body">
+            {/* SCIENCE DIAGRAM */}
             <div className="live-atom-panel">
               <div className="live-particle-label">
                 α particles →
@@ -237,7 +277,7 @@ function Live() {
                 </text>
 
                 <text
-                  x="350"
+                  x="300"
                   y="240"
                   fill="#8290b9"
                   fontSize="10"
@@ -247,6 +287,7 @@ function Live() {
               </svg>
             </div>
 
+            {/* LAB CONTROLS */}
             <div className="live-lab-controls">
               <div className="live-metric">
                 <span>Head-on closest approach</span>
@@ -275,8 +316,12 @@ function Live() {
                 min="10"
                 max="100"
                 value={energy}
-                onChange={(e) => setEnergy(Number(e.target.value))}
-                style={{ "--slider-progress": `${energy}%` }}
+                onChange={(e) =>
+                  setEnergy(Number(e.target.value))
+                }
+                style={{
+                  "--slider-progress": `${energy}%`,
+                }}
               />
 
               <div className="live-metric live-impact-label">
@@ -291,7 +336,9 @@ function Live() {
                 min="10"
                 max="90"
                 value={impact}
-                onChange={(e) => setImpact(Number(e.target.value))}
+                onChange={(e) =>
+                  setImpact(Number(e.target.value))
+                }
                 style={{
                   "--slider-progress": `${((impact - 10) / 80) * 100}%`,
                 }}
@@ -299,7 +346,9 @@ function Live() {
 
               <button
                 className="live-play-button"
-                onClick={() => setPlaying((value) => !value)}
+                onClick={() =>
+                  setPlaying((value) => !value)
+                }
               >
                 {playing ? "Pause" : "Play"}
                 <span>{playing ? "Ⅱ" : "▶"}</span>
@@ -320,54 +369,826 @@ function Live() {
       </section>
 
       {/* TRUST STRIP */}
-<section className="trust-strip">
-  <div className="trust-wrap">
-    <div className="trust-item">
-      <span className="trust-avatars">👩🏻‍🎓👨🏻‍🎓👩🏻‍🏫</span>
-      <span><b>2K+</b> happy students</span>
+      <section className="trust-strip">
+        <div className="trust-wrap">
+          <div className="trust-item">
+            <span className="trust-avatars">
+              👩🏻‍🎓👨🏻‍🎓👩🏻‍🏫
+            </span>
+            <span>
+              <b>2K+</b> happy students
+            </span>
+          </div>
+
+          <div className="trust-item">
+            <span className="trust-stars">★★★★★</span>
+            <span>
+              <b>4.8/5</b> rating
+            </span>
+          </div>
+
+          <div className="trust-item">
+            <span className="trust-icon">♙</span>
+            Verified expert mentors
+          </div>
+
+          <div className="trust-item">
+            <span className="trust-icon">✓</span>
+            A safe place to learn
+          </div>
+        </div>
+      </section>
+
+      {/* MOVING SUBJECT TEXT */}
+      <div className="trust-marquee">
+        <div className="trust-marquee-track">
+          {[1, 2].map((group) => (
+            <div className="trust-marquee-group" key={group}>
+              {[
+                "CBSE",
+                "ICSE",
+                "IB",
+                "State Boards",
+                "Classes 6–12",
+                "Coding",
+                "Data Science",
+                "Design",
+                "Communication",
+              ].map((item) => (
+                <span
+                  className="trust-marquee-item"
+                  key={item}
+                >
+                  <b>★</b> {item}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* WHY LIVEMENTORHUB SECTION */}
+      <section className="why-section">
+        <div className="why-left">
+          <div className="why-label">
+            <span>★</span> 01&nbsp; Why LiveMentorHub?
+          </div>
+
+          <h1>
+            Learning is
+            <br />
+            better when
+            <br />
+            you're <span>not</span>
+            <br />
+            <span>doing it alone.</span>
+          </h1>
+
+          <p>
+            We bring the structure, people and tools around a
+            learner, so learning becomes clearer, more engaging
+            and easier to act on.
+          </p>
+
+          <button
+            className="why-button"
+            onClick={() => {
+              window.location.hash = "about";
+            }}
+          >
+            Explore Why LiveMentorHub
+          </button>
+        </div>
+
+        <div className="why-right">
+          {features.map((feature) => (
+            <article
+              className="why-card"
+              key={feature.title}
+            >
+              <div className="why-card-text">
+                <h2>{feature.title}</h2>
+                <p>{feature.description}</p>
+              </div>
+
+              <div className={`why-icon ${feature.color}`}>
+                {feature.icon}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      
+{/* HOW LIVEMENTORHUB WORKS SECTION */}
+<section className="journey-section">
+  <div className="journey-container">
+    <div className="journey-label">
+      <span>★</span> 02&nbsp; How LiveMentorHub works
     </div>
 
-    <div className="trust-item">
-      <span className="trust-stars">★★★★★</span>
-      <span><b>4.8/5</b> rating</span>
+    <div className="journey-heading-row">
+      <div>
+        <h2>
+          A connected <span>learning journey.</span>
+        </h2>
+
+        <p>
+          Learning and live classes work together: choose what you need,
+          <br className="journey-desktop-break" />
+          learn, practise, ask questions and keep progressing.
+        </p>
+      </div>
+
+      <button
+        className="journey-learn-button"
+        onClick={() => {
+          window.location.hash = "how-it-works";
+        }}
+      >
+        Learn More <span>➜</span>
+      </button>
     </div>
 
-    <div className="trust-item">
-      <span className="trust-icon">♙</span>
-      Verified expert mentors
-    </div>
+    <div className="journey-cards">
+      <article className="journey-card">
+        <div className="journey-number yellow">01</div>
+        <h3>Find or Register</h3>
+        <p>
+          Students, parents, teachers and organisations can create an
+          account and get started.
+        </p>
+      </article>
 
-    <div className="trust-item">
-      <span className="trust-icon">✓</span>
-      A safe place to learn
+      <article className="journey-card">
+        <div className="journey-number cyan">02</div>
+        <h3>Choose What You Need</h3>
+        <p>
+          Pick the learning experience that fits your goal and schedule.
+        </p>
+      </article>
+
+      <article className="journey-card">
+        <div className="journey-number pink">03</div>
+        <h3>Learn Live</h3>
+        <p>
+          Join interactive live classes with HD video, live chat and
+          real-time questions.
+        </p>
+      </article>
+
+      <article className="journey-card">
+        <div className="journey-number white">04</div>
+        <h3>Never Miss a Class</h3>
+        <p>
+          Keep learning after class with recordings, notes, assignments
+          and practice resources.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
-{/* MOVING TEXT */}
-<div className="trust-marquee">
-  <div className="trust-marquee-track">
-    {[1, 2].map((group) => (
-      <div className="trust-marquee-group" key={group}>
-        {[
-          "CBSE",
-          "ICSE",
-          "IB",
-          "State Boards",
-          "Classes 6–12",
-          "Coding",
-          "Data Science",
-          "Design",
-          "Communication",
-        ].map((item) => (
-          <span className="trust-marquee-item" key={item}>
-            <b>★</b> {item}
-          </span>
-        ))}
+
+{/* LEARNING PATHS SECTION */}
+<section className="paths-section">
+  <div className="paths-container">
+    <div className="paths-label">
+      <span>★</span> 03&nbsp; Choose your path
+    </div>
+
+    <div className="paths-heading-row">
+      <div>
+        <h2>
+          Learning paths for <span>every goal.</span>
+        </h2>
+
+        <p>
+          Whether you're a school student, building skills or looking for
+          <br className="paths-desktop-break" />
+          personal mentorship — choose a path designed around what you
+          <br className="paths-desktop-break" />
+          want to achieve.
+        </p>
       </div>
-    ))}
+
+      <button
+        className="paths-explore-link"
+        onClick={() => {
+          window.location.hash = "learning";
+        }}
+      >
+        Explore Learning <span>➜</span>
+      </button>
+    </div>
+
+    <div className="paths-grid">
+      {/* ACADEMICS */}
+      <article className="path-card academics-card">
+        <div className="path-icon cyan-icon">▤</div>
+        <div className="path-decoration">▮</div>
+
+        <h3>Academics</h3>
+        <small>Classes 6–12</small>
+
+        <ul>
+          <li>CBSE</li>
+          <li>ICSE</li>
+          <li>State Boards</li>
+        </ul>
+
+        <button
+          className="path-action"
+          onClick={() => {
+            window.location.hash = "learning";
+          }}
+        >
+          Explore Academics <span>➜</span>
+        </button>
+      </article>
+
+      {/* SKILLS AND CAREERS */}
+      <article className="path-card skills-card">
+        <div className="path-icon yellow-icon">▣</div>
+        <div className="path-decoration">▮▮</div>
+
+        <h3>Skills &amp; Careers</h3>
+        <small>Future-ready skills</small>
+
+        <ul>
+          <li>Coding</li>
+          <li>Data Science</li>
+          <li>Design</li>
+          <li>Communication</li>
+        </ul>
+
+        <button
+          className="path-action"
+          onClick={() => {
+            window.location.hash = "learning";
+          }}
+        >
+          Explore Skills <span>➜</span>
+        </button>
+      </article>
+
+      {/* MENTORSHIP */}
+      <article className="path-card mentorship-card">
+        <div className="path-icon yellow-icon">♣</div>
+        <div className="path-decoration">▮▮▮</div>
+
+        <h3>Mentorship<br />Programs</h3>
+        <small>Personal guidance</small>
+
+        <ul>
+          <li>1:1 Mentoring</li>
+          <li>Career Guidance</li>
+        </ul>
+
+        <button
+          className="path-action"
+          onClick={() => {
+            window.location.hash = "parent";
+          }}
+        >
+          Explore Mentorship <span>➜</span>
+        </button>
+      </article>
+    </div>
   </div>
-</div>
+</section>
+
+
+{/* MENTORS SECTION */}
+<section className="mentors-section">
+  <div className="mentors-container">
+    <div className="mentors-label">
+      <span>★</span> 04&nbsp; Meet our mentors
+    </div>
+
+    <div className="mentors-heading-row">
+      <div>
+        <h2>
+          Learn from <span>the best.</span>
+        </h2>
+
+        <p>
+          Experienced mentors and educators who help learners
+          <br className="mentors-desktop-break" />
+          understand, improve and achieve more.
+        </p>
+      </div>
+
+      <button
+        className="mentors-view-all"
+        onClick={() => {
+          window.location.hash = "teachers";
+        }}
+      >
+        View All Mentors <span>➜</span>
+      </button>
+    </div>
+
+    <div className="mentors-grid">
+      <article className="mentor-card">
+        <div className="mentor-art mentor-blue">
+          <span className="mentor-subject">ϟ Physics</span>
+          <div className="mentor-cloud">PS</div>
+        </div>
+        <h3>Ms. Priya Sharma</h3>
+        <p>Physics Expert</p>
+        <div className="mentor-meta">
+          <span>⭐ 4.9</span>
+          <span className="mentor-verified">✓ Verified</span>
+        </div>
+      </article>
+
+      <article className="mentor-card">
+        <div className="mentor-art mentor-yellow">
+          <span className="mentor-subject">∑ Maths</span>
+          <div className="mentor-cloud">RV</div>
+        </div>
+        <h3>Mr. Rahul Verma</h3>
+        <p>Maths Expert</p>
+        <div className="mentor-meta">
+          <span>⭐ 4.8</span>
+          <span className="mentor-verified">✓ Verified</span>
+        </div>
+      </article>
+
+      <article className="mentor-card">
+        <div className="mentor-art mentor-pink">
+          <span className="mentor-subject">⚗ Chemistry</span>
+          <div className="mentor-cloud">SI</div>
+        </div>
+        <h3>Ms. Sneha Iyer</h3>
+        <p>Chemistry Expert</p>
+        <div className="mentor-meta">
+          <span>⭐ 4.9</span>
+          <span className="mentor-verified">✓ Verified</span>
+        </div>
+      </article>
+
+      <article className="mentor-card">
+        <div className="mentor-art mentor-navy">
+          <span className="mentor-subject">‹› Coding</span>
+          <div className="mentor-cloud">AM</div>
+        </div>
+        <h3>Mr. Arjun Mehta</h3>
+        <p>Coding Expert</p>
+        <div className="mentor-meta">
+          <span>⭐ 4.8</span>
+          <span className="mentor-verified">✓ Verified</span>
+        </div>
+      </article>
+
+      <article className="mentor-card">
+        <div className="mentor-art mentor-cyan">
+          <span className="mentor-subject">▣ English</span>
+          <div className="mentor-cloud">KR</div>
+        </div>
+        <h3>Ms. Kavya Reddy</h3>
+        <p>English Expert</p>
+        <div className="mentor-meta">
+          <span>⭐ 4.9</span>
+          <span className="mentor-verified">✓ Verified</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+{/* ABOUT LIVEMENTORHUB SECTION */}
+<section className="about-growth-section">
+  <div className="about-growth-container">
+    <div className="about-growth-label">
+      <span>★</span> 05&nbsp; About LiveMentorHub
+    </div>
+
+    <h2>
+      More than a platform. <span>A partner<br className="growth-break" />
+      in your growth.</span>
+    </h2>
+
+    <div className="about-growth-content">
+      <div className="about-growth-spacer"></div>
+
+      <div className="about-growth-description">
+        <p>
+          LiveMentorHub is an Indian education and mentorship
+          platform established in 2026 with a simple belief:
+          learning becomes more powerful when great content is
+          combined with great guidance. We bring together
+          structured learning, live classes, expert mentorship,
+          doubt solving and progress tracking in one connected
+          experience — helping learners know not only what to
+          learn, but also who can help and what to do next.
+        </p>
+
+        <button
+          className="about-growth-button"
+          onClick={() => {
+            window.location.hash = "about";
+          }}
+        >
+          Know Our Story
+        </button>
+      </div>
+    </div>
+
+    <div className="about-growth-cards">
+      <article className="growth-feature mentors-feature">
+        <h3>Mentors</h3>
+        <p>
+          Expert guidance
+          <br />
+          Verified professionals
+        </p>
+      </article>
+
+      <article className="growth-feature classes-feature">
+        <h3>Live Classes</h3>
+        <p>
+          Interactive learning
+          <br />
+          Real-time sessions
+        </p>
+      </article>
+
+      <article className="growth-feature learners-feature">
+        <h3>Learners</h3>
+        <p>
+          Built around students
+          <br />
+          Progress-focused
+        </p>
+      </article>
+
+      <article className="growth-feature subjects-feature">
+        <h3>Subjects</h3>
+        <p>
+          Academic + skills
+          <br />
+          Growing catalogue
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+{/* STUDENT TESTIMONIALS SECTION */}
+<section className="testimonial-section">
+  <div className="testimonial-container">
+    <div className="testimonial-label">
+      <span>★</span> 06&nbsp; What our students say
+    </div>
+
+    <div className="testimonial-heading">
+      <h2>
+        In their <span>own words.</span>
+      </h2>
+
+      <a href="#resources" className="testimonial-link">
+        Read Learner Stories&nbsp; →
+      </a>
+    </div>
+
+    <div className="testimonial-grid">
+      {/* FEATURED TESTIMONIAL */}
+      <article className="testimonial-featured">
+        <div className="testimonial-quote-mark">“</div>
+
+        <h3>
+          Having a mentor means I don't feel stuck for long.
+          The guidance is practical and easy to follow.
+        </h3>
+
+        <div className="testimonial-author">
+          <div className="testimonial-avatar avatar-yellow">
+            RK
+          </div>
+
+          <div>
+            <strong>Rohan K.</strong>
+            <small>JEE Aspirant</small>
+          </div>
+        </div>
+
+        <div className="testimonial-sun"></div>
+      </article>
+
+      {/* RIGHT TESTIMONIALS */}
+      <div className="testimonial-side">
+        <article className="testimonial-card">
+          <div className="testimonial-stars">★★★★★</div>
+
+          <p>
+            “The live classes are designed to make questions
+            easier to ask and concepts easier to understand.”
+          </p>
+
+          <div className="testimonial-author">
+            <div className="testimonial-avatar avatar-blue">
+              AR
+            </div>
+
+            <div>
+              <strong>Ananya R.</strong>
+              <small>Class 10 / CBSE</small>
+            </div>
+          </div>
+        </article>
+
+        <article className="testimonial-card">
+          <div className="testimonial-stars">★★★★★</div>
+
+          <p>
+            “It is not just about studying; it is about building
+            confidence and learning how to improve.”
+          </p>
+
+          <div className="testimonial-author">
+            <div className="testimonial-avatar avatar-pink">
+              IS
+            </div>
+
+            <div>
+              <strong>Ishita S.</strong>
+              <small>Class 12 / NEET</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* FOR SCHOOLS SECTION */}
+<section className="schools-hero">
+  <div className="schools-blue-shape"></div>
+
+  <div className="schools-content">
+    <div className="schools-label">
+      <span>★</span> 07&nbsp; For schools
+    </div>
+
+    <h2>
+      Strengthen
+      <br />
+      learning
+      <br />
+      outcomes <span>inside</span>
+      <br />
+      <span>and outside</span>
+      <br />
+      <span>the classroom.</span>
+    </h2>
+
+    <div className="schools-bottom">
+      <div className="schools-description">
+        <p>
+          Partner with LiveMentorHub for academic support,
+          workshops, mentorship, career guidance and learner
+          engagement.
+        </p>
+
+        <button
+          className="schools-partner-button"
+          onClick={() => {
+            window.location.hash = "connect";
+          }}
+        >
+          Partner With Us <span>→</span>
+        </button>
+      </div>
+
+      <div className="schools-tags">
+        <a href="#learning" className="school-tag tag-yellow">
+          Academic Support ↗
+        </a>
+        <a href="#resources" className="school-tag tag-purple">
+          Workshops ↗
+        </a>
+        <a href="#parent" className="school-tag tag-pink">
+          Mentorship ↗
+        </a>
+        <a href="#learning" className="school-tag tag-purple">
+          Career Guidance ↗
+        </a>
+        <a href="#learning" className="school-tag tag-cyan">
+          Learner Engagement ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div className="schools-yellow-star">★</div>
+</section>
+
+
+{/* RESOURCES SECTION */}
+<section className="resources-hero">
+  <div className="resources-container">
+    <div className="resources-left">
+      <div className="resources-label">
+        <span>★</span> 08&nbsp; Learn & grow with our resources
+      </div>
+
+      <h2>
+        Everything
+        <br />
+        you need to
+        <br />
+        <span>learn, practise</span>
+        <br />
+        <span>and grow.</span>
+      </h2>
+
+      <button
+        className="resources-view-button"
+        onClick={() => {
+          window.location.hash = "resources";
+        }}
+      >
+        View All Resources
+      </button>
+    </div>
+
+    <div className="resources-right">
+      <a href="#resources" className="resource-item">
+        <span className="resource-icon resource-cyan">▤</span>
+        <span className="resource-text">
+          <strong>Study Materials</strong>
+          <small>Notes, PDFs &amp; more</small>
+        </span>
+        <span className="resource-arrow">→</span>
+      </a>
+
+      <a href="#resources" className="resource-item">
+        <span className="resource-icon resource-yellow">♧</span>
+        <span className="resource-text">
+          <strong>Exam Tips</strong>
+          <small>Prepare smarter</small>
+        </span>
+        <span className="resource-arrow">→</span>
+      </a>
+
+      <a href="#resources" className="resource-item">
+        <span className="resource-icon resource-blue">◎</span>
+        <span className="resource-text">
+          <strong>Career Guidance</strong>
+          <small>Explore opportunities</small>
+        </span>
+        <span className="resource-arrow">→</span>
+      </a>
+
+      <a href="#resources" className="resource-item">
+        <span className="resource-icon resource-cyan">☷</span>
+        <span className="resource-text">
+          <strong>Blogs</strong>
+          <small>Insights &amp; updates</small>
+        </span>
+        <span className="resource-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+ 
+{/* LEARNING ON THE GO SECTION */}
+<section className="app-hero">
+  <div className="app-container">
+    <div className="app-content">
+      <div className="app-label">
+        <span>★</span> 09&nbsp; Learning on the go
+      </div>
+
+      <h2>
+        Your classroom.
+        <br />
+        <span>Wherever you go.</span>
+      </h2>
+
+      <p>
+        Access live classes, doubt solving and more on the
+        LiveMentorHub app.
+      </p>
+
+      <div className="app-buttons">
+        <a href="#get-started" className="app-download">
+          <span className="app-store-icon">▣</span>
+          <span>
+            <small>COMING SOON · GET IT ON</small>
+            <strong>Google Play</strong>
+          </span>
+        </a>
+
+        <a href="#get-started" className="app-download">
+          <span className="app-store-icon">▯</span>
+          <span>
+            <small>COMING SOON · DOWNLOAD ON THE</small>
+            <strong>App Store</strong>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div className="app-visual">
+      <div className="app-blue-circle"></div>
+
+      <div className="app-phone">
+        <div className="app-phone-notch"></div>
+
+        <div className="app-phone-screen">
+          <h3>Today's Schedule</h3>
+
+          <div className="app-live-card">
+            <span className="app-live-badge">● LIVE</span>
+            <strong>Physics</strong>
+            <small>10:30 AM – 11:30 AM</small>
+
+            <svg
+              className="app-wave"
+              viewBox="0 0 180 45"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 25 C25 -2, 40 48, 65 25 S105 2, 125 25 S155 45, 178 23"
+                fill="none"
+                stroke="#ffb511"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+
+          <div className="app-schedule-card">
+            <strong>12:00 PM · Mathematics</strong>
+            <small>Live class</small>
+          </div>
+
+          <div className="app-schedule-card">
+            <strong>02:00 PM · Chemistry</strong>
+            <small>Live class</small>
+          </div>
+
+          <div className="app-progress-card">
+            <strong>Progress</strong>
+            <small>Track your learning journey</small>
+            <div className="app-progress-track">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section className="schools-section">
+      <div className="schools-blue-shape"></div>
+      <div className="schools-yellow-star">★</div>
+
+      <div className="schools-content">
+        <div className="schools-label">
+          <span>★</span> 10&nbsp; For schools &amp; institutions
+        </div>
+
+        <h1>
+          Build a stronger
+          <br />
+          <span>learning ecosystem.</span>
+        </h1>
+
+        <p>
+          Bring mentorship, workshops, academic support and learner
+          <br className="schools-desktop-break" />
+          engagement to your institution.
+        </p>
+
+        <div className="schools-buttons">
+          <button
+            className="schools-primary-btn"
+            onClick={() => {
+              window.location.hash = "connect";
+            }}
+          >
+            Partner With Us <span>→</span>
+          </button>
+
+          <button
+            className="schools-secondary-btn"
+            onClick={() => {
+              window.location.hash = "connect";
+            }}
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </section>
 
 
     </main>

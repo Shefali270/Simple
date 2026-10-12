@@ -1,229 +1,156 @@
 
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Getstarted.css";
-import {
-  GraduationCap,
-  Users,
-  ContactRound,
-  Building2,
-  ArrowRight,
-  Hand,
-} from "lucide-react";
 
 const roles = [
+
   {
     name: "Student",
     icon: "🎓",
     description: "Live classes, practice and guidance",
+    text: "I want live classes, practice and expert guidance.",
+    path: "/student/login/",
   },
   {
     name: "Parent",
     icon: "👨‍👩‍👧",
-    description: "Support your child’s journey",
+    description: "Support your child's journey",
+    text: "I want to support my child's learning journey.",
+    path: "/parent/login/",
   },
   {
     name: "Teacher",
     icon: "👨‍🏫",
     description: "Teach, guide and share expertise",
+    text: "I want to teach, guide and share my expertise.",
+    path: "/teacher/login/",
   },
   {
     name: "Institute",
     icon: "🏢",
     description: "Schools, coaching and organisations",
+    text: "I represent a school, coaching institute or organization.",
+    path: "/institute/login/",
   },
 ];
 
-function GetStarted() {
+function Getstarted() {
   const [selectedRole, setSelectedRole] = useState("Student");
 
-  const handleContinue = () => {
-    if (selectedRole === "Student") {
-      window.location.hash = "signup";
-    } else if (selectedRole === "Parent") {
-      window.location.hash = "parent";
-    } else if (selectedRole === "Teacher") {
-      window.location.hash = "teachers";
-    } else {
-      window.location.hash = "schools";
-    }
+  const selected =
+    roles.find((role) => role.name === selectedRole) || roles[0];
+
+  const goToLogin = (role) => {
+    window.location.href = role.path;
   };
 
   return (
-    <main className="get-page">
-      <section className="get-intro">
-        <div className="get-badge">
-          <span>★</span> Get started with LiveMentorHub
+    <main className="getstarted-page">
+    
+      {/* Hero section */}
+      <section className="gs-hero">
+        <div className="gs-hero-copy">
+          <div className="gs-eyebrow">
+            <span>★</span>
+            Get started with LiveMentorHub
+          </div>
+
+          <h1>
+            First, tell us:
+            <br />
+            <span>how can</span>
+            <br />
+            <span>we help?</span>
+          </h1>
+
+          <p>
+            Choose the role that best describes you. We'll guide
+            you to the right LiveMentorHub portal.
+          </p>
         </div>
 
-        <h1>
-          First, tell us: <span>how can we help?</span>
-        </h1>
+        {/* Interactive role selection preview */}
+        <div className="gs-preview">
+          <div className="gs-preview-header">
+            <span className="gs-preview-logo">✦</span>
 
-        <p>
-          Choose the role that best describes you. We'll guide
-          you to the right LiveMentorHub portal.
-        </p>
+            <div>
+              <strong>Welcome to LiveMentorHub</strong>
+              <small>Who is joining today?</small>
+            </div>
+          </div>
+
+          <div className="gs-preview-grid">
+            {roles.map((role) => (
+              <button
+                key={role.name}
+                type="button"
+                className={`gs-preview-option ${
+                  selectedRole === role.name ? "selected" : ""
+                }`}
+                aria-pressed={selectedRole === role.name}
+                onClick={() => setSelectedRole(role.name)}
+              >
+                <span className="gs-preview-icon">
+                  {role.icon}
+                </span>
+
+                <span className="gs-preview-name">
+                  {role.name}
+                </span>
+
+                <small>{role.description}</small>
+
+                <span className="gs-radio">
+                  {selectedRole === role.name ? "✓" : ""}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="gs-preview-continue"
+            onClick={() => goToLogin(selected)}
+          >
+            <span>Continue as {selectedRole}</span>
+            <span className="gs-continue-arrow">→</span>
+          </button>
+        </div>
       </section>
 
-      <section className="role-card">
-        <div className="role-card-heading">
-          <div className="welcome-icon">✋</div>
-          <div>
-            <h2>Welcome to LiveMentorHub</h2>
-            <p>Who is joining today?</p>
-          </div>
-        </div>
-
-        <div className="role-grid">
+      {/* Four role cards */}
+      <section className="gs-role-section" id="role-cards">
+        <div className="gs-role-grid">
           {roles.map((role) => (
-            <button
-              type="button"
+            <article
               key={role.name}
-              className={`role-option ${
-                selectedRole === role.name ? "selected" : ""
+              className={`gs-role-card ${
+                selectedRole === role.name ? "active" : ""
               }`}
-              onClick={() => setSelectedRole(role.name)}
-              aria-pressed={selectedRole === role.name}
             >
-              <span className="role-icon">{role.icon}</span>
-              <span className="role-radio">
-                {selectedRole === role.name ? "●" : ""}
-              </span>
-              <strong>{role.name}</strong>
-              <span className="role-description">
-                {role.description}
-              </span>
-            </button>
+              <div className="gs-role-icon">
+                {role.icon}
+              </div>
+
+              <h2>{role.name}</h2>
+
+              <p>{role.text}</p>
+
+              <button
+                type="button"
+                className="gs-role-button"
+                onClick={() => goToLogin(role)}
+              >
+                <span>Choose {role.name}</span>
+                <span className="gs-role-arrow">→</span>
+              </button>
+            </article>
           ))}
         </div>
-
-        <button
-          type="button"
-          className="continue-role"
-          onClick={handleContinue}
-        >
-          <span>
-            Continue as <strong>{selectedRole}</strong>
-          </span>
-          <span className="continue-arrow">→</span>
-        </button>
       </section>
-
-
-
-<section className="get-started-section">
-  <div className="get-started-container">
-    <div className="get-started-grid">
-
-      {/* Student */}
-      <div className="role-card role-card-active">
-        <div className="role-icon">🎓</div>
-        <h2>Student</h2>
-        <p>
-          I want live classes, practice and expert guidance.
-        </p>
-        <button
-          className="role-button"
-          onClick={() => window.location.href = "/student/login/"}
-        >
-          Choose Student <span className="role-arrow">→</span>
-        </button>
-      </div>
-
-      {/* Parent */}
-      <div className="role-card">
-        <div className="role-icon">👨‍👩‍👧</div>
-        <h2>Parent</h2>
-        <p>
-          I want to support my child's learning journey.
-        </p>
-        <button
-          className="role-button"
-          onClick={() => window.location.href = "/parent/login/"}
-        >
-          Choose Parent <span className="role-arrow">→</span>
-        </button>
-      </div>
-
-      {/* Teacher */}
-      <div className="role-card">
-        <div className="role-icon">👨‍🏫</div>
-        <h2>Teacher</h2>
-        <p>
-          I want to teach, guide and share my expertise.
-        </p>
-        <button
-          className="role-button"
-          onClick={() => window.location.href = "/teacher/login/"}
-        >
-          Choose Teacher <span className="role-arrow">→</span>
-        </button>
-      </div>
-
-      {/* Institute */}
-      <div className="role-card">
-        <div className="role-icon">🏢</div>
-        <h2>Institute</h2>
-        <p>
-          I represent a school, coaching institute or organization.
-        </p>
-        <button
-          className="role-button"
-          onClick={() => window.location.href = "/institute/login/"}
-        >
-          Choose Institute <span className="role-arrow">→</span>
-        </button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-{/* 
-<section className="four-cards-section">
-  <section className="getstarted-grid">
-    {roles.map((role) => (
-      <article
-        key={role.name}
-        className={`getstarted-card ${
-          selectedRole === role.name ? "selected" : ""
-        }`}
-        onClick={() => setSelectedRole(role.name)}
-      >
-        <div className={`getstarted-icon ${role.color}`}>
-          {role.icon}
-        </div>
-
-        <h2>{role.name}</h2>
-
-        <p>{role.description}</p>
-
-        <button
-          type="button"
-          className="getstarted-button"
-          onClick={(event) => {
-            event.stopPropagation();
-            window.location.hash = `#${routes[role.name]}`;
-          }}
-        >
-          <span>Choose {role.name}</span>
-
-          <span className="getstarted-arrow">
-            <ArrowRight size={22} />
-          </span>
-        </button>
-      </article>
-    ))}
-  </section>
-</section> */}
-
-
-      
     </main>
   );
 }
 
-export default GetStarted;
-
-
+export default Getstarted;

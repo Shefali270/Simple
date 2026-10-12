@@ -1,5 +1,5 @@
 
-import "./RegisterInstitute.css";
+import "./Register.css";
 
 function RegisterInstitute() {
   return (
@@ -7,6 +7,7 @@ function RegisterInstitute() {
       <div className="register-dots"></div>
 
       <section className="register-layout">
+        {/* Left Section */}
         <div className="register-left">
           <div className="register-badge">
             <span>★</span> Institute portal
@@ -26,19 +27,39 @@ function RegisterInstitute() {
 
           <div className="register-features">
             <div><span>▣</span> Courses</div>
-            <div><span>♟</span> Teachers &amp;<br /> learners</div>
+            <div><span>♟</span> Teachers &amp; learners</div>
             <div><span>▦</span> Reports</div>
           </div>
         </div>
 
+        {/* Registration Card */}
         <div className="register-card">
           <div className="register-tabs">
-            <button>♟ Student</button>
-            <button>▣ Teacher</button>
-            <button className="active">▦ Institute</button>
+            <button
+              type="button"
+              onClick={() => {
+                window.location.hash = "student/login";
+              }}
+            >
+              ♟ Student
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                window.location.hash = "teacher/login";
+              }}
+            >
+              ▣ Teacher
+            </button>
+
+            <button type="button" className="active">
+              ▦ Institute
+            </button>
           </div>
 
           <h2>Register Your Institute</h2>
+
           <p className="register-subtitle">
             Create an institute account to partner with LiveMentorHub.
           </p>
@@ -46,56 +67,112 @@ function RegisterInstitute() {
           <form onSubmit={(e) => e.preventDefault()}>
             <h3>INSTITUTE DETAILS</h3>
 
-            <label>Institute name <b>*</b></label>
-            <input type="text" required />
+            <label htmlFor="institute-name">
+              Institute name <b>*</b>
+            </label>
+            <input
+              id="institute-name"
+              type="text"
+              placeholder="Enter institute name"
+              required
+            />
 
-            <label>Official email <b>*</b></label>
-            <input type="email" required />
+            <label htmlFor="official-email">
+              Official email <b>*</b>
+            </label>
+            <input
+              id="official-email"
+              type="email"
+              placeholder="Enter official email"
+              required
+            />
 
             <label>Exam categories offered <b>*</b></label>
+
             <div className="exam-categories">
-              <label><input type="checkbox" /> School (Classes 6–12)</label>
-              <label><input type="checkbox" /> JEE</label>
-              <label><input type="checkbox" /> NEET</label>
-              <label><input type="checkbox" /> UPSC</label>
-              <label><input type="checkbox" /> Skills &amp; careers</label>
+              <label>
+                <input type="checkbox" name="category" value="school" />
+                School (Classes 6–12)
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="jee" />
+                JEE
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="neet" />
+                NEET
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="upsc" />
+                UPSC
+              </label>
+              <label>
+                <input type="checkbox" name="category" value="skills" />
+                Skills &amp; careers
+              </label>
             </div>
 
             <div className="register-divider"></div>
+
             <h3>ADDRESS DETAILS</h3>
 
             <div className="register-form-grid">
               <div>
-                <label>Country <b>*</b></label>
-                <select defaultValue="India" required>
-                  <option>India</option>
-                  <option>United States</option>
-                  <option>United Kingdom</option>
-                  <option>Other</option>
+                <label htmlFor="country">
+                  Country <b>*</b>
+                </label>
+                <select id="country" defaultValue="India" required>
+                  <option value="India">India</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
               <div>
-                <label>State <b>*</b></label>
-                <input type="text" required />
+                <label htmlFor="state">
+                  State <b>*</b>
+                </label>
+                <input
+                  id="state"
+                  type="text"
+                  placeholder="Enter state"
+                  required
+                />
               </div>
 
               <div>
-                <label>City <b>*</b></label>
-                <input type="text" required />
+                <label htmlFor="city">
+                  City <b>*</b>
+                </label>
+                <input
+                  id="city"
+                  type="text"
+                  placeholder="Enter city"
+                  required
+                />
               </div>
 
               <div>
-                <label>Area / locality <b>*</b></label>
-                <input type="text" required />
+                <label htmlFor="locality">
+                  Area / locality <b>*</b>
+                </label>
+                <input
+                  id="locality"
+                  type="text"
+                  placeholder="Enter locality"
+                  required
+                />
               </div>
             </div>
 
             <div className="register-divider"></div>
+
             <h3>DOCUMENTS</h3>
 
-            <label>Upload documents</label>
+            <label htmlFor="documents">Upload documents</label>
             <input
+              id="documents"
               className="register-file"
               type="file"
               accept=".pdf,.jpg,.jpeg,.png"
@@ -112,14 +189,14 @@ function RegisterInstitute() {
             </button>
 
             <p className="register-terms">
-              By creating an account you agree to our
-              <a href="#terms"> Terms</a> and
-              <a href="#privacy"> Privacy Policy</a>.
+              By creating an account you agree to our{" "}
+              <a href="#terms">Terms</a> and{" "}
+              <a href="#privacy">Privacy Policy</a>.
             </p>
 
             <div className="register-signin">
-              Already have an account?
-              <a href="/institute/login/index.html"> Sign in</a>
+              Already have an account?{" "}
+              <a href="#institute/login">Sign in</a>
             </div>
           </form>
         </div>

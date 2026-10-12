@@ -1,5 +1,15 @@
 import "./parent.css";
-import { Bell, Users, CalendarCheck, BookOpen, MessageSquare } from "lucide-react";
+
+
+import {
+  Bell,
+  Users,
+  CalendarCheck,
+  BookOpen,
+  MessageSquare,
+  ChartNoAxesCombined,
+  BellRing,
+} from "lucide-react";
 
 function Parent() {
   return (
