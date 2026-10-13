@@ -1,613 +1,409 @@
 
-/* ===========================
-   GET STARTED PAGE
-=========================== */
-
-.getstarted-page {
-  --gs-blue: #3158f5;
-  --gs-navy: #10183f;
-  --gs-pale: #eef1ff;
-
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  background: #fff;
-  color: var(--gs-navy);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
-}
-
-.getstarted-page *,
-.getstarted-page *::before,
-.getstarted-page *::after {
+/* RESET — only inside Get Started page */
+.get-started-page,
+.get-started-page * {
   box-sizing: border-box;
 }
 
-/* ===========================
-   NAVBAR
-=========================== */
-
-.gs-navbar {
-  width: min(100% - 48px, 1000px);
-  min-height: 64px;
-  margin: 0 auto;
-  padding: 10px 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-
-  border-radius: 0 0 20px 20px;
-  background: #f0f2ff;
-}
-
-.gs-brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  flex-shrink: 0;
-
-  color: var(--gs-navy);
-  text-decoration: none;
-}
-
-.gs-brand-icon {
-  font-size: 26px;
-}
-
-.gs-brand-text strong,
-.gs-brand-text small {
-  display: block;
-}
-
-.gs-brand-text strong {
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.gs-brand-text small {
-  margin-top: 3px;
-  color: var(--gs-blue);
-  font-size: 7px;
-  letter-spacing: 1px;
-}
-
-.gs-nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-}
-
-.gs-nav-links a,
-.gs-signin {
-  color: #343d64;
-  font-size: 10px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.gs-nav-links a:hover,
-.gs-signin:hover {
-  color: var(--gs-blue);
-}
-
-.gs-nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.gs-signin {
-  padding: 8px 10px;
-  background: #fff;
-  border-radius: 20px;
-}
-
-.gs-getstarted {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 6px 8px 6px 12px;
-
-  border-radius: 30px;
-  background: var(--gs-blue);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.gs-getstarted span {
-  width: 21px;
-  height: 21px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-  background: #fff;
-  color: var(--gs-blue);
-}
-
-/* ===========================
-   HERO SECTION
-=========================== */
-
-.gs-hero {
+.get-started-page {
   position: relative;
-  isolation: isolate;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 45px 0 60px;
+  overflow: hidden;
+  background: #ffffff;
+  color: #101943;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  width: min(100% - 48px, 1000px);
-  min-height: 390px;
+.get-started-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgba(50, 96, 237, 0.15) 1px,
+    transparent 1.3px
+  );
+  background-size: 18px 18px;
+}
+
+.get-started-content {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 65px 0 45px;
+}
 
+/* TOP CONTENT */
+.get-started-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: 65px;
+  gap: 40px;
+  width: 100%;
 }
 
-.gs-hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0 -24px;
-
-  pointer-events: none;
-
-  background-image: radial-gradient(
-    #dce4ff 1px,
-    transparent 1px
-  );
-  background-size: 14px 14px;
-  opacity: 0.55;
-
-  mask-image: linear-gradient(
-    to bottom,
-    #000,
-    transparent 85%
-  );
-}
-
-.gs-hero-copy {
+.get-started-intro {
   min-width: 0;
 }
 
-.gs-eyebrow {
+.get-started-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-
-  padding: 7px 10px;
-  border-radius: 25px;
-  background: #eff2ff;
-
-  color: var(--gs-blue);
-  font-size: 9px;
-  font-weight: 700;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: #eef2ff;
+  color: #3260ed;
+  font-size: 12px;
 }
 
-.gs-eyebrow span {
-  color: #ffb400;
-  font-size: 14px;
+.get-started-badge span {
+  color: #ffb511;
 }
 
-.gs-hero-copy h1 {
-  margin: 18px 0 14px;
-
-  color: var(--gs-navy);
-  font-size: clamp(38px, 4.3vw, 48px);
+.get-started-intro h1 {
+  margin: 25px 0 18px;
+  color: #101943;
+  font-size: clamp(40px, 4vw, 64px);
   font-weight: 800;
-  line-height: 0.99;
+  line-height: 1;
   letter-spacing: -2px;
 }
 
-.gs-hero-copy h1 span {
-  color: var(--gs-blue);
+.get-started-intro h1 span {
+  color: #3260ed;
 }
 
-.gs-hero-copy p {
-  max-width: 340px;
+.get-started-intro p {
+  max-width: 430px;
   margin: 0;
-
-  color: #59648a;
-  font-size: 11px;
-  line-height: 1.7;
+  color: #596587;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-/* ===========================
-   ROLE PREVIEW
-=========================== */
-
-.gs-preview {
+/* SELECTION PANEL */
+.get-started-panel {
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
   justify-self: end;
-
-  padding: 9px;
-  border: 1px solid #e4e8f7;
-  border-radius: 19px;
-
-  background: #fff;
-  box-shadow: 0 18px 35px #18234b20;
+  padding: 16px;
+  border: 1px solid #e0e6ff;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(16, 25, 67, 0.1);
 }
 
-.gs-preview-header {
+.get-started-panel-heading {
   display: flex;
   align-items: center;
-  gap: 9px;
-
-  padding: 3px 3px 12px;
-  border-bottom: 1px solid #edf0fa;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e7ebfa;
 }
 
-.gs-preview-logo {
-  width: 25px;
-  height: 25px;
+.get-started-sparkle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 8px;
-  background: var(--gs-blue);
-  color: #fff;
+  border-radius: 10px;
+  background: #3260ed;
+  color: white;
 }
 
-.gs-preview-header strong,
-.gs-preview-header small {
-  display: block;
+.get-started-panel-heading h2 {
+  margin: 0 0 5px;
+  font-size: 15px;
 }
 
-.gs-preview-header strong {
-  font-size: 10px;
+.get-started-panel-heading p {
+  margin: 0;
+  color: #7c88a8;
+  font-size: 11px;
 }
 
-.gs-preview-header small {
-  margin-top: 3px;
-  color: #7580a3;
-  font-size: 8px;
-}
-
-.gs-preview-grid {
+.get-started-panel-roles {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-
-  padding: 9px 0;
+  gap: 10px;
+  margin: 15px 0;
 }
 
-.gs-preview-option {
+.get-started-mini-role {
   position: relative;
-  min-width: 0;
-  min-height: 75px;
-  padding: 9px;
-
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  min-height: 90px;
+  padding: 12px;
+  border: 1px solid #dce3ff;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #101943;
   text-align: left;
-  border: 1px solid #e1e6fa;
-  border-radius: 11px;
-
-  background: #fff;
-  color: var(--gs-navy);
   cursor: pointer;
 }
 
-.gs-preview-option.selected {
-  border-color: var(--gs-blue);
-  background: #f2f5ff;
-  box-shadow: 0 0 0 1px var(--gs-blue);
+.get-started-mini-role.selected {
+  border: 2px solid #3260ed;
+  padding: 11px;
+  background: #f3f6ff;
 }
 
-.gs-preview-icon {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 5px;
-
-  display: grid;
-  place-items: center;
-
+.get-started-mini-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
   border-radius: 8px;
-  background: #edf1ff;
-  font-size: 14px;
+  background: #eef2ff;
+  color: #3260ed;
 }
 
-.gs-preview-name {
+.get-started-mini-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.get-started-mini-copy strong {
+  font-size: 13px;
+}
+
+.get-started-mini-copy small {
+  color: #7782a1;
   font-size: 10px;
-  font-weight: 800;
+  line-height: 1.5;
 }
 
-.gs-preview-option small {
-  margin-top: 3px;
-  color: #657094;
-  font-size: 8px;
-  line-height: 1.35;
-}
-
-.gs-radio {
+.get-started-radio {
   position: absolute;
   top: 7px;
   right: 7px;
-
-  width: 10px;
-  height: 10px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid #cfd6f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cbd5f5;
   border-radius: 50%;
-  color: #fff;
-  font-size: 7px;
+  color: white;
 }
 
-.gs-preview-option.selected .gs-radio {
-  border-color: var(--gs-blue);
-  background: var(--gs-blue);
+.get-started-mini-role.selected .get-started-radio {
+  background: #3260ed;
+  border-color: #3260ed;
 }
 
-.gs-preview-continue {
-  width: 100%;
-  padding: 5px 7px 5px 10px;
-
+.get-started-continue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  width: 100%;
+  min-height: 45px;
+  padding: 5px 8px 5px 16px;
   border: 0;
   border-radius: 30px;
-  background: var(--gs-navy);
-  color: #fff;
-
-  font-size: 9px;
+  background: #101943;
+  color: white;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.gs-continue-arrow {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
+.get-started-continue-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #ffb900;
-  color: var(--gs-navy);
-  font-size: 14px;
+  background: #ffb511;
+  color: #101943;
 }
 
-/* ===========================
-   FOUR ROLE CARDS
-=========================== */
-
-.gs-role-section {
-  width: min(100% - 48px, 1000px);
-  margin: 0 auto;
-  padding: 10px 0 55px;
-}
-
-.gs-role-grid {
+/* FOUR ROLE CARDS */
+.get-started-role-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 12px;
+  gap: 16px;
+  width: 100%;
+  margin-top: 42px;
 }
 
-.gs-role-card {
+.get-started-role-card {
   min-width: 0;
-  min-height: 192px;
-  padding: 18px;
+  min-height: 205px;
+  overflow: hidden;
+  border: 1px solid #e4e9ff;
+  border-radius: 18px;
+  background: #eef2ff;
+}
 
+.get-started-role-card.active {
+  border-color: #3260ed;
+  background: #3260ed;
+}
+
+.get-started-card-select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  border-radius: 17px;
-  background: var(--gs-pale);
-  color: var(--gs-navy);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.gs-role-card.active {
-  background: var(--gs-blue);
-  color: #fff;
-}
-
-.gs-role-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px #17245315;
-}
-
-.gs-role-icon {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-  background: #ffb500;
-  font-size: 18px;
-}
-
-.gs-role-card:nth-child(3) .gs-role-icon,
-.gs-role-card:nth-child(4) .gs-role-icon {
-  background: #20c6df;
-}
-
-.gs-role-card h2 {
-  margin: 13px 0 6px;
-
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.4px;
-
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
-.gs-role-card p {
-  margin: 0 0 15px;
-
-  color: inherit;
-  font-size: 9px;
-  line-height: 1.55;
-  opacity: 0.88;
-}
-
-.gs-role-button {
   width: 100%;
-  min-height: 30px;
-  margin-top: auto;
-  padding: 5px 6px 5px 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px;
-
+  min-height: 205px;
+  padding: 18px;
   border: 0;
-  border-radius: 25px;
-  background: var(--gs-blue);
-  color: #fff;
-
-  font-size: 9px;
-  font-weight: 700;
-  white-space: nowrap;
+  background: transparent;
+  color: #101943;
+  text-align: left;
   cursor: pointer;
 }
 
-.gs-role-card.active .gs-role-button {
-  background: #fff;
-  color: var(--gs-navy);
-}
-
-.gs-role-arrow {
-  width: 21px;
-  height: 21px;
-  flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
+.get-started-role-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 15px;
   border-radius: 50%;
-  background: #fff;
-  color: var(--gs-blue);
-  font-size: 14px;
+  color: #101943;
 }
 
-.gs-role-card.active .gs-role-arrow {
-  background: #ffb500;
-  color: var(--gs-navy);
+.get-started-role-icon.yellow {
+  background: #ffb511;
 }
 
-/* ===========================
-   TABLET
-=========================== */
+.get-started-role-icon.cyan {
+  background: #19c3dc;
+}
 
-@media (max-width: 900px) {
-  .gs-navbar {
-    flex-wrap: wrap;
+.get-started-card-title {
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.get-started-card-description {
+  color: #596587;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.get-started-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 34px;
+  margin-top: auto;
+  padding: 4px 5px 4px 10px;
+  border-radius: 25px;
+  background: #3260ed;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.get-started-card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #3260ed;
+}
+
+.get-started-role-card.active .get-started-card-title,
+.get-started-role-card.active .get-started-card-description {
+  color: #ffffff;
+}
+
+.get-started-role-card.active .get-started-card-action {
+  background: #ffffff;
+  color: #101943;
+}
+
+.get-started-role-card.active .get-started-card-arrow {
+  background: #ffb511;
+  color: #101943;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+  .get-started-content {
+    width: 80%;
   }
 
-  .gs-nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  .get-started-hero {
+    gap: 24px;
   }
 
-  .gs-hero {
-    gap: 28px;
-    min-height: 350px;
+  .get-started-intro h1 {
+    font-size: clamp(36px, 5vw, 52px);
   }
 
-  .gs-hero-copy h1 {
-    font-size: 39px;
-  }
-
-  .gs-role-grid {
+  .get-started-role-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .gs-role-card {
-    min-height: 180px;
   }
 }
 
-/* ===========================
-   MOBILE
-=========================== */
-
-@media (max-width: 560px) {
-  .gs-navbar {
-    width: calc(100% - 24px);
-    justify-content: space-between;
-    gap: 10px;
+/* MOBILE */
+@media (max-width: 650px) {
+  .get-started-page {
+    padding: 30px 0 45px;
   }
 
-  .gs-nav-links {
+  .get-started-content {
+    width: 90%;
+  }
+
+  .get-started-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .get-started-intro h1 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .get-started-panel {
+    max-width: none;
+  }
+
+  .get-started-role-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+    margin-top: 28px;
   }
 
-  .gs-hero {
-    width: calc(100% - 36px);
-    padding: 42px 0 30px;
+  .get-started-card-select {
+    padding: 13px;
+  }
+}
 
+@media (max-width: 380px) {
+  .get-started-content {
+    width: 92%;
+  }
+
+  .get-started-role-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .gs-hero-copy h1 {
-    font-size: 42px;
-  }
-
-  .gs-preview {
-    max-width: 100%;
-    justify-self: center;
-  }
-
-  .gs-role-section {
-    width: calc(100% - 36px);
-  }
-
-  .gs-role-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .gs-role-card {
-    min-height: 175px;
-    padding: 22px;
-  }
-
-  .gs-role-card h2 {
-    font-size: 21px;
-  }
-
-  .gs-role-card p {
-    font-size: 12px;
-  }
-
-  .gs-role-button {
-    max-width: 230px;
-    min-height: 38px;
-    font-size: 11px;
   }
 }

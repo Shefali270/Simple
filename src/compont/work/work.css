@@ -1799,3 +1799,63 @@
     font-size: 11px;
   }
 }
+/* Journey box active blue background */
+.journey-card .step-active {
+  background: #eef3ff !important;
+  border-radius: 18px;
+}
+
+/* Active step text visible */
+.journey-card .step-active .step-info h3 {
+  color: #2864e9 !important;
+}
+
+.journey-card .step-active .step-info p {
+  color: #53628f !important;
+}
+
+/* Hover par bhi light blue box */
+.journey-card .step:hover {
+  background: #eef3ff;
+  border-radius: 18px;
+}
+
+
+/* FIX: Journey box text clearly visible */
+
+.work-page .journey-card .step-info h3,
+.journey-card .step-info h3 {
+  color: #101943 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #101943 !important;
+}
+
+.work-page .journey-card .step-info p,
+.journey-card .step-info p {
+  color: #53628f !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #53628f !important;
+}
+
+/* Step count and header text */
+.journey-card .journey-title h2 {
+  color: #101943 !important;
+  -webkit-text-fill-color: #101943 !important;
+}
+
+.journey-card .journey-title p {
+  color: #596587 !important;
+  -webkit-text-fill-color: #596587 !important;
+}
+
+.journey-card .step-count {
+  color: #2864e9 !important;
+  -webkit-text-fill-color: #2864e9 !important;
+}
+
+/* Keep blue background and active step background unchanged */
+.journey-card .step-active {
+  background: #eef3ff !important;
+}

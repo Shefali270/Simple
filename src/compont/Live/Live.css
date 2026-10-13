@@ -4,17 +4,22 @@
 ================================ */
 
 .live-page {
-  width: 100%;
-  min-height: 100vh;
+  width: 80%;
+  max-width: 100%;
+  min-height: 82px;
+  margin: 0 auto;
   padding: 100px 20px 60px;
   box-sizing: border-box;
   background-color: #ffffff;
   color: #10183f;
   font-family: Arial, Helvetica, sans-serif;
+
+  /* Background design same rahega */
   background-image: radial-gradient(#d9e2ff 1.3px, transparent 1.3px);
   background-size: 28px 28px;
   background-position: 4px 5px;
 }
+
 
 .live-page * {
   box-sizing: border-box;
@@ -2800,6 +2805,7 @@
   color: #10183f;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  transform:translate(-150px);
 }
 
 .resources-container {
@@ -3865,4 +3871,203 @@ body,
 
 body {
   overflow-x: hidden;
+}
+
+/* ALL MAIN SECTIONS — 80% WIDTH */
+.live-page,
+.why-page,
+.trust-strip,
+.journey-section,
+.paths-section,
+.mentors-section,
+.about-growth-section {
+  width: 80% !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* Inner content ko section ke andar rakho */
+.live-hero,
+.why-section,
+.journey-container,
+.paths-container,
+.mentors-container,
+.about-growth-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Mobile par bhi 80% width */
+@media (max-width: 650px) {
+  .live-page,
+  .why-page,
+  .trust-strip,
+  .journey-section,
+  .paths-section,
+  .mentors-section,
+  .about-growth-section {
+    width: 80% !important;
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* =========================================
+   FINAL FIX — ALL SECTIONS 80% WIDTH
+   Background colors/design remain unchanged
+========================================= */
+
+/* Full-page background stays full width */
+.live-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Main content sections */
+.live-hero,
+.why-section,
+.journey-section,
+.paths-section,
+.mentors-section {
+  width: 80% !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* Content inside each section */
+.live-hero,
+.why-section,
+.journey-container,
+.paths-container,
+.mentors-container {
+  min-width: 0;
+}
+
+/* Keep cards inside their parent width */
+.journey-cards,
+.paths-grid,
+.mentors-grid,
+.why-cards {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Keep full-page background unchanged on mobile too */
+@media (max-width: 650px) {
+  .live-page {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .live-hero,
+  .why-section,
+  .journey-section,
+  .paths-section,
+  .mentors-section {
+    width: 80% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+.resources-hero {
+  width: 80%;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Left text and right cards stay inside the content */
+.resources-left,
+.resources-visual {
+  min-width: 0;
+}
+
+.resources-visual {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .resources-hero {
+    width: 90%;
+  }
+}
+/* CONTENT WIDTH 80% — BACKGROUNDS UNCHANGED */
+
+/* Upper hero: background full width rahega */
+.work-hero {
+  width: 100%;
+  max-width: 1500px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* Lower section content */
+.how-wrapper {
+  width: 80%;
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Dashboard: background unchanged, content narrower */
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 1350px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.dashboard-badge,
+.dashboard-heading,
+.dashboard-grid {
+  max-width: 100%;
+}
+
+/* Blue ecosystem background unchanged */
+.ecosystem-wrapper {
+  width: 100%;
+}
+
+.ecosystem-content {
+  width: 80%;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .work-hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .how-wrapper,
+  .ecosystem-content {
+    width: 90%;
+  }
+
+  .dashboard-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }

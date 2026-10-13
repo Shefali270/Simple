@@ -2,14 +2,41 @@
    LEARNING PAGE
 ================================================= */
 
+
+/* FULL-WIDTH BACKGROUND */
 .leaning-page {
   width: 100%;
   min-height: 100vh;
-
   background: #ffffff;
-
   overflow-x: hidden;
+  box-sizing: border-box;
 }
+
+/* TEXT AND CONTENT WIDTH 80% */
+
+.leaning-container {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  box-sizing: border-box;
+}
+
+/* Right-side box */
+
+.learning-card {
+  width: 100%;
+  justify-self: end;
+  transform: translateX(50px);
+}
+
+
+
 
 
 /* =================================================
@@ -119,7 +146,7 @@
   color: #2563e9;
 
   font-size: 13px;
-
+  transform: translate(-45px);
   font-weight: 800;
 }
 
@@ -139,10 +166,10 @@
 
   color: #101a58;
 
-  font-size: 62px;
+  font-size: 82px;
 
   line-height: 1.02;
-
+  transform: translate(-60px);
   letter-spacing: -3px;
 
   font-weight: 850;
@@ -165,7 +192,7 @@
   color: #47547d;
 
   font-size: 18px;
-
+  transform: translate(-50px);
   line-height: 1.55;
 }
 
@@ -430,66 +457,61 @@
    UPPER SECTION SAFE - NO CHANGE
 ================================================= */
 
+
 .learning-second-row {
-  position: relative;
-
-  z-index: 5;
-
-  width: min(1060px, calc(100% - 60px));
-
-  margin: 140px auto 100px;
-
+  width: min(1200px, calc(100% - 60px));
+  margin: 100px auto 80px;
   display: grid;
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 20px;
-
+  gap: 24px;
   box-sizing: border-box;
 }
-
-
-/* =================================================
-   BOX
-================================================= */
 
 .learning-box {
   width: 100%;
-
   min-width: 0;
-
-  min-height: 430px;
-
+  min-height: 520px;
   padding: 40px;
-
   box-sizing: border-box;
-
   border-radius: 25px;
-
   background: #eef2ff;
-
   color: #101a58;
-
   display: flex;
-
   flex-direction: column;
-
   overflow: hidden;
 }
 
-
-/* =================================================
-   MIDDLE BLUE BOX
-================================================= */
-
 .learning-box-blue {
   background: #315be8;
-
   color: #ffffff;
-
-  box-shadow:
-    0 18px 40px rgba(49, 91, 232, 0.18);
 }
+
+@media (max-width: 900px) {
+  .learning-second-row {
+    width: calc(100% - 40px);
+    gap: 15px;
+  }
+
+  .learning-box {
+    min-height: 460px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .learning-second-row {
+    width: calc(100% - 30px);
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 35px;
+  }
+
+  .learning-box {
+    min-height: 420px;
+    padding: 25px;
+  }
+}
+
 
 
 /* =================================================
@@ -809,7 +831,7 @@
   color: #2864e9;
 
   font-size: 15px;
-
+  transform: translate(30px);
   font-weight: 700;
 }
 
@@ -833,12 +855,12 @@
 
   color: #101a58;
 
-  font-size: 78px;
+  font-size: 68px;
 
   line-height: 0.98;
 
   letter-spacing: -3px;
-
+  transform: translate(40px);
   font-weight: 900;
 }
 

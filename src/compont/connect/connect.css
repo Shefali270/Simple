@@ -1,40 +1,68 @@
 
 /* ==============================
-   CONNECT PAGE
+   CONNECT PAGE — CLEAN CSS
+   Page width: 80%
+   Blue section background preserved
 ============================== */
 
-.connect-page {
+html,
+body,
+#root,
+.App {
   width: 100%;
-  padding: 12px;
-  background: #ffffff;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-.connect-page * {
-  box-sizing: border-box;
+/* MAIN PAGE — 80% WIDTH */
+
+.connect-page {
+  width: 80%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 12px;
+  overflow-x: hidden;
+  background: #ffffff;
 }
+
+/* BLUE BACKGROUND SECTION */
 
 .connect-section {
   position: relative;
   width: 100%;
   min-height: 700px;
-  background: #101a58;
-  border-radius: 0 0 38px 38px;
+  margin: 0;
   overflow: hidden;
+  border-radius: 0 0 38px 38px;
+  background: #101a58;
   color: #ffffff;
 }
 
-/* CONTAINER */
+/* INNER CONTENT */
 
 .connect-container {
   position: relative;
   z-index: 5;
-  width: min(1250px, calc(100% - 70px));
+  width: 100%;
+  max-width: 1250px;
   margin: 0 auto;
-  padding-top: 65px;
+  padding: 65px 25px 0;
 }
 
-/* TOP SECTION */
+/* TOP HEADING */
 
 .connect-top {
   display: flex;
@@ -45,10 +73,10 @@
 .connect-top h1 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(42px, 7vw, 88px);
+  font-size: clamp(42px, 5.3vw, 88px);
   line-height: 1.08;
   font-weight: 800;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
 }
 
 .connect-top h1 span {
@@ -83,19 +111,20 @@
   justify-content: center;
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: #ffb511;
   color: #101a58;
   font-size: 20px;
 }
 
-/* DIVIDER */
+/* DIVIDERS */
 
 .connect-divider,
 .connect-bottom-divider {
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .connect-divider {
@@ -106,8 +135,8 @@
 
 .connect-main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.15fr;
-  gap: 28px;
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)) minmax(0, 1.15fr);
+  gap: 24px;
   padding: 45px 0 30px;
   align-items: start;
 }
@@ -130,22 +159,23 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 65px;
-  height: 65px;
+  width: 58px;
+  height: 58px;
   border-radius: 16px;
   background: #ffffff;
-  font-size: 35px;
+  font-size: 32px;
 }
 
 .connect-logo-text {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  min-width: 0;
 }
 
 .connect-logo-text strong {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.2;
 }
 
@@ -153,16 +183,17 @@
   color: #ffb511;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
 }
 
 /* DESCRIPTION */
 
 .connect-brand > p {
   margin: 0;
-  color: #b7c0e7;
-  font-size: 14px;
+  color: #d0d6f0;
+  font-size: 13px;
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 /* NEWSLETTER */
@@ -185,7 +216,7 @@
   max-width: 310px;
   min-height: 44px;
   padding: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 30px;
   background: #202b72;
 }
@@ -205,7 +236,7 @@
 }
 
 .connect-subscribe input::placeholder {
-  color: #aeb8e2;
+  color: #c1c9e8;
 }
 
 .connect-subscribe button {
@@ -221,7 +252,7 @@
   cursor: pointer;
 }
 
-/* COLUMNS */
+/* FOOTER LINK COLUMNS */
 
 .connect-column {
   display: flex;
@@ -233,17 +264,19 @@
 .connect-column h3 {
   margin: 0 0 20px;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
 }
 
 .connect-column > a {
   display: inline-block;
+  max-width: 100%;
   margin-bottom: 13px;
-  color: #b7c0e7;
-  font-size: 13px;
-  line-height: 1.5;
+  color: #d0d6f0;
+  font-size: 12px;
+  line-height: 1.6;
   text-decoration: none;
+  overflow-wrap: anywhere;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -258,6 +291,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  min-width: 0;
   margin-bottom: 17px;
 }
 
@@ -268,14 +302,15 @@
 }
 
 .connect-contact-item p {
+  min-width: 0;
   margin: 2px 0 0;
-  overflow-wrap: anywhere;
-  color: #b7c0e7;
+  color: #d0d6f0;
   font-size: 12px;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
-/* BOTTOM SECTION */
+/* BOTTOM FOOTER */
 
 .connect-bottom-divider {
   margin-top: 10px;
@@ -291,7 +326,7 @@
 
 .connect-bottom p {
   margin: 0;
-  color: #b7c0e7;
+  color: #d0d6f0;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -303,7 +338,7 @@
 }
 
 .connect-legal a {
-  color: #b7c0e7;
+  color: #d0d6f0;
   font-size: 12px;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -313,7 +348,7 @@
   color: #ffb511;
 }
 
-/* YELLOW ROTATING STAR */
+/* YELLOW DECORATIVE STAR */
 
 .connect-yellow-star {
   position: absolute;
@@ -331,7 +366,6 @@
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -356,13 +390,12 @@
 
 @media (max-width: 1100px) {
   .connect-container {
-    width: calc(100% - 50px);
-    padding-top: 55px;
+    padding: 55px 20px 0;
   }
 
   .connect-main {
-    grid-template-columns: 1.6fr 1fr 1fr;
-    gap: 35px 25px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 22px;
   }
 
   .connect-brand {
@@ -371,7 +404,7 @@
   }
 
   .connect-top h1 {
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
   }
 }
 
@@ -379,6 +412,7 @@
 
 @media (max-width: 650px) {
   .connect-page {
+    width: 80%;
     padding: 6px;
   }
 
@@ -388,13 +422,13 @@
   }
 
   .connect-container {
-    width: calc(100% - 34px);
-    padding-top: 42px;
+    padding: 42px 14px 0;
   }
 
   .connect-top h1 {
-    font-size: clamp(36px, 9vw, 52px);
-    letter-spacing: -1.5px;
+    font-size: clamp(30px, 7vw, 45px);
+    line-height: 1.1;
+    letter-spacing: -1px;
   }
 
   .connect-get-started {
@@ -407,7 +441,7 @@
 
   .connect-main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 20px;
+    gap: 28px 16px;
     padding-top: 32px;
   }
 
@@ -416,37 +450,41 @@
   }
 
   .connect-logo-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 29px;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
   }
 
   .connect-logo-text strong {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .connect-brand > p {
-    font-size: 13px;
-  }
-
-  .connect-column h3 {
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-
-  .connect-column > a {
-    margin-bottom: 11px;
     font-size: 12px;
   }
 
-  .connect-contact-item p {
+  .connect-column h3 {
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+
+  .connect-column > a {
+    margin-bottom: 10px;
     font-size: 11px;
+  }
+
+  .connect-contact-item {
+    gap: 6px;
+  }
+
+  .connect-contact-item p {
+    font-size: 10px;
   }
 
   .connect-yellow-star {
     top: -15px;
     right: -15px;
-    font-size: 100px;
+    font-size: 90px;
   }
 
   .connect-bottom {
@@ -464,10 +502,6 @@
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
-  .connect-container {
-    width: calc(100% - 26px);
-  }
-
   .connect-main {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -478,7 +512,7 @@
   }
 
   .connect-top h1 {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .connect-subscribe button {
@@ -487,7 +521,7 @@
   }
 }
 
-/* REDUCE ANIMATION FOR ACCESSIBILITY */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
   .connect-yellow-star {
@@ -498,5 +532,39 @@
   .connect-legal a,
   .connect-get-started {
     transition: none;
+  }
+}
+
+/* Background full width rahega */
+.connect-page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 12px 0;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+/* Blue background ki width change nahi hogi */
+.connect-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  background: #101a58;
+}
+
+/* Sirf content 80% width */
+.connect-container {
+  width: 80%;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 650px) {
+  .connect-container {
+    width: 90%;
   }
 }

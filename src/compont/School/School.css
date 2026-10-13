@@ -1,1242 +1,1294 @@
-/* =========================
-   SCHOOL PAGE
-========================= */
+
 
 .school-page {
   position: relative;
-  min-height: calc(100vh - 80px);
-
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
-
   background: #ffffff;
+  color: #101943;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+.school-page * {
+  box-sizing: border-box;
+}
 
-/* =========================
-   DOT BACKGROUND
-========================= */
+.school-page button,
+.school-page input,
+.school-page select,
+.school-page textarea {
+  font: inherit;
+}
 
 .school-dots {
   position: absolute;
   inset: 0;
-
-  background-image: radial-gradient(
-    #d9e2f7 1px,
-    transparent 1px
-  );
-
-  background-size: 20px 20px;
-
-  opacity: 0.55;
-
+  z-index: 0;
   pointer-events: none;
+  background-image: radial-gradient(#dbe5ff 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.7;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* =========================================
+   HERO SECTION
+========================================= */
 
 .school-hero {
   position: relative;
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1080px;
-
-  margin: 0 auto;
-
-  min-height: 720px;
-
-  padding: 85px 20px 70px;
-
+  z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: center;
-
-  gap: 70px;
-
-  box-sizing: border-box;
+  gap: 65px;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 850px;
+  margin: 0 auto;
+  padding: 100px 65px;
+  
 }
-
-
-/* =========================
-   LEFT
-========================= */
 
 .school-left {
-  padding-top: 10px;
+  width: 100%;
+  max-width: 650px;
 }
-
 
 .school-badge {
-  width: fit-content;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
-
-  padding: 7px 13px;
-
+  gap: 9px;
+  padding: 12px 18px;
   border-radius: 30px;
-
-  background: #edf3ff;
-
-  color: #315fe0;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  margin-bottom: 22px;
+  background: #edf2ff;
+  color: #315cf5;
+  font-size: 15px;
+  font-weight: 8900;
+  transform: translate(-60px);
 }
 
-
 .school-badge span {
-  color: #f5b400;
-  font-size: 15px;
+  color: #ffb800;
+  font-size: 20px;
 }
 
 
 .school-left h1 {
-  margin: 0;
-
-  color: #101a4d;
-
-  font-size: 57px;
-  line-height: 0.98;
-
-  letter-spacing: -3px;
-
-  font-weight: 900;
+  margin: 25px 0 26px;
+  color: #101943;
+  font-size: clamp(48px, 5.3vw, 78px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -3.5px;
+  transform: translateX(-70px);
 }
 
 
 .school-left h1 span {
-  color: #3262e9;
+  color: #315cf5;
 }
-
 
 .school-left p {
-  margin: 28px 0 0;
-
-  color: #58658a;
-
-  font-size: 17px;
-  line-height: 1.55;
-
-  font-weight: 500;
+  max-width: 590px;
+  margin: 0;
+  color: #596587;
+  font-size: 19px;
+  line-height: 1.2;
+  transform: translateX(-60px);
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
 
 .school-buttons {
   display: flex;
   align-items: center;
-  gap: 12px;
-
-  margin-top: 28px;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 36px;
+  transform: translate(-70px);
 }
-
 
 .school-primary-btn,
 .school-secondary-btn {
-  height: 52px;
-
-  border-radius: 28px;
-
-  padding: 0 18px;
-
-  font-family: inherit;
-
-  font-size: 14px;
-  font-weight: 800;
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 62px;
+  padding: 10px 25px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-
 .school-primary-btn {
-  min-width: 185px;
+  min-width: 225px;
+  border: 1px solid #315cf5;
+  background: #315cf5;
+  color: #ffffff;
+  box-shadow: 0 12px 25px rgba(49, 92, 245, 0.2);
+}
 
-  border: none;
+.school-primary-btn span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #315cf5;
+  font-size: 24px;
+}
 
-  background: #3262e9;
+.school-primary-btn:hover {
+  transform: translateY(-3px);
+  background: #2149dc;
+  box-shadow: 0 16px 28px rgba(49, 92, 245, 0.3);
+}
 
-  color: white;
+.school-secondary-btn {
+  min-width: 195px;
+  border: 1.5px solid #101943;
+  background: #ffffff;
+  color: #101943;
+}
 
+.school-secondary-btn:hover {
+  transform: translateY(-3px);
+  border-color: #315cf5;
+  color: #315cf5;
+  box-shadow: 0 10px 24px rgba(16, 25, 67, 0.08);
+}
+
+/* =========================================
+   RIGHT DASHBOARD
+========================================= */
+
+.school-right {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  justify-self: center;
+  padding-top: 28px;
+  transform: translate(55px);
+}
+
+.school-training {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1px solid #edf0ff;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #101943;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 7px 20px rgba(22, 37, 85, 0.06);
+}
+
+.school-training span {
+  color: #315cf5;
+}
+
+.school-dashboard {
+  width: 80%;
+  min-height: 580px;
+  overflow: hidden;
+  border: 1px solid #e1e7f8;
+  border-radius: 30px;
+  background: #ffffff;
+  transform: translate(30px);
+  box-shadow: 0 25px 60px rgba(25, 43, 91, 0.13);
+}
+
+/* Dashboard header */
+
+.dashboard-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-
-  box-shadow: 0 12px 25px rgba(50, 98, 233, 0.25);
+  min-height: 100px;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e7ebf7;
 }
-
-
-.school-primary-btn span {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: white;
-
-  color: #3262e9;
-
-  font-size: 20px;
-}
-
-
-.school-secondary-btn {
-  min-width: 155px;
-
-  background: white;
-
-  border: 2px solid #101a4d;
-
-  color: #101a4d;
-}
-
-
-/* =========================
-   RIGHT
-========================= */
-
-.school-right {
-  position: relative;
-
-  padding-top: 15px;
-}
-
-
-/* =========================
-   TEACHER TRAINING
-========================= */
-
-.school-training {
-  position: absolute;
-
-  top: -2px;
-  left: -18px;
-
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 8px 13px;
-
-  border-radius: 20px;
-
-  background: white;
-
-  color: #26345f;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  box-shadow: 0 5px 18px rgba(40, 62, 110, 0.08);
-}
-
-
-.school-training span {
-  color: #315fe8;
-}
-
-
-/* =========================
-   DASHBOARD
-========================= */
-
-.school-dashboard {
-  width: 100%;
-
-  background: white;
-
-  border: 1px solid #e2e7f3;
-
-  border-radius: 23px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 25px 45px rgba(31, 53, 105, 0.13);
-}
-
-
-/* HEADER */
-
-.dashboard-header {
-  min-height: 68px;
-
-  padding: 12px 15px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  border-bottom: 1px solid #e9edf5;
-
-  box-sizing: border-box;
-}
-
 
 .dashboard-title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  min-width: 0;
 }
-
 
 .dashboard-main-icon {
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-
-  background: #3563e9;
-
-  color: white;
-
-  font-size: 20px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: #315cf5;
+  color: #ffffff;
+  font-size: 26px;
 }
 
-
 .dashboard-title h3 {
-  margin: 0;
-
-  color: #17224e;
-
-  font-size: 15px;
+  margin: 0 0 7px;
+  color: #101943;
+  font-size: 20px;
   font-weight: 800;
 }
 
-
 .dashboard-title p {
-  margin: 2px 0 0;
-
-  color: #7b86a5;
-
-  font-size: 11px;
+  margin: 0;
+  color: #858eaa;
+  font-size: 13px;
 }
 
-
 .sample-data {
-  padding: 6px 12px;
-
-  border-radius: 15px;
-
+  flex-shrink: 0;
+  padding: 10px 15px;
+  border-radius: 25px;
   background: #edf2ff;
-
-  color: #4864bb;
-
-  font-size: 10px;
+  color: #315cf5;
+  font-size: 12px;
   font-weight: 700;
 }
 
-
-/* =========================
-   STATS
-========================= */
+/* Dashboard statistics */
 
 .dashboard-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 8px;
-
-  padding: 12px 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  padding: 20px 22px;
 }
 
-
 .stat-box {
-  min-height: 76px;
-
-  padding: 11px;
-
-  box-sizing: border-box;
-
-  border-radius: 12px;
-
-  background: #eef2fc;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 13px;
+  min-width: 0;
+  min-height: 112px;
+  padding: 16px;
+  border-radius: 17px;
+  background: #eef2ff;
 }
 
+.stat-box.stat-blue {
+  background: #315cf5;
+  color: #ffffff;
+}
 
 .stat-box small {
-  color: #7a85a5;
-
-  font-size: 9px;
-  font-weight: 600;
-}
-
-
-.stat-box strong {
-  margin-top: 2px;
-
-  color: #17224e;
-
-  font-size: 21px;
-  line-height: 1;
-}
-
-
-.stat-box span {
-  margin-top: 6px;
-
-  color: #20a57b;
-
-  font-size: 9px;
+  color: #596587;
+  font-size: 12px;
   font-weight: 700;
 }
 
-
-.stat-blue {
-  background: #3262e9;
+.stat-box.stat-blue small {
+  color: #ffffff;
 }
 
-
-.stat-blue small,
-.stat-blue strong,
-.stat-blue span {
-  color: white;
+.stat-box strong {
+  color: #101943;
+  font-size: 30px;
+  line-height: 1;
 }
 
+.stat-box.stat-blue strong {
+  color: #ffffff;
+}
 
-/* =========================
-   SCORE CARD
-========================= */
+.stat-box span {
+  color: #159c72;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.stat-box.stat-blue span {
+  color: #e2ffe9;
+}
+
+/* =========================================
+   SCORE CHART
+========================================= */
 
 .score-card {
-  margin: 0 14px;
-
-  padding: 13px;
-
-  border: 1px solid #e1e6f1;
-
-  border-radius: 13px;
+  margin: 0 22px;
+  padding: 22px;
+  border: 1px solid #e0e7fa;
+  border-radius: 19px;
+  background: #ffffff;
 }
-
 
 .score-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  margin-bottom: 15px;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #edf0f8;
 }
-
 
 .score-heading strong {
-  color: #17224e;
-
-  font-size: 11px;
+  color: #101943;
+  font-size: 15px;
 }
-
 
 .score-heading span {
-  color: #7c87a5;
-
-  font-size: 9px;
-  font-weight: 600;
+  color: #75809f;
+  font-size: 12px;
 }
 
-
-/* =========================
-   CHART
-========================= */
-
 .score-chart {
-  height: 108px;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-
-  gap: 7px;
-
-  border-top: 1px solid #edf0f6;
-
-  padding-top: 10px;
+  gap: 13px;
+  height: 155px;
+  padding-top: 15px;
 }
 
-
 .bar-item {
-  height: 100%;
-
-  flex: 1;
-
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-
-  gap: 5px;
+  gap: 9px;
+  height: 100%;
+  min-width: 0;
 }
-
 
 .bar {
   width: 100%;
-
-  max-width: 38px;
-
-  border-radius: 7px 7px 2px 2px;
-
-  background: #4169e9;
+  max-width: 52px;
+  min-height: 20px;
+  border-radius: 9px 9px 3px 3px;
+  background: #4168ed;
+  transition: height 0.3s ease, background 0.3s ease;
 }
 
+.bar:hover {
+  background: #2149dc;
+}
 
 .bar-6 {
-  height: 66px;
+  height: 75%;
 }
 
 .bar-7 {
-  height: 73px;
+  height: 84%;
 }
 
 .bar-8 {
-  height: 69px;
+  height: 80%;
 }
 
 .bar-9 {
-  height: 77px;
+  height: 91%;
 }
 
 .bar-10 {
-  height: 85px;
-  background: #ffc33d;
+  height: 100%;
+  background: #ffbf36;
 }
 
 .bar-11 {
-  height: 75px;
+  height: 86%;
 }
 
 .bar-12 {
-  height: 81px;
+  height: 95%;
 }
 
-
 .bar-item span {
-  color: #7c87a5;
-
-  font-size: 9px;
+  color: #596587;
+  font-size: 12px;
   font-weight: 600;
 }
 
-
-/* =========================
+/* =========================================
    CAREER WORKSHOP
-========================= */
+========================================= */
 
 .career-workshop {
-  margin: 12px 14px 14px;
-
-  min-height: 53px;
-
-  padding: 9px 10px;
-
   display: flex;
   align-items: center;
-
-  gap: 10px;
-
-  border-radius: 12px;
-
-  background: #fff4d9;
-
-  box-sizing: border-box;
+  gap: 15px;
+  min-height: 82px;
+  margin: 20px 22px 22px;
+  padding: 15px;
+  border-radius: 17px;
+  background: #fff4d7;
 }
-
 
 .workshop-icon {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
-
-  border-radius: 9px;
-
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
   background: #ffb900;
-
-  color: #14204d;
-
-  font-size: 16px;
+  color: #101943;
+  font-size: 23px;
 }
-
 
 .workshop-text {
   display: flex;
-  flex-direction: column;
-
   flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
 }
-
 
 .workshop-text strong {
-  color: #18234d;
-
-  font-size: 10px;
-  font-weight: 800;
+  color: #101943;
+  font-size: 14px;
 }
-
 
 .workshop-text span {
-  margin-top: 3px;
-
-  color: #71809f;
-
-  font-size: 9px;
-  font-weight: 600;
+  color: #6c7694;
+  font-size: 12px;
 }
-
 
 .upcoming {
-  padding: 6px 10px;
-
-  border-radius: 15px;
-
+  flex-shrink: 0;
+  padding: 9px 14px;
+  border-radius: 20px;
   background: #ffb900;
-
-  color: #17224e;
-
-  font-size: 9px;
-  font-weight: 800;
+  color: #101943;
+  font-size: 12px;
+  font-weight: 700;
 }
-
-
-/* =========================
-   DETAILED REPORTS
-========================= */
 
 .detailed-reports {
   position: absolute;
-
   right: -12px;
-  bottom: -25px;
-
-  padding: 9px 15px;
-
-  border-radius: 20px;
-
-  background: #3262e9;
-
-  color: white;
-
-  font-size: 10px;
-  font-weight: 800;
-
-  box-shadow: 0 8px 18px rgba(50, 98, 233, 0.25);
+  bottom: -20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 30px;
+  background: #315cf5;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(49, 92, 245, 0.2);
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-  .school-hero {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-
-    padding-top: 60px;
-  }
-
-  .school-left h1 {
-    font-size: 48px;
-  }
-
-  .school-right {
-    max-width: 650px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .school-hero {
-    padding: 45px 18px 70px;
-  }
-
-  .school-left h1 {
-    font-size: 38px;
-    letter-spacing: -1.5px;
-  }
-
-  .school-left p {
-    font-size: 14px;
-  }
-
-  .school-left p br {
-    display: none;
-  }
-
-  .school-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dashboard-stats {
-    gap: 5px;
-    padding: 9px;
-  }
-
-  .stat-box {
-    padding: 8px;
-  }
-
-  .stat-box strong {
-    font-size: 17px;
-  }
-
-  .score-card {
-    margin: 0 9px;
-  }
-
-  .career-workshop {
-    margin-left: 9px;
-    margin-right: 9px;
-  }
-
-  .school-training {
-    left: 5px;
-  }
-
-  .detailed-reports {
-    right: 5px;
-  }
-}
-/* =========================
-   SIX WAYS SECTION
-========================= */
+/* =========================================
+   SECTION 01 — SIX WAYS
+========================================= */
 
 .school-ways {
   position: relative;
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1080px;
-
+  z-index: 1;
+  width: 80%;
+  max-width: 1700px;
   margin: 0 auto;
-
-  padding: 70px 20px 90px;
-
-  box-sizing: border-box;
+  padding: 120px 65px 125px;
 }
-
-
-/* BADGE */
 
 .school-ways-badge {
-  width: fit-content;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
-
-  padding: 7px 13px;
-
-  border-radius: 25px;
-
-  background: #edf3ff;
-
-  color: #315fe0;
-
-  font-size: 12px;
-  font-weight: 800;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: #edf2ff;
+  color: #315cf5;
+  font-size: 15px;
+  font-weight: 700;
 }
-
 
 .school-ways-badge span {
-  color: #f4b000;
-  font-size: 15px;
+  color: #ffb800;
+  font-size: 19px;
 }
-
-
-/* HEADING */
 
 .school-ways h2 {
-  margin: 25px 0 55px;
-
-  color: #101a4d;
-
-  font-size: 50px;
-  line-height: 1;
-
-  letter-spacing: -2.5px;
-
-  font-weight: 900;
+  max-width: 1100px;
+  margin: 32px 0 60px;
+  color: #101943;
+  font-size: clamp(42px, 4vw, 62px);
+  line-height: 1.16;
+  letter-spacing: -2px;
 }
-
 
 .school-ways h2 span {
-  color: #3262e9;
+  color: #315cf5;
 }
 
-
-/* GRID */
+/* Feature grid */
 
 .school-way-grid {
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 }
-
-
-/* CARD */
 
 .school-way-card {
-  min-height: 235px;
-
-  padding: 29px;
-
-  box-sizing: border-box;
-
-  background: white;
-
-  border: 1px solid #dfe5f2;
-
-  border-radius: 25px;
-
-  box-shadow: 0 8px 22px rgba(35, 55, 105, 0.04);
+  min-width: 0;
+  min-height: 320px;
+  padding: 38px;
+  border: 1px solid #dfe6f8;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(35, 55, 105, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
+.school-way-card:hover {
+  transform: translateY(-7px);
+  border-color: #b9caff;
+  box-shadow: 0 20px 45px rgba(35, 55, 105, 0.12);
+}
+
+.way-icon {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  font-size: 26px;
+}
+
+.way-cyan {
+  background: #20b9d0;
+  color: #101943;
+}
+
+.way-yellow {
+  background: #ffb900;
+  color: #101943;
+}
+
+.way-pink {
+  background: #ff5578;
+  color: #ffffff;
+}
 
 .school-way-card h3 {
-  margin: 25px 0 10px;
-
-  color: #101a4d;
-
-  font-size: 20px;
-  line-height: 1.15;
-
+  margin: 30px 0 15px;
+  color: #101943;
+  font-size: 25px;
   font-weight: 800;
+  line-height: 1.35;
 }
-
 
 .school-way-card p {
   margin: 0;
-
-  color: #5c688d;
-
-  font-size: 14px;
-  line-height: 1.6;
-
-  font-weight: 500;
+  color: #596587;
+  font-size: 16px;
+  line-height: 1.9;
 }
 
-
-/* ICON */
-
-.way-icon {
-  width: 51px;
-  height: 51px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  font-size: 21px;
-  font-weight: 900;
-}
-
-
-.way-cyan {
-  background: #20bad7;
-  color: #09204e;
-}
-
-
-.way-yellow {
-  background: #ffb814;
-  color: #09204e;
-}
-
-
-.way-pink {
-  background: #ff5b78;
-  color: white;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-  .school-way-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .school-ways h2 {
-    font-size: 42px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .school-ways {
-    padding: 55px 18px 70px;
-  }
-
-  .school-ways h2 {
-    font-size: 35px;
-    margin-bottom: 35px;
-  }
-
-  .school-way-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-/* =========================
-   PARTNER SECTION
-========================= */
+/* =========================================
+   SECTION 02 — PARTNER
+========================================= */
 
 .school-partner {
-  width: 100%;
-
-  margin-top: 30px;
-
-  padding: 70px max(20px, calc((100% - 1080px) / 2))
-    75px;
-
-  box-sizing: border-box;
-
-  background: #eef2ff;
-
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
   gap: 80px;
-
-  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 110px 65px 125px;
+  background: #eef2ff;
 }
 
-
-/* =========================
-   LEFT
-========================= */
+/* Left partner information */
 
 .partner-left {
-  padding-top: 5px;
+  width: 100%;
+  max-width: 620px;
 }
-
 
 .partner-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-
-  margin-bottom: 25px;
-
-  color: #3262e9;
-
-  font-size: 12px;
-  font-weight: 800;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #315cf5;
+  font-size: 15px;
+  font-weight: 700;
 }
-
 
 .partner-badge span {
-  color: #f5b400;
-  font-size: 15px;
+  color: #ffb800;
+  font-size: 19px;
 }
-
 
 .partner-left h2 {
-  margin: 0;
-
-  color: #101a4d;
-
-  font-size: 54px;
-  line-height: 0.98;
-
-  letter-spacing: -2.8px;
-
-  font-weight: 900;
+  margin: 35px 0 25px;
+  color: #101943;
+  font-size: clamp(50px, 5vw, 72px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -3px;
 }
-
 
 .partner-left h2 span {
-  color: #3262e9;
+  color: #315cf5;
 }
-
 
 .partner-left > p {
-  margin: 27px 0 0;
-
-  color: #52618b;
-
-  font-size: 17px;
-  line-height: 1.6;
-
-  font-weight: 500;
+  margin: 0;
+  color: #596587;
+  font-size: 19px;
+  line-height: 1.9;
 }
-
-
-/* =========================
-   CONTACT BOXES
-========================= */
 
 .partner-info {
   display: flex;
   flex-direction: column;
-
-  gap: 10px;
-
-  margin-top: 30px;
-
-  max-width: 410px;
+  gap: 16px;
+  max-width: 500px;
+  margin-top: 40px;
 }
 
-
 .partner-info-box {
-  min-height: 72px;
-
-  padding: 15px 20px;
-
-  box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  background: white;
-
-  border-radius: 20px;
+  gap: 10px;
+  min-height: 95px;
+  padding: 22px 26px;
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(27, 46, 95, 0.04);
 }
-
 
 .partner-info-box small {
-  margin-bottom: 4px;
-
-  color: #7783a4;
-
-  font-size: 10px;
+  color: #7a86a7;
+  font-size: 12px;
   font-weight: 800;
-
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
-
 
 .partner-info-box strong {
-  color: #111a49;
-
-  font-size: 17px;
-  font-weight: 800;
+  color: #101943;
+  font-size: 20px;
+  overflow-wrap: anywhere;
 }
 
-
-/* =========================
-   FORM
-========================= */
+/* =========================================
+   PARTNER FORM
+========================================= */
 
 .partner-form {
   width: 100%;
-
-  padding: 38px 38px;
-
-  box-sizing: border-box;
-
-  background: white;
-
-  border-radius: 27px;
-
-  box-shadow: 0 12px 35px rgba(45, 64, 115, 0.06);
+  max-width: 700px;
+  padding: 45px;
+  border: 1px solid #e5eaff;
+  border-radius: 32px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(27, 46, 95, 0.07);
 }
-
 
 .form-row {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
-
 
 .form-group {
   display: flex;
   flex-direction: column;
-
-  margin-bottom: 15px;
+  min-width: 0;
+  margin-bottom: 23px;
 }
-
 
 .form-group label {
-  margin-bottom: 7px;
-
-  color: #18234d;
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  border: none;
-  outline: none;
-
-  background: #edf1ff;
-
-  border-radius: 16px;
-
-  color: #26345f;
-
-  font-family: inherit;
-
+  display: block;
+  margin-bottom: 11px;
+  color: #253052;
   font-size: 14px;
+  font-weight: 700;
 }
-
 
 .form-group input,
 .form-group select {
-  height: 47px;
-
-  padding: 0 18px;
+  width: 100%;
+  height: 58px;
+  min-width: 0;
+  padding: 0 17px;
+  outline: none;
+  border: 1px solid #e0e7fa;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: #101943;
+  font-size: 15px;
+  transition: border-color 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease;
 }
-
-
-.form-group textarea {
-  height: 120px;
-
-  padding: 15px 18px;
-
-  resize: vertical;
-}
-
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  box-shadow: 0 0 0 2px #3262e9;
+  border-color: #315cf5;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(49, 92, 245, 0.1);
 }
 
+.form-group textarea {
+  width: 100%;
+  min-height: 165px;
+  padding: 17px;
+  resize: vertical;
+  outline: none;
+  border: 1px solid #e0e7fa;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: #101943;
+  font-size: 15px;
+  line-height: 1.7;
+  transition: border-color 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease;
+}
 
-/* =========================
-   SUBMIT BUTTON
-========================= */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #929bb6;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+/* Partner submit button */
 
 .partner-submit {
-  margin-top: 18px;
-
-  height: 50px;
-
-  min-width: 185px;
-
-  padding: 0 12px 0 20px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
-
-  gap: 15px;
-
+  gap: 18px;
+  min-width: 235px;
+  min-height: 62px;
+  padding: 8px 12px 8px 25px;
   border: none;
-
-  border-radius: 28px;
-
-  background: #3262e9;
-
-  color: white;
-
-  font-family: inherit;
-
-  font-size: 14px;
-  font-weight: 800;
-
+  border-radius: 40px;
+  background: #315cf5;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-
-  box-shadow: 0 12px 24px rgba(50, 98, 233, 0.25);
+  box-shadow: 0 12px 24px rgba(49, 92, 245, 0.22);
+  transition: transform 0.25s ease, background 0.25s ease;
 }
-
 
 .partner-submit span {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-
-  background: white;
-
-  color: #3262e9;
-
-  font-size: 20px;
+  background: #ffffff;
+  color: #315cf5;
+  font-size: 24px;
 }
 
+.partner-submit:hover {
+  transform: translateY(-3px);
+  background: #2149dc;
+}
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================
+   LARGE DESKTOP SCREENS
+========================================= */
 
-@media (max-width: 900px) {
+@media (min-width: 1500px) {
+  .school-hero {
+    max-width: 1700px;
+    gap: 85px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  .school-left h1 {
+    font-size: 94px;
+  }
+
+  .school-dashboard {
+    min-height: 610px;
+  }
+
+  .school-ways {
+    max-width: 1700px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  .school-way-card {
+    min-height: 350px;
+    padding: 42px;
+  }
 
   .school-partner {
-    grid-template-columns: 1fr;
+    max-width: 1700px;
+    gap: 100px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+}
 
-    gap: 45px;
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
 
-    padding: 60px 25px;
+@media (max-width: 1100px) {
+  .school-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 35px;
+    min-height: 740px;
+    padding: 75px 30px;
+  }
+
+  .school-left h1 {
+    font-size: clamp(48px, 5.2vw, 65px);
+    letter-spacing: -2px;
+  }
+
+  .school-left p {
+    font-size: 16px;
+  }
+
+  .school-dashboard {
+    min-height: 510px;
+  }
+
+  .dashboard-header {
+    padding: 16px;
+  }
+
+  .dashboard-stats {
+    gap: 8px;
+    padding: 14px;
+  }
+
+  .stat-box {
+    padding: 11px;
+  }
+
+  .stat-box strong {
+    font-size: 24px;
+  }
+
+  .score-card {
+    margin: 0 14px;
+    padding: 15px;
+  }
+
+  .career-workshop {
+    margin: 15px 14px;
+  }
+
+  .school-ways {
+    padding: 85px 30px;
+  }
+
+  .school-way-grid {
+    gap: 20px;
+  }
+
+  .school-way-card {
+    min-height: 300px;
+    padding: 28px;
+  }
+
+  .school-way-card h3 {
+    font-size: 22px;
+  }
+
+  .school-partner {
+    gap: 35px;
+    padding: 85px 30px;
   }
 
   .partner-form {
-    max-width: 650px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .school-partner {
-    padding: 50px 18px;
+    padding: 30px;
   }
 
   .partner-left h2 {
-    font-size: 40px;
+    font-size: 55px;
   }
 
+  .partner-left > p {
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   SMALL TABLETS
+========================================= */
+
+@media (max-width: 800px) {
+  .school-hero {
+    grid-template-columns: 1fr;
+    gap: 65px;
+    min-height: auto;
+    padding: 70px 28px 85px;
+  }
+
+  .school-left {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .school-left h1 {
+    font-size: clamp(55px, 9vw, 76px);
+  }
+
+  .school-left p {
+    max-width: 600px;
+    font-size: 18px;
+  }
+
+  .school-right {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .school-dashboard {
+    min-height: 550px;
+  }
+
+  .school-ways {
+    padding: 75px 28px;
+  }
+
+  .school-ways h2 {
+    font-size: 48px;
+  }
+
+  .school-way-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .school-way-card {
+    min-height: 300px;
+  }
+
+  .school-partner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 75px 28px;
+  }
+
+  .partner-left {
+    max-width: 650px;
+  }
+
+  .partner-info {
+    max-width: 600px;
+  }
+
+  .partner-form {
+    max-width: 700px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .school-hero {
+    gap: 55px;
+    padding: 50px 20px 75px;
+  }
+
+  .school-badge,
+  .school-ways-badge,
+  .partner-badge {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .school-left h1 {
+    margin: 27px 0 20px;
+    font-size: clamp(42px, 11vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+  }
+
+  .school-left p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .school-left p br,
   .partner-left > p br {
     display: none;
+  }
+
+  .school-buttons {
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .school-primary-btn,
+  .school-secondary-btn {
+    min-width: 0;
+    min-height: 52px;
+    gap: 10px;
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .school-primary-btn span {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .school-right {
+    padding-top: 25px;
+  }
+
+  .school-training {
+    left: 0;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .school-dashboard {
+    min-height: auto;
+    border-radius: 21px;
+  }
+
+  .dashboard-header {
+    min-height: 75px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .dashboard-title {
+    gap: 9px;
+  }
+
+  .dashboard-main-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 20px;
+  }
+
+  .dashboard-title h3 {
+    font-size: 13px;
+  }
+
+  .dashboard-title p {
+    font-size: 10px;
+  }
+
+  .sample-data {
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+
+  .dashboard-stats {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .stat-box {
+    gap: 7px;
+    min-height: 83px;
+    padding: 8px;
+    border-radius: 11px;
+  }
+
+  .stat-box small {
+    font-size: 9px;
+  }
+
+  .stat-box strong {
+    font-size: clamp(17px, 5vw, 23px);
+  }
+
+  .stat-box span {
+    font-size: 8px;
+  }
+
+  .score-card {
+    margin: 0 10px;
+    padding: 12px;
+    border-radius: 13px;
+  }
+
+  .score-heading {
+    gap: 6px;
+    padding-bottom: 12px;
+  }
+
+  .score-heading strong {
+    font-size: 11px;
+  }
+
+  .score-heading span {
+    font-size: 9px;
+  }
+
+  .score-chart {
+    height: 115px;
+    gap: 7px;
+  }
+
+  .bar {
+    max-width: 32px;
+    border-radius: 6px 6px 2px 2px;
+  }
+
+  .bar-item {
+    gap: 6px;
+  }
+
+  .bar-item span {
+    font-size: 9px;
+  }
+
+  .career-workshop {
+    gap: 9px;
+    min-height: 62px;
+    margin: 10px;
+    padding: 9px;
+    border-radius: 12px;
+  }
+
+  .workshop-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .workshop-text {
+    gap: 5px;
+  }
+
+  .workshop-text strong {
+    font-size: 10px;
+  }
+
+  .workshop-text span {
+    font-size: 9px;
+  }
+
+  .upcoming {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .detailed-reports {
+    right: 0;
+    bottom: -17px;
+    padding: 10px 13px;
+    font-size: 10px;
+  }
+
+  /* Feature section */
+
+  .school-ways {
+    padding: 65px 20px 75px;
+  }
+
+  .school-ways h2 {
+    margin: 25px 0 35px;
+    font-size: clamp(33px, 8vw, 44px);
+    letter-spacing: -1.5px;
+  }
+
+  .school-way-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .school-way-card {
+    min-height: 260px;
+    padding: 28px;
+    border-radius: 23px;
+  }
+
+  .way-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+
+  .school-way-card h3 {
+    margin: 24px 0 12px;
+    font-size: 22px;
+  }
+
+  .school-way-card p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* Partner section */
+
+  .school-partner {
+    gap: 35px;
+    padding: 60px 20px 75px;
+  }
+
+  .partner-left h2 {
+    margin: 27px 0 20px;
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .partner-left > p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .partner-info {
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .partner-info-box {
+    min-height: 78px;
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .partner-info-box small {
+    font-size: 10px;
+  }
+
+  .partner-info-box strong {
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* Form */
+
+  .partner-form {
+    padding: 24px 18px;
+    border-radius: 23px;
   }
 
   .form-row {
@@ -1244,9 +1296,246 @@
     gap: 0;
   }
 
-  .partner-form {
-    padding: 25px 20px;
-    border-radius: 22px;
+  .form-group {
+    margin-bottom: 18px;
   }
 
+  .form-group label {
+    margin-bottom: 9px;
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 51px;
+    padding: 0 13px;
+    border-radius: 11px;
+    font-size: 14px;
+  }
+
+  .form-group textarea {
+    min-height: 135px;
+    padding: 13px;
+    border-radius: 11px;
+    font-size: 14px;
+  }
+
+  .partner-submit {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+    padding: 7px 9px 7px 18px;
+    font-size: 14px;
+  }
+
+  .partner-submit span {
+    width: 37px;
+    height: 37px;
+    font-size: 21px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .school-left h1 {
+    font-size: 39px;
+  }
+
+  .school-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .school-primary-btn,
+  .school-secondary-btn {
+    width: 100%;
+  }
+
+  .dashboard-title h3 {
+    font-size: 11px;
+  }
+
+  .sample-data {
+    font-size: 8px;
+  }
+
+  .stat-box {
+    padding: 6px;
+  }
+
+  .stat-box strong {
+    font-size: 17px;
+  }
+
+  .school-way-card {
+    padding: 23px;
+  }
+
+  .partner-left h2 {
+    font-size: 40px;
+  }
+}
+
+/* School page content aligned with header width */
+.school-hero,
+.school-ways,
+.school-partner {
+  width: 80%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Keep the full-page background unchanged */
+.school-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Keep hero columns inside the content width */
+.school-hero {
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+}
+
+/* Dashboard ko right column mein fit rakho */
+.school-right {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.school-dashboard {
+  width: 100%;
+  transform: none;
+}
+
+/* Feature cards */
+.school-way-grid {
+  width: 100%;
+}
+
+/* Tablet and mobile */
+@media (max-width: 800px) {
+  .school-hero,
+  .school-ways,
+  .school-partner {
+    width: 80%;
+  }
+
+  .school-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .school-hero,
+  .school-ways,
+  .school-partner {
+    width: 90%;
+  }
+}
+
+/* Keep full-page background unchanged */
+.school-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Make all main content 80% wide */
+.school-hero,
+.school-ways,
+.school-partner {
+  width: 80% !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* Prevent content from shrinking inside the sections */
+.school-hero {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.school-ways {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.school-partner {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Cards fill their parent width */
+.school-way-grid {
+  width: 100% !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Tablet and mobile: keep 80% width */
+@media (max-width: 800px) {
+  .school-hero,
+  .school-ways,
+  .school-partner {
+    width: 80% !important;
+  }
+
+  .school-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .school-way-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .school-hero,
+  .school-ways,
+  .school-partner {
+    width: 80% !important;
+  }
+
+  .school-way-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hero section ko thoda narrow karo */
+.school-hero {
+  width: 75% !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Background full width hi rahe */
+.school-page {
+  width: 100% !important;
+}
+
+/* Responsive screens */
+@media (max-width: 800px) {
+  .school-hero {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .school-hero {
+    width: 90% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

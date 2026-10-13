@@ -1,21 +1,99 @@
+
+import { useState } from "react";
 import "./Resources.css";
+import student from "../../assets/image/student.jpg";
+
 import {
   NotebookPen,
   Play,
-  CirclePlay,
   ClipboardList,
   Download,
   BookOpen,
   Check,
   Clock3,
   FileText,
+  GraduationCap,
+  Warehouse,
+  BriefcaseBusiness,
+  Users,
 } from "lucide-react";
 
 function Resources() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // RESOURCE DATA
+  const resourceCategories = [
+    {
+      title: "Study Materials",
+      description:
+        "Notes, PDFs and supporting materials for learning and revision.",
+      type: "Learn",
+      color: "cyan",
+      icon: <FileText size={21} />,
+    },
+    {
+      title: "Notes",
+      description: "Organised learning notes to support concept clarity.",
+      type: "Learn",
+      color: "blue",
+      icon: <NotebookPen size={21} />,
+    },
+    {
+      title: "E-Books",
+      description: "Digital learning resources for convenient access.",
+      type: "Learn",
+      color: "yellow",
+      icon: <BookOpen size={21} />,
+    },
+    {
+      title: "Videos",
+      description: "Video-based explanations and learning content.",
+      type: "Learn",
+      color: "pink",
+      icon: <Play size={21} />,
+    },
+    {
+      title: "Test Series",
+      description: "Practice with tests and quizzes to prepare smarter.",
+      type: "Practice",
+      color: "yellow",
+      icon: <ClipboardList size={21} />,
+    },
+    {
+      title: "Previous Papers",
+      description: "Use previous year papers for realistic practice.",
+      type: "Practice",
+      color: "cyan",
+      icon: <Download size={21} />,
+    },
+    {
+      title: "MCQs",
+      description: "Quick practice and concept checks.",
+      type: "Practice",
+      color: "cyan",
+      icon: <Check size={21} />,
+    },
+    {
+      title: "Practice Papers",
+      description: "Structured practice for revision and preparation.",
+      type: "Practice",
+      color: "yellow",
+      icon: <FileText size={21} />,
+    },
+  ];
+
+  const filteredResources =
+    selectedCategory === "All"
+      ? resourceCategories
+      : resourceCategories.filter(
+          (resource) => resource.type === selectedCategory
+        );
+
   return (
     <main className="resources-page">
       <div className="resources-dots" />
 
+      {/* HERO SECTION */}
       <section className="resources-hero">
         {/* LEFT CONTENT */}
         <div className="resources-left">
@@ -40,7 +118,7 @@ function Resources() {
           </p>
         </div>
 
-        {/* RIGHT RESOURCE CARDS */}
+        {/* RIGHT RESOURCE PREVIEW */}
         <div className="resources-visual">
           {/* NOTES */}
           <div className="resource-notes resource-card">
@@ -52,16 +130,22 @@ function Resources() {
             <div className="notes-paper">
               <h4>Light: Reflection and Refraction</h4>
               <p>Mirror formula</p>
+
               <div className="notes-formula">
-                <span>1</span><span>v</span>
+                <span>1</span>
+                <span>v</span>
                 <b>+</b>
-                <span>1</span><span>u</span>
+                <span>1</span>
+                <span>u</span>
                 <b>=</b>
-                <span>1</span><span>f</span>
+                <span>1</span>
+                <span>f</span>
               </div>
+
               <strong className="notes-highlight">
                 Magnification m = −v/u
               </strong>
+
               <p>Refractive index n = c/v</p>
               <p>Power of a lens P = 1/f</p>
 
@@ -77,23 +161,18 @@ function Resources() {
             </div>
           </div>
 
-          {/* VIDEO */}
+          {/* VIDEO PREVIEW */}
           <div className="resource-video resource-card">
             <div className="video-cover">
+              <img
+                className="resource-video-image"
+                src={student}
+                alt="Students learning"
+              />
+
               <div className="video-label">
                 <Play size={13} fill="currentColor" />
                 Videos
-              </div>
-
-              <div className="video-person">
-                <div className="video-hair" />
-                <div className="video-face">
-                  <span />
-                  <span />
-                  <i />
-                </div>
-                <div className="video-body" />
-                <div className="video-laptop" />
               </div>
 
               <div className="video-play">
@@ -105,11 +184,12 @@ function Resources() {
               </div>
             </div>
 
-            {/* TEST SERIES */}
+            {/* TEST SERIES PREVIEW */}
             <div className="resource-test">
               <div className="resource-card-heading test-heading">
                 <ClipboardList size={19} />
                 <strong>Test Series</strong>
+
                 <span className="test-timer">
                   <Clock3 size={14} /> Q 12/30
                 </span>
@@ -120,13 +200,18 @@ function Resources() {
               <div className="test-option">
                 <span>A</span> Oxygen
               </div>
+
               <div className="test-option test-correct">
-                <span><Check size={14} /></span>
+                <span>
+                  <Check size={14} />
+                </span>
                 Carbon dioxide
               </div>
+
               <div className="test-option">
                 <span>C</span> Nitrogen
               </div>
+
               <div className="test-option">
                 <span>D</span> Hydrogen
               </div>
@@ -171,10 +256,12 @@ function Resources() {
                 <span />
                 <strong>Maths</strong>
               </div>
+
               <div className="book book-science">
                 <span />
                 <strong>Science</strong>
               </div>
+
               <div className="book book-english">
                 <span />
                 <strong>English</strong>
@@ -184,129 +271,139 @@ function Resources() {
         </div>
       </section>
 
-     
-<section className="resources-category-section">
-  <div className="resources-category-badge">
-    <span>★</span>
-    01&nbsp; Explore resources by category
-  </div>
-
-  <h2 className="resources-category-title">
-    Eight ways to <span>study smarter.</span>
-  </h2>
-
-  <div className="resources-category-filters">
-    <button>All</button>
-    <button>Learn</button>
-    <button className="active">Practice</button>
-  </div>
-
-  <div className="resources-category-grid">
-    <div className="resources-category-card">
-      <div className="resources-category-icon yellow">▣</div>
-      <h3>Test Series</h3>
-      <p>Practice with tests and quizzes to prepare smarter.</p>
-    </div>
-
-    <div className="resources-category-card">
-      <div className="resources-category-icon cyan">♧</div>
-      <h3>Previous Papers</h3>
-      <p>Use previous year papers for realistic practice.</p>
-    </div>
-
-    <div className="resources-category-card">
-      <div className="resources-category-icon cyan">☷</div>
-      <h3>MCQs</h3>
-      <p>Quick practice and concept checks.</p>
-    </div>
-
-    <div className="resources-category-card">
-      <div className="resources-category-icon yellow">▰</div>
-      <h3>Practice Papers</h3>
-      <p>Structured practice for revision and preparation.</p>
-    </div>
-  </div>
-</section>
-
-{/* RESOURCES FOR EVERY LEARNER */}
-<section className="resources-audience">
-  <div className="resources-audience-container">
-    <div className="resources-audience-left">
-      <div className="resources-audience-badge">
-        <span>★</span>
-        02&nbsp; Resources for every learner
-      </div>
-
-      <h2>
-        Built for
-        <br />
-        everyone <span>in</span>
-        <br />
-        <span>the journey.</span>
-      </h2>
-    </div>
-
-    <div className="resources-audience-list">
-      <a href="/student/login" className="audience-card">
-        <div className="audience-icon cyan">
-          {/* <GraduationCap size={27} fill="#10183f" /> */}
+      {/* RESOURCE CATEGORY SECTION */}
+      <section className="resources-category-section">
+        <div className="resources-category-badge">
+          <span>★</span>
+          01&nbsp; Explore resources by category
         </div>
-        <div className="audience-content">
-          <h3>For Students</h3>
-          <p>
-            Strengthen concepts with study materials, notes, test series
-            and more.
-          </p>
-        </div>
-        <div className="audience-arrow blue">↗</div>
-      </a>
 
-      <a href="/teacher/login" className="audience-card">
-        <div className="audience-icon yellow">
-          {/* <Presentation size={27} fill="#10183f" /> */}
-        </div>
-        <div className="audience-content">
-          <h3>For Teachers &amp; Mentors</h3>
-          <p>
-            Share knowledge by contributing resources and helping
-            more learners.
-          </p>
-        </div>
-        <div className="audience-arrow navy">→</div>
-      </a>
+        <h2 className="resources-category-title">
+          Eight ways to <span>study smarter.</span>
+        </h2>
 
-      <a href="/institute/login" className="audience-card">
-        <div className="audience-icon blue">
-          {/* <Building2 size={27} /> */}
+        {/* FILTER BUTTONS */}
+        <div className="resources-category-filters">
+          {["All", "Learn", "Practice"].map((category) => (
+            <button
+              type="button"
+              key={category}
+              className={
+                selectedCategory === category ? "active" : ""
+              }
+              aria-pressed={selectedCategory === category}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
-        <div className="audience-content">
-          <h3>For Coaching Institutes</h3>
-          <p>
-            Provide quality resources to students and build trust
-            and credibility.
-          </p>
-        </div>
-        <div className="audience-arrow navy">→</div>
-      </a>
 
-      <a href="/jobs" className="audience-card">
-        <div className="audience-icon cyan">
-          {/* <BriefcaseBusiness size={27} fill="#10183f" /> */}
-        </div>
-        <div className="audience-content">
-          <h3>For Job Seekers</h3>
-          <p>
-            Access preparation materials, interview resources and
-            career guidance.
-          </p>
-        </div>
-        <div className="audience-arrow navy">→</div>
-      </a>
-    </div>
-  </div>
-</section>
+        {/* FILTERED RESOURCE CARDS */}
+        <div className="resources-category-grid">
+          {filteredResources.map((resource) => (
+            <div
+              className="resources-category-card"
+              key={resource.title}
+            >
+              <div
+                className={`resources-category-icon ${resource.color}`}
+              >
+                {resource.icon}
+              </div>
 
+              <h3>{resource.title}</h3>
+              <p>{resource.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* RESOURCES FOR EVERY LEARNER */}
+      <section className="resources-audience">
+        <div className="resources-audience-container">
+          <div className="resources-audience-left">
+            <div className="resources-audience-badge">
+              <span>★</span>
+              02&nbsp; Resources for every learner
+            </div>
+
+            <h2>
+              Built for
+              <br />
+              everyone <span>in</span>
+              <br />
+              <span>the journey.</span>
+            </h2>
+          </div>
+
+          <div className="resources-audience-list">
+            <a href="/student/login" className="audience-card">
+              <div className="audience-icon cyan">
+                <GraduationCap size={16} />
+              </div>
+
+              <div className="audience-content">
+                <h3>For Students</h3>
+                <p>
+                  Strengthen concepts with study materials, notes, test
+                  series and more.
+                </p>
+              </div>
+
+              <div className="audience-arrow blue">↗</div>
+            </a>
+
+            <a href="/teacher/login" className="audience-card">
+              <div className="audience-icon yellow">
+                <Users size={16} />
+              </div>
+
+              <div className="audience-content">
+                <h3>For Teachers &amp; Mentors</h3>
+                <p>
+                  Share knowledge by contributing resources and helping
+                  more learners.
+                </p>
+              </div>
+
+              <div className="audience-arrow navy">→</div>
+            </a>
+
+            <a href="/institute/login" className="audience-card">
+              <div className="audience-icon blue">
+                <Warehouse size={16} />
+              </div>
+
+              <div className="audience-content">
+                <h3>For Coaching Institutes</h3>
+                <p>
+                  Provide quality resources to students and build trust
+                  and credibility.
+                </p>
+              </div>
+
+              <div className="audience-arrow navy">→</div>
+            </a>
+
+            <a href="/jobs" className="audience-card">
+              <div className="audience-icon cyan">
+                <BriefcaseBusiness size={16} />
+              </div>
+
+              <div className="audience-content">
+                <h3>For Job Seekers</h3>
+                <p>
+                  Access preparation materials, interview resources and
+                  career guidance.
+                </p>
+              </div>
+
+              <div className="audience-arrow navy">→</div>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
