@@ -1,7 +1,6 @@
 
 import { useState } from "react";
-import "./Login.css";
-
+import "./login.css";
 function Login() {
   const getRole = () =>
     window.location.pathname.toLowerCase().includes("teacher")
