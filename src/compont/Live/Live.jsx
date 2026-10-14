@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import student1 from "../../assets/image/images.jpg";
+import student2 from "../../assets/image/imag 2.webp";
+import student3 from "../../assets/image/image boy.jpg";
 import "./Live.css";
 
 /* WHY LIVEMENTORHUB FEATURES */
@@ -83,39 +86,43 @@ const labTopics = [
 ];
 
 /* MAIN COMPONENT */
+
+/* MAIN COMPONENT */
 function Live() {
   const [index, setIndex] = useState(4);
   const [playing, setPlaying] = useState(true);
   const [energy, setEnergy] = useState(70);
   const [impact, setImpact] = useState(41);
+  const [isSwitching, setIsSwitching] = useState(false);
 
-  const lab = labTopics[index % labTopics.length];
 
-  /* LAB ANIMATION */
-  useEffect(() => {
-    if (!playing) return undefined;
-
-    const timer = setInterval(() => {
-      setImpact((value) => (value >= 90 ? 15 : value + 1));
-    }, 150);
-
-    return () => clearInterval(timer);
-  }, [playing]);
 
   /* NEXT AND PREVIOUS */
-  const nextLab = () => {
-    setIndex((value) => (value + 1) % labTopics.length);
+  const switchLab = (direction) => {
+    setIsSwitching(true);
+
+    setTimeout(() => {
+      setIndex(
+        (current) =>
+          (current + direction + labTopics.length) % labTopics.length
+      );
+      setIsSwitching(false);
+    }, 180);
   };
 
-  const previousLab = () => {
-    setIndex(
-      (value) => (value - 1 + labTopics.length) % labTopics.length
-    );
-  };
+const nextLab = () => switchLab(1);
+const previousLab = () => switchLab(-1);
 
+  // Current lab data
+  const lab = labTopics[index % labTopics.length];
   const angle = (impact * 0.96).toFixed(1);
   const distance = (impact * 1.424).toFixed(1);
 
+
+
+  // Tumhara existing lab, angle aur distance code yahan rahega
+
+  
   return (
     <main className="live-page">
       {/* HERO SECTION */}
@@ -183,6 +190,8 @@ function Live() {
                 <span>▶</span> Next
               </button>
 
+
+
               <small>
                 {index + 1}/{labTopics.length}
               </small>
@@ -191,10 +200,11 @@ function Live() {
 
           <div className="live-lab-body">
             {/* SCIENCE DIAGRAM */}
-            <div className="live-atom-panel">
+            {/* <div className="live-atom-panel">
               <div className="live-particle-label">
                 α particles →
               </div>
+
 
               {Array.from({ length: 28 }, (_, i) => (
                 <span
@@ -285,7 +295,158 @@ function Live() {
                   1 fm = 10⁻¹⁵ m
                 </text>
               </svg>
-            </div>
+            </div> */}
+
+
+           
+<div className={`live-atom-panel lab-visual lab-visual-${index}`}>
+  <div className="live-particle-label">
+    {index === 0 && "Hydrogen energy levels"}
+    {index === 1 && "Bohr atomic model"}
+    {index === 2 && "Light → electrons"}
+    {index === 3 && "DNA double helix"}
+    {index === 4 && "α particles →"}
+  </div>
+
+  {/* 1. Hydrogen spectrum */}
+  {index === 0 && (
+    <svg className="live-science-svg" viewBox="0 0 420 250">
+      {[45, 90, 135, 180].map((y) => (
+        <line key={y} x1="65" y1={y} x2="355" y2={y}
+          stroke="#315cf5" strokeWidth="2" />
+      ))}
+      <g className="lab-electron">
+        <circle cx="110" cy="45" r="8" fill="#ffb000" />
+        <path d="M110 45 L110 180" stroke="#f04466"
+          strokeWidth="3" strokeDasharray="5 5" />
+        <path d="M102 165 L110 180 L118 165" fill="none"
+          stroke="#f04466" strokeWidth="3" />
+      </g>
+      <text x="20" y="49" fill="#263b78" fontSize="13">n = 4</text>
+      <text x="20" y="94" fill="#263b78" fontSize="13">n = 3</text>
+      <text x="20" y="139" fill="#263b78" fontSize="13">n = 2</text>
+      <text x="20" y="184" fill="#263b78" fontSize="13">n = 1</text>
+      <text x="130" y="220" fill="#f04466" fontSize="15">
+        Photon emitted
+      </text>
+    </svg>
+  )}
+
+  {/* 2. Bohr atomic model */}
+  {index === 1 && (
+    <svg className="live-science-svg" viewBox="0 0 420 250">
+      {[35, 65, 95].map((r) => (
+        <circle key={r} cx="210" cy="125" r={r}
+          fill="none" stroke="#315cf5" strokeWidth="2"
+          strokeDasharray="5 4" />
+      ))}
+      <circle cx="210" cy="125" r="17" fill="#ff8b9d" />
+      <circle cx="205" cy="120" r="6" fill="#f04466" />
+      <circle cx="217" cy="130" r="6" fill="#315cf5" />
+      <g className="lab-orbit-electron">
+        <circle cx="305" cy="125" r="8" fill="#ffb000" />
+      </g>
+      <text x="20" y="30" fill="#263b78" fontSize="14">
+        Electrons occupy energy levels
+      </text>
+    </svg>
+  )}
+
+  {/* 3. Photoelectric effect */}
+  {index === 2 && (
+    <svg className="live-science-svg" viewBox="0 0 420 250">
+      <rect x="45" y="145" width="330" height="48" rx="8"
+        fill="#315cf5" opacity=".18" />
+      <path d="M45 145 H375" stroke="#315cf5" strokeWidth="5" />
+      {[85, 145, 205, 265, 325].map((x) => (
+        <g key={x}>
+          <path d={`M${x} 35 L${x} 115`}
+            stroke="#ffb000" strokeWidth="3" strokeDasharray="6 5" />
+          <path d={`M${x - 7} 105 L${x} 118 L${x + 7} 105`}
+            fill="none" stroke="#ffb000" strokeWidth="3" />
+          <circle cx={x} cy="130" r="6" fill="#ffb000" />
+        </g>
+      ))}
+      <g className="lab-photo-electron">
+        <circle cx="160" cy="95" r="7" fill="#f04466" />
+        <path d="M160 95 L160 50" stroke="#f04466"
+          strokeWidth="3" strokeDasharray="4 4" />
+      </g>
+      <text x="100" y="220" fill="#263b78" fontSize="15">
+        Electrons released by light
+      </text>
+    </svg>
+  )}
+
+  {/* 4. DNA structure */}
+  {index === 3 && (
+    <svg className="live-science-svg" viewBox="0 0 420 250">
+      <path
+        d={Array.from({ length: 21 }, (_, i) =>
+          `${i === 0 ? "M" : "L"} ${115 + Math.sin(i * 0.55) * 60} ${15 + i * 11}`
+        ).join(" ")}
+        fill="none" stroke="#315cf5" strokeWidth="5"
+      />
+      <path
+        d={Array.from({ length: 21 }, (_, i) =>
+          `${i === 0 ? "M" : "L"} ${235 - Math.sin(i * 0.55) * 60} ${15 + i * 11}`
+        ).join(" ")}
+        fill="none" stroke="#f04466" strokeWidth="5"
+      />
+      {Array.from({ length: 11 }, (_, i) => {
+        const y = 20 + i * 20;
+        const x1 = 115 + Math.sin((i * 2) * 0.55) * 60;
+        const x2 = 235 - Math.sin((i * 2) * 0.55) * 60;
+        return (
+          <line key={i} x1={x1} y1={y} x2={x2} y2={y}
+            stroke="#ffb000" strokeWidth="3" />
+        );
+      })}
+      <text x="290" y="125" fill="#263b78" fontSize="15">
+        DNA double helix
+      </text>
+    </svg>
+  )}
+
+  {/* 5. Rutherford gold foil */}
+  {index === 4 && (
+    <>
+      {Array.from({ length: 28 }, (_, i) => (
+        <span
+          key={i}
+          className="live-particle"
+          style={{
+            left: `${(i * 37 + 7) % 96}%`,
+            top: `${(i * 23 + 3) % 94}%`,
+            animationDelay: `${(i % 8) * -0.25}s`,
+          }}
+        />
+      ))}
+      <svg className="live-science-svg" viewBox="0 0 420 250">
+        <path
+          d={`M0 95 L170 95 Q245 95 280 65 T${330 + impact * 0.4} 5`}
+          fill="none" stroke="#315cf5" strokeWidth="3"
+        />
+        <path d="M0 95 L180 95 Q240 95 285 75"
+          fill="none" stroke="#315cf5" strokeWidth="1.5"
+          strokeDasharray="5 5" opacity=".5" />
+        <circle cx="260" cy="130" r="24" fill="none"
+          stroke="#ff8b9d" strokeWidth="2" strokeDasharray="5 5" />
+        <circle cx="260" cy="130" r="13" fill="#ffb6c2" opacity=".4" />
+        <circle cx="260" cy="130" r="6" fill="#f04466" />
+        <text x="273" y="178" fill="#f04466" fontSize="10">
+          gold nucleus, +79e
+        </text>
+        <text x="300" y="240" fill="#8290b9" fontSize="10">
+          1 fm = 10⁻¹⁵ m
+        </text>
+      </svg>
+    </>
+  )}
+</div>
+
+
+
 
             {/* LAB CONTROLS */}
             <div className="live-lab-controls">
@@ -373,7 +534,13 @@ function Live() {
         <div className="trust-wrap">
           <div className="trust-item">
             <span className="trust-avatars">
-              👩🏻‍🎓👨🏻‍🎓👩🏻‍🏫
+
+       <span className="trust-avatars">
+    <img src={student1} alt="Student" />
+    <img src={student2} alt="Student" /> 
+    <img src={student3} alt="Student" />
+  </span>
+
             </span>
             <span>
               <b>2K+</b> happy students

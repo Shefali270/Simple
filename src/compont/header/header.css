@@ -1,334 +1,196 @@
-* {
+
+/* ================= HEADER BASE ================= */
+
+.header {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #edf0fa;
   box-sizing: border-box;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-.header {
-  width: 80%;
-  height: 82px;
-  margin: 0 auto;
-  padding: 12px 10px;
-
-  background: #ffffff;
-  border-bottom: 1px solid #edf1f8;
+.header * {
+  box-sizing: border-box;
 }
-
 
 .header-inner {
-  width: 100%;
-  height: 68px;
-
+  width: min(1200px, calc(100% - 40px));
+  min-height: 76px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* =========================
-   LOGO
-========================= */
+/* ================= LOGO ================= */
 
 .logo {
-  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 10px;
-
+  flex-shrink: 0;
+  color: #10183f;
   text-decoration: none;
-  color: #101943;
 }
 
 .logo-icon {
-  position: relative;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
 }
 
 .logo-icon img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
-}
-
-.book {
-  position: absolute;
-  bottom: 4px;
-  width: 29px;
-  height: 29px;
-}
-
-.book-blue {
-  left: 0;
-  background: #2864e9;
-  clip-path: polygon(
-    0 15%, 45% 0, 100% 12%,
-    78% 100%, 20% 82%
-  );
-  transform: skewY(-10deg);
-}
-
-.book-yellow {
-  right: 0;
-  background: #f5a900;
-  clip-path: polygon(
-    0 12%, 55% 0, 100% 15%,
-    78% 82%, 22% 100%
-  );
-  transform: skewY(-10deg);
-}
-
-.star {
-  position: absolute;
-  top: -4px;
-  left: 27px;
-  color: #f5a900;
-  font-size: 18px;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
+  gap: 3px;
 }
 
 .brand-name {
-  font-size: 22px;
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: -0.8px;
-  color: #111a42;
+  color: #10183f;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .tagline {
-  margin-top: 6px;
-  font-size: 7px;
+  color: #315cf5;
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: 1.7px;
-  color: #2864e9;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= DESKTOP NAVIGATION ================= */
 
 .nav {
-  flex: 1;
-  min-width: 0;
-  height: 58px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: clamp(8px, 1.5vw, 24px);
-  padding: 0 8px;
-
-  background: #f1f5ff;
-  border-radius: 32px;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  padding: 9px;
+  border-radius: 40px;
+  background: #f0f3ff;
 }
 
-.nav a {
-  color: #354274;
+.nav > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 11px;
+  border-radius: 24px;
+  color: #10183f;
+  font-size: 13px;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 950;
   white-space: nowrap;
-  transition: 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.nav a:hover {
-  color: #2864e9;
+.nav > a:hover {
+  background: #ffffff;
+  color: #315cf5;
 }
 
-/* =========================
-   HEADER ACTIONS
-========================= */
+/* ================= HEADER BUTTONS ================= */
 
 .header-actions {
-  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-/* SIGN IN */
+.signin-btn,
+.get-started {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 17px;
+  border-radius: 28px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 .signin-btn {
-  height: 48px;
-  padding: 0 12px;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
+  color: #10183f;
   background: #ffffff;
-  border: 1px solid #e1e7f5;
-  border-radius: 28px;
-
-  color: #111a42;
-  font-size: 12px;
-  font-weight: 900;
-  cursor: pointer;
+  border: 1px solid #dce3fa;
 }
-
-.signin-btn:hover {
-  background: #f5f7fc;
-}
-
-.chevron {
-  font-size: 12px;
-  margin-top: -4px;
-}
-
-/* GET STARTED */
 
 .get-started {
-  height: 52px;
-  padding: 0 8px 0 14px;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  border: none;
-  border-radius: 30px;
-  background: #2864e9;
-
   color: #ffffff;
-  font-size: 15px;
-  font-weight: 950;
-  cursor: pointer;
-
-  box-shadow: 0 10px 25px rgba(40, 100, 233, 0.25);
-  transition: 0.2s ease;
+  background: #315cf5;
+  border: 1px solid #315cf5;
+  box-shadow: 0 7px 18px rgba(49, 92, 245, 0.17);
 }
 
+.signin-btn:hover,
 .get-started:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(40, 100, 233, 0.35);
+  transform: translateY(-1px);
 }
 
 .arrow {
-  width: 36px;
-  height: 36px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
   border-radius: 50%;
+  color: #315cf5;
   background: #ffffff;
-  color: #2864e9;
-  font-size: 22px;
+  font-size: 19px;
 }
 
-/* =========================
-   LARGE SCREENS
-========================= */
-
-@media (min-width: 1600px) {
-  .header {
-    width: 80%;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .nav {
-    gap: 24px;
-  }
+.chevron {
+  font-size: 15px;
 }
 
-/* =========================
-   TABLET
-========================= */
+/* ================= MOBILE CONTROLS ================= */
 
-@media (max-width: 1100px) {
-  .header {
-    width: 80%;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  padding: 0;
+  color: #10183f;
+  background: #f0f3ff;
+  border: 1px solid #dce3fa;
+  border-radius: 12px;
+  cursor: pointer;
+}
 
+.mobile-nav-actions {
+  display: none;
+}
+
+/* ================= TABLET ================= */
+
+@media screen and (min-width: 701px) and (max-width: 1050px) {
   .header-inner {
+    width: calc(100% - 24px);
     gap: 10px;
-  }
-
-  .nav {
-    gap: 8px;
-    padding: 0 6px;
-  }
-
-  .nav a {
-    font-size: 13px;
-  }
-
-  .brand-name {
-    font-size: 19px;
-  }
-
-  .tagline {
-    letter-spacing: 1px;
-  }
-
-  .header-actions {
-    gap: 5px;
-  }
-
-  .signin-btn {
-    padding: 0 8px;
-    font-size: 13px;
-  }
-
-  .get-started {
-    padding-left: 10px;
-    gap: 6px;
-    font-size: 13px;
-  }
-
-  .arrow {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 850px) {
-  .header {
-    width: 100%;
-    height: 76px;
-    padding: 10px 8px;
-  }
-
-  .header-inner {
-    width: 100%;
-    height: 56px;
-    gap: 8px;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .header-actions {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 550px) {
-  .header {
-    width: 100%;
-    padding: 10px 5px;
-  }
-
-  .header-inner {
-    gap: 5px;
   }
 
   .logo {
@@ -336,12 +198,79 @@
   }
 
   .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand-name {
-    font-size: 17px;
+    font-size: 16px;
+  }
+
+  .tagline {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .nav {
+    gap: 0;
+    padding: 5px;
+  }
+
+  .nav > a {
+    padding: 10px 7px;
+    font-size: 11px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .signin-btn,
+  .get-started {
+    min-height: 40px;
+    padding: 0 11px;
+    font-size: 11px;
+  }
+
+  .arrow {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ================= MOBILE HEADER ================= */
+
+@media screen and (max-width: 700px) {
+  .header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    position: relative;
+    width: 100%;
+    min-height: 66px;
+    padding: 10px 15px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .logo {
+    max-width: calc(100% - 55px);
+    min-width: 0;
+    gap: 7px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 16px;
   }
 
   .tagline {
@@ -349,20 +278,326 @@
     letter-spacing: 1px;
   }
 
-  .signin-btn {
+  /* Desktop navigation ko mobile par hide rakho */
+  .header-inner > .nav {
     display: none;
   }
 
-  .get-started {
-    height: 44px;
-    padding-left: 10px;
-    gap: 6px;
+  /* JSX mein nav-open class lagne par dropdown dikhega */
+  .header-inner > .nav.nav-open {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 3px;
+
+    top: calc(100% + 5px);
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #e0e6fa;
+    border-radius: 17px;
+    background: #ffffff;
+    box-shadow: 0 14px 35px rgba(16, 24, 63, 0.16);
+
+    z-index: 1100;
+  }
+
+  .nav.nav-open > a {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 43px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: #10183f;
+    background: transparent;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .nav.nav-open > a:hover {
+    color: #315cf5;
+    background: #f0f3ff;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .mobile-nav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 10px 4px 3px;
+    margin-top: 5px;
+    border-top: 1px solid #edf0fa;
+  }
+
+  .mobile-nav-actions .signin-btn,
+  .mobile-nav-actions .get-started {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    justify-content: space-between;
+    padding: 0 15px;
     font-size: 13px;
   }
 
-  .arrow {
-    width: 31px;
-    height: 31px;
-    font-size: 18px;
+  .mobile-nav-actions .get-started {
+    background: #315cf5;
+    color: #ffffff;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media screen and (max-width: 380px) {
+  .header-inner {
+    padding: 9px 12px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .tagline {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+  }
+
+  .mobile-menu-btn {
+    width: 39px;
+    height: 39px;
+  }
+
+  .header-inner > .nav.nav-open {
+    left: 8px;
+    right: 8px;
+  }
+}
+
+/* ===== FIXED HEADER ON SCROLL ===== */
+
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: #ffffff !important;
+  box-shadow: 0 3px 15px rgba(16, 24, 63, 0.08);
+}
+
+.header-inner {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* Header ke neeche content chhupne na do */
+body {
+  padding-top: 76px;
+}
+
+@media screen and (max-width: 700px) {
+  .header-inner {
+    width: 100%;
+    min-height: 66px;
+    padding: 10px 15px;
+  }
+
+  body {
+    padding-top: 66px;
+  }
+}
+
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  background: #fff !important;
+}
+
+/* Header ke neeche gap */
+.header + * {
+  margin-top: 80px !important;
+}
+
+
+/* Sign in dropdown wrapper */
+.signin-menu {
+  position: relative;
+}
+
+/* Dropdown card */
+.signin-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 260px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e4e9f7;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(16, 24, 63, 0.18);
+  z-index: 99999;
+}
+
+/* Each option */
+.signin-dropdown .signin-option {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 11px 8px;
+  box-sizing: border-box;
+  color: #10183f;
+  text-decoration: none;
+  border-radius: 14px;
+  transition: background 0.2s ease;
+}
+
+.signin-dropdown .signin-option:hover {
+  background: #f0f3ff;
+}
+
+/* Circular icons */
+.signin-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60%;
+}
+
+.student-icon {
+  background: #3260ed;
+  color: #ffffff;
+}
+
+.teacher-icon {
+  background: #ffb900;
+  color: #10183f;
+}
+
+.institute-icon {
+  background: #ff5275;
+  color: #ffffff;
+}
+
+/* Option text */
+.signin-option-text {
+  min-width: 0;
+}
+
+.signin-dropdown .signin-option strong {
+  display: block;
+  color: #10183f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.signin-dropdown .signin-option small {
+  display: block;
+  margin-top: 5px;
+  color: #7581aa;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Mobile action layout */
+.mobile-nav-actions {
+  display: none;
+}
+
+/* Desktop */
+@media (min-width: 701px) {
+  .desktop-signin-menu {
+    display: block;
+  }
+
+  .mobile-signin-menu {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .header-actions {
+    display: none !important;
+  }
+
+  .mobile-nav-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .mobile-signin-menu {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-signin-menu > .signin-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mobile-signin-menu .signin-dropdown {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: 0 8px 22px rgba(16, 24, 63, 0.1);
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+  }
+
+  .header-inner {
+    min-height: 66px;
+  }
+
+  .nav.nav-open {
+    top: 100%;
+  }
+
+  .signup-page,
+  .hero,
+  .home-hero {
+    scroll-margin-top: 80px;
   }
 }

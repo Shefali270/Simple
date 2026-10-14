@@ -1084,3 +1084,263 @@
     grid-template-columns: minmax(0, 1fr) !important;
   }
 }
+
+
+/* ===== FINAL MOBILE LAYOUT FIX ===== */
+
+@media screen and (max-width: 650px) {
+  .resources-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  .resources-page .resources-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 32px 18px 40px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 28px !important;
+
+    transform: none !important;
+  }
+
+  .resources-page .resources-left {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .resources-page .resources-badge {
+    max-width: 100% !important;
+    margin: 0 0 22px !important;
+    transform: none !important;
+    font-size: 12px !important;
+    flex-wrap: wrap;
+  }
+
+  .resources-page .resources-left h1 {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+
+    font-size: clamp(36px, 9vw, 48px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.5px !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .resources-page .resources-left p {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 18px 0 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .resources-page .resources-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .resources-page .resource-card,
+  .resources-page .resource-notes,
+  .resources-page .resource-papers,
+  .resources-page .resource-ebooks,
+  .resources-page .resource-test {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .resources-page .resource-notes {
+    min-height: auto !important;
+    padding: 14px !important;
+  }
+
+  .resources-page .notes-paper {
+    min-height: 300px !important;
+    padding: 12px !important;
+  }
+
+  .resources-page .resource-video {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .resources-page .video-cover {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  .resources-page .resource-papers,
+  .resources-page .resource-ebooks,
+  .resources-page .resource-test {
+    padding: 14px !important;
+  }
+
+  /* Category section */
+  .resources-page .resources-category-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 38px 18px 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  .resources-page .resources-category-title {
+    margin: 22px 0 30px !important;
+    font-size: clamp(32px, 8vw, 44px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1.5px !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .resources-page .resources-category-filters {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .resources-page .resources-category-filters button {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .resources-page .resources-category-grid {
+    width: 100% !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .resources-page .resources-category-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .resources-page .resources-category-card h3 {
+    font-size: 21px !important;
+  }
+
+  .resources-page .resources-category-card p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Audience section */
+  .resources-page .resources-audience {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 42px 18px !important;
+    border-radius: 26px 26px 0 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .resources-page .resources-audience-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .resources-page .resources-audience-left h2 {
+    font-size: clamp(34px, 8.5vw, 46px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .resources-page .resources-audience-list {
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 12px !important;
+  }
+
+  .resources-page .audience-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 90px !important;
+    gap: 12px !important;
+    padding: 14px !important;
+    border-radius: 20px !important;
+  }
+
+  .resources-page .audience-icon {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .resources-page .audience-content {
+    min-width: 0 !important;
+  }
+
+  .resources-page .audience-content h3 {
+    font-size: 15px !important;
+  }
+
+  .resources-page .audience-content p {
+    font-size: 12px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .resources-page .audience-arrow {
+    width: 32px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Extra-small phones */
+@media screen and (max-width: 380px) {
+  .resources-page .resources-hero {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
+
+  .resources-page .resources-left h1 {
+    font-size: 34px !important;
+    letter-spacing: -1px !important;
+  }
+
+  .resources-page .resources-category-section {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
+
+  .resources-page .resources-audience {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
+}

@@ -1539,3 +1539,375 @@
     padding-right: 15px;
   }
 }
+
+
+/* ==========================================
+   FINAL SCHOOL PAGE MOBILE FIX
+   Paste at the VERY END of School.css
+========================================== */
+
+@media screen and (max-width: 600px) {
+
+  .school-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: clip !important;
+  }
+
+  .school-hero,
+  .school-ways,
+  .school-partner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* HERO */
+  .school-hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 35px !important;
+    min-height: auto !important;
+    padding: 35px 18px 55px !important;
+  }
+
+  .school-left,
+  .school-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+
+  .school-badge,
+  .school-left h1,
+  .school-left p,
+  .school-buttons {
+    transform: none !important;
+  }
+
+  .school-badge {
+    max-width: 100% !important;
+    padding: 9px 13px !important;
+    font-size: 12px !important;
+  }
+
+  .school-left h1 {
+    width: 100% !important;
+    margin: 22px 0 18px !important;
+    font-size: clamp(36px, 10vw, 48px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.5px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .school-left p {
+    max-width: 100% !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  .school-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+
+  .school-primary-btn,
+  .school-secondary-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 50px !important;
+    padding: 8px 14px !important;
+    font-size: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* DASHBOARD */
+  .school-training {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    display: inline-flex !important;
+    max-width: 100% !important;
+    margin-bottom: 12px !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .school-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .dashboard-header {
+    min-height: 70px !important;
+    gap: 8px !important;
+    padding: 12px !important;
+  }
+
+  .dashboard-title {
+    min-width: 0 !important;
+    gap: 8px !important;
+  }
+
+  .dashboard-main-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
+  }
+
+  .dashboard-title h3 {
+    font-size: 12px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .dashboard-title p {
+    font-size: 10px !important;
+  }
+
+  .sample-data {
+    padding: 6px 8px !important;
+    font-size: 9px !important;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    padding: 10px !important;
+  }
+
+  .stat-box {
+    min-width: 0 !important;
+    min-height: 80px !important;
+    gap: 7px !important;
+    padding: 7px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .stat-box small {
+    font-size: 9px !important;
+  }
+
+  .stat-box strong {
+    font-size: clamp(16px, 5vw, 22px) !important;
+  }
+
+  .stat-box span {
+    font-size: 8px !important;
+  }
+
+  .score-card {
+    margin: 0 9px !important;
+    padding: 11px !important;
+  }
+
+  .score-heading {
+    gap: 6px !important;
+  }
+
+  .score-heading strong {
+    font-size: 11px !important;
+  }
+
+  .score-heading span {
+    font-size: 9px !important;
+  }
+
+  .score-chart {
+    height: 110px !important;
+    gap: 6px !important;
+  }
+
+  .bar-item span {
+    font-size: 9px !important;
+  }
+
+  .career-workshop {
+    gap: 8px !important;
+    margin: 10px !important;
+    padding: 9px !important;
+  }
+
+  .workshop-text {
+    min-width: 0 !important;
+  }
+
+  .workshop-text strong,
+  .workshop-text span {
+    overflow-wrap: anywhere !important;
+  }
+
+  .workshop-text strong {
+    font-size: 10px !important;
+  }
+
+  .workshop-text span {
+    font-size: 9px !important;
+  }
+
+  .upcoming {
+    padding: 6px 7px !important;
+    font-size: 9px !important;
+  }
+
+  .detailed-reports {
+    right: 5px !important;
+    bottom: -15px !important;
+    padding: 9px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* SIX FEATURE CARDS */
+  .school-ways {
+    padding: 45px 18px 55px !important;
+  }
+
+  .school-ways h2 {
+    margin: 22px 0 28px !important;
+    font-size: clamp(30px, 8vw, 40px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .school-way-grid {
+    width: 100% !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  .school-way-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    padding: 23px !important;
+    border-radius: 20px !important;
+  }
+
+  .school-way-card h3 {
+    margin: 22px 0 12px !important;
+    font-size: 21px !important;
+  }
+
+  .school-way-card p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* PARTNER SECTION */
+  .school-partner {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+    padding: 45px 18px 55px !important;
+  }
+
+  .partner-left,
+  .partner-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .partner-left h2 {
+    margin: 23px 0 18px !important;
+    font-size: clamp(34px, 9vw, 43px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1.5px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .partner-left > p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .partner-info {
+    width: 100% !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+
+  .partner-info-box {
+    min-width: 0 !important;
+    padding: 16px !important;
+  }
+
+  .partner-info-box strong {
+    font-size: 15px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .partner-form {
+    padding: 22px 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .form-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  .form-group {
+    min-width: 0 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+  }
+
+  .partner-submit {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media screen and (max-width: 380px) {
+  .school-hero {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .dashboard-header {
+    padding: 8px !important;
+  }
+
+  .dashboard-title h3 {
+    font-size: 10px !important;
+  }
+
+  .sample-data {
+    font-size: 8px !important;
+  }
+
+  .school-ways,
+  .school-partner {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}

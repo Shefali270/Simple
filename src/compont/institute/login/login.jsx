@@ -128,9 +128,7 @@ function Login() {
         </div>
       </section>
 
-      <section className="login-banner">
-        <h2>Learn. Connect. <span>Grow.</span></h2>
-      </section>
+    
     </main>
   );
 }

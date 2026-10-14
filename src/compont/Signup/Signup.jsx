@@ -58,18 +58,34 @@ function Signup() {
           </div>
         </div>
 
-        <div className="signup-form-card">
-          <div className="signup-tabs">
-            <button type="button" className="selected">
-              <GraduationCap size={14} /> Student
-            </button>
-            <button type="button">
-              <UserRound size={14} /> Teacher
-            </button>
-            <button type="button">
-              <School size={14} /> Institute
-            </button>
-          </div>
+     
+<div className="signup-form-card">
+  <div className="signup-tabs">
+    <button
+      type="button"
+      className="selected"
+      onClick={() => (window.location.href = "/student/signup")}
+    >
+      <GraduationCap size={14} /> Student
+    </button>
+
+    <button
+      type="button"
+      onClick={() => (window.location.href = "/teacher/signup")}
+    >
+      <UserRound size={14} /> Teacher
+    </button>
+
+    <button
+      type="button"
+      onClick={() => (window.location.href = "/institute/signup")}
+    >
+      <School size={14} /> Institute
+    </button>
+  </div>
+
+
+
 
           <h2>Create Student Account</h2>
           <p className="signup-subtitle">
