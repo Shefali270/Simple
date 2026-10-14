@@ -9,8 +9,7 @@ import {
   ArrowRight,
   Check,
 } from "lucide-react";
-import "./GetStarted.css";
-
+import "./Getstarted.css";
 const roles = [
   {
     id: "student",
