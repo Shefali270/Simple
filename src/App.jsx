@@ -19,7 +19,7 @@ import Privacy from "./compont/privacy/privacy.jsx";
 import InstituteLogin from "./compont/institute/login/login.jsx";
 import InstituteRegister from "./compont/institute/Register/Register.jsx";
 import InstituteForgotPassword from "./compont/institute/forget-password/forget.jsx";
-
+import Why from "./compont/why/why.jsx";
 function getCurrentPage() {
   const hash = window.location.hash.slice(1).toLowerCase();
 
@@ -72,6 +72,7 @@ function App() {
     connect: <Connect />,
     live: <Live />,
     privacy: <Privacy />,
+    why :<Why />,
 
     // Login pages: existing components only
     "student/login": <Signup />,

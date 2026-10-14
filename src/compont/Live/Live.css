@@ -2240,10 +2240,14 @@
    STUDENT TESTIMONIALS SECTION
 ================================== */
 
+/* ================================
+   TESTIMONIAL SECTION
+================================ */
+
 .testimonial-section {
-  width: calc(100% - 24px);
+  width: 80%;
   margin: 25px auto 40px;
-  padding: 48px 25px;
+  padding: 48px 35px;
   background: #eef2ff;
   border-radius: 30px;
   box-sizing: border-box;
@@ -2252,9 +2256,12 @@
 }
 
 .testimonial-container {
-  width: min(800px, 100%);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
+
+/* Section label */
 
 .testimonial-label {
   display: inline-flex;
@@ -2272,6 +2279,8 @@
   color: #ffb511;
   font-size: 17px;
 }
+
+/* Heading */
 
 .testimonial-heading {
   display: flex;
@@ -2305,24 +2314,26 @@
   text-decoration: underline;
 }
 
-/* TESTIMONIAL GRID */
+/* Blue and white cards side by side */
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.9fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
   align-items: stretch;
+  width: 100%;
 }
 
-/* LARGE BLUE CARD */
+/* Large blue card */
 
 .testimonial-featured {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 300px;
-  padding: 28px;
+  min-width: 0;
+  min-height: 330px;
+  padding: 30px;
   overflow: hidden;
   border-radius: 21px;
   background: #315cf0;
@@ -2340,13 +2351,15 @@
 .testimonial-featured h3 {
   position: relative;
   z-index: 2;
-  max-width: 380px;
+  max-width: 100%;
   margin: 22px 0 30px;
-  font-size: clamp(23px, 2.6vw, 30px);
-  line-height: 1.15;
+  font-size: clamp(23px, 2.2vw, 30px);
+  line-height: 1.2;
   letter-spacing: -0.8px;
   font-weight: 800;
 }
+
+/* Student details */
 
 .testimonial-author {
   position: relative;
@@ -2379,9 +2392,11 @@
   color: #e1e7ff;
 }
 
+/* Avatars */
+
 .testimonial-avatar {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -2406,7 +2421,7 @@
   color: #ffffff;
 }
 
-/* DECORATIVE SUN SHAPE */
+/* Decorative rotating yellow star */
 
 .testimonial-sun {
   position: absolute;
@@ -2416,6 +2431,8 @@
   bottom: -35px;
   border-radius: 50%;
   background: #ffb511;
+  animation: rotateStar 6s linear infinite;
+  transform-origin: center;
 }
 
 .testimonial-sun::before {
@@ -2431,14 +2448,26 @@
     0% 52%, 12% 39%, 7% 23%, 25% 20%,
     35% 5%
   );
+  animation: rotateStar 6s linear infinite;
+  transform-origin: center;
 }
 
-/* RIGHT CARDS */
+@keyframes rotateStar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Right-side white cards */
 
 .testimonial-side {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  min-width: 0;
 }
 
 .testimonial-card {
@@ -2446,8 +2475,9 @@
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 145px;
-  padding: 22px;
+  min-width: 0;
+  min-height: 155px;
+  padding: 24px;
   border-radius: 21px;
   background: #ffffff;
   box-sizing: border-box;
@@ -2463,15 +2493,43 @@
   margin: 18px 0;
   color: #10183f;
   font-size: 13px;
-  line-height: 1.45;
+  line-height: 1.5;
   font-weight: 700;
 }
 
-/* TABLET */
+/* ================================
+   TABLET
+================================ */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .testimonial-section {
-    padding: 35px 20px;
+    width: 92%;
+    padding: 35px 24px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .testimonial-featured {
+    padding: 23px;
+  }
+
+  .testimonial-card {
+    padding: 18px;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .testimonial-section {
+    width: calc(100% - 20px);
+    padding: 28px 15px;
+    margin: 18px auto;
     border-radius: 23px;
   }
 
@@ -2482,37 +2540,13 @@
     margin-bottom: 25px;
   }
 
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial-featured {
-    min-height: 280px;
-  }
-
-  .testimonial-side {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .testimonial-card {
-    min-height: 190px;
-    padding: 17px;
-  }
-}
-
-/* MOBILE */
-
-@media (max-width: 450px) {
-  .testimonial-section {
-    width: calc(100% - 16px);
-    padding: 28px 15px;
-    margin: 18px auto;
-  }
-
   .testimonial-heading h2 {
     font-size: 30px;
     letter-spacing: -1px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
   }
 
   .testimonial-featured {
@@ -2524,32 +2558,9 @@
     font-size: 25px;
   }
 
-  .testimonial-side {
-    grid-template-columns: 1fr;
-  }
-
   .testimonial-card {
     min-height: 155px;
     padding: 20px;
-  }
-}
-/* Yellow star rotating animation */
-.testimonial-sun {
-  animation: rotateStar 6s linear infinite;
-  transform-origin: center;
-}
-
-.testimonial-sun::before {
-  animation: rotateStar 6s linear infinite;
-  transform-origin: center;
-}
-
-@keyframes rotateStar {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
