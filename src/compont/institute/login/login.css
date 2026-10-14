@@ -1,259 +1,447 @@
 
-.login-page {
+* {
+  box-sizing: border-box;
+}
+
+.insti-page {
+  width: 80%;
   min-height: 100vh;
-  padding: 45px 5%;
-  color: #101943;
-  font-family: Inter, Arial, sans-serif;
-  background: radial-gradient(#e3eaff 1px, transparent 1px), #fff;
+  margin: 0 auto;
+  overflow-x: clip;
+  color: #10183f;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  background-image: radial-gradient(#dce5ff 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-.login-hero {
-  max-width: 1180px;
-  min-height: 520px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+/* NAVBAR */
+.insti-navbar {
+  width: 80%;
+  max-width: 1350px;
+  min-height: 85px;
+  margin: 0 auto;
+  display: flex;
   align-items: center;
-  gap: 45px;
+  justify-content: space-between;
+  gap: 24px;
+  background: #fff;
 }
 
-.login-badge {
-  display: inline-block;
-  padding: 9px 15px;
-  border-radius: 30px;
+.insti-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #10183f;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.insti-logo-icon {
+  font-size: 32px;
+}
+
+.insti-logo strong {
+  display: block;
+  font-size: 18px;
+  letter-spacing: -0.7px;
+}
+
+.insti-logo small {
+  display: block;
+  margin-top: 4px;
   color: #315cf5;
-  background: #edf2ff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.insti-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 14px;
+  border-radius: 40px;
+  background: #eef2ff;
+}
+
+.insti-nav-links a {
+  color: #414d78;
   font-size: 12px;
   font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.login-left h1 {
-  margin: 24px 0 18px;
-  font-size: clamp(40px, 5vw, 62px);
-  line-height: 1.05;
-  letter-spacing: -2px;
+.insti-signin,
+.insti-get-started {
+  padding: 12px 15px;
+  border: 0;
+  border-radius: 30px;
+  background: #fff;
+  color: #10183f;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-.login-left h1 span {
+.insti-get-started {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #315cf5;
+  color: #fff;
+}
+
+.insti-get-started span {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff;
   color: #315cf5;
 }
 
-.login-left p {
-  max-width: 490px;
-  color: #596587;
-  line-height: 1.8;
+/* MAIN LAYOUT: 80% WIDTH */
+.insti-hero {
+  width: 80%;
+  max-width: 1350px;
+  min-height: 590px;
+  margin: 0 auto;
+  padding: 65px 0 75px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  align-items: center;
+  gap: 70px;
 }
 
-.login-features {
+.insti-welcome {
+  min-width: 0;
+}
+
+.insti-badge {
+  display: inline-block;
+  padding: 9px 13px;
+  border-radius: 25px;
+  background: #edf1ff;
+  color: #315cf5;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.insti-welcome h1 {
+  margin: 22px 0;
+  font-size: clamp(44px, 4.2vw, 66px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.insti-welcome h1 span {
+  color: #315cf5;
+}
+
+.insti-welcome > p {
+  max-width: 500px;
+  margin: 20px 0 27px;
+  color: #4c587e;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.insti-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 22px;
   margin-top: 28px;
   padding-top: 20px;
-  border-top: 1px solid #e5eaff;
-  font-size: 12px;
-  font-weight: 700;
+  border-top: 1px solid #dfe5ff;
 }
 
-.login-card {
+.insti-features > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.insti-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #edf1ff;
+  color: #315cf5;
+  font-size: 19px;
+}
+
+/* LOGIN CARD */
+.insti-login-card {
   width: 100%;
   max-width: 440px;
-  justify-self: center;
-  padding: 22px;
-  border: 1px solid #e5eaff;
-  border-radius: 22px;
+  justify-self: end;
+  padding: 18px 22px 20px;
+  border: 1px solid #e0e6ff;
+  border-radius: 26px;
   background: #fff;
-  box-shadow: 0 22px 55px #182b6920;
+  box-shadow: 0 22px 50px rgba(24, 39, 91, 0.14);
 }
 
-.login-tabs {
+.insti-tabs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 5px;
   padding: 5px;
-  margin-bottom: 24px;
-  border-radius: 13px;
-  background: #f0f3ff;
+  border-radius: 17px;
+  background: #edf1ff;
 }
 
-.login-tabs button {
-  padding: 12px 3px;
+.insti-tabs button {
+  padding: 13px 5px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   background: transparent;
-  color: #58648b;
-  font-size: 11px;
-  font-weight: 700;
+  color: #66739b;
+  font-size: 12px;
+  font-weight: 800;
   cursor: pointer;
 }
 
-.login-tabs button.active {
-  color: #315cf5;
+.insti-tabs .insti-tab-active {
   background: #fff;
-  box-shadow: 0 3px 10px #182b6918;
+  color: #10183f;
+  box-shadow: 0 4px 12px #dfe5ff;
 }
 
-.login-card h2 {
-  margin: 0 0 7px;
-  font-size: 23px;
+.insti-login-card h2 {
+  margin: 22px 0 4px;
+  font-size: 22px;
+  letter-spacing: -0.8px;
 }
 
-.login-subtitle {
-  margin: 0 0 22px;
-  color: #7781a0;
+.insti-subtitle {
+  margin: 0 0 20px;
+  color: #7380a5;
+  font-size: 13px;
+}
+
+.insti-login-card form > label {
+  display: block;
+  margin: 15px 0 7px;
   font-size: 12px;
+  font-weight: 800;
 }
 
-.login-card form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-card form > label {
-  margin-bottom: 7px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.login-card form > input,
-.login-password input {
+.insti-login-card form > input,
+.insti-password-wrap input {
   width: 100%;
-  height: 44px;
-  padding: 0 12px;
+  height: 47px;
+  padding: 0 14px;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 16px;
   outline: none;
-  background: #eef2ff;
+  background: #edf1ff;
+  color: #10183f;
 }
 
-.login-card form > input {
-  margin-bottom: 17px;
+.insti-login-card input:focus {
+  border-color: #315cf5;
 }
 
-.login-password {
+.insti-password-wrap {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
-  padding-right: 10px;
-  border-radius: 10px;
-  background: #eef2ff;
+  border-radius: 16px;
+  background: #edf1ff;
 }
 
-.login-password input {
-  min-width: 0;
+.insti-password-wrap input {
   flex: 1;
+  min-width: 0;
 }
 
-.login-password button {
+.insti-password-wrap button {
+  margin-right: 12px;
   border: 0;
   background: transparent;
-  color: #315cf5;
   cursor: pointer;
 }
 
-.login-options {
+.insti-form-options {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  font-size: 11px;
+  gap: 10px;
+  margin: 14px 0;
+  font-size: 12px;
 }
 
-.login-options label {
+.insti-remember {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  color: #4c587e;
 }
 
-.login-options a,
-.login-footer a {
+.insti-form-options a,
+.insti-register a {
   color: #315cf5;
-  font-weight: 700;
   text-decoration: none;
+  font-weight: 800;
 }
 
-.login-submit {
+.insti-submit {
+  width: 100%;
+  min-height: 51px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 12px 8px 18px;
+  justify-content: space-between;
+  padding: 6px 8px 6px 22px;
   border: 0;
   border-radius: 30px;
   background: #315cf5;
-  color: white;
-  font-weight: 700;
+  color: #fff;
+  font-weight: 800;
   cursor: pointer;
 }
 
-.login-submit span {
+.insti-submit span {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 37px;
+  height: 37px;
   border-radius: 50%;
-  background: white;
+  background: #fff;
   color: #315cf5;
   font-size: 20px;
 }
 
-.login-footer {
-  margin: 18px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid #e8ecf7;
-  color: #7781a0;
+.insti-register {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px dashed #dfe5ff;
+  color: #7380a5;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 
-.login-banner {
-  max-width: 1280px;
-  margin: 20px auto 0;
-  padding: 35px;
-  border-radius: 25px 25px 0 0;
-  background: #10194e;
+/* BOTTOM BANNER */
+.insti-bottom-banner {
+  position: relative;
+  width: 80%;
+  max-width: 1500px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 55px 30px;
+  overflow: hidden;
+  border-radius: 35px 35px 0 0;
+  background: #101849;
+  text-align: center;
+}
+
+.insti-bottom-banner h2 {
+  position: relative;
+  z-index: 1;
+  margin: 15px 0;
   color: #fff;
+  font-size: clamp(45px, 7vw, 100px);
+  font-weight: 900;
+  letter-spacing: -4px;
 }
 
-.login-banner h2 {
-  margin: 0;
-  font-size: clamp(28px, 4vw, 40px);
+.insti-bottom-banner h2 span {
+  color: #ffb511;
 }
 
-.login-banner span {
-  color: #ffbd00;
+.insti-star {
+  position: absolute;
+  top: -65px;
+  right: -15px;
+  color: #ffb511;
+  font-size: 250px;
 }
 
-@media (max-width: 800px) {
-  .login-hero {
-    grid-template-columns: 1fr;
-    gap: 25px;
+/* RESPONSIVE */
+@media (max-width: 1050px) {
+  .insti-navbar,
+  .insti-hero,
+  .insti-bottom-banner {
+    width: 90%;
   }
 
-  .login-left {
-    text-align: center;
+  .insti-navbar {
+    flex-wrap: wrap;
+    padding: 15px 0;
   }
 
-  .login-left p {
-    margin: auto;
+  .insti-nav-links {
+    flex-wrap: wrap;
   }
 
-  .login-features {
+  .insti-hero {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insti-navbar,
+  .insti-hero,
+  .insti-bottom-banner {
+    width: 94%;
+  }
+
+  .insti-nav-links {
     justify-content: center;
+    gap: 12px;
+  }
+
+  .insti-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 40px 0;
+  }
+
+  .insti-welcome h1 {
+    font-size: clamp(42px, 10vw, 60px);
+  }
+
+  .insti-login-card {
+    justify-self: center;
+  }
+
+  .insti-bottom-banner h2 {
+    letter-spacing: -2px;
   }
 }
 
 @media (max-width: 480px) {
-  .login-page {
-    padding: 25px 4%;
+  .insti-navbar,
+  .insti-hero,
+  .insti-bottom-banner {
+    width: calc(100% - 24px);
   }
 
-  .login-card {
-    padding: 16px;
+  .insti-nav-links a {
+    font-size: 11px;
   }
 
-  .login-tabs button {
-    font-size: 10px;
+  .insti-login-card {
+    padding: 15px;
+  }
+
+  .insti-features {
+    gap: 12px;
+  }
+
+  .insti-bottom-banner {
+    min-height: 200px;
+    padding: 35px 15px;
+    border-radius: 22px 22px 0 0;
   }
 }

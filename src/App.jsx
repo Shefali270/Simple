@@ -16,10 +16,15 @@ import Connect from "./compont/connect/connect.jsx";
 import Live from "./compont/Live/Live.jsx";
 import Privacy from "./compont/privacy/privacy.jsx";
 
+import StudentLogin from "./compont/student/login.jsx";
+import TeacherLogin from "./compont/techer/login.jsx";
+
 import InstituteLogin from "./compont/institute/login/login.jsx";
 import InstituteRegister from "./compont/institute/Register/Register.jsx";
 import InstituteForgotPassword from "./compont/institute/forget-password/forget.jsx";
+
 import Why from "./compont/why/why.jsx";
+
 function getCurrentPage() {
   const hash = window.location.hash.slice(1).toLowerCase();
 
@@ -31,12 +36,17 @@ function getCurrentPage() {
 
   if (path.includes("/student/login")) return "student/login";
   if (path.includes("/teacher/login")) return "teacher/login";
+  if (path.includes("/techer/login")) return "teacher/login";
+
   if (path.includes("/institute/login")) return "institute/login";
   if (path.includes("/institute/register")) return "institute/register";
+
   if (path.includes("/institute/forgot-password")) {
     return "institute/forgot-password";
   }
+
   if (path.includes("/parent/login")) return "parent/login";
+  if (path === "/why" || path.endsWith("/why")) return "why";
 
   return "live";
 }
@@ -72,26 +82,39 @@ function App() {
     connect: <Connect />,
     live: <Live />,
     privacy: <Privacy />,
-    why :<Why />,
+    why: <Why />,
 
-    // Login pages: existing components only
-    "student/login": <Signup />,
-    "teacher/login": <Teacher />,
+    // Student and Teacher Login
+    "student/login": <StudentLogin />,
+    "teacher/login": <TeacherLogin />,
+
+    // Existing pages
     "parent/login": <Parent />,
     "institute/login": <InstituteLogin />,
-
-    // Institute account pages
     "institute/register": <InstituteRegister />,
     "institute/forgot-password": <InstituteForgotPassword />,
   };
 
-  return (
-    <>
-      <Header />
-      {pages[page] || <Live />}
-      <Connect />
-    </>
-  );
+  const isLoginPage =
+    page === "student/login" ||
+    page === "teacher/login" ||
+    page === "institute/login" ||
+    page === "institute/register" ||
+    page === "institute/forgot-password";
+
+
+return (
+  <>
+    <Header />
+
+    {/* Current page */}
+    {pages[page] || <Live />}
+
+    {/* Connect sabhi pages ke neeche */}
+    <Connect />
+  </>
+);
+
 }
 
 export default App;

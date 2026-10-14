@@ -33,14 +33,14 @@ const features = [
   },
 ];
 
- {
-  const problems = [
-    ["×", "CLARITY", "Not sure what to study next"],
-    ["×", "CONFIDENCE", "Doubts stay unanswered"],
-    ["×", "CONSISTENCY", "Study rhythm keeps breaking"],
-    ["×", "GROWTH", "No clear sense of progress"],
-  ];
+const problems = [
+  ["×", "CLARITY", "Not sure what to study next"],
+  ["×", "CONFIDENCE", "Doubts stay unanswered"],
+  ["×", "CONSISTENCY", "Study rhythm keeps breaking"],
+  ["×", "GROWTH", "No clear sense of progress"],
+];
 
+function Why() {
   return (
     <>
       {/* First section: Student image and problems */}
@@ -72,9 +72,11 @@ const features = [
               src="/images/students.jpg"
               alt="Students learning together"
             />
+
             <span className="why-image-badge">
               Studying alone
             </span>
+
             <span className="why-image-arrow">✣</span>
           </div>
 
@@ -82,6 +84,7 @@ const features = [
             {problems.map(([icon, title, description]) => (
               <div className="why-problem" key={title}>
                 <span className="why-problem-icon">{icon}</span>
+
                 <div>
                   <small>{title}</small>
                   <strong>{description}</strong>
@@ -134,4 +137,5 @@ const features = [
     </>
   );
 }
-export default why;
+
+export default Why;

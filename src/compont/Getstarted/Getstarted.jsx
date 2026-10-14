@@ -20,6 +20,7 @@ const roles = [
       "I want live classes, practice and expert guidance.",
     icon: GraduationCap,
     color: "yellow",
+    route: "/student/login",
   },
   {
     id: "parent",
@@ -29,6 +30,7 @@ const roles = [
       "I want to support my child's learning journey.",
     icon: Users,
     color: "yellow",
+    route: "/parent/login",
   },
   {
     id: "teacher",
@@ -38,6 +40,7 @@ const roles = [
       "I want to teach, guide and share my expertise.",
     icon: UserRound,
     color: "cyan",
+    route: "/teacher/login",
   },
   {
     id: "institute",
@@ -47,26 +50,27 @@ const roles = [
       "I represent a school, coaching institute or organization.",
     icon: Building2,
     color: "cyan",
+    route: "/institute/login",
   },
 ];
 
 function GetStarted() {
   const [selectedRole, setSelectedRole] = useState("student");
 
-  const handleContinue = () => {
-    const routes = {
-      student: "/student/login",
-      parent: "/parent/login",
-      teacher: "/teacher/login",
-      institute: "/institute/login",
-    };
-
-    window.location.href = routes[selectedRole];
-  };
-
   const selected = roles.find(
     (role) => role.id === selectedRole
   );
+
+  const handleContinue = () => {
+    if (selected) {
+      window.location.href = selected.route;
+    }
+  };
+
+  const handleRoleClick = (role) => {
+    setSelectedRole(role.id);
+    window.location.href = role.route;
+  };
 
   return (
     <main className="get-started-page">
@@ -153,7 +157,7 @@ function GetStarted() {
           </div>
         </section>
 
-        {/* FOUR ROLE CARDS */}
+        {/* FOUR CLICKABLE ROLE CARDS */}
         <section className="get-started-role-grid">
           {roles.map((role) => {
             const Icon = role.icon;
@@ -169,9 +173,8 @@ function GetStarted() {
                 <button
                   type="button"
                   className="get-started-card-select"
-                  onClick={() => setSelectedRole(role.id)}
-                  aria-pressed={isSelected}
-                  aria-label={`Choose ${role.title}`}
+                  onClick={() => handleRoleClick(role)}
+                  aria-label={`Open ${role.title} login`}
                 >
                   <span
                     className={`get-started-role-icon ${role.color}`}

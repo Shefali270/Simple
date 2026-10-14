@@ -620,7 +620,7 @@ const previousLab = () => switchLab(-1);
           <button
             className="why-button"
             onClick={() => {
-              window.location.hash = "about";
+              window.location.hash = "why";
             }}
           >
             Explore Why LiveMentorHub

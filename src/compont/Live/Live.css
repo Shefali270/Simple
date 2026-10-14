@@ -1049,21 +1049,27 @@
 /*=================================
    CONNECTED LEARNING JOURNEY
 ===================================== */
-
 .journey-section {
   position: relative;
-  width: calc(100% - 24px);
+
+  width: 100vw !important;
+  max-width: none !important;
+
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: 0 !important;
+
   min-height: 570px;
-  margin: 35px auto 45px;
   padding: 75px 30px;
+
+  box-sizing: border-box;
   overflow: hidden;
-  border-radius: 30px;
-  background-color: #202e83;
+  border-radius: 0;
+
+  background: #202e83;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
 }
-
+ 
 .journey-section::before {
   content: "";
   position: absolute;
@@ -2571,14 +2577,17 @@
 
 .schools-hero {
   position: relative;
-  width: calc(100% - 24px);
-  max-width: 1100px;
+  width: 100%;
+  max-width: none;
   min-height: 400px;
-  margin: 30px auto;
-  padding: 55px 56px;
+
+  margin: 30px 0;
+  padding: 55px max(24px, calc((100% - 1100px) / 2));
+
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 0;
   box-sizing: border-box;
+
   background: #202d86;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;

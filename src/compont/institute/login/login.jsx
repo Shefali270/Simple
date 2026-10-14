@@ -1,136 +1,149 @@
 
 import { useState } from "react";
-import "./Login.css";
+import "./login.css";
 
-function Login() {
-  const getRole = () =>
-    window.location.pathname.toLowerCase().includes("teacher")
-      ? "teacher"
-      : "student";
-
-  const [role, setRole] = useState(getRole);
+export default function InstituteLogin() {
   const [showPassword, setShowPassword] = useState(false);
 
-  const changeRole = (newRole) => {
-    if (newRole === "institute") {
-      window.location.hash = "institute/login";
-      return;
-    }
-
-    setRole(newRole);
-    window.history.pushState({}, "", `/${newRole}/login/`);
-  };
-
   return (
-    <main className="login-page">
-      <section className="login-hero">
-        <div className="login-left">
-          <span className="login-badge">
-            ★ {role === "student" ? "Student portal" : "Teacher portal"}
+    <div className="insti-page">
+      {/* LOGIN HERO */}
+      <main className="insti-hero">
+        <section className="insti-welcome">
+          <span className="insti-badge">
+            ⭐ Institute portal
           </span>
 
           <h1>
-            Welcome back.
-            <br />
-            <span>
-              {role === "student"
-                ? "Pick up where you left off."
-                : "Your classes are waiting."}
-            </span>
+            Institute <span>sign in.</span>
           </h1>
 
           <p>
-            {role === "student"
-              ? "Sign in to join live classes, catch up on recordings, take tests and track your progress."
-              : "Sign in to teach online, manage your sessions and connect with your students."}
+            Access your institute’s administrative portal to
+            manage courses, teachers, learners and reports.
           </p>
 
-          <div className="login-features">
-            <span>{role === "student" ? "Live classes" : "Teach live"}</span>
-            <span>{role === "student" ? "Recordings & notes" : "Manage sessions"}</span>
-            <span>{role === "student" ? "Tests & progress" : "Guide students"}</span>
-          </div>
-        </div>
+          <div className="insti-features">
+            <div>
+              <span className="insti-feature-icon">▤</span>
+              Courses
+            </div>
 
-        <div className="login-card">
-          <div className="login-tabs">
+            <div>
+              <span className="insti-feature-icon">♟</span>
+              Teachers &amp; learners
+            </div>
+
+            <div>
+              <span className="insti-feature-icon">▥</span>
+              Reports
+            </div>
+          </div>
+        </section>
+
+        {/* LOGIN CARD */}
+        <section className="insti-login-card">
+          <div className="insti-tabs">
             <button
-              className={role === "student" ? "active" : ""}
-              onClick={() => changeRole("student")}
               type="button"
+              onClick={() => {
+                window.location.href = "/student/login";
+              }}
             >
               🎓 Student
             </button>
 
             <button
-              className={role === "teacher" ? "active" : ""}
-              onClick={() => changeRole("teacher")}
               type="button"
+              onClick={() => {
+                window.location.href = "/teacher/login";
+              }}
             >
-              👨‍🏫 Teacher
+              ▣ Teacher
             </button>
 
             <button
               type="button"
-              onClick={() => changeRole("institute")}
+              className="insti-tab-active"
             >
-              🏢 Institute
+              ▦ Institute
             </button>
           </div>
 
-          <h2>{role === "student" ? "Student Sign In" : "Teacher Sign In"}</h2>
-          <p className="login-subtitle">Sign in to access your account.</p>
+          <h2>Institute Sign In</h2>
 
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            alert("Login abhi backend se connected nahi hai.");
-          }}>
-            <label htmlFor="login-email">Email or phone number</label>
+          <p className="insti-subtitle">
+            Access your institute administrative portal.
+          </p>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Login abhi backend se connected nahi hai.");
+            }}
+          >
+            <label htmlFor="insti-email">
+              Email or mobile number
+            </label>
+
             <input
-              id="login-email"
+              id="insti-email"
               type="text"
-              placeholder="Enter email or phone number"
               autoComplete="username"
               required
             />
 
-            <label htmlFor="login-password">Password</label>
-            <div className="login-password">
+            <label htmlFor="insti-password">
+              Password
+            </label>
+
+            <div className="insti-password-wrap">
               <input
-                id="login-password"
+                id="insti-password"
                 type={showPassword ? "text" : "password"}
-                placeholder="Enter password"
                 autoComplete="current-password"
                 required
               />
+
               <button
                 type="button"
+                aria-label="Toggle password visibility"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? "Hide" : "Show"}
+                {showPassword ? "🙈" : "👁"}
               </button>
             </div>
 
-            <div className="login-options">
-              <label><input type="checkbox" /> Remember me</label>
-              <a href={`#${role}/forgot-password`}>Forgot password?</a>
+            <div className="insti-form-options">
+              <label className="insti-remember">
+                <input type="checkbox" />
+                Remember me
+              </label>
+
+              <a href="#institute/forgot-password">
+                Forgot password?
+              </a>
             </div>
 
-            <button className="login-submit" type="submit">
-              Sign in <span>→</span>
+            <button
+              className="insti-submit"
+              type="submit"
+            >
+              Sign in to Portal
+              <span>➜</span>
             </button>
           </form>
 
-          <p className="login-footer">
-            Don’t have an account?{" "}
-            <a href="#signup">Sign up free</a>
-          </p>
-        </div>
-      </section>
+          <div className="insti-register">
+            New institute partner?
+            <a href="#institute/register">
+              {" "}Register your institute
+            </a>
+          </div>
+        </section>
+      </main>
 
-    
-    </main>
+   
+    </div>
   );
 }
-
-export default Login;
