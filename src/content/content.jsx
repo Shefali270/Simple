@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import "./Content.css";
+import "./content.css";
 
 function Contact() {
   const messages = [
