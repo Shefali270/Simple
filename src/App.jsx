@@ -14,7 +14,7 @@ import Signup from "./compont/Signup/Signup.jsx";
 import GetStarted from "./compont/Getstarted/Getstarted.jsx";
 import Connect from "./compont/connect/connect.jsx";
 import Live from "./compont/Live/Live.jsx";
-import Privacy from "./compont/privacy/privacy.jsx";
+// import Privacy from "./compont/privacy/privacy.jsx";
 
 import StudentLogin from "./compont/student/login.jsx";
 import TeacherLogin from "./compont/techer/login.jsx";
@@ -81,7 +81,7 @@ function App() {
     "get-started": <GetStarted />,
     connect: <Connect />,
     live: <Live />,
-    privacy: <Privacy />,
+    // privacy: <Privacy />,
     why: <Why />,
 
     // Student and Teacher Login
