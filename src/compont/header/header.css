@@ -440,9 +440,9 @@ body {
 }
 
 /* Header ke neeche gap */
-.header + * {
+/* .header + * {
   margin-top: 80px !important;
-}
+} */
 
 
 /* Sign in dropdown wrapper */
@@ -606,32 +606,31 @@ body {
 
 /* Header height: 80px */
 .header {
-  height: 80px;
-  min-height: 80px;
+  height: 76px;
+  min-height: 76px;
 }
 
 .header-inner {
-  min-height: 80px;
-  height: 80px;
+  min-height: 76px;
+  height: 76px;
 }
 
 /* Mobile header */
 @media screen and (max-width: 700px) {
   .header {
-    height: 80px;
-    min-height: 80px;
+    height: 66px;
+    min-height: 66px;
   }
 
   .header-inner {
-    height: 80px;
-    min-height: 80px;
+    height: 66px;
+    min-height: 66px;
   }
 
   body {
-    padding-top: 80px;
+    padding-top: 66px;
   }
 }
-
 /* Header navigation spacing fix */
 .header-inner {
   gap: 18px !important;
@@ -683,14 +682,14 @@ body {
     padding: 8px 12px;
   }
 }
-
+/* 
 .live-page {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
   box-sizing: border-box;
-}
+} */
 
 .live-hero {
   width: 100%;
@@ -862,15 +861,12 @@ body {
 
 /* Header fixed ho to content ke liye space */
 body {
-  padding-top: 0;
+  margin: 0;
+  padding-top: 76px;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --site-gutter: 16px;
-  }
-
-  .header-inner {
-    width: calc(100% - 32px);
+@media (max-width: 700px) {
+  body {
+    padding-top: 66px;
   }
 }

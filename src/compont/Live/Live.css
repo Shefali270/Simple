@@ -31,14 +31,13 @@
 
 
 .live-hero {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.65fr);
   align-items: center;
-  gap: 40px;
-  box-sizing: border-box;
+  gap: 28px;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
 
@@ -480,7 +479,7 @@
 .live-hero {
   width: 100%;
   max-width: 1200px;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 32px;
 }
 
@@ -4520,12 +4519,12 @@ body {
 /* DESKTOP CONTENT - CENTERED */
 .live-hero {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.65fr);
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   box-sizing: border-box;
 }
 
