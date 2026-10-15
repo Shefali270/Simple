@@ -833,56 +833,44 @@ body {
     padding-top: 66px;
   }
 }
-/* ===== SHARED HEADER STRUCTURE ===== */
+
+/* ===== COMMON HEADER ALIGNMENT ===== */
+
+:root {
+  --site-width: 1200px;
+  --site-gutter: 24px;
+}
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
   width: 100%;
-  height: 76px;
-  min-height: 76px;
-  margin: 0;
-  padding: 0;
-  background: #fff;
   box-sizing: border-box;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .header-inner {
-  width: calc(100% - 40px);
-  max-width: 1200px;
-  height: 76px;
-  min-height: 76px;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  width: min(
+    var(--site-width),
+    calc(100% - (var(--site-gutter) * 2))
+  );
+  max-width: var(--site-width);
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
 }
 
-/* Remove the extra gap after header */
-.header + * {
-  margin-top: 0 !important;
-}
-
-/* Sticky header does not need body top padding */
+/* Header fixed ho to content ke liye space */
 body {
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
-@media (max-width: 700px) {
-  .header {
-    height: 66px;
-    min-height: 66px;
+@media (max-width: 768px) {
+  :root {
+    --site-gutter: 16px;
   }
 
   .header-inner {
-    width: calc(100% - 24px);
-    height: 66px;
-    min-height: 66px;
-    padding: 0;
-    gap: 10px;
+    width: calc(100% - 32px);
   }
 }

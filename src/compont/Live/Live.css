@@ -4559,3 +4559,27 @@ body {
     white-space: normal;
   }
 }
+
+/* Common content alignment */
+
+.page-container,
+.live-container,
+.work-wrapper,
+.how-wrapper,
+.dashboard-wrapper {
+  width: min(1200px, calc(100% - 48px));
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .page-container,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper {
+    width: calc(100% - 32px);
+  }
+}
