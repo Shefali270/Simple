@@ -4594,14 +4594,14 @@ body {
   .live-page {
     width: 100%;
     max-width: 100%;
-    padding: 30px 12px;
+    box-sizing: border-box;
   }
 
   .live-hero {
     width: 100%;
     max-width: 100%;
     grid-template-columns: minmax(0, 1fr);
-    gap: 26px;
+    box-sizing: border-box;
   }
 
   .live-hero-copy,
@@ -4609,23 +4609,7 @@ body {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-  }
-
-  .trust-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .trust-item {
-    white-space: normal;
-  }
-
-  .page-container,
-  .live-container,
-  .work-wrapper,
-  .how-wrapper,
-  .dashboard-wrapper {
-    width: calc(100% - 24px);
+    box-sizing: border-box;
   }
 }
 
