@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import "./why.css";
-import student3 from "../../assets/image/image boy.jpg";
+import student3 from "../../assets/image/boy.jpg";
 import studentAfter from "../../assets/image/imag 2.webp";
 
 const features = [

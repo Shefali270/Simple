@@ -8,4 +8,4 @@ export {default as student} from "./student.jpg"
 export { default as image } from "./images.jpg";
 export { default as image2 } from "./imag 2.webp";
 export { default as imageboy } from "./image boy.jpg";
-
+export { default as boy } from "./image boy.jpg";

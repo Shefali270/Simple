@@ -2852,22 +2852,22 @@
 
 .resources-hero {
   width: 100%;
+  min-height: 100vh;
   padding: 80px 24px;
   background: #fff;
   color: #10183f;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  transform:translate(-150px);
 }
 
 .resources-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   align-items: center;
-  gap: 70px;
+  gap: 48px;
   box-sizing: border-box;
 }
 
@@ -2926,7 +2926,7 @@
   font-size: 12px;
   font-weight: 800;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .resources-view-button:hover {
