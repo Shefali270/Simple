@@ -410,11 +410,11 @@ body {
 
 /* MOBILE */
 
-@media (max-width: 650px) {
+/* @media (max-width: 650px) {
   .connect-page {
     width: 80%;
     padding: 6px;
-  }
+  } */
 
   .connect-section {
     min-height: auto;
@@ -497,7 +497,7 @@ body {
   .connect-legal {
     gap: 15px;
   }
-}
+
 
 /* SMALL MOBILE */
 
@@ -567,4 +567,11 @@ body {
   .connect-container {
     width: 90%;
   }
+}
+.connect-container {
+  width: 80%;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }

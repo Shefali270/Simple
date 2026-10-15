@@ -385,8 +385,9 @@
   }
 
   .insti-hero {
-    gap: 35px;
-  }
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  gap: 28px;
+}
 }
 
 @media (max-width: 768px) {

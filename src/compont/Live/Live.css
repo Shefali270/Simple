@@ -2261,7 +2261,7 @@
 ================================ */
 
 .testimonial-section {
-  width: 80%;
+  width: min(1200px, calc(100% - 48px));
   margin: 25px auto 40px;
   padding: 48px 35px;
   background: #eef2ff;
@@ -3248,7 +3248,7 @@
 
 /* Move heading slightly to the right */
 
-.resources-hero .resources-left {
+/* .resources-hero .resources-left {
   padding-left: 175px;
 }
 
@@ -3256,7 +3256,7 @@
   .resources-hero .resources-left {
     padding-left: 55px;
   }
-}
+} */
 
 /* Move resource cards to the right */
 @media (min-width: 851px) {
@@ -3901,12 +3901,12 @@
     padding: 14px 20px;
   }
 }
-.schools-yellow-star {
+/* .schools-yellow-star {
   display: none !important;
 }
 .schools-blue-shape {
   display: none !important;
-}
+} */
 
 html,
 body,
@@ -3955,7 +3955,7 @@ body {
 }
 
 /* Mobile par bhi 80% width */
-
+/* 
 @media (max-width: 650px) {
   .live-page,
   .why-page,
@@ -3969,14 +3969,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-  }
+  } */
 
-  .live-page,
+  /* .live-page,
   .paths-section {
     padding-left: 16px;
     padding-right: 16px;
   }
-}
+} */
 
 
 /* =========================================
@@ -4489,7 +4489,7 @@ body {
   }
 }
 
-.live-page {
+/* .live-page {
   width: 80%;
   max-width: 80%;
   margin: 0 auto;
@@ -4501,7 +4501,7 @@ body {
     width: 100%;
     max-width: 100%;
   }
-}
+} */
 
 
 
@@ -4567,7 +4567,7 @@ body {
 }
 
 /* TABLET */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .live-page {
     padding: 35px 20px 45px;
   }
@@ -4586,7 +4586,7 @@ body {
   .trust-wrap {
     justify-content: center;
   }
-}
+} */
 
 /* MOBILE */
 @media (max-width: 650px) {

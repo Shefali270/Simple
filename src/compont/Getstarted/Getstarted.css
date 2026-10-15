@@ -645,3 +645,34 @@
     animation: none !important;
   }
 }
+
+
+@media (max-width: 900px) {
+  .get-started-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .get-started-intro {
+    max-width: 100%;
+  }
+
+  .get-started-role-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .get-started-page {
+    padding: 35px 16px 45px;
+  }
+
+  .get-started-panel {
+    padding: 20px 16px;
+  }
+
+  .get-started-role-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
