@@ -4469,3 +4469,93 @@ body {
     transition: none !important;
   }
 }
+
+.live-page {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 650px) {
+  .live-page {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Live page: consistent alignment */
+.live-page {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.live-hero {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.live-hero-copy,
+.live-lab-card {
+  min-width: 0;
+}
+
+.live-lab-card {
+  width: 100%;
+  align-self: center;
+}
+
+/* Trust items ek hi line mein */
+.trust-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.trust-item {
+  white-space: nowrap;
+}
+
+/* Tablet aur mobile */
+@media (max-width: 900px) {
+  .live-page {
+    width: 94%;
+  }
+
+  .live-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .live-page {
+    width: 100%;
+    padding: 30px 12px;
+  }
+
+  .live-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-item {
+    white-space: normal;
+  }
+}

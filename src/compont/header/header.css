@@ -118,7 +118,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   min-height: 46px;
   padding: 0 17px;
   border-radius: 28px;
@@ -599,5 +599,290 @@ body {
   .hero,
   .home-hero {
     scroll-margin-top: 80px;
+  }
+}
+
+
+
+/* Header height: 80px */
+.header {
+  height: 80px;
+  min-height: 80px;
+}
+
+.header-inner {
+  min-height: 80px;
+  height: 80px;
+}
+
+/* Mobile header */
+@media screen and (max-width: 700px) {
+  .header {
+    height: 80px;
+    min-height: 80px;
+  }
+
+  .header-inner {
+    height: 80px;
+    min-height: 80px;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+}
+
+/* Header navigation spacing fix */
+.header-inner {
+  gap: 18px !important;
+}
+
+.nav {
+  gap: 24px !important;
+  padding: 0 22px !important;
+  justify-content: center;
+}
+
+.nav a {
+  white-space: nowrap;
+}
+
+/* Keep header items aligned */
+.header-inner {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    gap: 16px !important;
+  }
+}
+.header-inner {
+  width: min(1100px, calc(100% - 32px));
+  min-height: 68px;
+  height: 68px;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.nav {
+  gap: 18px;
+  padding: 0 12px;
+}
+
+.header .logo img {
+  max-height: 42px;
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    width: 100%;
+    min-height: 66px;
+    height: 66px;
+    padding: 8px 12px;
+  }
+}
+
+.live-page {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.live-hero {
+  width: 100%;
+  max-width: 100%;
+  gap: 30px;
+}
+
+@media (max-width: 650px) {
+  .live-page {
+    width: 100%;
+    padding: 35px 12px;
+  }
+
+  .live-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header-inner {
+  width: min(1200px, calc(100% - 40px)) !important;
+  max-width: 1200px !important;
+  height: 76px !important;
+  min-height: 76px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.nav {
+  flex: 1;
+  min-width: 0;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ===== FINAL HEADER ALIGNMENT ===== */
+
+.header {
+  position: fixed ;
+  top: 0 ;
+  left: 0 ;
+  right: 0 ;
+  width: 100%;
+  height: 76px !important;
+  min-height: 76px;
+  padding: 0 !important;
+  z-index: 99999 !important;
+  background: #fff !important;
+}
+
+.header-inner {
+  width: min(1080px, calc(100% - 32px)) !important;
+  height: 76px !important;
+  min-height: 76px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+/* Fixed header ke liye sirf ek offset */
+body {
+  padding-top: 76px !important;
+}
+
+/* Extra spacing remove */
+.header + * {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .header {
+    height: 66px !important;
+    min-height: 66px !important;
+  }
+
+  .header-inner {
+    height: 66px !important;
+    min-height: 66px !important;
+  }
+
+  body {
+    padding-top: 66px !important;
+  }
+}
+/* =================================
+   HEADER — CONSISTENT SIZE
+================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 76px;
+  min-height: 76px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 9999;
+  background: #fff;
+}
+
+.header-inner {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  height: 76px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Header ke neeche sirf ek offset */
+body {
+  margin: 0;
+  padding-top: 76px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .header {
+    height: 66px;
+    min-height: 66px;
+  }
+
+  .header-inner {
+    width: 100%;
+    height: 66px;
+    min-height: 66px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  body {
+    padding-top: 66px;
+  }
+}
+/* ===== SHARED HEADER STRUCTURE ===== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 76px;
+  min-height: 76px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.header-inner {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  height: 76px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Remove the extra gap after header */
+.header + * {
+  margin-top: 0 !important;
+}
+
+/* Sticky header does not need body top padding */
+body {
+  padding-top: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .header {
+    height: 66px;
+    min-height: 66px;
+  }
+
+  .header-inner {
+    width: calc(100% - 24px);
+    height: 66px;
+    min-height: 66px;
+    padding: 0;
+    gap: 10px;
   }
 }

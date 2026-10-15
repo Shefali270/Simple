@@ -1859,3 +1859,21 @@
 .journey-card .step-active {
   background: #eef3ff !important;
 }
+/* Common width for Work page sections */
+.work-hero,
+.how-wrapper,
+.dashboard-wrapper {
+  width: min(1200px, calc(100% - 48px));
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .work-hero,
+  .how-wrapper,
+  .dashboard-wrapper {
+    width: calc(100% - 24px);
+  }
+}

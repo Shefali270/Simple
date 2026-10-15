@@ -182,3 +182,84 @@
     border-right-color: var(--border);
   }
 }
+
+
+/* ===== GLOBAL RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: clip;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  margin: 0;
+  background: #fff;
+}
+
+/* Header inner content */
+.header-inner {
+  width: min(1080px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+/* ===== MAIN PAGE ===== */
+main,
+.live-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-top: 0;
+}
+
+/* ===== SHARED CONTENT ALIGNMENT ===== */
+.live-hero,
+.why-section,
+.journey-container,
+.paths-container,
+.mentors-container,
+.about-growth-container {
+  width: min(1080px, calc(100% - 32px));
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Remove unwanted gap after header */
+.header + main,
+.header + .live-page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .header-inner,
+  .live-hero,
+  .why-section,
+  .journey-container,
+  .paths-container,
+  .mentors-container,
+  .about-growth-container {
+    width: calc(100% - 24px);
+  }
+}
+

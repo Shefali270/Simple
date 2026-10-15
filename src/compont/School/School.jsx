@@ -2,6 +2,7 @@
 import "./School.css";
 import { useRef, useState } from "react";
 
+
 function School() {
   const partnerFormRef = useRef(null);
   const [formMessage, setFormMessage] = useState("");

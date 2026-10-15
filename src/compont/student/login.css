@@ -9,13 +9,21 @@
 }
 
 .login-hero {
+  width: 100%;
   max-width: 1180px;
-  min-height: 520px;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+  align-items: start;
   gap: 45px;
+}
+
+.login-left {
+  min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  padding-top: 0;
 }
 
 .login-badge {
@@ -48,7 +56,8 @@
 .login-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
+  gap: 12px 20px;
   margin-top: 28px;
   padding-top: 20px;
   border-top: 1px solid #e5eaff;
@@ -56,10 +65,27 @@
   font-weight: 700;
 }
 
+.login-features > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.login-features svg {
+  flex-shrink: 0;
+  color: #315cf5;
+}
+
+/* Login box: right side, aligned at the top */
 .login-card {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
   width: 100%;
   max-width: 440px;
-  justify-self: center;
+  min-width: 0;
+  margin: 0;
   padding: 22px;
   border: 1px solid #e5eaff;
   border-radius: 22px;
@@ -141,8 +167,8 @@
 }
 
 .login-password input {
-  min-width: 0;
   flex: 1;
+  min-width: 0;
 }
 
 .login-password button {
@@ -225,22 +251,38 @@
   color: #ffbd00;
 }
 
+/* Tablet and mobile */
 @media (max-width: 800px) {
+  .login-page {
+    padding: 30px 5%;
+  }
+
   .login-hero {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
 
   .login-left {
+    grid-column: 1;
+    grid-row: 1;
     text-align: center;
   }
 
   .login-left p {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .login-features {
     justify-content: center;
+  }
+
+  .login-card {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    width: 100%;
+    max-width: 440px;
   }
 }
 
@@ -249,11 +291,20 @@
     padding: 25px 4%;
   }
 
+  .login-left h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
   .login-card {
     padding: 16px;
   }
 
   .login-tabs button {
     font-size: 10px;
+  }
+
+  .login-features {
+    gap: 12px;
   }
 }

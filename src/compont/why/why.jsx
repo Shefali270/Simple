@@ -1,6 +1,8 @@
 
-import React from "react";
+import { useState } from "react";
 import "./why.css";
+import student3 from "../../assets/image/image boy.jpg";
+import studentAfter from "../../assets/image/imag 2.webp";
 
 const features = [
   {
@@ -34,16 +36,36 @@ const features = [
 ];
 
 const problems = [
-  ["×", "CLARITY", "Not sure what to study next"],
-  ["×", "CONFIDENCE", "Doubts stay unanswered"],
-  ["×", "CONSISTENCY", "Study rhythm keeps breaking"],
-  ["×", "GROWTH", "No clear sense of progress"],
+  {
+    title: "CLARITY",
+    oldText: "Not sure what to study next",
+    newText: "A clear next step to work on",
+  },
+  {
+    title: "CONFIDENCE",
+    oldText: "Doubts stay unanswered",
+    newText: "Doubts cleared live, in class",
+  },
+  {
+    title: "CONSISTENCY",
+    oldText: "Study rhythm keeps breaking",
+    newText: "A steady rhythm of live sessions",
+  },
+  {
+    title: "GROWTH",
+    oldText: "No clear sense of progress",
+    newText: "Progress you can see and track",
+  },
 ];
 
 function Why() {
+  const [split, setSplit] = useState(50);
+
+  // Right side zyada visible hone par new text show hoga.
+  const isNew = split >= 50;
+
   return (
     <>
-      {/* First section: Student image and problems */}
       <section className="why-section">
         <div className="why-left">
           <span className="why-label">
@@ -68,26 +90,59 @@ function Why() {
 
         <div className="why-right">
           <div className="why-image-box">
-            <img
-              src="/images/students.jpg"
-              alt="Students learning together"
-            />
+            <div
+              className="cmp-photo"
+              style={{ "--split": `${split}%` }}
+            >
+              <figure className="a">
+                <img
+                  src={student3}
+                  alt="Studying alone"
+                />
+                <figcaption>Studying alone</figcaption>
+              </figure>
 
-            <span className="why-image-badge">
-              Studying alone
-            </span>
+              <figure className="b">
+                <img
+                  src={studentAfter}
+                  alt="With LiveMentorHub"
+                />
+                <figcaption>With LiveMentorHub</figcaption>
+              </figure>
 
-            <span className="why-image-arrow">✣</span>
+              <input
+                className="cmp-slider"
+                type="range"
+                min="0"
+                max="100"
+                value={split}
+                onChange={(e) =>
+                  setSplit(Number(e.target.value))
+                }
+                aria-label="Compare before and after images"
+              />
+
+              <span className="cmp-knob">
+                <span className="ms">↔</span>
+              </span>
+            </div>
           </div>
 
           <div className="why-problems">
-            {problems.map(([icon, title, description]) => (
-              <div className="why-problem" key={title}>
-                <span className="why-problem-icon">{icon}</span>
+            {problems.map((problem) => (
+              <div
+                className={`why-problem ${isNew ? "is-new" : "is-old"}`}
+                key={problem.title}
+              >
+                <span className="why-problem-icon">
+                  {isNew ? "✓" : "×"}
+                </span>
 
                 <div>
-                  <small>{title}</small>
-                  <strong>{description}</strong>
+                  <small>{problem.title}</small>
+                  <strong>
+                    {isNew ? problem.newText : problem.oldText}
+                  </strong>
                 </div>
               </div>
             ))}
@@ -95,7 +150,6 @@ function Why() {
         </div>
       </section>
 
-      {/* Second section: Four parts of learning */}
       <section className="features-section">
         <div className="features-left">
           <span className="features-label">
@@ -121,7 +175,10 @@ function Why() {
 
         <div className="features-right">
           {features.map((feature) => (
-            <article className="features-card" key={feature.title}>
+            <article
+              className="features-card"
+              key={feature.title}
+            >
               <div>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
