@@ -1,12 +1,85 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
-  margin: 0;
-  padding: 0;
   width: 100%;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   min-width: 320px;
+  overflow-x: hidden;
+}
+
+/* HEADER FULL WIDTH */
+header,
+.site-header,
+.navbar,
+.header-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* COMMON CONTENT WIDTH */
+.page-container,
+.live-page,
+.live-container,
+.work-wrapper,
+.how-wrapper,
+.dashboard-wrapper,
+.section-container {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* LIVE SECTION */
+.live-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.live-hero-copy,
+.live-lab-card {
+  min-width: 0;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .live-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .page-container,
+  .live-page,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper,
+  .section-container {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 650px) {
+  .live-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
 }

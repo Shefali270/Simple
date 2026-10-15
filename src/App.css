@@ -160,31 +160,30 @@
     height: 48px;
   }
 }
-
 .ticks {
   position: relative;
   width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
 }
 
+.ticks::before,
+.ticks::after {
+  content: '';
+  position: absolute;
+  top: -4.5px;
+  border: 5px solid transparent;
+}
 
-/* ===== GLOBAL RESET ===== */
+.ticks::before {
+  left: 0;
+  border-left-color: var(--border);
+}
+
+.ticks::after {
+  right: 0;
+  border-right-color: var(--border);
+}
+
+/* GLOBAL RESET */
 *,
 *::before,
 *::after {
@@ -201,35 +200,24 @@ body,
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  margin: 0;
   background: #fff;
 }
 
-/* Header inner content */
 .header-inner {
   width: min(1080px, calc(100% - 32px));
   margin-inline: auto;
 }
 
-/* ===== MAIN PAGE ===== */
-main,
-.live-page {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding-top: 0;
-}
-
-/* ===== SHARED CONTENT ALIGNMENT ===== */
+/* CONTENT WIDTH */
 .live-hero,
 .why-section,
 .journey-container,
@@ -238,19 +226,9 @@ main,
 .about-growth-container {
   width: min(1080px, calc(100% - 32px));
   max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
+  margin-inline: auto;
 }
 
-/* Remove unwanted gap after header */
-.header + main,
-.header + .live-page {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .header-inner,
   .live-hero,
@@ -262,4 +240,3 @@ main,
     width: calc(100% - 24px);
   }
 }
-

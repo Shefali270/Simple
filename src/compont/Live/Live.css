@@ -3,12 +3,13 @@
    LIVE PAGE
 ================================ */
 
+
 .live-page {
-  width: 80%;
+  width: 100%;
   max-width: 100%;
   min-height: 82px;
   margin: 0 auto;
-  padding: 100px 20px 60px;
+  padding: 40px 24px 60px;
   box-sizing: border-box;
   background-color: #ffffff;
   color: #10183f;
@@ -21,20 +22,25 @@
 }
 
 
+
 .live-page * {
   box-sizing: border-box;
 }
 
 /* HERO LAYOUT */
 
+
 .live-hero {
-  width: min(1350px, 100%);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.88fr 1.65fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
   align-items: center;
-  gap: 45px;
+  gap: 40px;
+  box-sizing: border-box;
 }
+
 
 /* LEFT CONTENT */
 
@@ -467,30 +473,35 @@
 ================================ */
 
 @media (max-width: 1100px) {
-  .live-page {
-    padding-top: 60px;
-  }
+.live-page {
+  padding: 40px 20px 50px;
+}
 
-  .live-hero {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+.live-hero {
+  width: 100%;
+  max-width: 1200px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  gap: 32px;
+}
 
   .live-hero-copy {
-    max-width: 700px;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .live-hero-copy h1 {
-    font-size: clamp(42px, 7vw, 65px);
+    font-size: clamp(38px, 4.5vw, 52px);
   }
 
   .live-hero-copy > p {
-    max-width: 650px;
+    max-width: 100%;
+    font-size: 16px;
   }
 
   .live-lab-card {
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
@@ -3945,6 +3956,7 @@ body {
 }
 
 /* Mobile par bhi 80% width */
+
 @media (max-width: 650px) {
   .live-page,
   .why-page,
@@ -3953,12 +3965,20 @@ body {
   .paths-section,
   .mentors-section,
   .about-growth-section {
-    width: 80% !important;
-    max-width: 80% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .live-page,
+  .paths-section {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
+
 
 /* =========================================
    FINAL FIX — ALL SECTIONS 80% WIDTH
@@ -4485,43 +4505,128 @@ body {
 }
 
 
+
 /* Live page: consistent alignment */
+
+/* LIVE PAGE - FULL WIDTH BACKGROUND */
 .live-page {
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 40px 24px 60px;
   box-sizing: border-box;
 }
 
+/* DESKTOP CONTENT - CENTERED */
 .live-hero {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.9fr 1.6fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
   align-items: center;
-  gap: 30px;
+  gap: 40px;
+  box-sizing: border-box;
 }
 
 .live-hero-copy,
 .live-lab-card {
+  width: 100%;
   min-width: 0;
+  box-sizing: border-box;
 }
 
 .live-lab-card {
-  width: 100%;
+  max-width: 100%;
   align-self: center;
 }
 
-/* Trust items ek hi line mein */
+/* TRUST STRIP */
 .trust-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
 .trust-item {
-  white-space: nowrap;
+  white-space: normal;
+}
+
+/* COMMON SECTION ALIGNMENT */
+.page-container,
+.live-container,
+.work-wrapper,
+.how-wrapper,
+.dashboard-wrapper {
+  width: min(1200px, calc(100% - 48px));
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .live-page {
+    padding: 35px 20px 45px;
+  }
+
+  .live-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .live-hero-copy,
+  .live-lab-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .trust-wrap {
+    justify-content: center;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .live-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 12px;
+  }
+
+  .live-hero {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .live-hero-copy,
+  .live-lab-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .trust-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-item {
+    white-space: normal;
+  }
+
+  .page-container,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper {
+    width: calc(100% - 24px);
+  }
 }
 
 /* Tablet aur mobile */
@@ -4581,5 +4686,28 @@ body {
   .how-wrapper,
   .dashboard-wrapper {
     width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 650px) {
+  .live-page {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .live-hero {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    box-sizing: border-box;
+  }
+
+  .live-hero-copy,
+  .live-lab-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 }
