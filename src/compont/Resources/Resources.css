@@ -25,13 +25,13 @@
   z-index: 1;
   width: 100%;
   max-width: 1340px;
-  min-height: 800px;
+  min-height: 700px;
   margin: 0 auto;
-  padding: 36px 24px 70px;
+  padding: 40px 28px 60px;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 5px;
+  gap: 24px;
   box-sizing: border-box;
 }
 
@@ -53,7 +53,7 @@
   color: #3260ed;
   font-size: 14px;
   font-weight: 800;
-  transform: translate(-150px);
+  /* transform: translate(-150px); */
 }
 
 .resources-badge span {
@@ -66,7 +66,7 @@
   margin: 0;
   color: #10183f;
   font-size: clamp(50px, 5.2vw, 78px);
-  transform: translate(-150px);
+  /* transform: translate(0px); */
   font-weight: 900;
   line-height: 0.99;
  
@@ -84,18 +84,19 @@
   color: #4e5b83;
   font-size: 21px;
   line-height: 1.65;
-  transform: translate(-150px);
+  /* transform: translate(-150px); */
 }
 
 /* RIGHT CARDS GRID */
 
 .resources-visual {
+  width: 100%;
   min-width: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
   gap: 13px;
-  transform: translate(-10px);
+  box-sizing: border-box;
 }
 
 .resource-card {
@@ -128,8 +129,8 @@
 /* NOTES CARD */
 
 .resource-notes {
-  padding: 16px;
-  min-height: 445px;
+padding: 16px;
+min-height: 400px;
 }
 
 .notes-paper {
@@ -1089,26 +1090,21 @@
 /* ===== FINAL MOBILE LAYOUT FIX ===== */
 
 @media screen and (max-width: 650px) {
-  .resources-page {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: clip !important;
-  }
+.resources-page {
+width: 100%;
+max-width: 100%;
+overflow-x: clip;
+}
 
-  .resources-page .resources-hero {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: auto !important;
-    margin: 0 !important;
-    padding: 32px 18px 40px !important;
+.resources-page .resources-hero {
+width: 100%;
+min-height: auto;
+padding: 32px 18px 40px;
+grid-template-columns: minmax(0, 1fr);
+gap: 28px;
+}
 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 28px !important;
 
-    transform: none !important;
-  }
 
   .resources-page .resources-left {
     width: 100% !important;

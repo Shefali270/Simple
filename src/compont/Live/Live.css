@@ -2841,33 +2841,30 @@
    RESOURCES SECTION
 ================================ */
 
-/* RESOURCES SECTION — CENTER ALIGNMENT */
-
-
-/* ==============================
-   RESOURCES HERO SECTION
-============================== */
-
-/* ===== RESOURCES SECTION ===== */
+/* ===== Resources Page ===== */
 
 .resources-hero {
   width: 100%;
   min-height: 100vh;
-  padding: 80px 24px;
+  padding: 35px 24px 55px;
   background: #fff;
   color: #10183f;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: clip;
 }
 
+/* Main container */
 .resources-container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1180px;
+  min-height: calc(100vh - 180px);
   margin: 0 auto;
+  padding: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
   align-items: center;
-  gap: 48px;
+  gap: 0px;
   box-sizing: border-box;
 }
 
@@ -2882,8 +2879,11 @@
   gap: 12px;
   width: 100%;
   min-width: 0;
+  justify-self: start;
+  transform: translate(60px);
 }
 
+/* Label */
 .resources-label {
   display: inline-flex;
   align-items: center;
@@ -2901,6 +2901,7 @@
   font-size: 18px;
 }
 
+/* Heading */
 .resources-left h2 {
   margin: 25px 0 28px;
   font-size: clamp(38px, 4vw, 52px);
@@ -2908,12 +2909,14 @@
   letter-spacing: -2px;
   font-weight: 800;
   color: #10183f;
+  overflow-wrap: break-word;
 }
 
 .resources-left h2 span {
   color: #315cf5;
 }
 
+/* View all button */
 .resources-view-button {
   display: inline-flex;
   align-items: center;
@@ -2926,7 +2929,7 @@
   font-size: 12px;
   font-weight: 800;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .resources-view-button:hover {
@@ -2934,8 +2937,10 @@
   color: #fff;
 }
 
+/* Resource cards */
 .resource-item {
   width: 100%;
+  min-width: 0;
   min-height: 80px;
   display: flex;
   align-items: center;
@@ -2954,6 +2959,7 @@
   background: #e4eaff;
 }
 
+/* Icons */
 .resource-icon {
   width: 48px;
   height: 48px;
@@ -2980,6 +2986,7 @@
   color: #fff;
 }
 
+/* Card text */
 .resource-text {
   flex: 1;
   min-width: 0;
@@ -2992,13 +2999,16 @@
   font-size: 17px;
   line-height: 1.2;
   font-weight: 800;
+  overflow-wrap: break-word;
 }
 
 .resource-text small {
   color: #7480a6;
   font-size: 12px;
+  line-height: 1.4;
 }
 
+/* Arrow */
 .resource-arrow {
   width: 39px;
   height: 39px;
@@ -3015,6 +3025,109 @@
 
 .resource-item:hover .resource-arrow {
   transform: translateX(3px);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .resources-hero {
+    padding: 35px 24px 45px;
+  }
+
+  .resources-container {
+    width: 100%;
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .resources-left h2 {
+    font-size: clamp(36px, 6vw, 48px);
+  }
+
+  .resources-right {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .resources-hero {
+    padding: 25px 16px 40px;
+  }
+
+  .resources-container {
+    gap: 26px;
+  }
+
+  .resources-left h2 {
+    margin: 20px 0 22px;
+    font-size: clamp(34px, 9vw, 42px);
+    letter-spacing: -1.5px;
+  }
+
+  .resources-label {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
+  .resources-right {
+    gap: 10px;
+  }
+
+  .resource-item {
+    min-height: 72px;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .resource-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .resource-text strong {
+    font-size: 14px;
+  }
+
+  .resource-text small {
+    font-size: 11px;
+  }
+
+  .resource-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .resources-hero {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .resource-item {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .resource-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
+
+  .resource-text strong {
+    font-size: 13px;
+  }
+
+  .resource-arrow {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* ===== LEARNING ON THE GO ===== */
@@ -4692,5 +4805,53 @@ body {
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
+  }
+}
+@media (max-width: 900px) {
+  .resources-hero {
+    padding: 35px 24px;
+  }
+
+  .resources-container {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .resources-hero {
+    padding: 25px 16px 40px;
+  }
+
+  .resources-container {
+    gap: 26px;
+  }
+
+  .resources-left h2 {
+    font-size: clamp(34px, 9vw, 42px);
+    letter-spacing: -1.5px;
+  }
+
+  .resource-item {
+    min-height: 72px;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .resource-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .resource-text strong {
+    font-size: 14px;
+  }
+
+  .resource-arrow {
+    width: 34px;
+    height: 34px;
   }
 }

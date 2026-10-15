@@ -1011,31 +1011,27 @@
 ================================================= */
 
 @media (max-width: 900px) {
-
-  .learning-live-section {
-    width: calc(100% - 40px);
-
-    padding: 55px 45px;
+  .learning-second-row {
+    width: min(700px, calc(100% - 40px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
-  .learning-live-container {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
+  .learning-box {
+    min-height: 420px;
+    padding: 22px;
   }
 
-  .learning-live-left h2 {
-    font-size: 52px;
+  .learning-box h3 {
+    font-size: 22px;
   }
-
 }
-
 
 /* =================================================
    MOBILE
 ================================================= */
 
-@media (max-width: 650px) {
+/* @media (max-width: 650px) {
 
   .learning-live-section {
     width: calc(100% - 30px);
@@ -1075,7 +1071,7 @@
     font-size: 12px;
   }
 
-}
+} */
 
 
 /* =========================================
