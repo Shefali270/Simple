@@ -7,7 +7,9 @@
   min-height: 100vh;
   overflow-x: hidden;
   background: #ffffff;
+
   color: #10183f;
+
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -26,7 +28,7 @@
   gap: 42px;
 
   width: calc(100% - 48px);
-  max-width: 1050px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 45px 0 65px;
 }
@@ -458,12 +460,13 @@
 
 .how-wrapper {
   width: 100%;
-  max-width: 1050px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .work-badge,
 .dashboard-badge,
+
 .ecosystem-badge {
   display: flex;
   align-items: center;
@@ -501,7 +504,7 @@
 }
 
 .how-description {
-  max-width: 650px;
+  max-width: 1150px;
   margin: 0 0 35px;
   color: #697695;
   font-size: 15px;
@@ -630,7 +633,7 @@
 
 .dashboard-wrapper {
   width: 100%;
-  max-width: 1050px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -757,7 +760,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1050px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -772,7 +775,7 @@
 }
 
 .ecosystem-heading {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 0 35px;
   color: #ffffff;
   font-size: clamp(32px, 4vw, 48px);
@@ -864,11 +867,94 @@
 /* =========================================
    TABLET
 ========================================= */
+/* =========================================
+   WORK PAGE - CONSISTENT WIDTH
+========================================= */
+
+.work-page .work-hero,
+.how-wrapper,
+.dashboard-wrapper,
+.ecosystem-wrapper {
+  width: calc(100% - 48px);
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.how-it-works-section,
+.dashboard-section,
+.ecosystem-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* HERO LAYOUT */
+.work-page .work-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 36px;
+  padding: 45px 0 65px;
+}
+
+.work-page .work-hero-content,
+.work-page .journey-card {
+  min-width: 0;
+}
+
+.work-page .journey-card {
+  width: 100%;
+  max-width: 600px;
+  justify-self: end;
+  box-sizing: border-box;
+}
+
+/* DASHBOARD: 3 CARDS PER ROW */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+.dashboard-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* ECOSYSTEM: 3 CARDS PER ROW */
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.ecosystem-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* TABLET */
 @media (max-width: 900px) {
   .how-it-works-section,
   .dashboard-section,
   .ecosystem-section {
     padding: 60px 22px;
+  }
+
+  .work-page .work-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .work-page .journey-card {
+    max-width: 100%;
+    justify-self: stretch;
   }
 
   .journey-step-card {
@@ -891,15 +977,24 @@
   }
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 @media (max-width: 600px) {
+  .work-page .work-hero,
+  .how-wrapper,
+  .dashboard-wrapper,
+  .ecosystem-wrapper {
+    width: calc(100% - 32px);
+  }
+
+  .work-page .work-hero {
+    padding: 35px 0 45px;
+    gap: 25px;
+  }
+
   .how-it-works-section,
   .dashboard-section,
   .ecosystem-section {
-    padding: 45px 18px;
+    padding: 45px 16px;
   }
 
   .how-heading,
@@ -944,7 +1039,6 @@
     min-height: 160px;
   }
 }
-
 
 /* ===== WIDTH FIX: HOW IT WORKS ===== */
 .how-it-works-section,
@@ -1011,5 +1105,36 @@
   .dashboard-grid,
   .ecosystem-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* WORK PAGE - FINAL WIDTH FIX */
+.work-page .work-hero {
+  width: calc(100% - 48px) !important;
+  max-width: 1050px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+  gap: 36px !important;
+  box-sizing: border-box;
+}
+
+.work-page .journey-card {
+  width: 100%;
+  max-width: 550px;
+  min-width: 0;
+  justify-self: end;
+}
+
+@media (max-width: 650px) {
+  .work-page .work-hero {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  .work-page .journey-card {
+    max-width: 100%;
+    justify-self: stretch;
   }
 }

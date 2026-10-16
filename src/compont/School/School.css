@@ -6,6 +6,7 @@
   min-height: 100vh;
   overflow: hidden;
   background: #ffffff;
+  max-width: 1200px;
   color: #101943;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -43,7 +44,7 @@
   align-items: center;
   gap: 65px;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1200px;
   min-height: 850px;
   margin: 0 auto;
   padding: 100px 65px;
@@ -65,7 +66,6 @@
   color: #315cf5;
   font-size: 15px;
   font-weight: 8900;
-  transform: translate(-60px);
 }
 
 .school-badge span {
@@ -81,7 +81,6 @@
   font-weight: 600;
   line-height: 0.95;
   letter-spacing: -3.5px;
-  transform: translateX(-70px);
 }
 
 
@@ -95,7 +94,7 @@
   color: #596587;
   font-size: 19px;
   line-height: 1.2;
-  transform: translateX(-60px);
+  
 }
 
 
@@ -105,7 +104,6 @@
   flex-wrap: wrap;
   gap: 18px;
   margin-top: 36px;
-  transform: translate(-70px);
 }
 
 .school-primary-btn,

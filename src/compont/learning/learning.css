@@ -7,6 +7,7 @@
   min-height: 100vh;
   overflow-x: hidden;
   background: #ffffff;
+  padding-top: 40px;
   color: #10183f;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -49,8 +50,9 @@
   align-items: center;
   gap: 42px;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1300px;
   margin: 0 auto;
+
 }
 
 /* LEFT TEXT */
@@ -620,7 +622,7 @@
 
 .leaning-page .leaning-container {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1230px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -647,7 +649,7 @@
 /* Neeche ke 3 boxes ki width bhi consistent */
 .leaning-page .learning-second-row {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1240px;
   margin: 50px auto 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
@@ -656,7 +658,7 @@
 /* Live classes section */
 .leaning-page .learning-live-container {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 

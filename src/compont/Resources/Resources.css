@@ -25,7 +25,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1340px;
+  max-width: 1270px;
   min-height: 700px;
   margin: 0 auto;
   padding: 40px 28px 60px;
@@ -640,7 +640,7 @@ min-height: 400px;
 }
 
 .resources-category-section {
-  max-width: 1390px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 66px 24px 90px;
   color: #10183f;
@@ -802,7 +802,7 @@ min-height: 400px;
 }
 
 .resources-audience-container {
-  max-width: 1340px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
