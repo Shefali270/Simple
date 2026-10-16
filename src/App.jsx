@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from "react";
-
 import Header from "./compont/header/header.jsx";
 import Work from "./compont/work/work.jsx";
 import Learning from "./compont/learning/learning.jsx";

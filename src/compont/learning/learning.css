@@ -1,1362 +1,715 @@
-/* =================================================
+
+/* =========================================
    LEARNING PAGE
-================================================= */
-
-
-/* FULL-WIDTH BACKGROUND */
+========================================= */
 .leaning-page {
   width: 100%;
   min-height: 100vh;
-  background: #ffffff;
   overflow-x: hidden;
-  padding-top: 40px;
+  background: #ffffff;
+  color: #10183f;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.leaning-page *,
+.leaning-page *::before,
+.leaning-page *::after {
   box-sizing: border-box;
 }
 
-/* TEXT AND CONTENT WIDTH 80% */
-
-.leaning-container {
-  position: relative;
-  z-index: 2;
-  width: 80%;
-  max-width: 1250px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 80px;
-  box-sizing: border-box;
-}
-
-/* Right-side box */
-
-.learning-card {
-  width: 100%;
-  justify-self: end;
-  transform: translateX(50px);
-}
-
-
-
-
-
-/* =================================================
-   HERO
-================================================= */
-
+/* =========================================
+   HERO SECTION
+========================================= */
 .leaning-hero {
   position: relative;
-
   width: 100%;
-  min-height: 100vh;
-
-  padding: 70px 0 110px;
-
-  background:
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(65, 102, 230, 0.12),
-      transparent 30%
-    ),
-    #ffffff;
-
+  padding: 55px 24px 75px;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(65, 102, 230, 0.1), transparent 30%),
+    #ffffff;
 }
-
-
-/* =================================================
-   DOT BACKGROUND
-================================================= */
 
 .leaning-dots {
   position: absolute;
-
   inset: 0;
-
   pointer-events: none;
-
   opacity: 0.7;
-
-  background-image: radial-gradient(
-    #cbd8ff 1px,
-    transparent 1px
-  );
-
+  background-image: radial-gradient(#cbd8ff 1px, transparent 1px);
   background-size: 20px 20px;
-
-  mask-image: linear-gradient(
-    to right,
-    black 0%,
-    black 45%,
-    transparent 80%
-  );
+  mask-image: linear-gradient(to right, black 0%, black 45%, transparent 85%);
 }
 
-
-/* =================================================
-   TOP CONTAINER
-================================================= */
-
+/* TOP CONTENT WIDTH */
 .leaning-container {
   position: relative;
-
   z-index: 2;
-
-  width: min(1060px, calc(100% - 60px));
-
-  margin: 0 auto;
-
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   align-items: center;
-
-  gap: 70px;
+  gap: 42px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-
-/* =================================================
-   LEFT CONTENT
-================================================= */
-
+/* LEFT TEXT */
 .leaning-left {
-  padding-top: 30px;
+  min-width: 0;
 }
-
-
-/* =================================================
-   BADGE
-================================================= */
 
 .leaning-badge {
-  width: fit-content;
-
-  display: flex;
-
+  display: inline-flex;
   align-items: center;
-
-  gap: 8px;
-
-  padding: 8px 15px;
-
-  border-radius: 25px;
-
-  background: #eef3ff;
-
-  color: #2563e9;
-
-  font-size: 13px;
-  transform: translate(-30px);
-  font-weight: 800;
+  gap: 9px;
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: #eef2ff;
+  color: #315cf5;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .leaning-badge span {
-  color: #ffb511;
-
-  font-size: 17px;
+  color: #ffad00;
 }
 
-
-/* =================================================
-   MAIN HEADING
-================================================= */
-
 .leaning-left h1 {
-  margin: 25px 0 22px;
-
-  color: #101a58;
-
-  font-size: 82px;
-
-  line-height: 1.02;
-  transform: translate(-40px);
-  letter-spacing: -3px;
-
-  font-weight: 850;
+  margin: 0 0 24px;
+  color: #10183f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 55px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
 }
 
 .leaning-left h1 span {
-  color: #2864e9;
+  color: #315cf5;
 }
 
-
-/* =================================================
-   LEFT DESCRIPTION
-================================================= */
-
-.leaning-left p {
-  max-width: 530px;
-
+.leaning-left > p {
+  max-width: 430px;
   margin: 0;
-
-  color: #47547d;
-
-  font-size: 18px;
-  transform: translate(-50px);
-  line-height: 1.55;
+  color: #53658b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.8;
 }
 
-
-/* =================================================
-   MAIN LEARNING CARD
-================================================= */
-
+/* =========================================
+   RIGHT LEARNING CARD
+========================================= */
 .learning-card {
-  position: relative;
-
   width: 100%;
-
-  padding: 10px;
-
-  box-sizing: border-box;
-
-  border-radius: 25px;
-
+  max-width: 540px;
+  min-width: 0;
+  justify-self: end;
+  transform: none;
+  padding: 18px;
+  border: 1px solid #e1e7f8;
+  border-radius: 22px;
   background: #ffffff;
-
-  border: 1px solid #e9edfa;
-
-  box-shadow:
-    0 25px 55px rgba(31, 46, 100, 0.16);
+  box-shadow: 0 18px 45px rgba(30, 48, 105, 0.1);
 }
 
-
-/* =================================================
-   TABS
-================================================= */
-
+/* TABS */
 .learning-tabs {
-  width: 100%;
-
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 5px;
-
-  padding: 4px;
-
-  margin-bottom: 10px;
-
-  box-sizing: border-box;
-
-  border-radius: 15px;
-
-  background: #eef2ff;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .learning-tab {
-  height: 38px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  gap: 6px;
-
-  border: none;
-
-  border-radius: 12px;
-
-  background: transparent;
-
-  color: #7782a6;
-
+  gap: 7px;
+  min-width: 0;
+  padding: 12px 6px;
+  border: 1px solid #e2e7f5;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #536184;
   font-size: 12px;
-
   font-weight: 700;
-
   cursor: pointer;
-
-  transition:
-    background 0.35s ease,
-    color 0.35s ease,
-    box-shadow 0.35s ease;
 }
 
 .learning-tab.active {
-  background: #ffffff;
-
-  color: #182454;
-
-  box-shadow:
-    0 5px 14px rgba(30, 50, 110, 0.13);
+  border-color: #315cf5;
+  background: #315cf5;
+  color: #ffffff;
 }
 
 .learning-tab-icon {
-  font-size: 13px;
-
-  color: #2864e9;
+  flex-shrink: 0;
 }
 
-
-/* =================================================
-   IMAGE
-================================================= */
-
+/* IMAGE */
 .learning-image {
   position: relative;
-
   width: 100%;
-
-  height: 255px;
-
+  height: 245px;
   overflow: hidden;
-
-  border-radius: 18px;
+  border-radius: 15px;
+  background: #e9edff;
 }
 
 .learning-image img {
-  width: 100%;
-
-  height: 100%;
-
   display: block;
-
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-
-  animation: learningImageIn 0.5s ease;
+  animation: learning-image-in 0.4s ease;
 }
 
-@keyframes learningImageIn {
+@keyframes learning-image-in {
   from {
-    opacity: 0;
-
-    transform: scale(1.04);
+    opacity: 0.5;
+    transform: scale(1.02);
   }
-
   to {
     opacity: 1;
-
     transform: scale(1);
   }
 }
 
-
-/* =================================================
-   IMAGE OVERLAY
-================================================= */
-
 .learning-image-overlay {
   position: absolute;
-
   inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 15, 45, 0.78),
-      rgba(5, 15, 45, 0.02) 65%
-    );
+  background: linear-gradient(to top, rgba(10, 20, 57, 0.86), transparent 75%);
 }
-
-
-/* =================================================
-   IMAGE TEXT
-================================================= */
 
 .learning-image-text {
   position: absolute;
-
-  left: 18px;
-
   right: 18px;
-
-  bottom: 16px;
-
+  bottom: 18px;
+  left: 18px;
   color: #ffffff;
 }
 
 .learning-image-text h2 {
-  margin: 0 0 5px;
-
-  font-size: 20px;
-
-  font-weight: 800;
+  margin: 0 0 7px;
+  font-size: 24px;
 }
 
 .learning-image-text p {
   margin: 0;
-
-  color: #ffffff;
-
-  font-size: 11px;
-
-  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
-
-/* =================================================
-   4 POINTS
-================================================= */
-
+/* CHECKLIST */
 .learning-points {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 8px;
-
-  margin-top: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+  padding: 20px 3px 3px;
 }
 
 .learning-point {
-  min-height: 39px;
-
   display: flex;
-
-  align-items: center;
-
+  align-items: flex-start;
   gap: 9px;
-
-  padding: 0 12px;
-
-  box-sizing: border-box;
-
-  border-radius: 11px;
-
-  background: #eef2ff;
-
-  color: #17234e;
-
-  font-size: 12px;
-
-  font-weight: 700;
+  min-width: 0;
+  color: #455477;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .learning-check {
-  width: 17px;
-
-  height: 17px;
-
-  min-width: 17px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-
-  color: #2864e9;
-
-  font-size: 14px;
-
-  font-weight: 900;
+  background: #e6f8ef;
+  color: #149764;
+  font-size: 12px;
+  font-weight: 800;
 }
 
-
-/* =================================================
-   BELOW 3 CARDS
-================================================= */
-/* =================================================
-   BELOW 3 BOXES
-   UPPER SECTION SAFE - NO CHANGE
-================================================= */
-
-
+/* =========================================
+   THREE BOXES BELOW HERO
+========================================= */
 .learning-second-row {
-  width: min(1200px, calc(100% - 60px));
-  margin: 100px auto 80px;
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  box-sizing: border-box;
+  align-items: stretch;
+  gap: 22px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 55px auto 0;
 }
 
 .learning-box {
-  width: 100%;
-  min-width: 0;
-  min-height: 520px;
-  padding: 40px;
-  box-sizing: border-box;
-  border-radius: 25px;
-  background: #eef2ff;
-  color: #101a58;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 25px 22px;
+  border: 1px solid #e1e7f5;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(30, 48, 105, 0.05);
 }
 
 .learning-box-blue {
-  background: #315be8;
-  color: #ffffff;
+  background: #f4f7ff;
 }
-
-@media (max-width: 900px) {
-  .learning-second-row {
-    width: calc(100% - 40px);
-    gap: 15px;
-  }
-
-  .learning-box {
-    min-height: 460px;
-    padding: 25px;
-  }
-}
-
-@media (max-width: 650px) {
-  .learning-second-row {
-    width: calc(100% - 30px);
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 35px;
-  }
-
-  .learning-box {
-    min-height: 420px;
-    padding: 25px;
-  }
-}
-
-
-
-/* =================================================
-   ICON
-================================================= */
 
 .learning-box-icon {
-  width: 58px;
-
-  height: 58px;
-
-  min-width: 58px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  margin-bottom: 30px;
-
-  border-radius: 50%;
-
-  font-size: 25px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  font-size: 22px;
 }
 
 .learning-icon-cyan {
-  background: #20c4e5;
+  background: #d8f8ff;
 }
 
 .learning-icon-yellow {
-  background: #ffb511;
+  background: #fff0bf;
 }
 
 .learning-icon-pink {
-  background: #f36ba8;
+  background: #ffe2ef;
 }
-
-
-/* =================================================
-   HEADING
-================================================= */
 
 .learning-box h3 {
-  margin: 0 0 15px;
-
-  color: #101a58;
-
-  font-size: 27px;
-
-  line-height: 1.08;
-
-  letter-spacing: -0.5px;
-
-  font-weight: 850;
+  margin: 0 0 12px;
+  color: #10183f;
+  font-size: 20px;
+  line-height: 1.4;
 }
 
-.learning-box-blue h3 {
-  color: #ffffff;
-}
-
-
-/* =================================================
-   DESCRIPTION
-================================================= */
-
-.learning-box p {
-  min-height: 72px;
-
-  margin: 0 0 25px;
-
-  color: #536086;
-
+.learning-box > p {
+  margin: 0 0 20px;
+  color: #697695;
   font-size: 14px;
-
-  line-height: 1.55;
+  line-height: 1.8;
 }
-
-.learning-box-blue p {
-  color: #e1e7ff;
-}
-
-
-/* =================================================
-   POINTS
-================================================= */
 
 .learning-box-list {
-  display: flex;
-
-  flex-direction: column;
-
+  display: grid;
   gap: 13px;
-
-  margin-top: auto;
+  width: 100%;
+  margin-bottom: 25px;
 }
 
-.learning-box-list div {
+.learning-box-list > div {
   display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  color: #46537d;
-
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  color: #455477;
   font-size: 13px;
+  line-height: 1.5;
 }
 
-.learning-box-blue .learning-box-list div {
-  color: #ffffff;
-}
-
-
-/* CHECK CIRCLE */
-
-.learning-box-list span {
-  width: 20px;
-
-  height: 20px;
-
-  min-width: 20px;
-
+.learning-box-list > div > span {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
   border-radius: 50%;
-
-  background: #ffb511;
-
-  color: #101a58;
-
+  background: #e4f8ed;
+  color: #149764;
   font-size: 11px;
-
-  font-weight: 900;
-}
-
-
-/* =================================================
-   BUTTON
-================================================= */
-
-.learning-box-button {
-  width: fit-content;
-
-  margin-top: 28px;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
-  color: #2864e9;
-
-  font-size: 14px;
-
   font-weight: 800;
-
-  cursor: pointer;
 }
 
-.learning-box-blue .learning-box-button {
+.learning-box-list strong {
+  font-weight: 600;
+}
+
+.dashboard-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  margin-top: auto;
+  padding: 13px 15px;
+  border: none;
+  border-radius: 9px;
+  background: #315cf5;
   color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.learning-box-button span {
-  margin-left: 8px;
-
-  font-size: 17px;
+.dashboard-button:hover {
+  background: #2449d9;
+  transform: translateY(-2px);
 }
 
-
-/* =================================================
-   TABLET
-================================================= */
-
-@media (max-width: 900px) {
-
-  .learning-second-row {
-    width: min(700px, calc(100% - 40px));
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 10px;
-  }
-
-  .learning-box {
-    padding: 22px;
-  }
-
-  .learning-box h3 {
-    font-size: 22px;
-  }
-
+.dashboard-button span {
+  font-size: 19px;
 }
 
-
-/* =================================================
-   MOBILE
-================================================= */
-
-@media (max-width: 650px) {
-
-  .learning-second-row {
-    width: calc(100% - 30px);
-
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-
-    margin-top: 35px;
-  }
-
-  .learning-box {
-    min-height: auto;
-
-    padding: 25px;
-  }
-
-}
-/* =================================================
-   SECTION BELOW 3 BOXES
-================================================= */
-
+/* =========================================
+   LEARNING + LIVE CLASSES
+========================================= */
 .learning-live-section {
-  position: relative;
-
-  width: min(1060px, calc(100% - 60px));
-
-  min-height: 580px;
-
-  margin: 55px 0 100px;
-
-  padding: 75px 70px;
-
-  box-sizing: border-box;
-
-  border-radius: 38px;
-
-  background: #eef2ff;
-
-  overflow: hidden;
-}
-
-
-/* =================================================
-   CONTAINER
-================================================= */
-
-.learning-live-section {
-  position: relative;
-
-  width: calc(100% - 30px);
-  max-width: none;
-
-  min-height: 580px;
-
-  margin: 5px 10px 100px;
-
-  padding: 75px 0;
-
-  box-sizing: border-box;
-
-  border-radius: 38px;
-
-  background: #eef2ff;
-
-  overflow: hidden;
+  width: 100%;
+  padding: 85px 24px;
+  background: #f5f7ff;
 }
 
 .learning-live-container {
-  width: min(1250px, calc(100% - 100px));
-
-  min-height: 450px;
-
-  margin: 0 auto;
-
   display: grid;
-
-  grid-template-columns: 0.9fr 1.1fr;
-
-  align-items: center;
-
-  gap: 80px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 60px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-/* =================================================
-   LEFT
-================================================= */
-
-.learning-live-left {
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
+.learning-live-left,
+.learning-live-right {
+  min-width: 0;
 }
-
-
-/* =================================================
-   LABEL
-================================================= */
 
 .learning-live-label {
   display: flex;
-
   align-items: center;
-
-  gap: 8px;
-
-  margin-bottom: 30px;
-
-  color: #2864e9;
-
-  font-size: 15px;
-  transform: translate(30px);
-  font-weight: 700;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 25px;
+  color: #536184;
+  font-size: 13px;
 }
 
 .learning-live-label span:first-child {
-  color: #ffb511;
-
-  font-size: 17px;
+  color: #ffad00;
 }
 
 .learning-live-label strong {
-  font-weight: 800;
+  color: #315cf5;
 }
-
-
-/* =================================================
-   HEADING
-================================================= */
 
 .learning-live-left h2 {
   margin: 0;
-
-  color: #101a58;
-
-  font-size: 68px;
-
-  line-height: 0.98;
-
-  letter-spacing: -3px;
-  transform: translate(40px);
-  font-weight: 900;
+  color: #10183f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
 }
 
 .learning-live-left h2 span {
-  color: #2864e9;
+  color: #315cf5;
 }
-
-
-/* =================================================
-   RIGHT
-================================================= */
-
-.learning-live-right {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-
-/* =================================================
-   RIGHT HEADING
-================================================= */
 
 .learning-live-right h3 {
-  max-width: 570px;
-
-  margin: 0 0 30px;
-
-  color: #101a58;
-
-  font-size: 30px;
-
-  line-height: 1.08;
-
-  letter-spacing: -1px;
-
-  font-weight: 850;
+  margin: 0 0 27px;
+  color: #536184;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.85;
 }
-
-
-/* =================================================
-   FEATURE PILLS
-================================================= */
 
 .learning-live-features {
   display: flex;
-
   flex-wrap: wrap;
-
-  gap: 10px;
-
-  max-width: 570px;
-
-  margin-bottom: 30px;
+  gap: 12px;
 }
 
 .learning-live-feature {
-  min-height: 54px;
-
-  padding: 0 16px;
-
-  display: flex;
-
+  display: inline-flex;
   align-items: center;
-
-  gap: 7px;
-
-  box-sizing: border-box;
-
-  border: 2px solid #dce4ff;
-
-  border-radius: 30px;
-
+  gap: 9px;
+  padding: 12px 14px;
+  border: 1px solid #e0e6f5;
+  border-radius: 10px;
   background: #ffffff;
-
-  color: #3e4c78;
-
+  color: #3f4e72;
   font-size: 13px;
-
   font-weight: 700;
 }
 
 .learning-live-feature span {
-  width: 27px;
-
-  height: 27px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border: 2px solid #d5defd;
-
-  border-radius: 50%;
-
-  color: #2864e9;
-
-  font-size: 14px;
+  color: #315cf5;
+  font-size: 18px;
 }
-
-
-/* =================================================
-   BUTTON
-================================================= */
 
 .learning-live-button {
-  min-width: 140px;
-
-  height: 50px;
-
-  padding: 0 25px;
-
-  border: 2px solid #101a58;
-
-  border-radius: 30px;
-
-  background: #ffffff;
-
-  color: #101a58;
-
-  font-size: 14px;
-
-  font-weight: 800;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.learning-live-button:hover {
-  background: #101a58;
-
+  margin-top: 28px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 9px;
+  background: #315cf5;
   color: #ffffff;
-
-  transform: translateY(-2px);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
 }
-
-
-/* =================================================
-   TABLET
-================================================= */
-
-@media (max-width: 900px) {
-  .learning-second-row {
-    width: min(700px, calc(100% - 40px));
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .learning-box {
-    min-height: 420px;
-    padding: 22px;
-  }
-
-  .learning-box h3 {
-    font-size: 22px;
-  }
-}
-
-/* =================================================
-   MOBILE
-================================================= */
-
-/* @media (max-width: 650px) {
-
-  .learning-live-section {
-    width: calc(100% - 30px);
-
-    min-height: auto;
-
-    margin-top: 35px;
-
-    padding: 40px 25px;
-
-    border-radius: 28px;
-  }
-
-  .learning-live-container {
-    min-height: auto;
-
-    gap: 35px;
-  }
-
-  .learning-live-left h2 {
-    font-size: 42px;
-
-    letter-spacing: -2px;
-  }
-
-  .learning-live-right h3 {
-    font-size: 22px;
-  }
-
-  .learning-live-features {
-    gap: 8px;
-  }
-
-  .learning-live-feature {
-    min-height: 48px;
-
-    font-size: 12px;
-  }
-
-} */
-
 
 /* =========================================
-   LEARNING PAGE - MOBILE LAYOUT FIX
-   Desktop layout unchanged
+   TABLET
 ========================================= */
-
-@media screen and (max-width: 650px) {
-
-  .leaning-page {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow-x: clip !important;
-  }
-
+@media (max-width: 950px) {
   .leaning-hero {
-    width: 100% !important;
-    min-height: auto !important;
-    padding: 38px 0 45px !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
+    padding: 42px 22px 60px;
   }
 
   .leaning-container {
-    width: calc(100% - 36px) !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 28px !important;
-    align-items: stretch !important;
-    box-sizing: border-box !important;
-  }
-
-  .leaning-left {
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .leaning-badge {
-    width: fit-content !important;
-    max-width: 100% !important;
-    margin: 0 0 18px !important;
-    padding: 8px 12px !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-    font-size: 12px !important;
-  }
-
-  .leaning-left h1 {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 18px !important;
-    padding: 0 !important;
-    transform: none !important;
-
-    font-size: clamp(35px, 9vw, 48px) !important;
-    line-height: 1.08 !important;
-    letter-spacing: -1.5px !important;
-    overflow-wrap: break-word !important;
-    box-sizing: border-box !important;
-  }
-
-  .leaning-left p {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-
-    font-size: 15px !important;
-    line-height: 1.7 !important;
-    overflow-wrap: anywhere !important;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 25px;
   }
 
   .learning-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    justify-self: stretch !important;
-    margin: 0 !important;
-    padding: 10px !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-    border-radius: 20px !important;
-  }
-
-  .learning-tabs {
-    width: 100% !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 4px !important;
-    padding: 4px !important;
-    box-sizing: border-box !important;
-  }
-
-  .learning-tab {
-    min-width: 0 !important;
-    height: 38px !important;
-    gap: 4px !important;
-    padding: 0 3px !important;
-    font-size: 11px !important;
+    padding: 14px;
   }
 
   .learning-image {
-    width: 100% !important;
-    height: clamp(190px, 58vw, 270px) !important;
-    min-width: 0 !important;
-    border-radius: 14px !important;
-  }
-
-  .learning-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-
-  .learning-image-text {
-    left: 12px !important;
-    right: 12px !important;
-    bottom: 12px !important;
-  }
-
-  .learning-image-text h2 {
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-  }
-
-  .learning-image-text p {
-    font-size: 11px !important;
-  }
-
-  .learning-points {
-    width: 100% !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 7px !important;
-  }
-
-  .learning-point {
-    min-width: 0 !important;
-    padding: 9px 10px !important;
-    font-size: 12px !important;
-  }
-
-  /* Three learning boxes */
-  .learning-second-row {
-    width: calc(100% - 36px) !important;
-    max-width: 100% !important;
-    margin: 35px auto 45px !important;
-    padding: 0 !important;
-
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  .learning-box {
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: auto !important;
-    padding: 24px !important;
-    border-radius: 22px !important;
-    box-sizing: border-box !important;
-  }
-
-  .learning-box h3 {
-    font-size: 23px !important;
-    line-height: 1.2 !important;
-  }
-
-  .learning-box p {
-    min-height: 0 !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-  }
-
-  /* Live learning section */
-  .learning-live-section {
-    width: calc(100% - 24px) !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    min-height: auto !important;
-    margin: 30px auto 45px !important;
-    padding: 30px 18px !important;
-    border-radius: 24px !important;
-    box-sizing: border-box !important;
-  }
-
-  .learning-live-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 28px !important;
-    box-sizing: border-box !important;
-  }
-
-  .learning-live-left,
-  .learning-live-right {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    align-items: flex-start !important;
-  }
-
-  .learning-live-label {
-    margin: 0 0 18px !important;
-    transform: none !important;
-    font-size: 13px !important;
-  }
-
-  .learning-live-left h2 {
-    width: 100% !important;
-    margin: 0 !important;
-    transform: none !important;
-    font-size: clamp(34px, 8.5vw, 44px) !important;
-    line-height: 1.08 !important;
-    letter-spacing: -1.5px !important;
-    overflow-wrap: break-word !important;
-  }
-
-  .learning-live-right h3 {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 18px !important;
-    font-size: 22px !important;
-    line-height: 1.25 !important;
-  }
-
-  .learning-live-features {
-    width: 100% !important;
-    max-width: 100% !important;
-    gap: 8px !important;
-    margin-bottom: 22px !important;
-  }
-
-  .learning-live-feature {
-    min-width: 0 !important;
-    min-height: 44px !important;
-    padding: 7px 11px !important;
-    font-size: 12px !important;
-    box-sizing: border-box !important;
-  }
-
-  .learning-live-button {
-    max-width: 100% !important;
-    min-height: 46px !important;
-    padding: 0 20px !important;
-  }
-}
-
-/* Very small phones */
-@media screen and (max-width: 380px) {
-  .leaning-container {
-    width: calc(100% - 28px) !important;
-  }
-
-  .leaning-left h1 {
-    font-size: 33px !important;
-    letter-spacing: -1px !important;
-  }
-
-  .learning-card {
-    padding: 7px !important;
+    height: 210px;
   }
 
   .learning-tab {
-    font-size: 10px !important;
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .learning-second-row {
+    gap: 15px;
   }
 
   .learning-box {
-    padding: 20px !important;
+    padding: 20px 17px;
+  }
+
+  .learning-live-container {
+    gap: 35px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 700px) {
+  .leaning-hero {
+    padding: 35px 18px 45px;
+  }
+
+  .leaning-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .leaning-left h1 {
+    font-size: clamp(36px, 9vw, 46px);
+    letter-spacing: -1px;
+  }
+
+  .leaning-left > p {
+    font-size: 15px;
+  }
+
+  .learning-card {
+    max-width: 100%;
+    justify-self: stretch;
+    padding: 12px;
+    border-radius: 17px;
+  }
+
+  .learning-tabs {
+    gap: 5px;
+  }
+
+  .learning-tab {
+    padding: 10px 4px;
+    font-size: 10px;
+  }
+
+  .learning-image {
+    height: 220px;
+  }
+
+  .learning-points {
+    gap: 12px 8px;
+  }
+
+  .learning-point {
+    font-size: 12px;
+  }
+
+  .learning-second-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .learning-box {
+    padding: 22px;
   }
 
   .learning-live-section {
-    width: calc(100% - 16px) !important;
-    padding: 25px 14px !important;
+    padding: 55px 20px;
+  }
+
+  .learning-live-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .learning-live-left h2 {
+    font-size: clamp(36px, 9vw, 46px);
+  }
+
+  .learning-live-right h3 {
+    font-size: 16px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+  .leaning-hero {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .learning-card {
+    padding: 9px;
+  }
+
+  .learning-tab {
+    font-size: 9px;
+  }
+
+  .learning-image {
+    height: 190px;
+  }
+
+  .learning-points {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .learning-live-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+
+/* ===== LEARNING PAGE WIDTH FIX ===== */
+.leaning-page .leaning-hero {
+  width: 100%;
+  padding: 45px 24px 65px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.leaning-page .leaning-container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 36px;
+  box-sizing: border-box;
+}
+
+.leaning-page .leaning-left {
+  min-width: 0;
+}
+
+.leaning-page .learning-card {
+  width: 100%;
+  max-width: 520px;
+  min-width: 0;
+  justify-self: end;
+  margin: 0;
+  padding: 18px;
+  transform: none;
+  box-sizing: border-box;
+}
+
+/* Neeche ke 3 boxes ki width bhi consistent */
+.leaning-page .learning-second-row {
+  width: 100%;
+  max-width: 1040px;
+  margin: 50px auto 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Live classes section */
+.leaning-page .learning-live-container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .leaning-page .leaning-container {
+    max-width: 650px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .leaning-page .learning-card {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .leaning-page .learning-second-row {
+    max-width: 650px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .leaning-page .leaning-hero {
+    padding: 35px 16px 45px;
+  }
+
+  .leaning-page .leaning-container {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .leaning-page .learning-card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .leaning-page .learning-second-row {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .leaning-page .learning-live-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .leaning-page .learning-live-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
 }

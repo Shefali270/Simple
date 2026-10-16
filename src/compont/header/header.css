@@ -1,59 +1,56 @@
 
-/* ========================================
-   HEADER — GLOBAL BOX SIZING
-======================================== */
+/* =========================================
+   HEADER - FULL WIDTH
+========================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-bottom: 1px solid #edf0f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .header,
-.header *,
-.header *::before,
-.header *::after {
+.header * {
   box-sizing: border-box;
 }
 
-.header {
-  position: relative;
-  top: auto;
-  z-index: 1000;
-  width: 100%;
-  max-width: 100%;
-  height: 76px;
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
-  border-bottom: 1px solid #edf0fa;
-}
-/* Header content stays centered */
 .header-inner {
-  width: min(1080px, calc(100% - 32px));
-  max-width: 1080px;
-  height: 100%;
-  min-width: 0;
-  margin: 0 auto;
-  padding: 0;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  gap: 20px;
+  width: calc(100% - 48px);
+  max-width: 1280px;
+  min-height: 76px;
+  margin: 0 auto;
 }
 
-/* ========================================
+/* =========================================
    LOGO
-======================================== */
-
+========================================= */
 .header .logo {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 10px;
-  flex-shrink: 0;
   min-width: 0;
   color: #10183f;
   text-decoration: none;
 }
 
 .header .logo-icon {
-  width: 52px;
-  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  width: 46px;
+  height: 52px;
 }
 
 .header .logo-icon img {
@@ -66,89 +63,80 @@
 .header .logo-text {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  min-width: 0;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 .header .brand-name {
   color: #10183f;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 19px;
-  font-weight: 800;
-  line-height: 1.2;
-  white-space: nowrap;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .header .tagline {
   color: #315cf5;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 1.4px;
-  white-space: nowrap;
+  letter-spacing: 1px;
 }
 
-/* ========================================
+/* =========================================
    DESKTOP NAVIGATION
-======================================== */
-
+========================================= */
 .header .nav {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
+  gap: clamp(12px, 1.5vw, 24px);
   min-width: 0;
-  gap: 4px;
-  padding: 7px;
+  padding: 17px 20px;
   border-radius: 40px;
   background: #f0f3ff;
 }
 
 .header .nav > a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 1 auto;
-  min-width: 0;
-  padding: 11px 9px;
-  border-radius: 24px;
+  flex-shrink: 0;
   color: #10183f;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .header .nav > a:hover {
-  background: #ffffff;
   color: #315cf5;
 }
 
-/* ========================================
+/* =========================================
    HEADER ACTIONS
-======================================== */
-
+========================================= */
 .header .header-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  gap: 8px;
+  flex: 0 0 auto;
+  gap: 10px;
 }
 
 .header .signin-menu {
   position: relative;
-  min-width: 0;
+  flex: 0 0 auto;
 }
 
-.header .signin-btn,
-.header .get-started {
+.header .signin-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   min-height: 42px;
-  padding: 0 13px;
-  border-radius: 28px;
+  padding: 0 15px;
+  border: 1px solid #dce3fa;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #10183f;
   font-family: inherit;
   font-size: 12px;
   font-weight: 700;
@@ -156,258 +144,223 @@
   cursor: pointer;
 }
 
-.header .signin-btn {
-  color: #10183f;
-  background: #ffffff;
-  border: 1px solid #dce3fa;
-}
-
-.header .get-started {
-  color: #ffffff;
-  background: #315cf5;
-  border: 1px solid #315cf5;
-  box-shadow: 0 5px 14px rgba(49, 92, 245, 0.15);
-  text-decoration: none;
-}
-
 .header .signin-btn:hover {
-  background: #f7f8ff;
-}
-
-.header .get-started:hover {
-  background: #254ce0;
-}
-
-.header .arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: #315cf5;
-  background: #ffffff;
-  font-size: 18px;
+  border-color: #315cf5;
 }
 
 .header .chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 15px;
 }
 
-/* ========================================
-   SIGN-IN DROPDOWN
-======================================== */
+/* GET STARTED */
+.header .get-started {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 5px 7px 5px 16px;
+  border: none;
+  border-radius: 30px;
+  background: #315cf5;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 5px 13px rgba(49, 92, 245, 0.14);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
 
+.header .get-started:hover {
+  background: #2449d9;
+  transform: translateY(-1px);
+}
+
+.header .get-started .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #315cf5;
+  font-size: 21px;
+}
+
+/* =========================================
+   SIGN IN DROPDOWN
+========================================= */
 .header .signin-dropdown {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  z-index: 1200;
-  width: 260px;
-  max-width: calc(100vw - 24px);
+  z-index: 1100;
+  display: grid;
+  gap: 4px;
+  width: 270px;
+  max-width: calc(100vw - 36px);
   padding: 10px;
+  border: 1px solid #e2e7f5;
+  border-radius: 15px;
   background: #ffffff;
-  border: 1px solid #e4e9f7;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(16, 24, 63, 0.16);
+  box-shadow: 0 14px 38px rgba(22, 37, 82, 0.14);
 }
 
 .header .signin-option {
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 100%;
   min-width: 0;
-  padding: 11px 8px;
+  padding: 12px;
+  border-radius: 10px;
   color: #10183f;
   text-decoration: none;
-  border-radius: 12px;
+  transition: background 0.2s ease;
 }
 
 .header .signin-option:hover {
-  background: #f0f3ff;
+  background: #f3f6ff;
 }
 
 .header .signin-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
   flex-shrink: 0;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
 }
 
 .header .student-icon {
-  color: #ffffff;
-  background: #3260ed;
+  background: #e5edff;
+  color: #315cf5;
 }
 
 .header .teacher-icon {
-  color: #10183f;
-  background: #ffcf55;
+  background: #fff0c9;
+  color: #906600;
 }
 
 .header .institute-icon {
-  color: #ffffff;
-  background: #ff5275;
+  background: #dff9f0;
+  color: #13845f;
 }
 
 .header .signin-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   min-width: 0;
 }
 
-.header .signin-option strong {
-  display: block;
+.header .signin-option-text strong {
   color: #10183f;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
 }
 
-.header .signin-option small {
-  display: block;
-  margin-top: 4px;
-  color: #7581aa;
+.header .signin-option-text small {
+  color: #75809b;
   font-size: 11px;
   line-height: 1.4;
 }
 
-/* ========================================
-   MOBILE CONTROLS
-======================================== */
+/* =========================================
+   MOBILE CONTROLS - HIDDEN ON DESKTOP
+========================================= */
+.header .mobile-menu-btn {
+  display: none;
+}
 
-.header .mobile-menu-btn,
 .header .mobile-nav-actions {
   display: none;
 }
 
-/* ========================================
-   TABLET
-======================================== */
-
-@media (min-width: 701px) and (max-width: 1050px) {
-  .header-inner {
-    width: calc(100% - 24px);
-    gap: 8px;
-  }
-
-  .header .logo {
-    gap: 6px;
-  }
-
-  .header .logo-icon {
-    width: 34px;
-    height: 34px;
-  }
-
-  .header .brand-name {
-    font-size: 15px;
-  }
-
-  .header .tagline {
-    font-size: 6px;
-    letter-spacing: 0.6px;
-  }
-
-  .header .nav {
-    gap: 0;
-    padding: 4px;
-  }
-
-  .header .nav > a {
-    padding: 10px 5px;
-    font-size: 10px;
-  }
-
-  .header .header-actions {
-    gap: 5px;
-  }
-
-  .header .signin-btn,
-  .header .get-started {
-    min-height: 38px;
-    padding: 0 9px;
-    font-size: 10px;
-  }
-
-  .header .arrow {
-    width: 22px;
-    height: 22px;
-  }
+.header .desktop-signin-menu {
+  display: block;
 }
 
-/* ========================================
-   MOBILE
-======================================== */
+.header .mobile-signin-menu {
+  display: none;
+}
 
-@media (max-width: 700px) {
-  .header {
-    height: 66px;
-  }
-
+/* =========================================
+   SMALL LAPTOP / TABLET
+========================================= */
+@media (max-width: 1100px) {
   .header-inner {
-    width: 100%;
-    height: 66px;
-    min-height: 66px;
-    padding: 0 12px;
-    gap: 10px;
+    width: calc(100% - 32px);
+    gap: 14px;
   }
 
   .header .logo {
-    max-width: calc(100% - 54px);
     gap: 7px;
   }
 
   .header .logo-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 46px;
   }
 
   .header .brand-name {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .header .tagline {
-    font-size: 7px;
-    letter-spacing: 0.8px;
+    font-size: 8px;
+    letter-spacing: 0.7px;
   }
 
-  .header .header-inner > .nav {
+  .header .nav {
+    gap: 12px;
+    padding: 15px 13px;
+  }
+
+  .header .nav > a {
+    font-size: 11px;
+  }
+
+  .header .header-actions {
+    gap: 7px;
+  }
+
+  .header .signin-btn {
+    padding: 0 11px;
+  }
+
+  .header .get-started {
+    gap: 6px;
+    padding-left: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE HEADER
+========================================= */
+@media (max-width: 850px) {
+  .header-inner {
+    min-height: 70px;
+    width: calc(100% - 32px);
+    gap: 12px;
+  }
+
+  .header .logo-icon {
+    width: 40px;
+    height: 45px;
+  }
+
+  .header .brand-name {
+    font-size: 17px;
+  }
+
+  .header .desktop-signin-menu {
     display: none;
-  }
-
-  .header .header-inner > .nav.nav-open {
-    position: absolute;
-    top: 100%;
-    left: 12px;
-    right: 12px;
-    z-index: 1100;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 3px;
-    width: auto;
-    max-width: none;
-    max-height: calc(100vh - 90px);
-    overflow-y: auto;
-    padding: 10px;
-    margin: 0;
-    background: #ffffff;
-    border: 1px solid #e0e6fa;
-    border-radius: 16px;
-    box-shadow: 0 14px 35px rgba(16, 24, 63, 0.16);
-  }
-
-  .header .nav.nav-open > a {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    min-height: 43px;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 14px;
-    white-space: normal;
   }
 
   .header .header-actions {
@@ -415,80 +368,63 @@
   }
 
   .header .mobile-menu-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 42px;
     height: 42px;
-    flex-shrink: 0;
-    padding: 0;
-    color: #10183f;
-    background: #f0f3ff;
-    border: 1px solid #dce3fa;
+    margin-left: auto;
+    border: 1px solid #e0e6f5;
     border-radius: 12px;
+    background: #ffffff;
+    color: #10183f;
     cursor: pointer;
   }
 
+  .header .nav {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    padding: 14px;
+    border: 1px solid #e4e9f6;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(22, 37, 82, 0.13);
+  }
+
+  .header .nav.nav-open {
+    display: flex;
+  }
+
+  .header .nav > a {
+    display: block;
+    width: 100%;
+    padding: 13px 12px;
+    border-radius: 9px;
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  @media (max-width: 850px) {
   .header .mobile-nav-actions {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 4px 4px;
-    margin-top: 5px;
-    border-top: 1px solid #edf0fa;
   }
 
-  .header .mobile-nav-actions .signin-menu {
-    width: 100%;
+  .header .mobile-signin-menu {
+    display: block;
   }
 
-  .header .mobile-nav-actions .signin-btn,
-  .header .mobile-nav-actions .get-started {
-    display: flex;
-    width: 100%;
-    min-height: 44px;
-    justify-content: space-between;
-    padding: 0 14px;
-    font-size: 13px;
+  .header .header-actions {
+    display: none;
   }
-
-  .header .mobile-nav-actions .signin-dropdown {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 8px;
-    box-shadow: 0 8px 22px rgba(16, 24, 63, 0.1);
-  }
-}
-
-@media (max-width: 380px) {
-  .header-inner {
-    padding: 0 10px;
-  }
-
-  .header .logo-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .header .brand-name {
-    font-size: 14px;
-  }
-
-  .header .tagline {
-    font-size: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  .header .mobile-menu-btn {
-    width: 39px;
-    height: 39px;
-  }
-
-  .header .header-inner > .nav.nav-open {
-    left: 8px;
-    right: 8px;
-  }
-}
+}}

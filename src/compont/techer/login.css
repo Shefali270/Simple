@@ -1,417 +1,426 @@
 
-* {
+/* =========================================
+   INSTITUTE LOGIN PAGE
+========================================= */
+.insti-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #10183f;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.insti-page *,
+.insti-page *::before,
+.insti-page *::after {
   box-sizing: border-box;
 }
 
-.teacher-login-hero {
-  width: 100%;
-  max-width: 1440px;
-  min-height: 590px;
-  margin: 0 auto;
-  padding: 65px 40px 75px;
+/* =========================================
+   HERO WIDTH & LAYOUT
+========================================= */
+.insti-hero {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
   align-items: center;
-  gap: 50px;
-  box-sizing: border-box;
-}
+  gap: 55px;
 
-/* NAVBAR */
-.teacher-navbar {
-  width: 100%;
-  max-width: 1440px;
+  width: calc(100% - 48px);
+  max-width: 1050px;
+  min-height: 650px;
   margin: 0 auto;
-  padding: 0 40px;
-  min-height: 85px;
-  display: flex;
+  padding: 36px 0 60px;
+}
+
+/* =========================================
+   LEFT WELCOME CONTENT
+========================================= */
+.insti-welcome {
+  min-width: 0;
+  width: 100%;
+}
+
+.insti-badge {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  background: #fff;
-}
-
-.teacher-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.logo-icon {
-  font-size: 32px;
-}
-
-.teacher-logo strong {
-  display: block;
-  font-size: 18px;
-  letter-spacing: -0.7px;
-}
-
-.teacher-logo small {
-  display: block;
-  margin-top: 4px;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: #eef2ff;
   color: #315cf5;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
-.teacher-navbar nav {
+.insti-welcome h1 {
+  margin: 0 0 20px;
+  color: #10183f;
+  font-size: clamp(38px, 4vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.insti-welcome h1 span {
+  color: #315cf5;
+}
+
+.insti-welcome > p {
+  max-width: 490px;
+  margin: 0;
+  color: #53658b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* FEATURES UNDER LEFT TEXT */
+.insti-features {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 10px 14px;
-  border-radius: 40px;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f5;
+}
+
+.insti-features > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #10183f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.insti-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: #edf1ff;
+  color: #315cf5;
+  font-size: 17px;
+}
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+.insti-login-card {
+  width: 100%;
+  max-width: 420px;
+  min-width: 0;
+  justify-self: end;
+  padding: 22px;
+  border: 1px solid #e0e7fa;
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(30, 48, 105, 0.1);
+}
+
+/* ROLE TABS */
+.insti-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  margin-bottom: 22px;
+  padding: 5px;
+  border-radius: 13px;
   background: #eef2ff;
 }
 
-.teacher-navbar nav a {
-  color: #414d78;
-  text-decoration: none;
+.insti-tabs button {
+  min-width: 0;
+  padding: 12px 5px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #53658b;
   font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
-}
-
-.nav-signin,
-.nav-start {
-  padding: 12px 16px;
-  border: 0;
-  border-radius: 30px;
-  background: white;
-  color: #10183f;
-  font-weight: 800;
-  white-space: nowrap;
   cursor: pointer;
 }
 
-.nav-start {
-  background: #315cf5;
-  color: white;
-}
-
-/* MAIN LOGIN AREA */
-.teacher-login-hero {
-  width: 80%;
-  max-width: 1350px;
-  min-height: 590px;
-  margin: 0 auto;
-  padding: 65px 0 75px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  align-items: center;
-  gap: 70px;
-}
-
-.teacher-welcome {
-  min-width: 0;
-}
-
-.teacher-badge {
-  display: inline-block;
-  padding: 9px 13px;
-  border-radius: 25px;
-  background: #edf1ff;
-  color: #315cf5;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.teacher-welcome h1 {
-  margin: 22px 0;
-  font-size: clamp(44px, 4.2vw, 66px);
-  line-height: 0.99;
-  font-weight: 900;
-  letter-spacing: -3px;
-}
-
-.teacher-welcome h1 span {
-  display: block;
-  color: #315cf5;
-}
-
-.teacher-welcome > p {
-  max-width: 500px;
-  color: #4c587e;
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-.teacher-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid #dfe5ff;
-}
-
-.teacher-features div {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.teacher-features span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: #edf1ff;
-  color: #315cf5;
-  font-size: 19px;
-}
-
-/* LOGIN CARD */
-.teacher-login-card {
-  width: 100%;
-  max-width: 440px;
-  justify-self: end;
-  padding: 18px 22px 20px;
-  border: 1px solid #e0e6ff;
-  border-radius: 26px;
-  background: #fff;
-  box-shadow: 0 22px 50px rgba(24, 39, 91, 0.14);
-}
-
-.teacher-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  padding: 5px;
-  border-radius: 17px;
-  background: #edf1ff;
-}
-
-.teacher-tabs button {
-  padding: 13px 5px;
-  border: 0;
-  border-radius: 12px;
-  background: transparent;
-  color: #66739b;
-  font-size: 12px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.teacher-tabs button.active {
-  background: #fff;
+.insti-tabs .insti-tab-active {
+  background: #ffffff;
   color: #10183f;
-  box-shadow: 0 4px 12px #dfe5ff;
+  box-shadow: 0 4px 12px rgba(30, 48, 105, 0.08);
 }
 
-.teacher-login-card h2 {
-  margin: 22px 0 4px;
+/* LOGIN TITLE */
+.insti-login-card h2 {
+  margin: 0 0 5px;
+  color: #10183f;
   font-size: 22px;
-  letter-spacing: -0.8px;
+  line-height: 1.3;
 }
 
-.teacher-subtitle {
-  margin: 0 0 20px;
-  color: #7380a5;
+.insti-subtitle {
+  margin: 0 0 22px;
+  color: #697695;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FORM */
+.insti-login-card form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.insti-login-card form > label {
+  margin-bottom: 8px;
+  color: #10183f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.insti-login-card form > input,
+.insti-password-wrap input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  background: #eaf0ff;
+  color: #10183f;
+  font-family: inherit;
   font-size: 13px;
 }
 
-.teacher-login-card form > label {
-  display: block;
-  margin: 15px 0 7px;
-  font-size: 12px;
-  font-weight: 800;
+.insti-login-card form > input {
+  margin-bottom: 17px;
 }
 
-.teacher-login-card form > input,
-.teacher-password input {
-  width: 100%;
-  height: 47px;
-  padding: 0 14px;
-  border: 1px solid transparent;
-  border-radius: 16px;
-  outline: none;
-  background: #edf1ff;
-  color: #10183f;
-}
-
-.teacher-login-card input:focus {
+.insti-login-card form > input:focus,
+.insti-password-wrap input:focus {
   border-color: #315cf5;
+  background: #f5f7ff;
 }
 
-.teacher-password {
+/* PASSWORD */
+.insti-password-wrap {
   display: flex;
   align-items: center;
-  border-radius: 16px;
-  background: #edf1ff;
-}
-
-.teacher-password input {
-  flex: 1;
+  width: 100%;
   min-width: 0;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: #eaf0ff;
 }
 
-.teacher-password button {
-  margin-right: 12px;
+.insti-password-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+}
+
+.insti-password-wrap button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
   border: 0;
+  border-radius: 10px;
   background: transparent;
   cursor: pointer;
 }
 
-.teacher-form-options {
+/* REMEMBER & FORGOT PASSWORD */
+.insti-form-options {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 10px;
-  margin: 14px 0;
+  margin-bottom: 18px;
   font-size: 12px;
 }
 
-.remember-label {
-  display: flex;
+.insti-remember {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: #4c587e;
+  gap: 7px;
+  color: #53658b;
+  cursor: pointer;
 }
 
-.teacher-form-options a,
-.teacher-signup a {
+.insti-remember input {
+  accent-color: #315cf5;
+}
+
+.insti-form-options > a,
+.insti-register a {
   color: #315cf5;
-  text-decoration: none;
   font-weight: 800;
+  text-decoration: none;
 }
 
-.teacher-submit {
-  width: 100%;
-  min-height: 51px;
+.insti-form-options > a:hover,
+.insti-register a:hover {
+  text-decoration: underline;
+}
+
+/* SUBMIT BUTTON */
+.insti-submit {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 8px 6px 22px;
+  gap: 12px;
+  width: 100%;
+  min-height: 49px;
+  padding: 6px 8px 6px 19px;
   border: 0;
-  border-radius: 30px;
+  border-radius: 28px;
   background: #315cf5;
-  color: #fff;
+  color: #ffffff;
+  font-size: 13px;
   font-weight: 800;
   cursor: pointer;
 }
 
-.teacher-submit span {
-  display: grid;
-  place-items: center;
-  width: 37px;
-  height: 37px;
+.insti-submit > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: white;
+  background: #ffffff;
   color: #315cf5;
-  font-size: 20px;
+  font-size: 21px;
 }
 
-.teacher-signup {
+/* REGISTER LINK */
+.insti-register {
   margin-top: 18px;
-  padding-top: 15px;
-  border-top: 1px dashed #dfe5ff;
-  color: #7380a5;
-  text-align: center;
+  padding-top: 16px;
+  border-top: 1px dashed #dce4f7;
+  color: #697695;
   font-size: 12px;
-}
-
-/* BLUE BANNER */
-.teacher-bottom-banner {
-  width: 80%;
-  max-width: 1500px;
-  min-height: 300px;
-  margin: 0 auto;
-  padding: 55px 30px;
-  overflow: hidden;
-  border-radius: 35px 35px 0 0;
-  background: #101849;
+  line-height: 1.8;
   text-align: center;
 }
 
-.teacher-bottom-banner h2 {
-  margin: 15px 0;
-  color: white;
-  font-size: clamp(45px, 7vw, 100px);
-  font-weight: 900;
-  letter-spacing: -4px;
-}
-
-.teacher-bottom-banner h2 span {
-  color: #ffb511;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-  .teacher-navbar {
-    width: 100%;
-    padding: 15px 20px;
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 900px) {
+  .insti-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+    gap: 28px;
+    width: calc(100% - 36px);
   }
 
-  .teacher-login-hero {
-    width: 100%;
-    padding: 35px 20px;
+  .insti-welcome h1 {
+    font-size: clamp(35px, 4.5vw, 46px);
+  }
+
+  .insti-login-card {
+    padding: 17px;
+  }
+
+  .insti-features {
+    gap: 10px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 700px) {
+  .insti-hero {
     grid-template-columns: minmax(0, 1fr);
+    width: calc(100% - 36px);
+    max-width: 500px;
+    min-height: auto;
     gap: 30px;
+    padding: 35px 0 45px;
   }
 
-  .teacher-login-card {
+  .insti-welcome h1 {
+    font-size: clamp(36px, 8vw, 48px);
+    letter-spacing: -1px;
+  }
+
+  .insti-welcome > p {
+    font-size: 15px;
+  }
+
+  .insti-login-card {
     width: 100%;
-    max-width: 440px;
-    justify-self: center;
+    max-width: 100%;
+    justify-self: stretch;
+    padding: 17px;
   }
 
-  .teacher-bottom-banner {
-    width: calc(100% - 40px);
-  }
-
-  .teacher-bottom-banner h2 {
-    letter-spacing: -2px;
-  }
-}
-
-@media (max-width: 480px) {
-  .teacher-login-hero {
-    padding: 25px 12px 35px;
-  }
-
-  .teacher-login-card {
-    width: 100%;
-    padding: 15px;
-    min-width: 0;
-  }
-
-  .teacher-bottom-banner {
-    width: calc(100% - 24px);
-    padding: 35px 15px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .teacher-navbar,
-  .teacher-login-hero,
-  .teacher-bottom-banner {
-    width: calc(100% - 24px);
-  }
-
-  .teacher-navbar nav a {
-    font-size: 11px;
-  }
-
-  .teacher-login-card {
-    padding: 15px;
-  }
-
-  .teacher-features {
+  .insti-features {
     gap: 12px;
   }
+}
 
-  .teacher-bottom-banner {
-    min-height: 200px;
-    padding: 35px 15px;
-    border-radius: 22px 22px 0 0;
+@media (max-width: 380px) {
+  .insti-hero {
+    width: calc(100% - 28px);
+  }
+
+  .insti-login-card {
+    padding: 13px;
+  }
+
+  .insti-tabs button {
+    font-size: 10px;
+  }
+
+  .insti-form-options {
+    align-items: flex-start;
+  }
+}
+
+
+
+/* INSTITUTE LOGIN - WIDTH FIX */
+.insti-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+  align-items: center;
+  gap: 65px;
+  width: calc(100% - 48px);
+  max-width: 1150px;
+  min-height: 650px;
+  margin: 0 auto;
+  padding: 36px 0 60px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .insti-hero {
+    gap: 28px;
+    width: calc(100% - 36px);
+  }
+}
+
+@media (max-width: 700px) {
+  .insti-hero {
+    grid-template-columns: minmax(0, 1fr);
+    width: calc(100% - 36px);
+    max-width: 500px;
+    min-height: auto;
+    gap: 30px;
+    padding: 35px 0 45px;
   }
 }

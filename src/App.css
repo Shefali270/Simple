@@ -1,259 +1,385 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-.ticks {
-  position: relative;
-  width: 100%;
-}
-
-.ticks::before,
-.ticks::after {
-  content: '';
-  position: absolute;
-  top: -4.5px;
-  border: 5px solid transparent;
-}
-
-.ticks::before {
-  left: 0;
-  border-left-color: var(--border);
-}
-
-.ticks::after {
-  right: 0;
-  border-right-color: var(--border);
-}
-
-/* GLOBAL RESET */
+/* =========================================
+   1. GLOBAL RESET
+========================================= */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+html {
   width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-  overflow-x: hidden;
-}
-
-/* HEADER */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   width: 100%;
-  background: #fff;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background: #ffffff;
+  color: #10183f;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.header-inner {
-  width: min(1080px, calc(100% - 32px));
-  margin-inline: auto;
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-/* CONTENT WIDTH */
-.live-hero,
+/* =========================================
+   2. COMMON WEBSITE SETTINGS
+========================================= */
+:root {
+  --site-content-width: 1100px;
+  --site-header-width: 1280px;
+  --site-side-gap: 48px;
+  --site-section-padding: 64px;
+}
+
+/* Common media and form sizing */
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================
+   3. HEADER WIDTH
+========================================= */
+.header {
+  width: 100%;
+  max-width: 100%;
+}
+
+.header .header-inner {
+  width: min(
+    var(--site-header-width),
+    calc(100% - var(--site-side-gap))
+  ) !important;
+  max-width: var(--site-header-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   4. COMMON CONTENT WIDTH
+========================================= */
+.page-container,
+.live-container,
+.work-wrapper,
+.how-wrapper,
+.dashboard-wrapper,
+.ecosystem-wrapper,
+.section-container,
 .why-section,
 .journey-container,
 .paths-container,
 .mentors-container,
-.about-growth-container {
-  width: min(1080px, calc(100% - 32px));
-  max-width: 1080px;
-  margin-inline: auto;
+.about-growth-container,
+.resources-container,
+.testimonial-container,
+.app-container,
+.leaning-container,
+.learning-second-row,
+.learning-live-container {
+  width: calc(100% - var(--site-side-gap));
+  max-width: var(--site-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  .header-inner,
-  .live-hero,
+/* =========================================
+   5. WORK PAGE
+========================================= */
+.work-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.work-page .work-hero {
+  width: calc(100% - var(--site-side-gap));
+  max-width: var(--site-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.how-it-works-section,
+.dashboard-section,
+.ecosystem-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   6. LEARNING PAGE
+========================================= */
+.leaning-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.leaning-page .leaning-container,
+.leaning-page .learning-second-row,
+.leaning-page .learning-live-container {
+  width: calc(100% - var(--site-side-gap));
+  max-width: var(--site-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Keep learning cards inside their containers */
+.leaning-page .learning-card,
+.leaning-page .learning-box {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   7. LIVE PAGE
+========================================= */
+.live-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  overflow-x: clip;
+  box-sizing: border-box;
+}
+
+/* The background stays full width.
+   Only the hero content gets a max-width. */
+.live-page .live-hero {
+  width: calc(100% - var(--site-side-gap));
+  max-width: var(--site-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.live-page .live-hero-copy,
+.live-page .live-lab-card {
+  min-width: 0;
+}
+
+/* =========================================
+   8. LOGIN PAGES
+========================================= */
+.insti-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.insti-page .insti-hero {
+  width: calc(100% - var(--site-side-gap));
+  max-width: var(--site-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.insti-page .insti-login-card,
+.insti-page .insti-welcome {
+  min-width: 0;
+}
+
+/* =========================================
+   9. FULL-WIDTH SECTION BACKGROUNDS
+========================================= */
+section {
+  box-sizing: border-box;
+}
+
+.how-it-works-section,
+.dashboard-section,
+.ecosystem-section,
+.paths-section,
+.journey-section,
+.mentors-section,
+.testimonial-section,
+.schools-section,
+.schools-hero,
+.resources-hero,
+.app-hero,
+.learning-live-section {
+  width: 100%;
+}
+
+/* =========================================
+   10. TABLET RESPONSIVENESS
+========================================= */
+@media (max-width: 900px) {
+  :root {
+    --site-side-gap: 40px;
+    --site-section-padding: 48px;
+  }
+
+  .header .header-inner {
+    width: calc(100% - var(--site-side-gap)) !important;
+  }
+
+  .page-container,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper,
+  .ecosystem-wrapper,
+  .section-container,
   .why-section,
   .journey-container,
   .paths-container,
   .mentors-container,
-  .about-growth-container {
-    width: calc(100% - 24px);
+  .about-growth-container,
+  .resources-container,
+  .testimonial-container,
+  .app-container,
+  .leaning-container,
+  .learning-second-row,
+  .learning-live-container {
+    width: calc(100% - var(--site-side-gap));
+  }
+
+  .live-page .live-hero,
+  .work-page .work-hero,
+  .leaning-page .leaning-container,
+  .insti-page .insti-hero {
+    width: calc(100% - var(--site-side-gap));
   }
 }
 
+/* =========================================
+   11. MOBILE RESPONSIVENESS
+========================================= */
+@media (max-width: 600px) {
+  :root {
+    --site-side-gap: 32px;
+    --site-section-padding: 36px;
+  }
 
-/* MOBILE: prevent page content from going off-screen */
-@media (max-width: 700px) {
   html,
   body,
   #root {
     width: 100%;
     max-width: 100%;
-    overflow-x: clip;
   }
 
-  img,
-  video {
-    max-width: 100%;
+  .header .header-inner {
+    width: calc(100% - var(--site-side-gap)) !important;
+  }
+
+  .page-container,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper,
+  .ecosystem-wrapper,
+  .section-container,
+  .why-section,
+  .journey-container,
+  .paths-container,
+  .mentors-container,
+  .about-growth-container,
+  .resources-container,
+  .testimonial-container,
+  .app-container,
+  .leaning-container,
+  .learning-second-row,
+  .learning-live-container {
+    width: calc(100% - var(--site-side-gap));
+  }
+
+  .live-page {
+    width: 100%;
+    max-width: none;
+  }
+
+  .live-page .live-hero,
+  .work-page .work-hero,
+  .leaning-page .leaning-container,
+  .insti-page .insti-hero {
+    width: calc(100% - var(--site-side-gap));
+  }
+
+  .leaning-page .learning-second-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================
+   12. SMALL MOBILE
+========================================= */
+@media (max-width: 380px) {
+  :root {
+    --site-side-gap: 24px;
+  }
+
+  .header .header-inner {
+    width: calc(100% - var(--site-side-gap)) !important;
+  }
+
+  .page-container,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper,
+  .ecosystem-wrapper,
+  .section-container,
+  .why-section,
+  .journey-container,
+  .paths-container,
+  .mentors-container,
+  .about-growth-container,
+  .resources-container,
+  .testimonial-container,
+  .app-container,
+  .leaning-container,
+  .learning-second-row,
+  .learning-live-container {
+    width: calc(100% - var(--site-side-gap));
+  }
+}
+
+/* =========================================
+   13. ACCESSIBILITY
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

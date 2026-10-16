@@ -208,11 +208,9 @@ function Work() {
 
   return (
     <main className="work-page">
-
       {/* =====================================================
           UPPER HERO
       ===================================================== */}
-
       <section className="work-hero">
 
         {/* LEFT SIDE */}
@@ -241,8 +239,6 @@ function Work() {
           </p>
 
           <div className="work-buttons">
-
-            
 <button
   className="work-primary"
   onClick={() => {
@@ -261,12 +257,8 @@ function Work() {
 >
   See the Journey
 </button>
-
           </div>
-
         </div>
-
-
         {/* =====================================================
             RIGHT SIDE JOURNEY CARD
         ===================================================== */}
@@ -280,21 +272,16 @@ function Work() {
               <div className="journey-logo">
                 ↕
               </div>
-
               <div>
                 <h2>Your learning journey</h2>
                 <p>Every step in one place</p>
               </div>
 
             </div>
-
             <div className="step-count">
               Step {activeJourneyStep} of 8
             </div>
-
           </div>
-
-
           {/* =================================================
               ALL 8 STEPS STAY IN PLACE
           ================================================= */}
@@ -320,7 +307,6 @@ function Work() {
                     isCompleted ? "step-completed" : ""
                   }`}
                 >
-
                   <div
                     className={`step-icon ${
                       isCurrent
@@ -332,28 +318,20 @@ function Work() {
                   >
                     {step.icon}
                   </div>
-
-
                   <div className="step-info">
-
                     <h3>
                       {step.title}
                     </h3>
-
                     <p>
                       {step.description}
                     </p>
 
                   </div>
-
-
                   {isCompleted && (
                     <span className="check">
                       ✓
                     </span>
                   )}
-
-
                   {isCurrent && (
                     <span className="now">
                       Now
@@ -363,14 +341,9 @@ function Work() {
                 </div>
               );
             })}
-
           </div>
-
         </div>
-
       </section>
-
-
       {/* =====================================================
           YAHAN SE TUMHARA PURANA LOWER SECTION SAME RAHEGA
           01 - 08
@@ -437,11 +410,8 @@ function Work() {
                     <p>
                       {step.description}
                     </p>
-
                   </div>
-
                 </div>
-
 
                 <div className="journey-features">
 
@@ -466,8 +436,6 @@ function Work() {
       </section>
 
 {/*=========3to 3 box  */}
-
-
 <section className="dashboard-section">
   <div className="dashboard-wrapper">
 
@@ -546,8 +514,6 @@ function Work() {
 
   </div>
 </section>
-
-
       {/* ====bule==== */}
 
 <section className="ecosystem-section">
