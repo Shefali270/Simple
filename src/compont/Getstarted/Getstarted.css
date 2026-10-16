@@ -7,8 +7,9 @@
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  padding: 65px 24px 75px;
+  padding: 65px;
   color: #172033;
+  
   font-family: Inter, Arial, sans-serif;
   background:
     radial-gradient(

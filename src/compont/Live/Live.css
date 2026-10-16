@@ -2,8 +2,6 @@
 /* ================================
    LIVE PAGE
 ================================ */
-
-
 .live-page {
   width: 100%;
   max-width: 100%;
@@ -38,6 +36,8 @@
   width: 100%;
   max-width: 1350px;
   margin: 0 auto;
+  padding-top: 65px;
+  box-sizing: border-box;
 }
 
 
@@ -62,6 +62,7 @@
   font-size: clamp(38px, 3.6vw, 54px);
   font-weight: 800;
   line-height: 1.04;
+  transform: translate(-25px);
   letter-spacing: -2.5px;
 }
 
@@ -149,7 +150,7 @@
 .live-lab-card {
   width: 100%;
   min-width: 0;
-  padding: 18px 20px 0;
+  padding: 19px 22px 0;
   overflow: hidden;
   border: 1px solid #dfe5ff;
   border-radius: 30px;
@@ -1059,26 +1060,24 @@
 /*=================================
    CONNECTED LEARNING JOURNEY
 ===================================== */
+
 .journey-section {
   position: relative;
-
-  width: 100vw !important;
-  max-width: none !important;
-
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: 0 !important;
-
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   min-height: 570px;
-  padding: 75px 30px;
-
+  padding: 75px 24px;
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 0;
-
   background: #202e83;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
  
 .journey-section::before {
   content: "";
@@ -2277,7 +2276,7 @@
   margin: 0 auto;
 }
 
-/* Section label */
+/* Section label */ 
 
 .testimonial-label {
   display: inline-flex;
@@ -2837,12 +2836,6 @@
 ================================= */
 
 
-/* ================================
-   RESOURCES SECTION
-================================ */
-
-/* ===== Resources Page ===== */
-
 .resources-hero {
   width: 100%;
   min-height: 100vh;
@@ -2878,9 +2871,11 @@
   flex-direction: column;
   gap: 12px;
   width: 100%;
+  max-width: 100%;
   min-width: 0;
-  justify-self: start;
-  transform: translate(60px);
+  justify-self: stretch;
+  transform: none;
+  box-sizing: border-box;
 }
 
 /* Label */
@@ -2904,10 +2899,11 @@
 /* Heading */
 .resources-left h2 {
   margin: 25px 0 28px;
-  font-size: clamp(38px, 4vw, 52px);
+  font-size: clamp(35px, 4vw, 50px);
   line-height: 1.03;
   letter-spacing: -2px;
-  font-weight: 800;
+  font-weight: 700;
+  transform: translate(-10px);
   color: #10183f;
   overflow-wrap: break-word;
 }
@@ -2944,13 +2940,14 @@
   min-height: 80px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   padding: 13px 18px;
   border-radius: 24px;
   background: #eef2ff;
   color: #10183f;
   text-decoration: none;
   box-sizing: border-box;
+  
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -4045,13 +4042,15 @@ body {
 .journey-section,
 .paths-section,
 .mentors-section,
+
 .about-growth-section {
-  width: 80% !important;
-  max-width: 80% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   box-sizing: border-box;
 }
+
 
 /* Inner content ko section ke andar rakho */
 .live-hero,
@@ -4111,7 +4110,7 @@ body {
 .journey-section,
 .paths-section,
 .mentors-section {
-  width: 80% !important;
+  width: 100% !important;
   max-width: none !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -4149,16 +4148,16 @@ body {
   .journey-section,
   .paths-section,
   .mentors-section {
-    width: 80% !important;
-    max-width: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 100% ;
+    max-width: none;
+    margin-left: auto ;
+    margin-right: auto ;
   }
 }
 
 
 .resources-hero {
-  width: 80%;
+  width: 100%;
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
@@ -4261,12 +4260,15 @@ body {
   overflow-x: clip;
 }
 
+
 .live-hero {
   width: 100%;
-  max-width: 1350px;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.65fr);
-  gap: 28px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
+
 
 .live-hero-copy,
 .live-lab-card,
@@ -4825,6 +4827,45 @@ body {
   }
 
   .resources-container {
+    gap: 15px;
+  }
+
+  .resources-left h2 {
+    font-size: clamp(34px, 9vw, 42px);
+    letter-spacing: -1.5px;
+  }
+
+  .resources-right {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    transform: none;
+    gap: 10px;
+  }
+
+  .resource-item {
+    min-height: 72px;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .resource-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .resource-text strong {
+    font-size: 14px;
+  }
+
+  .resource-arrow {
+    width: 34px;
+    height: 34px;
+  }
+}
+  .resources-container {
     gap: 26px;
   }
 
@@ -4853,5 +4894,241 @@ body {
   .resource-arrow {
     width: 34px;
     height: 34px;
+  }
+.testimonial-sun {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  right: -28px;
+  bottom: -35px;
+  border-radius: 50%;
+  background: #ffb511;
+  animation: rotateStar 6s linear infinite;
+  transform-origin: center;
+}
+
+.testimonial-sun::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  background: #ffb511;
+  clip-path: polygon(
+    50% 0%, 61% 12%, 76% 5%, 82% 22%,
+    98% 25%, 93% 42%, 100% 55%, 86% 66%,
+    89% 83%, 71% 84%, 62% 100%, 48% 89%,
+    34% 100%, 27% 83%, 9% 80%, 15% 63%,
+    0% 52%, 12% 39%, 7% 23%, 25% 20%,
+    35% 5%
+  );
+  animation: rotateStar 6s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotateStar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Right-side white cards */
+
+.testimonial-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.testimonial-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 155px;
+  padding: 24px;
+  border-radius: 21px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.testimonial-stars {
+  color: #ffad00;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.testimonial-card > p {
+  margin: 18px 0;
+  color: #10183f;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+  .testimonial-section {
+    width: 92%;
+    padding: 35px 24px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .testimonial-featured {
+    padding: 23px;
+  }
+
+  .testimonial-card {
+    padding: 18px;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .testimonial-section {
+    width: calc(100% - 20px);
+    padding: 28px 15px;
+    margin: 18px auto;
+    border-radius: 23px;
+  }
+
+  .testimonial-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .testimonial-heading h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-featured {
+    min-height: 290px;
+    padding: 23px;
+  }
+
+  .testimonial-featured h3 {
+    font-size: 25px;
+  }
+
+  .testimonial-card {
+    min-height: 155px;
+    padding: 20px;
+  }
+}
+
+
+/* ===== COMMON CONTENT WIDTH FIX ===== */
+
+/* Hero aur main content */
+.live-hero,
+.why-section,
+.journey-container,
+.paths-container,
+.mentors-container,
+.about-growth-container,
+.resources-hero,
+.how-wrapper,
+.ecosystem-content {
+  width: calc(100% - 48px) !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* Background sections full width rahenge */
+.live-page,
+.why-page,
+.trust-strip,
+.journey-section,
+.paths-section {
+  box-sizing: border-box;
+}
+
+/* Mobile par side spacing */
+@media (max-width: 650px) {
+  .live-hero,
+  .why-section,
+  .journey-container,
+  .paths-container,
+  .mentors-container,
+  .about-growth-container,
+  .resources-hero,
+  .how-wrapper,
+  .ecosystem-content {
+    width: calc(100% - 28px) !important;
+    max-width: 100% !important;
+  }
+}
+
+/* HERO TOP SPACING FIX */
+.live-page {
+  padding-top: 55px !important;
+}
+
+.live-hero {
+  margin-top: 0 !important;
+  align-items: center;
+}
+
+.live-hero-copy h1 {
+  transform: none !important;
+}
+
+/* Keep hero content balanced on desktop */
+@media (min-width: 1101px) {
+  .live-hero {
+    max-width: 1260px !important;
+  }
+}
+
+/* Mobile spacing */
+.live-page {
+  padding-top: 40px !important;
+  margin-top: 0 !important;
+}
+
+.live-hero-copy h1 {
+  transform: none !important;
+}
+
+
+/* FIX: HERO HEADER KE PEECHHE NA CHHUPE */
+.live-page {
+  padding-top: 35px !important;
+}
+
+.live-hero {
+  align-items: start !important;
+  margin-top: 0 !important;
+}
+
+.live-hero-copy h1 {
+  transform: none !important;
+}
+
+@media (max-width: 650px) {
+  .live-page {
+    padding-top: 25px !important;
   }
 }

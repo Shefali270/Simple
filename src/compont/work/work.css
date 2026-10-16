@@ -5,12 +5,13 @@
 * {
   box-sizing: border-box;
 }
-
 .work-page {
   width: 100%;
   min-height: 100vh;
   background: #ffffff;
-  overflow: hidden;
+  overflow-x: clip;
+  padding-top: 55px;
+  box-sizing: border-box;
 }
 
 

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Menu, X, GraduationCap, UserRound, School } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { logo } from "../../assets/image/image.js";
 import "./header.css";
 
@@ -145,37 +146,39 @@ function Header() {
         </nav>
 
         {/* DESKTOP BUTTONS */}
-        <div className="header-actions">
-          <div className="signin-menu desktop-signin-menu">
-            <button
-              type="button"
-              className="signin-btn"
-              aria-expanded={signInOpen}
-              onClick={() => setSignInOpen(!signInOpen)}
-            >
-              <span>Sign in</span>
-              <span className="chevron">
-                {signInOpen ? "⌃" : "⌄"}
-              </span>
-            </button>
 
-            {signInOpen && (
-              <SignInOptions onSelect={closeAll} />
-            )}
-          </div>
+<div className="header-actions">
+  <div className="signin-menu desktop-signin-menu">
+    <button
+      type="button"
+      className="signin-btn"
+      aria-expanded={signInOpen}
+      onClick={() => setSignInOpen(!signInOpen)}
+    >
+      <span>Sign in</span>
+      <span className="chevron">
+        {signInOpen ? "⌃" : <ChevronDown size={16} />}
+      </span>
+    </button>
 
-          <button
-            type="button"
-            className="get-started"
-            onClick={() => {
-              closeAll();
-              window.location.hash = "#get-started";
-            }}
-          >
-            <span>Get Started</span>
-            <span className="arrow">→</span>
-          </button>
-        </div>
+    {signInOpen && (
+      <SignInOptions onSelect={closeAll} />
+    )}
+  </div>
+
+  <button
+    type="button"
+    className="get-started"
+    onClick={() => {
+      closeAll();
+      window.location.hash = "#get-started";
+    }}
+  >
+    <span>Get Started</span>
+    <span className="arrow">→</span>
+  </button>
+</div>
+
 
         {/* MOBILE MENU BUTTON */}
         <button

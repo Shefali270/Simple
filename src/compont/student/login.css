@@ -3,6 +3,7 @@
   min-height: 100vh;
   padding: 45px 5%;
   color: #101943;
+  padding-top: 45px;
   font-family: Inter, Arial, sans-serif;
   background: radial-gradient(#e3eaff 1px, transparent 1px), #fff;
   background-size: 24px 24px;

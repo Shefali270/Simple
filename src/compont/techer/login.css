@@ -3,23 +3,25 @@
   box-sizing: border-box;
 }
 
-.teacher-login-page {
+.teacher-login-hero {
   width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  color: #10183f;
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(#dce5ff 1px, transparent 1px),
-    #fff;
-  background-size: 24px 24px;
+  max-width: 1440px;
+  min-height: 590px;
+  margin: 0 auto;
+  padding: 65px 40px 75px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.9fr);
+  align-items: center;
+  gap: 50px;
+  box-sizing: border-box;
 }
 
 /* NAVBAR */
 .teacher-navbar {
-  width: 80%;
-  max-width: 1350px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 40px;
   min-height: 85px;
   display: flex;
   align-items: center;
@@ -341,57 +343,52 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 1050px) {
-  .teacher-navbar,
-  .teacher-login-hero,
-  .teacher-bottom-banner {
-    width: 90%;
-  }
-
-  .teacher-navbar {
-    flex-wrap: wrap;
-    padding: 15px 0;
-  }
-
-  .teacher-navbar nav {
-    flex-wrap: wrap;
-  }
-
-  .teacher-login-hero {
-    gap: 35px;
-  }
-}
 
 @media (max-width: 768px) {
-  .teacher-navbar,
-  .teacher-login-hero,
-  .teacher-bottom-banner {
-    width: 94%;
-  }
-
-  .teacher-navbar nav {
-    justify-content: center;
-    gap: 12px;
+  .teacher-navbar {
+    width: 100%;
+    padding: 15px 20px;
   }
 
   .teacher-login-hero {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    padding: 40px 0;
-  }
-
-  .teacher-welcome h1 {
-    font-size: clamp(42px, 10vw, 60px);
+    width: 100%;
+    padding: 35px 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
   }
 
   .teacher-login-card {
+    width: 100%;
+    max-width: 440px;
     justify-self: center;
+  }
+
+  .teacher-bottom-banner {
+    width: calc(100% - 40px);
   }
 
   .teacher-bottom-banner h2 {
     letter-spacing: -2px;
   }
 }
+
+@media (max-width: 480px) {
+  .teacher-login-hero {
+    padding: 25px 12px 35px;
+  }
+
+  .teacher-login-card {
+    width: 100%;
+    padding: 15px;
+    min-width: 0;
+  }
+
+  .teacher-bottom-banner {
+    width: calc(100% - 24px);
+    padding: 35px 15px;
+  }
+}
+
 
 @media (max-width: 480px) {
   .teacher-navbar,

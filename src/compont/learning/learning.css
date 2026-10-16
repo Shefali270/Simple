@@ -9,6 +9,7 @@
   min-height: 100vh;
   background: #ffffff;
   overflow-x: hidden;
+  padding-top: 40px;
   box-sizing: border-box;
 }
 
@@ -146,7 +147,7 @@
   color: #2563e9;
 
   font-size: 13px;
-  transform: translate(-45px);
+  transform: translate(-30px);
   font-weight: 800;
 }
 
@@ -169,7 +170,7 @@
   font-size: 82px;
 
   line-height: 1.02;
-  transform: translate(-60px);
+  transform: translate(-40px);
   letter-spacing: -3px;
 
   font-weight: 850;

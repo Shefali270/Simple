@@ -1111,7 +1111,7 @@ const previousLab = () => switchLab(-1);
       outcomes <span>inside</span>
       <br />
       <span>and outside</span>
-      <br />
+      <br />s
       <span>the classroom.</span>
     </h2>
 
@@ -1158,6 +1158,7 @@ const previousLab = () => switchLab(-1);
 
 
 {/* RESOURCES SECTION */}
+   
 <section className="resources-hero">
   <div className="resources-container">
     <div className="resources-left">
