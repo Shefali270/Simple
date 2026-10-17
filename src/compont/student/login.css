@@ -11,7 +11,7 @@
 
 .login-hero {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);

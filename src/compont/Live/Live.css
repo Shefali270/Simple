@@ -1156,17 +1156,21 @@
 
 
 /* ===== WHY LIVEMENTORHUB ===== */
+
+
 .why-section {
-  width: 100%;
- max-width: 800px;
+  width: 82%;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 45px 24px 60px;
+  padding: 35px 20px 45px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 38px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: 28px;
   align-items: center;
 }
+
+
 
 .why-left {
   min-width: 0;
@@ -1183,6 +1187,7 @@
   max-width: 900px;
   font-size: 14px;
   font-weight: 700;
+  transform: translate(45px);
 }
 
 .why-label span,
@@ -1196,6 +1201,7 @@
   color: #10183f;
   font-size: clamp(36px, 3.5vw, 50px);
   line-height: 1.08;
+  transform: translate(45px);
   letter-spacing: -1.5px;
 }
 
@@ -1210,6 +1216,7 @@
   color: #69718c;
   font-size: 16px;
   line-height: 1.8;
+  transform: translate(45px);
 }
 
 .why-button,
@@ -1228,6 +1235,7 @@
   border: 0;
   border-radius: 9px;
   background: #5265e9;
+  transform: translate(40px);
   color: #ffffff;
 }
 
@@ -1239,7 +1247,7 @@
 
 .why-right {
   display: grid;
-  gap: 16px;
+  gap: 14px;
   min-width: 0;
 }
 
@@ -1253,8 +1261,10 @@
   box-sizing: border-box;
   border: 1px solid #e6e9f5;
   border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 8px 28px rgba(24, 39, 90, 0.05);
+  background: #bbc1ed;
+  transform: translate(-30px);
+  box-shadow: 0 8px 28px rgba(19, 31, 69, 0.05);
+
 }
 
 .why-card-text {
@@ -1269,7 +1279,7 @@
 
 .why-card p {
   margin: 0;
-  color: #69718c;
+  color: #7e869e;
   font-size: 14px;
   line-height: 1.65;
 }
@@ -1288,8 +1298,11 @@
 }
 
 /* ===== RESPONSIVE ===== */
+
 @media (max-width: 700px) {
   .why-section {
+    width: 100%;
+    max-width: 100%;
     grid-template-columns: minmax(0, 1fr);
     padding: 35px 18px 45px;
     gap: 28px;
@@ -1304,6 +1317,7 @@
     padding: 17px;
   }
 }
+
 
 
 /* ===== HOW LIVEMENTORHUB WORKS ===== */
@@ -2384,7 +2398,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1152px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -2634,7 +2648,7 @@
   align-items: center;
   gap: 54px;
   width: 100%;
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -3141,7 +3155,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1152px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

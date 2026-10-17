@@ -6,7 +6,7 @@
   min-height: 100vh;
   overflow: hidden;
   background: #ffffff;
-  max-width: 1250px;
+  max-width: 900px;
   color: #101943;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -28,7 +28,7 @@
   z-index: 0;
   pointer-events: none;
   background-image: radial-gradient(#dbe5ff 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 20px 20px;
   opacity: 0.7;
 }
 
@@ -44,7 +44,7 @@
   align-items: center;
   gap: 65px;
   width: 100%;
-  max-width: 1250px;
+  max-width: 900px;
   min-height: 850px;
   margin: 0 auto;
   padding: 100px 65px;
@@ -66,7 +66,7 @@
   color: #315cf5;
   font-size: 15px;
   font-weight: 8900;
-   transform: translate(-60px);
+  
 }
 
 .school-badge span {
@@ -82,7 +82,7 @@
   font-weight: 600;
   line-height: 0.95;
   letter-spacing: -3.5px;
-  transform: translate(-60px);
+  
 }
 
 
@@ -96,9 +96,7 @@
   color: #596587;
   font-size: 19px;
   line-height: 1.2;
-   transform: translate(-60px);
-
-  
+ 
 }
 
 
@@ -115,14 +113,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   min-height: 62px;
   padding: 10px 25px;
   border-radius: 40px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-   transform: translate(-60px);
   transition: transform 0.25s ease, background 0.25s ease,
     box-shadow 0.25s ease;
 }
@@ -176,7 +173,7 @@
   max-width: 760px;
   justify-self: center;
   padding-top: 28px;
-  transform: translate(55px);
+  transform: translate(0px);
 }
 
 .school-training {
@@ -499,10 +496,10 @@
 .school-ways {
   position: relative;
   z-index: 1;
-  width: 80%;
-  max-width: 1700px;
+  width: 50%;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 120px 65px 125px;
+  padding: 100px 65px 105px;
 }
 
 .school-ways-badge {
@@ -515,11 +512,12 @@
   color: #315cf5;
   font-size: 15px;
   font-weight: 700;
+  transform: translate(40px);
 }
 
 .school-ways-badge span {
   color: #ffb800;
-  font-size: 19px;
+  font-size: 15px;
 }
 
 .school-ways h2 {
@@ -529,6 +527,7 @@
   font-size: clamp(42px, 4vw, 62px);
   line-height: 1.16;
   letter-spacing: -2px;
+  transform: translate(40px);
 }
 
 .school-ways h2 span {
@@ -545,14 +544,15 @@
 
 .school-way-card {
   min-width: 0;
-  min-height: 320px;
-  padding: 38px;
+  min-height: 250px;
+  padding: 28px;
   border: 1px solid #dfe6f8;
   border-radius: 28px;
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(35, 55, 105, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease,
-    border-color 0.25s ease;
+  border-color 0.25s ease;
+    /* transform: translate(30px); */
 }
 
 .school-way-card:hover {
@@ -612,17 +612,18 @@
   align-items: start;
   gap: 80px;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 110px 65px 125px;
   background: #eef2ff;
 }
 
+
 /* Left partner information */
 
 .partner-left {
   width: 100%;
-  max-width: 620px;
+  max-width: 520px;
 }
 
 .partner-badge {
@@ -675,7 +676,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  min-height: 95px;
+  min-height: 85px;
   padding: 22px 26px;
   border-radius: 23px;
   background: #ffffff;
