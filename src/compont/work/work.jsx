@@ -588,9 +588,6 @@ function Work() {
     </div>
   </div>
 </section>
-
-
-
     </main>
   );
 }

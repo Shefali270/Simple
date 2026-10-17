@@ -7,7 +7,8 @@
   min-height: 100vh;
   overflow-x: hidden;
   background: #ffffff;
-
+  padding-top: 60px;
+  max-width: 1590PX;
   color: #10183f;
 
   font-family: Georgia, "Times New Roman", serif;
@@ -28,7 +29,7 @@
   gap: 42px;
 
   width: calc(100% - 48px);
-  max-width: 1600px;
+  max-width: 1490px;
   margin: 0 auto;
   padding: 45px 0 65px;
 }
@@ -137,7 +138,7 @@
 ========================================= */
 .journey-card {
   width: 100%;
-  max-width: 550px;
+  max-width: 1350px;
   min-width: 0;
   justify-self: end;
   padding: 20px;
@@ -460,7 +461,7 @@
 
 .how-wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 
@@ -504,7 +505,7 @@
 }
 
 .how-description {
-  max-width: 1150px;
+  max-width: 1350px;
   margin: 0 0 35px;
   color: #697695;
   font-size: 15px;
@@ -633,7 +634,7 @@
 
 .dashboard-wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1370px;
   margin: 0 auto;
 }
 
@@ -760,7 +761,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 
@@ -775,7 +776,7 @@
 }
 
 .ecosystem-heading {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 0 35px;
   color: #ffffff;
   font-size: clamp(32px, 4vw, 48px);
@@ -945,6 +946,7 @@
   .dashboard-section,
   .ecosystem-section {
     padding: 60px 22px;
+    padding-top: 40px;
   }
 
   .work-page .work-hero {
@@ -983,6 +985,7 @@
   .how-wrapper,
   .dashboard-wrapper,
   .ecosystem-wrapper {
+    padding-top: 40px;
     width: calc(100% - 32px);
   }
 
@@ -1131,6 +1134,7 @@
     width: calc(100% - 32px) !important;
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 28px !important;
+    padding-top: 90px;
   }
 
   .work-page .journey-card {
@@ -1138,3 +1142,4 @@
     justify-self: stretch;
   }
 }
+

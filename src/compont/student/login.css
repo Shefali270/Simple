@@ -3,7 +3,7 @@
   min-height: 100vh;
   padding: 45px 5%;
   color: #101943;
-  padding-top: 45px;
+  padding-top: 90px;
   font-family: Inter, Arial, sans-serif;
   background: radial-gradient(#e3eaff 1px, transparent 1px), #fff;
   background-size: 24px 24px;
@@ -11,7 +11,7 @@
 
 .login-hero {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1250px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
@@ -84,7 +84,7 @@
   align-self: start;
   justify-self: end;
   width: 100%;
-  max-width: 440px;
+  max-width: 540px;
   min-width: 0;
   margin: 0;
   padding: 22px;
@@ -283,7 +283,7 @@
     grid-row: 2;
     justify-self: center;
     width: 100%;
-    max-width: 440px;
+    max-width: 540px;
   }
 }
 

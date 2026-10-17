@@ -5,7 +5,7 @@
 
 .about-page {
   position: relative;
-  width: 80%;
+  width: 100%;
   max-width: 100%;
   min-height: calc(100vh - 80px);
   margin: 0 auto;
@@ -542,7 +542,7 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
 .about-story {
   position: relative;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 80px 35px;
   display: grid;

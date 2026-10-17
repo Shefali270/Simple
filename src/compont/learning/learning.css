@@ -7,7 +7,7 @@
   min-height: 100vh;
   overflow-x: hidden;
   background: #ffffff;
-  padding-top: 40px;
+  padding-top: 50px;
   color: #10183f;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -50,7 +50,7 @@
   align-items: center;
   gap: 42px;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1350px;
   margin: 0 auto;
 
 }

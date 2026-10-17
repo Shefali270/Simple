@@ -1158,12 +1158,16 @@ const previousLab = () => switchLab(-1);
 
 
 {/* RESOURCES SECTION */}
-   
-<section className="resources-hero">
-  <div className="resources-container">
-    <div className="resources-left">
-      <div className="resources-label">
-        <span>★</span> 08&nbsp; Learn & grow with our resources
+
+{/* LEARN RESOURCES SECTION */}
+<section className="learn-hero">
+  <div className="learn-container">
+
+    {/* LEFT SIDE */}
+    <div className="learn-left">
+      <div className="learn-label">
+        <span>★</span>
+        <span>08&nbsp; Learn &amp; grow with our resources</span>
       </div>
 
       <h2>
@@ -1177,7 +1181,8 @@ const previousLab = () => switchLab(-1);
       </h2>
 
       <button
-        className="resources-view-button"
+        type="button"
+        className="learn-view-button"
         onClick={() => {
           window.location.hash = "resources";
         }}
@@ -1186,45 +1191,61 @@ const previousLab = () => switchLab(-1);
       </button>
     </div>
 
-    <div className="resources-right">
-      <a href="#resources" className="resource-item">
-        <span className="resource-icon resource-cyan">▤</span>
-        <span className="resource-text">
+    {/* RIGHT SIDE CARDS */}
+    <div className="learn-right">
+
+      {/* STUDY MATERIALS */}
+      <a href="#resources" className="learn-item">
+        <span className="learn-icon learn-cyan">▤</span>
+
+        <span className="learn-text">
           <strong>Study Materials</strong>
           <small>Notes, PDFs &amp; more</small>
         </span>
-        <span className="resource-arrow">→</span>
+
+        <span className="learn-arrow">→</span>
       </a>
 
-      <a href="#resources" className="resource-item">
-        <span className="resource-icon resource-yellow">♧</span>
-        <span className="resource-text">
+      {/* EXAM TIPS */}
+      <a href="#resources" className="learn-item">
+        <span className="learn-icon learn-yellow">♧</span>
+
+        <span className="learn-text">
           <strong>Exam Tips</strong>
           <small>Prepare smarter</small>
         </span>
-        <span className="resource-arrow">→</span>
+
+        <span className="learn-arrow">→</span>
       </a>
 
-      <a href="#resources" className="resource-item">
-        <span className="resource-icon resource-blue">◎</span>
-        <span className="resource-text">
+      {/* CAREER GUIDANCE */}
+      <a href="#resources" className="learn-item">
+        <span className="learn-icon learn-blue">◎</span>
+
+        <span className="learn-text">
           <strong>Career Guidance</strong>
           <small>Explore opportunities</small>
         </span>
-        <span className="resource-arrow">→</span>
+
+        <span className="learn-arrow">→</span>
       </a>
 
-      <a href="#resources" className="resource-item">
-        <span className="resource-icon resource-cyan">☷</span>
-        <span className="resource-text">
+      {/* BLOGS */}
+      <a href="#resources" className="learn-item">
+        <span className="learn-icon learn-cyan">☷</span>
+
+        <span className="learn-text">
           <strong>Blogs</strong>
           <small>Insights &amp; updates</small>
         </span>
-        <span className="resource-arrow">→</span>
+
+        <span className="learn-arrow">→</span>
       </a>
+
     </div>
   </div>
 </section>
+
  
 {/* LEARNING ON THE GO SECTION */}
 <section className="app-hero">

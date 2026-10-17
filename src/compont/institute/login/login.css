@@ -4,7 +4,7 @@
 }
 
 .insti-page {
-  width: 80%;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   overflow-x: clip;
@@ -17,7 +17,7 @@
 
 /* NAVBAR */
 .insti-navbar {
-  width: 80%;
+  width: 100%;
   max-width: 1350px;
   min-height: 85px;
   margin: 0 auto;

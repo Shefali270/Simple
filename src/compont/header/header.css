@@ -418,6 +418,7 @@
   @media (max-width: 850px) {
   .header .mobile-nav-actions {
     display: flex;
+    transform: translate(90px);
   }
 
   .header .mobile-signin-menu {

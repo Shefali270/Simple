@@ -13,7 +13,7 @@
   height: auto;
   margin: 0;
 padding: 0;
-padding-top: 30px;
+padding-top: 50px;
 overflow-x: clip;
   overflow-y: visible;
   box-sizing: border-box;
@@ -47,7 +47,7 @@ overflow-x: clip;
   margin-left: auto;
   margin-right: auto;
   padding: 30px 0 40px;
-  padding-top: 30px;
+  padding-top: 60px;
   box-sizing: border-box;
 }
 
@@ -757,6 +757,7 @@ overflow-x: clip;
   .teacher-hero {
     width: calc(100% - 24px);
     padding: 25px 12px 35px;
+    padding-top: 50px;
   }
 
 
@@ -841,6 +842,7 @@ overflow-x: clip;
 @media (max-width: 700px) {
   .teacher-hero {
     width: calc(100% - 30px);
+    padding-top: 50px;
   }
 
   .teacher-left h1 {
@@ -908,6 +910,7 @@ overflow-x: clip;
 @media (max-width: 450px) {
   .teacher-left h1 {
     font-size: 36px;
+    padding-top: 50px;
   }
 
   .teacher-left p {
@@ -1162,6 +1165,7 @@ overflow-x: clip;
 
   .teacher-hero {
     padding: 45px 20px;
+    padding-top: 50px;
   }
 
   .teacher-left h1 {
@@ -1322,6 +1326,7 @@ margin: 0 auto 40px;
 @media (max-width: 450px) {
   .teacher-hero {
     padding: 25px 12px 35px;
+    padding-top: 80px;
   }
 
   .teacher-right {
