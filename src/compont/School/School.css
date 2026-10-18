@@ -3,10 +3,10 @@
 .school-page {
   position: relative;
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: clip;
   background: #ffffff;
-  max-width: 900px;
   color: #101943;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -1918,5 +1918,92 @@
   .school-partner {
     padding-left: 14px !important;
     padding-right: 14px !important;
+  }
+}
+
+/* ===== SCHOOL HERO - BALANCED DESKTOP LAYOUT ===== */
+
+.school-page .school-hero {
+  width: calc(100% - 80px) !important;
+  max-width: 1450px !important;
+  margin: 0 auto !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important;
+  gap: 55px !important;
+  padding: 70px 20px !important;
+  box-sizing: border-box;
+}
+
+.school-page .school-left,
+.school-page .school-right {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  transform: none !important;
+}
+
+.school-page .school-dashboard {
+  width: 100% !important;
+  max-width: 100% !important;
+  transform: none !important;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .school-page .school-hero {
+    width: calc(100% - 36px) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 40px !important;
+    padding: 50px 18px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .school-page .school-hero {
+    width: 100% !important;
+    padding: 35px 18px !important;
+    gap: 32px !important;
+  }
+}
+
+
+/* ===== SCHOOL PAGE WIDTH ===== */
+.school-page {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.school-page .school-hero {
+  width: calc(100% - 64px) !important;
+  max-width: 1250px !important;
+  margin: 0 auto !important;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 48px;
+  box-sizing: border-box;
+}
+
+.school-page .school-left,
+.school-page .school-right,
+.school-page .school-dashboard {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .school-page .school-hero {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .school-page .school-hero {
+    width: 100% !important;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }

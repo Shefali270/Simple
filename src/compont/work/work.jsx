@@ -1,140 +1,64 @@
 import { useEffect, useState } from "react";
 import "./work.css";
+import {
+  Video, PlayCircle, BookOpen, ClipboardCheck,
+  CalendarCheck, UsersRound, Compass, Wrench,
+  MessageCircle, Monitor, PenTool, Hand,
+  CircleHelp, RotateCcw, StickyNote, FileText,
+  ClipboardList, History, Timer, Trophy,
+  ChartNoAxesCombined, CalendarDays, House,
+  FileBarChart, GraduationCap, Users,
+  BriefcaseBusiness, Rocket, Network
+} from "lucide-react";
 
 function Work() {
-  const journeySteps = [
-    {
-      number: "01",
-      color: "step-yellow",
-      title: "Find or Register",
-      description: "Choose your role and get started with LiveMentorHub.",
-      features: [
-        "👨‍🎓 Students",
-        "🏫 Coaching Institutes",
-        "👨‍🏫 Mentors & Teachers",
-        "🏢 Organizations",
-      ],
-    },
-
-    {
-      number: "02",
-      color: "step-cyan",
-      title: "Choose What You Need",
-      description:
-        "Pick the learning experience that fits your goal and schedule.",
-      features: [
-        "📡 Live Classes",
-        "▶ Recorded Classes",
-        "📄 Study Material",
-        "📋 Tests & Assignments",
-        "☑ Attendance & Performance",
-        "👥 Mentorship",
-        "◉ Career Guidance",
-        "🛠 Skill Development",
-      ],
-    },
-
-    {
-      number: "03",
-      color: "step-pink",
-      title: "Learn Live",
-      description: "Join interactive live classes and learning features.",
-      features: [
-        "HD Video",
-        "💬 Live Chat",
-        "🖥 Screen Share",
-        "✍ Whiteboard",
-        "✋ Raise Hand",
-        "▣ Polls",
-        "❓ Quizzes",
-        "❔ Doubt Session",
-      ],
-    },
-
-    {
-      number: "04",
-      color: "step-blue",
-      title: "Never Miss a Class",
-      description:
-        "Watch recorded sessions and access all learning resources anytime, anywhere.",
-      features: [
-        "↻ Recordings",
-        "▤ Study Notes",
-        "📄 PDFs & PPTs",
-        "📋 Assignments",
-        "📑 Practice Papers",
-        "📚 Previous Year Papers",
-      ],
-    },
-
-    {
-      number: "05",
-      color: "step-yellow",
-      title: "Practice & Test Yourself",
-      description:
-        "Improve your preparation with regular practice and tests.",
-      features: [
-        "▣ Online Tests",
-        "⏱ Mock Tests",
-        "▥ Rank & Scorecard",
-        "⌁ Solutions & Analysis",
-      ],
-    },
-
-    {
-      number: "06",
-      color: "step-cyan",
-      title: "Track Your Progress",
-      description: "Monitor your learning journey in one dashboard.",
-      features: [
-        "☑ Attendance",
-        "⌂ Homework",
-        "☰ Test Results",
-        "📈 Performance",
-        "▦ Upcoming Classes",
-      ],
-    },
-
-    {
-      number: "07",
-      color: "step-pink",
-      title: (
-        <>
-          Connect with
-          <br />
-          Teachers & Mentors
-        </>
-      ),
-      description: "Get guidance beyond the classroom.",
-      features: [
-        "♙ 1:1 Mentorship",
-        "👥 Group Sessions",
-        "🏅 Masterclasses",
-        "◉ Career Guidance",
-      ],
-    },
-
-    {
-      number: "08",
-      color: "step-blue",
-      title: (
-        <>
-          Build Skills &
-          <br />
-          Explore Opportunities
-        </>
-      ),
-      description:
-        "Go beyond academics and prepare for your future.",
-      features: [
-        "🛠 Skill Development",
-        "🚀 Workshops & Bootcamps",
-        "◉ Career Guidance",
-        "💼 Job Opportunities",
-        "♧ Industry Connections",
-      ],
-    },
-  ];
+const steps = [
+  {
+    title: "Find or Register",
+    description: "",
+    items: [
+      ["Students", "Search coaching institutes, courses, mentors and more."],
+      ["Coaching Institutes", "Register your institute and showcase your courses and teachers."],
+      ["Mentors & Teachers", "Create your profile and offer your expertise."],
+      ["Organizations", "Register your organization and find the right talent."]
+    ]
+  },
+  {
+    title: "Choose What You Need",
+    description: "Pick the learning experience that fits your goal and schedule.",
+    items: ["Live Classes", "Recorded Classes", "Study Material", "Tests & Assignments", "Attendance & Performance", "Mentorship", "Career Guidance", "Skill Development"]
+  },
+  {
+    title: "Learn Live",
+    description: "Join interactive live classes and learning features.",
+    items: ["HD Video", "Live Chat", "Screen Share", "Whiteboard", "Raise Hand", "Polls", "Quizzes", "Doubt Session"]
+  },
+  {
+    title: "Never Miss a Class",
+    description: "Watch recorded sessions and access all learning resources anytime, anywhere.",
+    items: ["Recordings", "Study Notes", "PDFs & PPTs", "Assignments", "Practice Papers", "Previous Year Papers"]
+  },
+  {
+    title: "Practice & Test Yourself",
+    description: "Improve your preparation with regular practice and tests.",
+    items: ["Online Tests", "Mock Tests", "Rank & Scorecard", "Solutions & Analysis"]
+  },
+  {
+    title: "Track Your Progress",
+    description: "Monitor your learning journey in one dashboard.",
+    items: ["Attendance", "Homework", "Test Results", "Performance", "Upcoming Classes"]
+  },
+  {
+    title: "Connect with Teachers & Mentors",
+    description: "Get guidance beyond the classroom.",
+    items: ["1:1 Mentorship", "Group Sessions", "Masterclasses", "Career Guidance"]
+  },
+  {
+    title: "Build Skills & Explore Opportunities",
+    description: "Go beyond academics and prepare for your future.",
+    items: ["Skill Development", "Workshops & Bootcamps", "Career Guidance", "Job Opportunities", "Industry Connections"]
+  }
+];
 
   /* =====================================================
      UPPER JOURNEY CARD ANIMATION
@@ -205,6 +129,48 @@ function Work() {
       description: "Workshops, careers and opportunities",
     },
   ];
+
+  
+const chipIcons = {
+  "Live Classes": Video,
+  "Recorded Classes": PlayCircle,
+  "Study Material": BookOpen,
+  "Tests & Assignments": ClipboardCheck,
+  "Attendance & Performance": CalendarCheck,
+  "Mentorship": UsersRound,
+  "Career Guidance": Compass,
+  "Skill Development": Wrench,
+  "HD Video": Video,
+  "Live Chat": MessageCircle,
+  "Screen Share": Monitor,
+  "Whiteboard": PenTool,
+  "Raise Hand": Hand,
+  "Polls": ChartNoAxesCombined,
+  "Quizzes": ClipboardCheck,
+  "Doubt Session": CircleHelp,
+  "Recordings": RotateCcw,
+  "Study Notes": StickyNote,
+  "PDFs & PPTs": FileText,
+  "Assignments": ClipboardList,
+  "Practice Papers": FileText,
+  "Previous Year Papers": History,
+  "Online Tests": ClipboardCheck,
+  "Mock Tests": Timer,
+  "Rank & Scorecard": Trophy,
+  "Solutions & Analysis": ChartNoAxesCombined,
+  "Attendance": CalendarCheck,
+  "Homework": House,
+  "Test Results": FileBarChart,
+  "Performance": ChartNoAxesCombined,
+  "Upcoming Classes": CalendarDays,
+  "1:1 Mentorship": GraduationCap,
+  "Group Sessions": Users,
+  "Masterclasses": GraduationCap,
+  "Workshops & Bootcamps": Rocket,
+  "Job Opportunities": BriefcaseBusiness,
+  "Industry Connections": Network
+};
+
 
   return (
     <main className="work-page">
@@ -348,92 +314,64 @@ function Work() {
           YAHAN SE TUMHARA PURANA LOWER SECTION SAME RAHEGA
           01 - 08
       ===================================================== */}
+    <section className="how-section">
+      <div className="how-heading">
+        <span className="how-label">⭐ 01 The LiveMentorHub journey</span>
+        <h1>
+          How LiveMentorHub <span>works.</span>
+        </h1>
+        <p>
+          Every learner, mentor and institution has a clear next step —
+          with the tools to keep learning moving.
+        </p>
+      </div>
 
-      <section className="how-it-works-section">
-
-        <div className="how-wrapper">
-
-          <div className="work-badge">
-
-            <span className="badge-star">
-              ★
+      <div className="journey">
+        {steps.map((step, index) => (
+          <article
+            className="jstep"
+            id={`step-${index + 1}`}
+            key={step.title}
+          >
+            <span className={`step-number number-${index + 1}`}>
+              {String(index + 1).padStart(2, "0")}
             </span>
 
-            <span className="badge-number">
-              01
-            </span>
+            <div className="step-info">
+              <h3>{step.title}</h3>
+              {step.description && <p>{step.description}</p>}
+            </div>
 
-            <span>
-              The LiveMentorHub journey
-            </span>
-
-          </div>
-
-
-          <h2 className="how-heading">
-            How LiveMentorHub <span>works.</span>
-          </h2>
-
-
-          <p className="how-description">
-            Every learner, mentor and institution has a clear next step —
-            with the tools to keep learning moving.
-          </p>
-
-
-          <div className="journey-steps-list">
-
-            {journeySteps.map((step, index) => (
-
-              <div
-                key={step.number}
-                className="journey-step-card"
-                style={{
-                  animationDelay: `${index * 2.5}s`,
-                }}
-              >
-
-                <div className="journey-step-info">
-
-                  <div
-                    className={`journey-step-number ${step.color}`}
-                  >
-                    {step.number}
+            <div className={index === 0 ? "sub" : "chips"}>
+              {step.items.map((item) =>
+                index === 0 ? (
+                  <div className="sub-card" key={item[0]}>
+                    <b>{item[0]}</b>
+                    <p>{item[1]}</p>
                   </div>
+                ) : (
+                  <span className="chip" key={item}>
+                    {(() => {
+                      const Icon = chipIcons[item] || BookOpen;
+                      return (
+                        <Icon
+                          className="chip-icon"
+                          size={15}
+                          strokeWidth={2}
+                          aria-hidden="true"
+                        />
+                      );
+                    })()}
+                    <span>{item}</span>
+                  </span>
+                )
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
 
-                  <div>
-
-                    <h3>
-                      {step.title}
-                    </h3>
-
-                    <p>
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="journey-features">
-
-                  {step.features.map((feature) => (
-
-                    <span key={feature}>
-                      {feature}
-                    </span>
-
-                  ))}
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
 
 {/*=========3to 3 box  */}
 <section className="dashboard-section">

@@ -1,14 +1,13 @@
 
-/* =========================================
-   INSTITUTE LOGIN PAGE
-========================================= */
+/* ===== INSTITUTE LOGIN PAGE ===== */
+
 .insti-page {
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
+  padding-top: 50px;
+  overflow-x: clip;
   color: #10183f;
-  padding-top: 30px;
-  background: #ffffff;
+  background: #fff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -18,29 +17,22 @@
   box-sizing: border-box;
 }
 
-/* =========================================
-   HERO WIDTH & LAYOUT
-========================================= */
+/* MAIN LAYOUT */
 .insti-hero {
-  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 460px);
   align-items: center;
   gap: 55px;
-
-  width: calc(100% - 48px);
-  max-width: 1100px;
-  min-height: 650px;
+  width: calc(100% - 40px);
+  max-width: 1280px;
+  min-height: 680px;
   margin: 0 auto;
   padding: 36px 0 60px;
 }
 
-/* =========================================
-   LEFT WELCOME CONTENT
-========================================= */
 .insti-welcome {
-  min-width: 0;
   width: 100%;
+  min-width: 0;
 }
 
 .insti-badge {
@@ -54,17 +46,15 @@
   color: #315cf5;
   font-size: 13px;
   font-weight: 700;
-  transform: translate(60px);
 }
 
 .insti-welcome h1 {
   margin: 0 0 20px;
   color: #10183f;
-  font-size: clamp(38px, 4vw, 60px);
+  font-size: clamp(44px, 4.2vw, 66px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.8px;
-  transform: translate(65px);
 }
 
 .insti-welcome h1 span {
@@ -77,10 +67,9 @@
   color: #53658b;
   font-size: 16px;
   line-height: 1.8;
-  transform: translate(70px);
 }
 
-/* FEATURES UNDER LEFT TEXT */
+/* FEATURES */
 .insti-features {
   display: flex;
   align-items: center;
@@ -98,7 +87,6 @@
   color: #10183f;
   font-size: 12px;
   font-weight: 700;
-  transform: translate(60px);
 }
 
 .insti-feature-icon {
@@ -112,22 +100,18 @@
   background: #edf1ff;
   color: #315cf5;
   font-size: 17px;
-  transform: translate(6px);
 }
 
-/* =========================================
-   LOGIN CARD
-========================================= */
+/* LOGIN CARD */
 .insti-login-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   min-width: 0;
   justify-self: end;
-  padding: 22px;
+  padding: 26px;
   border: 1px solid #e0e7fa;
   border-radius: 23px;
-  background: #ffffff;
-  transform: translate(-60px);
+  background: #fff;
   box-shadow: 0 18px 45px rgba(30, 48, 105, 0.1);
 }
 
@@ -156,12 +140,12 @@
 }
 
 .insti-tabs .insti-tab-active {
-  background: #ffffff;
+  background: #fff;
   color: #10183f;
   box-shadow: 0 4px 12px rgba(30, 48, 105, 0.08);
 }
 
-/* LOGIN TITLE */
+/* FORM TEXT */
 .insti-login-card h2 {
   margin: 0 0 5px;
   color: #10183f;
@@ -176,7 +160,6 @@
   line-height: 1.6;
 }
 
-/* FORM */
 .insti-login-card form {
   display: flex;
   flex-direction: column;
@@ -194,7 +177,7 @@
 .insti-password-wrap input {
   width: 100%;
   min-width: 0;
-  height: 46px;
+  height: 48px;
   padding: 0 14px;
   border: 1px solid transparent;
   border-radius: 12px;
@@ -203,7 +186,6 @@
   color: #10183f;
   font-family: inherit;
   font-size: 13px;
-  transform: translate(-20px);
 }
 
 .insti-login-card form > input {
@@ -246,7 +228,7 @@
   cursor: pointer;
 }
 
-/* REMEMBER & FORGOT PASSWORD */
+/* FORM OPTIONS */
 .insti-form-options {
   display: flex;
   align-items: center;
@@ -281,7 +263,7 @@
   text-decoration: underline;
 }
 
-/* SUBMIT BUTTON */
+/* SUBMIT */
 .insti-submit {
   display: flex;
   align-items: center;
@@ -293,7 +275,7 @@
   border: 0;
   border-radius: 28px;
   background: #315cf5;
-  color: #ffffff;
+  color: #fff;
   font-size: 13px;
   font-weight: 800;
   cursor: pointer;
@@ -307,12 +289,12 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   color: #315cf5;
   font-size: 21px;
 }
 
-/* REGISTER LINK */
+/* REGISTER */
 .insti-register {
   margin-top: 18px;
   padding-top: 16px;
@@ -323,12 +305,10 @@
   text-align: center;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+/* TABLET */
 @media (max-width: 900px) {
   .insti-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
     gap: 28px;
     width: calc(100% - 36px);
   }
@@ -338,7 +318,7 @@
   }
 
   .insti-login-card {
-    padding: 17px;
+    padding: 20px;
   }
 
   .insti-features {
@@ -346,13 +326,15 @@
   }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 @media (max-width: 700px) {
+  .insti-page {
+    padding-top: 15px;
+  }
+
   .insti-hero {
     grid-template-columns: minmax(0, 1fr);
-    width: calc(100% - 36px);
+    width: calc(100% - 32px);
     max-width: 500px;
     min-height: auto;
     gap: 30px;
@@ -380,6 +362,7 @@
   }
 }
 
+/* SMALL MOBILE */
 @media (max-width: 380px) {
   .insti-hero {
     width: calc(100% - 28px);
@@ -398,37 +381,71 @@
   }
 }
 
+/* ===== INSTITUTE LOGIN - BALANCED WIDTH ===== */
 
-
-/* INSTITUTE LOGIN - WIDTH FIX */
 .insti-hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
-  align-items: center;
-  gap: 65px;
-  width: calc(100% - 48px);
-  max-width: 1150px;
-  min-height: 650px;
-  margin: 0 auto;
-  padding: 36px 0 60px;
-  box-sizing: border-box;
+  width: calc(100% - 48px) !important;
+  max-width: 1200px !important;
+  min-height: 650px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px) !important;
+  align-items: center !important;
+  gap: 48px !important;
+  margin: 0 auto !important;
+  padding: 36px 0 60px !important;
 }
 
+.insti-welcome h1 {
+  font-size: clamp(40px, 4vw, 58px) !important;
+  letter-spacing: -1.5px;
+  transform: none !important;
+}
+
+.insti-welcome > p {
+  max-width: 490px;
+  transform: none !important;
+}
+
+.insti-badge,
+.insti-features > div,
+.insti-feature-icon {
+  transform: none !important;
+}
+
+.insti-login-card {
+  width: 100%;
+  max-width: 440px !important;
+  padding: 22px !important;
+  justify-self: end;
+  transform: none !important;
+}
+
+.insti-login-card form > input,
+.insti-password-wrap input {
+  transform: none !important;
+}
+
+/* Tablet */
 @media (max-width: 900px) {
   .insti-hero {
-    gap: 28px;
-    width: calc(100% - 36px);
+    width: calc(100% - 36px) !important;
+    min-height: auto !important;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 390px) !important;
+    gap: 28px !important;
   }
 }
 
+/* Mobile */
 @media (max-width: 700px) {
   .insti-hero {
-    grid-template-columns: minmax(0, 1fr);
-    width: calc(100% - 36px);
-    max-width: 500px;
-    min-height: auto;
-    gap: 30px;
-    padding: 35px 0 45px;
+    width: calc(100% - 32px) !important;
+    max-width: 500px !important;
+    min-height: auto !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    padding: 35px 0 45px !important;
+  }
+
+  .insti-login-card {
+    max-width: 100% !important;
   }
 }

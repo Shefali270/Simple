@@ -3373,3 +3373,102 @@
 
 /* FORCE WIDTH FIX */
 /* .live-page .why-section { */
+
+/* ===== LIVE LAB BOX STRUCTURE ===== */
+
+.live-page .live-lab-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep diagram and controls side by side */
+.live-page .live-lab-card .live-lab-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Diagram */
+.live-page .live-lab-card .live-atom-panel {
+  width: 100%;
+  min-width: 0;
+  min-height: 220px;
+}
+
+/* Controls */
+.live-page .live-lab-card .live-lab-controls {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Formula and explanation below */
+.live-page .live-lab-card .live-lab-footer {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .live-page .live-lab-card .live-lab-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .live-page .live-lab-card .live-lab-footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Remove extra white space above Live Lab */
+.live-page {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.live-page .live-hero {
+  margin-top: 0 !important;
+  padding-top: 24px !important;
+  min-height: auto !important;
+  align-items: center;
+}
+
+.live-page .live-lab-card {
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+/* Live page ko thoda neeche shift karo */
+.live-page .live-hero {
+  padding-top: 85px !important;
+}
+
+@media (max-width: 700px) {
+  .live-page .live-hero {
+    padding-top: 45px !important;
+  }
+}
+
+/* Live Lab box - compact size */
+.live-page .live-lab-card {
+  height: auto !important;
+  min-height: unset !important;
+  padding: 14px 18px !important;
+  margin: 0 !important;
+  align-self: center;
+}
+
+.live-page .live-hero {
+  min-height: unset !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  gap: 28px !important;
+  align-items: center !important;
+}
