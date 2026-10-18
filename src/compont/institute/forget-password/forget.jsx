@@ -86,17 +86,8 @@ function ForgotPassword() {
         </div>
       </section>
 
-      <section className="institute-bottom-banner">
-        <h2>
-          Learn. Connect. <span>Grow.</span>
-        </h2>
+    
 
-        <div className="banner-star">★</div>
-
-        <a className="banner-get-started" href="#get-started">
-          Get Started <span>→</span>
-        </a>
-      </section>
     </main>
   );
 }
