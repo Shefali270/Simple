@@ -69,11 +69,14 @@
   color: #3260ed;
   font-size: 14px;
   font-weight: 800;
+  transform: translate(20px);
 }
 
 .about-badge span {
   color: #ffb400;
   font-size: 19px;
+
+  
 }
 
 .about-left h1 {
@@ -559,7 +562,7 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
   justify-content: center;
   align-items: flex-start;
   padding-top: 10px;
-  transform: translate(-110px);
+  transform: translate(-60px);
 }
 
 .story-logo img {
@@ -1416,5 +1419,47 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
     height: 100%;
     padding: 0;
     gap: 10px;
+  }
+}
+
+/* ===== STORY LOGO MOBILE FIX ===== */
+
+
+
+.story-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.story-logo img {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+  
+}
+
+@media (max-width: 650px) {
+  .story-logo {
+    justify-content: center;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .story-logo img {
+    width: 160px;
+    max-width: 100%;
+    height: auto;
   }
 }
