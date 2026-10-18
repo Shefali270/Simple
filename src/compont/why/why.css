@@ -10,6 +10,7 @@
   align-items: center;
   gap: 55px;
   box-sizing: border-box;
+  padding-top: 40px;
   color: #10183f;
   font-family: Arial, Helvetica, sans-serif;
 
@@ -426,5 +427,140 @@
     width: 90%;
     grid-template-columns: 1fr;
     gap: 25px;
+  }
+}
+
+/* ===== FIX COMPARISON IMAGE BOX ===== */
+
+.why-image-box {
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 17px;
+  background: #e8ecf6;
+}
+
+.cmp-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #e8ecf6;
+}
+
+.cmp-photo figure {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.cmp-photo figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Both images use the same box dimensions */
+.cmp-photo figure.a {
+  z-index: 1;
+}
+
+.cmp-photo figure.b {
+  z-index: 2;
+  clip-path: inset(0 0 0 var(--split, 50%));
+}
+
+/* Keep the comparison slider aligned */
+.cmp-slider {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cmp-knob {
+  top: 0;
+  bottom: 0;
+}
+
+/* Responsive image height */
+@media (max-width: 600px) {
+  .why-image-box {
+    height: 210px;
+  }
+}
+
+.why-section {
+  padding-top: 90px;
+}
+
+/* ===== IMAGE BOX FINAL FIX ===== */
+
+.why-right {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.why-image-box {
+  width: 100%;
+  height: 250px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #e8ecf6;
+  box-sizing: border-box;
+}
+
+.cmp-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #e8ecf6;
+}
+
+.cmp-photo figure {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.cmp-photo figure.a img,
+.cmp-photo figure.b img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Comparison divider */
+.cmp-knob {
+  top: 0;
+  bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .why-image-box {
+    height: 220px;
   }
 }
