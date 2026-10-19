@@ -445,9 +445,6 @@ const previousLab = () => switchLab(-1);
   )}
 </div>
 
-
-
-
             {/* LAB CONTROLS */}
             <div className="live-lab-controls">
               <div className="live-metric">

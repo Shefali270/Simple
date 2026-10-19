@@ -83,3 +83,87 @@ header,
     gap: 20px;
   }
 }
+
+/* ===== GLOBAL WIDTH STANDARD: 1200px ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+/* Common containers */
+.page-container,
+.live-page,
+.live-container,
+.work-wrapper,
+.how-wrapper,
+.dashboard-wrapper,
+.section-container {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Teacher page */
+.teacher-page .teacher-hero,
+.teacher-page .teacher-list-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Resources page */
+.resources-page .resources-hero,
+.resources-page .resources-category-section,
+.resources-page .resources-audience-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Learning page — supports both spellings */
+.leaning-page .leaning-container,
+.leaning-page .learning-second-row,
+.leaning-page .learning-live-container,
+.learning-page .leaning-container,
+.learning-page .learning-second-row,
+.learning-page .learning-live-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .page-container,
+  .live-page,
+  .live-container,
+  .work-wrapper,
+  .how-wrapper,
+  .dashboard-wrapper,
+  .section-container {
+    width: calc(100% - 32px);
+  }
+
+  .teacher-page .teacher-list-section {
+    width: calc(100% - 32px);
+  }
+}

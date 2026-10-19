@@ -370,10 +370,14 @@
    LEARNING + LIVE CLASSES
 ========================================= */
 .learning-live-section {
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 85px 24px;
+  box-sizing: border-box;
   background: #f5f7ff;
 }
+
 
 .learning-live-container {
   display: grid;
@@ -713,5 +717,82 @@
   .leaning-page .learning-live-container {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+}
+
+
+/* ===== LEARNING PAGE: CONSISTENT WIDTH ===== */
+
+.leaning-page .leaning-container,
+.leaning-page .learning-second-row,
+.leaning-page .learning-live-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .leaning-page .leaning-container,
+  .leaning-page .learning-second-row,
+  .leaning-page .learning-live-container {
+    max-width: 650px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .leaning-page .leaning-container,
+  .leaning-page .learning-second-row,
+  .leaning-page .learning-live-container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* LEARNING PAGE — FINAL 1200px WIDTH */
+
+.leaning-page {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Main content containers */
+.leaning-page .leaning-container,
+.leaning-page .learning-second-row,
+.leaning-page .learning-live-container {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Keep hero background full width */
+.leaning-page .leaning-hero {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .leaning-page .leaning-container,
+  .leaning-page .learning-second-row,
+  .leaning-page .learning-live-container {
+    width: calc(100% - 40px);
+    max-width: 650px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .leaning-page .leaning-container,
+  .leaning-page .learning-second-row,
+  .leaning-page .learning-live-container {
+    width: 100%;
+    max-width: 100%;
   }
 }

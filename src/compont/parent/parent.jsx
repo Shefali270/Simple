@@ -1,5 +1,5 @@
 import "./parent.css";
-
+import { parent } from "../../assets/image/image.js";
 
 import {
   Bell,
@@ -47,13 +47,13 @@ function Parent() {
         </div>
 
         <div className="parent-right">
-          <div className="parent-photo-wrap">
-            <img
-              className="parent-photo"
-              src="https://images.unsplash.com/photo-1587613865763-4b8b4b8c8f5b?auto=format&fit=crop&w=900&q=85"
-              alt="Mother and daughter learning together"
-            />
-          </div>
+         <div className="parent-photo-wrap">
+  <img
+    className="parent-photo"
+    src={parent}
+    alt="Mother and daughter learning together"
+  />
+</div>
 
           <div className="parent-soon">Soon</div>
 

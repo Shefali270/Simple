@@ -43,7 +43,7 @@ overflow-x: clip;
 
 .teacher-hero {
   width: calc(100% - 30px);
-  max-width: 1080px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
   padding: 30px 0 40px;
@@ -958,7 +958,7 @@ overflow-x: clip;
 
 .teacher-hero {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 78px 30px 85px;
 
@@ -1216,7 +1216,7 @@ overflow-x: clip;
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1240px;
   min-height: auto;
   height: auto;
   margin: 0 auto;
@@ -1400,7 +1400,7 @@ margin: 0 auto 40px;
 .teacher-page .teacher-hero {
   position: relative;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 45px 25px 40px !important;
   display: grid;
@@ -1429,7 +1429,7 @@ margin: 0 auto 40px;
 .teacher-page .teacher-list-section {
   position: relative;
   width: calc(100% - 40px);
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto 40px;
 }
 
@@ -1478,4 +1478,298 @@ margin: 0 auto 40px;
 /* Move teacher hero slightly down */
 .teacher-page .teacher-hero {
   padding-top: 70px !important;
+}
+
+/* =====================================
+   TEACHER PAGE — COMMON WIDTH FIX
+   ===================================== */
+
+.teacher-page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.teacher-page .teacher-hero,
+.teacher-page .teacher-list-section {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Hero content: consistent side spacing */
+.teacher-page .teacher-hero {
+  padding: 45px 25px 40px !important;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 35px;
+  align-items: center;
+}
+
+.teacher-page .teacher-left,
+.teacher-page .teacher-right {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.teacher-page .teacher-right {
+  width: 100%;
+}
+
+/* Teacher cards: same content boundary as hero */
+.teacher-page .teacher-list-section {
+  padding: 0 25px;
+  margin-bottom: 60px;
+}
+
+.teacher-page .teacher-subjects {
+  width: 100%;
+  min-width: 0;
+}
+
+.teacher-page .teacher-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.teacher-page .teacher-card,
+.teacher-page .teacher-card-image {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .teacher-page .teacher-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 40px 24px !important;
+  }
+
+  .teacher-page .teacher-left {
+    text-align: center;
+  }
+
+  .teacher-page .teacher-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .teacher-page .teacher-right {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .teacher-page .teacher-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .teacher-page .teacher-hero {
+    padding: 35px 18px 40px !important;
+  }
+
+  .teacher-page .teacher-list-section {
+    padding: 0 18px;
+  }
+
+  .teacher-page .teacher-right {
+    height: 470px;
+  }
+
+  .teacher-page .teacher-video-card {
+    width: min(440px, 100%);
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .teacher-page .teacher-chat {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 20px);
+  }
+
+  .teacher-page .teacher-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 450px) {
+  .teacher-page .teacher-hero {
+    padding: 30px 14px 35px !important;
+  }
+
+  .teacher-page .teacher-list-section {
+    padding: 0 14px;
+  }
+
+  .teacher-page .teacher-right {
+    height: 420px;
+  }
+
+  .teacher-page .teacher-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ===== TEACHER PAGE — FINAL 1240px WIDTH ===== */
+
+.teacher-page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+/* Main content sections */
+.teacher-page .teacher-hero,
+.teacher-page .teacher-list-section {
+  width: calc(100% - 48px);
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Hero layout */
+.teacher-page .teacher-hero {
+  padding: 45px 25px 40px !important;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 35px;
+  align-items: center;
+}
+
+.teacher-page .teacher-left,
+.teacher-page .teacher-right {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.teacher-page .teacher-right {
+  width: 100%;
+}
+
+/* Subject filters and teacher cards */
+.teacher-page .teacher-list-section {
+  padding: 0 25px;
+  margin-bottom: 60px;
+}
+
+.teacher-page .teacher-subjects {
+  width: 100%;
+  min-width: 0;
+}
+
+.teacher-page .teacher-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.teacher-page .teacher-card,
+.teacher-page .teacher-card-image {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .teacher-page .teacher-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 40px 24px !important;
+  }
+
+  .teacher-page .teacher-left {
+    text-align: center;
+  }
+
+  .teacher-page .teacher-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .teacher-page .teacher-right {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .teacher-page .teacher-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .teacher-page .teacher-hero,
+  .teacher-page .teacher-list-section {
+    width: calc(100% - 30px);
+    max-width: 100%;
+  }
+
+  .teacher-page .teacher-hero {
+    padding: 35px 18px 40px !important;
+  }
+
+  .teacher-page .teacher-list-section {
+    padding: 0 18px;
+  }
+
+  .teacher-page .teacher-right {
+    height: 470px;
+  }
+
+  .teacher-page .teacher-video-card {
+    width: min(440px, 100%);
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .teacher-page .teacher-chat {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 20px);
+  }
+
+  .teacher-page .teacher-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 450px) {
+  .teacher-page .teacher-hero {
+    padding: 30px 14px 35px !important;
+  }
+
+  .teacher-page .teacher-list-section {
+    padding: 0 14px;
+  }
+
+  .teacher-page .teacher-right {
+    height: 420px;
+  }
+
+  .teacher-page .teacher-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

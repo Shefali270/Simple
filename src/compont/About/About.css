@@ -35,7 +35,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1250px;
+  max-width: 1220px;
   min-height: 690px;
   margin: 0 auto;
   padding: 55px 24px 70px;
@@ -69,7 +69,8 @@
   color: #3260ed;
   font-size: 14px;
   font-weight: 800;
-  transform: translate(20px);
+  transform: translate(40px);
+
 }
 
 .about-badge span {
@@ -545,7 +546,7 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
 .about-story {
   position: relative;
   width: 100%;
-  max-width: 1150px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 80px 35px;
   display: grid;
@@ -562,7 +563,7 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
   justify-content: center;
   align-items: flex-start;
   padding-top: 10px;
-  transform: translate(-60px);
+ 
 }
 
 .story-logo img {
@@ -644,7 +645,8 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
 /* FOUR THINGS SECTION */
 
 .about-features {
-  width: calc(100% - 28px);
+  width: calc(100% - 48px);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 105px 24px 100px;
   box-sizing: border-box;
@@ -778,7 +780,8 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
 
 .about-vision {
   position: relative;
-  width: calc(100% - 26px);
+  width: calc(100% - 48px);
+  max-width: 1200px;
   margin: 0 auto 35px;
   padding: 110px 24px 115px;
   box-sizing: border-box;
@@ -1461,5 +1464,114 @@ animation: earthLeftRight 3s ease-in-out infinite alternate; */
     width: 160px;
     max-width: 100%;
     height: auto;
+  }
+}
+
+
+/* ABOUT PAGE — CONSISTENT 1200px CONTENT WIDTH */
+.about-page {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Main content sections */
+.about-hero,
+.about-story,
+.features-container,
+.vision-container,
+.offices-container {
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Keep section backgrounds full width */
+.about-features,
+.about-vision,
+.about-offices {
+  box-sizing: border-box;
+}
+
+/* Prevent grid children from overflowing */
+.about-left,
+.about-right,
+.story-content,
+.story-logo {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile layout unchanged */
+@media (max-width: 700px) {
+  .about-hero,
+  .about-story {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* ===== ABOUT PAGE: ALL SECTIONS SAME WIDTH ===== */
+
+/* Full page background */
+.about-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* All main content aligned to 1200px */
+.about-page .about-hero,
+.about-page .about-story,
+.about-page .features-container,
+.about-page .vision-container,
+.about-page .offices-container {
+  width: 100% !important;
+  max-width: 1220px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Full-width section backgrounds stay unchanged */
+.about-page .about-features,
+.about-page .about-vision,
+.about-page .about-offices {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent inner content overflow */
+.about-page .about-left,
+.about-page .about-right,
+.about-page .story-content,
+.about-page .story-logo,
+.about-page .features-grid,
+.about-page .offices-grid {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile: keep existing responsive layout */
+@media (max-width: 700px) {
+  .about-page .about-hero,
+  .about-page .about-story,
+  .about-page .features-container,
+  .about-page .vision-container,
+  .about-page .offices-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 701px) {
+  .about-page .about-hero {
+    width: calc(100% - 48px) !important;
+    max-width: 1240px !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
   }
 }

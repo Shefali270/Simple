@@ -13,7 +13,6 @@ import Signup from "./compont/Signup/Signup.jsx";
 import GetStarted from "./compont/Getstarted/Getstarted.jsx";
 import Connect from "./compont/connect/connect.jsx";
 import Live from "./compont/Live/Live.jsx";
-// import Privacy from "./compont/privacy/privacy.jsx";
 
 import StudentLogin from "./compont/student/login.jsx";
 import TeacherLogin from "./compont/techer/login.jsx";
@@ -67,6 +66,15 @@ function App() {
     };
   }, []);
 
+  // Page change hone par automatically top par scroll karega
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [page]);
+
   const pages = {
     "how-it-works": <Work />,
     learning: <Learning />,
@@ -80,40 +88,28 @@ function App() {
     "get-started": <GetStarted />,
     connect: <Connect />,
     live: <Live />,
-    // privacy: <Privacy />,
     why: <Why />,
 
-    // Student and Teacher Login
     "student/login": <StudentLogin />,
     "teacher/login": <TeacherLogin />,
 
-    // Existing pages
     "parent/login": <Parent />,
     "institute/login": <InstituteLogin />,
     "institute/register": <InstituteRegister />,
     "institute/forgot-password": <InstituteForgotPassword />,
   };
 
-  const isLoginPage =
-    page === "student/login" ||
-    page === "teacher/login" ||
-    page === "institute/login" ||
-    page === "institute/register" ||
-    page === "institute/forgot-password";
+  return (
+    <>
+      <Header />
 
+      {/* Current page */}
+      {pages[page] || <Live />}
 
-return (
-  <>
-    <Header />
-
-    {/* Current page */}
-    {pages[page] || <Live />}
-
-    {/* Connect sabhi pages ke neeche */}
-    <Connect />
-  </>
-);
-
+      {/* Connect sabhi pages ke neeche */}
+      <Connect />
+    </>
+  );
 }
 
 export default App;

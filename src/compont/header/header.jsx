@@ -84,30 +84,58 @@ function Header() {
         </a>
 
         {/* NAVIGATION */}
-        <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
-          <a href="#how-it-works" onClick={closeMenu}>
-            How It Works
-          </a>
+      
+{/* NAVIGATION */}
+<nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
+  <a
+    href="#how-it-works"
+    className={window.location.hash === "#how-it-works" ? "active" : ""}
+    onClick={closeMenu}
+  >
+    How It Works
+  </a>
 
-          <a href="#learning" onClick={closeMenu}>
-            Learning
-          </a>
+  <a
+    href="#learning"
+    className={window.location.hash === "#learning" ? "active" : ""}
+    onClick={closeMenu}
+  >
+    Learning
+  </a>
 
-          <a href="#teachers" onClick={closeMenu}>
-            Teachers
-          </a>
+  <a
+    href="#teachers"
+    className={window.location.hash === "#teachers" ? "active" : ""}
+    onClick={closeMenu}
+  >
+    Teachers
+  </a>
 
-          <a href="#schools" onClick={closeMenu}>
-            For Schools
-          </a>
+  <a
+    href="#schools"
+    className={window.location.hash === "#schools" ? "active" : ""}
+    onClick={closeMenu}
+  >
+    For Schools
+  </a>
 
-          <a href="#resources" onClick={closeMenu}>
-            Resources
-          </a>
+  <a
+    href="#resources"
+    className={window.location.hash === "#resources" ? "active" : ""}
+    onClick={closeMenu}
+  >
+    Resources
+  </a>
 
-          <a href="#about" onClick={closeMenu}>
-            About Us
-          </a>
+  <a
+    href="#about"
+    className={window.location.hash === "#about" ? "active" : ""}
+    onClick={closeMenu}
+  >
+    About Us
+  </a>
+</nav>
+
 
           {/* MOBILE SIGN IN */}
           <div className="mobile-nav-actions">
@@ -143,7 +171,7 @@ function Header() {
               <span className="arrow">→</span>
             </button>
           </div>
-        </nav>
+
 
         {/* DESKTOP BUTTONS */}
 

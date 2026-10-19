@@ -793,7 +793,8 @@ min-height: 400px;
 /* RESOURCES FOR EVERY LEARNER */
 
 .resources-audience {
-  width: calc(100% - 32px);
+  width: calc(100% - 48px);
+  max-width: 1200px;
   margin: 10px auto 0;
   padding: 150px 24px 65px;
   min-height: 720px;

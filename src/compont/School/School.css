@@ -1977,7 +1977,7 @@
 
 .school-page .school-hero {
   width: calc(100% - 64px) !important;
-  max-width: 1250px !important;
+  max-width: 1240px !important;
   margin: 0 auto !important;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 48px;
@@ -2006,5 +2006,120 @@
     width: 100% !important;
     padding-left: 18px;
     padding-right: 18px;
+  }
+}
+
+/* SCHOOL PAGE — FINAL 1200px CONTENT WIDTH */
+
+.school-page .school-hero,
+.school-page .school-ways,
+.school-page .school-partner {
+  width: calc(100% - 48px) !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep dashboard inside hero */
+.school-page .school-right,
+.school-page .school-dashboard {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.school-page .school-dashboard {
+  width: 100%;
+  transform: none;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .school-page .school-hero,
+  .school-page .school-ways,
+  .school-page .school-partner {
+    width: calc(100% - 36px) !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .school-page .school-hero,
+  .school-page .school-ways,
+  .school-page .school-partner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+
+/* SCHOOL PAGE — CONSISTENT CONTENT WIDTH */
+
+/* Desktop: same outer width for all main sections */
+@media (min-width: 801px) {
+  .school-page .school-hero,
+  .school-page .school-ways,
+  .school-page .school-partner {
+    width: calc(100% - 48px) !important;
+    max-width: 1240px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Keep hero columns and dashboard layout intact */
+.school-page .school-hero {
+  min-width: 0;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.school-page .school-left,
+.school-page .school-right,
+.school-page .school-dashboard,
+.school-page .school-way-grid {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.school-page .school-dashboard {
+  width: 100%;
+  transform: none;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 800px) {
+  .school-page .school-hero,
+  .school-page .school-ways,
+  .school-page .school-partner {
+    width: calc(100% - 36px) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .school-page .school-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Mobile: preserve existing stacked layout */
+@media (max-width: 600px) {
+  .school-page .school-hero,
+  .school-page .school-ways,
+  .school-page .school-partner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .school-page .school-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 }

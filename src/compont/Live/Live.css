@@ -1158,40 +1158,48 @@
 /* ===== WHY LIVEMENTORHUB ===== */
 
 
+/* =====================================
+   WHY LIVEMENTORHUB SECTION
+===================================== */
+
 .why-section {
-  width: 82%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 35px 20px 45px;
+  padding: 40px 32px;
   box-sizing: border-box;
+
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1fr);
+  gap: 32px;
   align-items: center;
 }
 
-
+/* =====================================
+   LEFT CONTENT
+===================================== */
 
 .why-left {
+  width: 100%;
   min-width: 0;
+  box-sizing: border-box;
 }
 
-.why-label,
-.journey-label,
-.paths-label {
+.why-label {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 9px;
+
   margin-bottom: 24px;
   color: #535d80;
-  max-width: 900px;
   font-size: 14px;
   font-weight: 700;
 }
 
-.why-label span,
-.journey-label span,
-.paths-label span {
+.why-label span {
   color: #f3b900;
 }
 
@@ -1199,130 +1207,337 @@
   margin: 0 0 22px;
   color: #10183f;
   font-size: clamp(36px, 3.5vw, 50px);
-  line-height: 1.08;
-  
+  line-height: 1.12;
   letter-spacing: -1.5px;
+  overflow-wrap: break-word;
 }
 
 .why-left h1 span {
   color: #5265e9;
 }
 
-.why-left p,
-.journey-heading-row p,
-.paths-heading-row p {
+.why-left p {
   margin: 0;
   color: #69718c;
   font-size: 16px;
   line-height: 1.8;
+  overflow-wrap: break-word;
 }
 
-.why-button,
-.journey-learn-button,
-.paths-explore-link,
-.path-action {
-  cursor: pointer;
-  font: inherit;
-  font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
+/* =====================================
+   BUTTON
+===================================== */
 
 .why-button {
+  display: inline-block;
+  max-width: 100%;
   margin-top: 28px;
   padding: 14px 22px;
+  box-sizing: border-box;
+
   border: 0;
   border-radius: 9px;
   background: #5265e9;
   color: #ffffff;
+
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.why-button:hover,
-.journey-learn-button:hover,
-.path-action:hover {
+.why-button:hover {
+  background: #4053d5;
   transform: translateY(-2px);
 }
 
+/* =====================================
+   RIGHT CONTENT
+===================================== */
+
 .why-right {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
+
+  width: 100%;
   min-width: 0;
+  box-sizing: border-box;
 }
+
+/* =====================================
+   FEATURE CARDS
+===================================== */
 
 .why-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 18px;
+
+  width: 100%;
   min-width: 0;
-  padding: 20px;
   box-sizing: border-box;
+
+  padding: 20px;
   border: 1px solid #e6e9f5;
   border-radius: 16px;
   background: #bbc1ed;
-  transform: translate(-30px);
+
   box-shadow: 0 8px 28px rgba(19, 31, 69, 0.05);
 
+  /* Prevent horizontal shifting */
+  transform: none;
 }
 
 .why-card-text {
+  flex: 1;
   min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .why-card h2 {
   margin: 0 0 8px;
   color: #10183f;
   font-size: 19px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
 }
 
 .why-card p {
   margin: 0;
-  color: #7e869e;
+  color: #69718c;
   font-size: 14px;
   line-height: 1.65;
+  overflow-wrap: break-word;
 }
+
+/* =====================================
+   FEATURE ICONS
+===================================== */
 
 .why-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
   width: 54px;
   height: 54px;
+  box-sizing: border-box;
   border-radius: 14px;
+
   background: #eef0ff;
   color: #5265e9;
   font-size: 25px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* =====================================
+   TABLET
+===================================== */
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .why-section {
+    padding: 40px 24px;
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .why-left h1 {
+    font-size: clamp(32px, 4vw, 42px);
+    letter-spacing: -1px;
+  }
+
+  .why-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .why-card h2 {
+    font-size: 17px;
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 21px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 700px) {
   .why-section {
     width: 100%;
     max-width: 100%;
+    margin: 0 auto;
+    padding: 35px 18px 40px;
+    box-sizing: border-box;
+
     grid-template-columns: minmax(0, 1fr);
-    padding: 35px 18px 45px;
     gap: 28px;
+  }
+
+  .why-left,
+  .why-right {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .why-label {
+    margin-bottom: 20px;
+    font-size: 13px;
   }
 
   .why-left h1 {
     font-size: clamp(34px, 8vw, 44px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .why-left p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .why-button {
+    margin-top: 22px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+
+  .why-right {
+    gap: 14px;
   }
 
   .why-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 16px;
     gap: 12px;
-    padding: 17px;
+    box-sizing: border-box;
+    transform: none;
+  }
+
+  .why-card h2 {
+    font-size: 17px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 21px;
+    border-radius: 12px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+  .why-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .why-card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .why-card h2 {
+    font-size: 16px;
+  }
+
+  .why-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+}
+/* ===== FINAL WHY SECTION WIDTH FIX ===== */
+
+.why-section {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 40px 24px;
+  box-sizing: border-box;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1fr);
+  gap: 32px;
+}
+
+.why-section .why-left,
+.why-section .why-right {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.why-section .why-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  transform: none;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .why-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .why-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 35px 18px 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .why-section .why-card {
+    padding: 16px;
+    gap: 12px;
   }
 }
 
 
-
 /* ===== HOW LIVEMENTORHUB WORKS ===== */
 .journey-section {
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 75px 24px;
   box-sizing: border-box;
   background: #f6f8ff;
+  border-radius: 0;
 }
 
 .journey-container {
@@ -1790,7 +2005,9 @@
 
 /* ===== MENTORS SECTION ===== */
 .mentors-section {
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 80px 24px;
   box-sizing: border-box;
   background: #f7f8ff;
@@ -2193,11 +2410,16 @@
 
 /* ===== STUDENT TESTIMONIALS ===== */
 .testimonial-section {
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 80px 24px;
   box-sizing: border-box;
   background: #f6f8ff;
 }
+
+
+
 
 .testimonial-container {
   width: 100%;
@@ -2382,8 +2604,10 @@
 /* ===== FOR SCHOOLS ===== */
 .schools-hero {
   position: relative;
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
   min-height: 600px;
+  margin: 0 auto;
   overflow: hidden;
   padding: 75px 24px;
   box-sizing: border-box;
@@ -2894,7 +3118,9 @@
 
 /* ===== LEARNING ON THE GO ===== */
 .app-hero {
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 0 auto;
   overflow: hidden;
   padding: 80px 24px;
   box-sizing: border-box;
@@ -3140,7 +3366,9 @@
 /* ===== SCHOOLS SECTION (FINAL) ===== */
 .schools-section {
   position: relative;
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 0 auto;
   overflow: hidden;
   padding: 80px 24px;
   box-sizing: border-box;
