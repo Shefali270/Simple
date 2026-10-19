@@ -23,11 +23,7 @@ function Header() {
 
   const SignInOptions = ({ onSelect }) => (
     <div className="signin-dropdown">
-      <a
-        href="/student/login"
-        className="signin-option"
-        onClick={onSelect}
-      >
+      <a href="/student/login" className="signin-option" onClick={onSelect}>
         <span className="signin-icon student-icon">
           <GraduationCap size={20} />
         </span>
@@ -37,11 +33,7 @@ function Header() {
         </span>
       </a>
 
-      <a
-        href="/teacher/login"
-        className="signin-option"
-        onClick={onSelect}
-      >
+      <a href="/teacher/login" className="signin-option" onClick={onSelect}>
         <span className="signin-icon teacher-icon">
           <UserRound size={20} />
         </span>
@@ -51,11 +43,7 @@ function Header() {
         </span>
       </a>
 
-      <a
-        href="/institute/login"
-        className="signin-option"
-        onClick={onSelect}
-      >
+      <a href="/institute/login" className="signin-option" onClick={onSelect}>
         <span className="signin-icon institute-icon">
           <School size={20} />
         </span>
@@ -70,7 +58,6 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-
         {/* LOGO */}
         <a href="/" className="logo" onClick={closeAll}>
           <div className="logo-icon">
@@ -83,70 +70,64 @@ function Header() {
           </div>
         </a>
 
-        {/* NAVIGATION */}
-      
-{/* NAVIGATION */}
-<nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
-  <a
-    href="#how-it-works"
-    className={window.location.hash === "#how-it-works" ? "active" : ""}
-    onClick={closeMenu}
-  >
-    How It Works
-  </a>
+        {/* NAVIGATION + MOBILE BUTTONS */}
+        <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
+          <a
+            href="#how-it-works"
+            className={window.location.hash === "#how-it-works" ? "active" : ""}
+            onClick={closeMenu}
+          >
+            How It Works
+          </a>
 
-  <a
-    href="#learning"
-    className={window.location.hash === "#learning" ? "active" : ""}
-    onClick={closeMenu}
-  >
-    Learning
-  </a>
+          <a
+            href="#learning"
+            className={window.location.hash === "#learning" ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Learning
+          </a>
 
-  <a
-    href="#teachers"
-    className={window.location.hash === "#teachers" ? "active" : ""}
-    onClick={closeMenu}
-  >
-    Teachers
-  </a>
+          <a
+            href="#teachers"
+            className={window.location.hash === "#teachers" ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Teachers
+          </a>
 
-  <a
-    href="#schools"
-    className={window.location.hash === "#schools" ? "active" : ""}
-    onClick={closeMenu}
-  >
-    For Schools
-  </a>
+          <a
+            href="#schools"
+            className={window.location.hash === "#schools" ? "active" : ""}
+            onClick={closeMenu}
+          >
+            For Schools
+          </a>
 
-  <a
-    href="#resources"
-    className={window.location.hash === "#resources" ? "active" : ""}
-    onClick={closeMenu}
-  >
-    Resources
-  </a>
+          <a
+            href="#resources"
+            className={window.location.hash === "#resources" ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Resources
+          </a>
 
-  <a
-    href="#about"
-    className={window.location.hash === "#about" ? "active" : ""}
-    onClick={closeMenu}
-  >
-    About Us
-  </a>
-</nav>
+          <a
+            href="#about"
+            className={window.location.hash === "#about" ? "active" : ""}
+            onClick={closeMenu}
+          >
+            About Us
+          </a>
 
-
-          {/* MOBILE SIGN IN */}
+          {/* MOBILE SIGN IN + GET STARTED */}
           <div className="mobile-nav-actions">
             <div className="signin-menu mobile-signin-menu">
               <button
                 type="button"
                 className="signin-btn"
                 aria-expanded={mobileSignInOpen}
-                onClick={() =>
-                  setMobileSignInOpen(!mobileSignInOpen)
-                }
+                onClick={() => setMobileSignInOpen(!mobileSignInOpen)}
               >
                 <span>Sign in</span>
                 <span className="chevron">
@@ -171,42 +152,40 @@ function Header() {
               <span className="arrow">→</span>
             </button>
           </div>
-
+        </nav>
 
         {/* DESKTOP BUTTONS */}
+        <div className="header-actions">
+          <div className="signin-menu desktop-signin-menu">
+            <button
+              type="button"
+              className="signin-btn"
+              aria-expanded={signInOpen}
+              onClick={() => setSignInOpen(!signInOpen)}
+            >
+              <span>Sign in</span>
+              <span className="chevron">
+                {signInOpen ? "⌃" : <ChevronDown size={16} />}
+              </span>
+            </button>
 
-<div className="header-actions">
-  <div className="signin-menu desktop-signin-menu">
-    <button
-      type="button"
-      className="signin-btn"
-      aria-expanded={signInOpen}
-      onClick={() => setSignInOpen(!signInOpen)}
-    >
-      <span>Sign in</span>
-      <span className="chevron">
-        {signInOpen ? "⌃" : <ChevronDown size={16} />}
-      </span>
-    </button>
+            {signInOpen && (
+              <SignInOptions onSelect={closeAll} />
+            )}
+          </div>
 
-    {signInOpen && (
-      <SignInOptions onSelect={closeAll} />
-    )}
-  </div>
-
-  <button
-    type="button"
-    className="get-started"
-    onClick={() => {
-      closeAll();
-      window.location.hash = "#get-started";
-    }}
-  >
-    <span>Get Started</span>
-    <span className="arrow">→</span>
-  </button>
-</div>
-
+          <button
+            type="button"
+            className="get-started"
+            onClick={() => {
+              closeAll();
+              window.location.hash = "#get-started";
+            }}
+          >
+            <span>Get Started</span>
+            <span className="arrow">→</span>
+          </button>
+        </div>
 
         {/* MOBILE MENU BUTTON */}
         <button
@@ -221,7 +200,6 @@ function Header() {
         >
           {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
-
       </div>
     </header>
   );
