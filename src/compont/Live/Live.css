@@ -3697,3 +3697,99 @@
   gap: 28px !important;
   align-items: center !important;
 }
+
+
+.live-atom-panel.is-paused * {
+  animation-play-state: paused !important;
+}
+
+.live-atom-panel.is-playing * {
+  animation-play-state: running !important;
+}
+
+
+@keyframes liveElectronPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+@keyframes liveOrbitPulse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes liveParticleFloat {
+  from {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateY(-18px);
+    opacity: 1;
+  }
+}
+
+.live-atom-panel.is-paused .lab-electron,
+.live-atom-panel.is-paused .lab-orbit-electron,
+.live-atom-panel.is-paused .live-particle {
+  animation-play-state: paused !important;
+}
+
+.live-atom-panel.is-playing .lab-electron,
+.live-atom-panel.is-playing .lab-orbit-electron,
+.live-atom-panel.is-playing .live-particle {
+  animation-play-state: running !important;
+}
+
+/* DNA double helix animation */
+.lab-visual-3 .live-science-svg {
+  overflow: visible;
+}
+
+.lab-visual-3 .live-science-svg path {
+  animation: dnaWave 2s ease-in-out infinite alternate;
+}
+
+.lab-visual-3 .live-science-svg line {
+  animation: dnaRung 1.5s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes dnaWave {
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes dnaRung {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.live-atom-panel.is-paused .live-science-svg path,
+.live-atom-panel.is-paused .live-science-svg line {
+  animation-play-state: paused !important;
+}
+
+.live-atom-panel.is-playing .live-science-svg path,
+.live-atom-panel.is-playing .live-science-svg line {
+  animation-play-state: running !important;
+}

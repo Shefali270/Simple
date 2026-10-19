@@ -137,8 +137,12 @@
 
 /* ===== HOW IT WORKS SECTION ===== */
 
+/* ===== HOW IT WORKS SECTION ===== */
+
 .how-section {
   width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 48px 24px 70px;
   box-sizing: border-box;
   background: #ffffff;
@@ -146,10 +150,14 @@
   font-family: Arial, sans-serif;
 }
 
+/* ===== HEADING ===== */
+
 .how-section .how-heading {
-  max-width: 960px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto 28px;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .how-section .how-label {
@@ -187,24 +195,33 @@
 /* ===== JOURNEY CARDS ===== */
 
 .how-section .journey {
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-sizing: border-box;
 }
 
 .how-section .jstep {
   display: grid;
-  grid-template-columns: 34px minmax(180px, 1fr) minmax(300px, 1.25fr);
+  grid-template-columns: 34px minmax(0, 1fr) minmax(0, 1.25fr);
   align-items: start;
   gap: 14px;
   width: 100%;
+  min-width: 0;
   padding: 15px 16px;
   box-sizing: border-box;
   border-radius: 15px;
   background: #eef2ff;
   border: 1px solid #edf0ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.how-section .jstep:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(49, 92, 245, 0.08);
 }
 
 /* ===== STEP NUMBER ===== */
@@ -276,10 +293,12 @@
 }
 
 .how-section .sub-card {
+  min-width: 0;
   padding: 9px 10px;
   border-radius: 10px;
   background: #ffffff;
   border: 1px solid #f0f2fa;
+  box-sizing: border-box;
 }
 
 .how-section .sub-card b {
@@ -323,7 +342,8 @@
   font-size: 9px;
   font-weight: 600;
   line-height: 1.3;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .how-section .chip-icon {
@@ -333,40 +353,38 @@
   color: #315cf5;
 }
 
-/* ===== HOVER EFFECT ===== */
-
-.how-section .jstep {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.how-section .jstep:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 20px rgba(49, 92, 245, 0.08);
-}
-
 /* ===== TABLET ===== */
 
 @media (max-width: 900px) {
+  .how-section {
+    padding: 40px 22px 55px;
+  }
+
   .how-section .jstep {
     grid-template-columns: 34px minmax(0, 1fr);
     gap: 12px;
   }
 
-  .how-section .step-info {
-    grid-column: 2;
-  }
-
+  .how-section .step-info,
   .how-section .sub,
   .how-section .chips {
     grid-column: 2;
+  }
+
+  .how-section .step-info h3 {
+    font-size: 14px;
+  }
+
+  .how-section .step-info p {
+    font-size: 12px;
   }
 }
 
 /* ===== MOBILE ===== */
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .how-section {
-    padding: 35px 14px 45px;
+    padding: 35px 16px 45px;
   }
 
   .how-section .how-heading h1 {
@@ -378,10 +396,14 @@
     font-size: 13px;
   }
 
+  .how-section .journey {
+    max-width: 100%;
+  }
+
   .how-section .jstep {
     grid-template-columns: 30px minmax(0, 1fr);
-    padding: 13px 11px;
     gap: 10px;
+    padding: 13px 11px;
   }
 
   .how-section .sub {
@@ -391,55 +413,62 @@
   .how-section .chip {
     font-size: 9px;
     padding: 5px 7px;
-    white-space: normal;
   }
 }
 
+/* ===== SMALL MOBILE ===== */
 
-/* ===== HOW IT WORKS: WIDTH FIX ===== */
+@media (max-width: 380px) {
+  .how-section {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
 
-.how-section {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 55px 6%;
-  box-sizing: border-box;
+  .how-section .jstep {
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  .how-section .step-number {
+    width: 28px;
+    height: 28px;
+  }
+
+  .how-section .step-info h3 {
+    font-size: 12px;
+  }
+
+  .how-section .step-info p {
+    font-size: 11px;
+  }
 }
 
-.how-section .how-heading,
+/* ===== FINAL WIDTH FIX ===== */
+
 .how-section .journey {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  gap: 10px;
   box-sizing: border-box;
-}
-
-.how-section .how-heading {
-  margin-bottom: 32px;
 }
 
 .how-section .jstep {
   width: 100%;
+  max-width: 100%;
   min-width: 0;
+  align-self: stretch;
   box-sizing: border-box;
 }
 
-/* Large screens */
-@media (min-width: 1600px) {
-  .how-section .how-heading,
+@media (max-width: 900px) {
   .how-section .journey {
-    max-width: 1500px;
+    max-width: 100%;
   }
 }
-
-/* Mobile screens */
-@media (max-width: 600px) {
-  .how-section {
-    padding: 35px 16px;
-  }
-}
-
 
 /* =========================================
    RIGHT JOURNEY CARD

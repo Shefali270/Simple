@@ -299,8 +299,11 @@ const previousLab = () => switchLab(-1);
 
 
            
-<div className={`live-atom-panel lab-visual lab-visual-${index}`}>
-  <div className="live-particle-label">
+<div
+  className={`live-atom-panel lab-visual lab-visual-${index} ${
+    playing ? "is-playing" : "is-paused"
+  }`}
+>  <div className="live-particle-label">
     {index === 0 && "Hydrogen energy levels"}
     {index === 1 && "Bohr atomic model"}
     {index === 2 && "Light → electrons"}
@@ -406,6 +409,7 @@ const previousLab = () => switchLab(-1);
         DNA double helix
       </text>
     </svg>
+    
   )}
 
   {/* 5. Rutherford gold foil */}
